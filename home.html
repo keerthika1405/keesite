@@ -455,7 +455,23 @@ z-index: -1;
     
     }
  
- </style> 
+ </style>
+ <style>
+   @media (min-width: 1024px) {
+.frontpicture{
+  width:1349px;
+   height:750px;
+}
+   }
+   @media (max-width: 767px) {
+.frontpicture{
+  width:150px;
+   height:150px;
+}
+   }
+
+ 
+ </style>
 
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10.1.0/swiper-bundle.min.css">
@@ -613,7 +629,7 @@ z-index: -1;
 
             <button class="loginopen-button" onclick="loginopenForm()" >login/signup</button>           
             
-            <img  class="frontpicture" src="Dawn.gif" alt="" width="1349px" height="750px">
+            <img  class="frontpicture" src="Dawn.gif" alt="">
             <div class="fronttext">
               <h1> <span style="color: white;"  > Welcome to Keesite</span> <br>
                 <span style="color: rgb(66, 64, 64);"> your premier destination for online education and skill development</span></h1>
@@ -829,7 +845,7 @@ z-index: -1;
               </footer>    
             
 
-
+<script src="homepage.js"></script>
     <script>
         const canvas = document.getElementById('Canvas');
         const ctx = canvas.getContext('2d');
