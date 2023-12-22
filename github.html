@@ -1,0 +1,2650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>github</title>
+    <link rel="stylesheet" href="github.css">
+    <style>
+      
+
+:root{
+  --body-color: rgb(253, 253, 253);
+  --text-color:rgb(244, 245, 211);
+  --list-color: white;
+  --list-text-color:black;
+  --hover:grey;
+  --tab-content:white;
+  --containerprofile:white;
+}
+
+
+body.dark{
+  --hover:grey;
+  --list-text-color:white;
+ --list-color: rgb(48, 46, 46);
+  --body-color:rgb(0, 0, 0,0.7);
+  --text-color:rgb(255, 255, 255);
+  --gry-color:rgba(0, 0, 0);
+  --tab-content: rgb(48, 46, 46);
+  --containerprofile:rgb(48, 46, 46);
+ 
+
+}
+body {
+	/* background: var(--body-color); */
+	height: 100%;
+}
+
+
+.nav-bar .darkLight-searchBox{
+  display: flex;
+  align-items: center;
+}
+.darkLight-searchBox .dark-light
+{
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+}
+.dark-light i{
+  margin-left: 2200px;
+  position: absolute;
+  color: var(--text-color);
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+margin-top: -50px;
+}
+.dark-light i.sun{
+  opacity: 0;
+  pointer-events: none;
+}
+.dark-light.active i.sun{
+  opacity: 1;
+  pointer-events: auto;
+}
+.dark-light.active i.moon{
+  opacity: 0;
+  pointer-events: none;
+}
+.dark-light i.moon:hover{
+  color: rgb(0, 0, 0);
+}
+.dark-light i.sun:hover{
+  color: yellow;
+
+} 
+    </style>
+     <!-- <style>
+     
+      
+        .sidebar {
+          height: 100%;
+          width: 250px;
+          position: fixed;
+          z-index: 1;
+          top: 30;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidebar a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidebar a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidebar .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        .openbtn {
+          font-size: 20px;
+          cursor: pointer;
+          background-color: #111;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+        }
+        
+        .openbtn:hover {
+          background-color: #444;
+        }
+        
+        #main {
+       
+          position: fixed;
+          margin-top:50px;
+          transition: margin-left .5s;
+          padding: 6px;
+        }
+        
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+          .sidebar {padding-top: 15px;}
+          .sidebar a {font-size: 18px;}
+        }
+        </style> -->
+      <style>
+  
+        .hamburger-menu{
+         padding-right: 1.5rem;
+         cursor: pointer;
+       }
+       .hamburger-menu .line{
+       display: block; 
+       width:25px;
+       height: 20px; 
+       margin-top: -25px;
+       margin-left: 60px;
+       color: rgb(80, 80, 80);
+       cursor: pointer;
+       }
+       .nav-menu{
+         position: fixed;
+         width: 34%;
+         top: 0;
+         left: 50px;
+         background-color: rgb(255, 255, 255);
+         font-weight: 600;
+       
+       }
+       .nav-menu a{
+        margin-top: 40px;
+         font-size: 15px;
+         color: rgb(255, 255, 255);
+         text-decoration: none;
+         display: block;
+         text-align: center;
+         padding: 20px 0;
+       }
+  
+       .hide{
+         display: none;
+       }
+  
+           /* for Desktop view */
+           @media screen and (min-width:600px){
+             .navbar{
+               justify-content: space-around;
+             }
+             .nav-menu{
+               width: 60%;
+               display: block;
+               position: static;
+               margin-top: -25px;
+               margin-left: 70px;
+              
+               background: none;
+             }
+             .nav-menu a{
+               display: inline-block;
+             padding: 0px 10px;
+             cursor: pointer;
+               /* padding: -px 20px; */
+             
+             }
+         
+             .hamburger-menu{
+               display: none;
+             }
+           }
+           
+    </style>
+
+     <style type="text/css">
+  
+      #stage{
+      position: fixed;
+      margin-left: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      z-index: 200;
+  
+  
+      }
+          @font-face {
+           font-family: 'FontAwesome';
+           src: url('fontawesome/fonts/fontawesome-webfont.ttf');
+           font-weight: normal;
+           font-style: normal;
+       
+          }
+          #stage{
+            font-family:FontAwesome;
+          }
+
+          </style> 
+ <style>
+            #bg{
+  position: fixed;
+width: 100%;
+height:160px; 
+/* border: 1px solid black; */
+
+}
+
+.bg h1{
+color: rgb(251, 251, 251);
+ position: absolute;
+font-size: 30px;
+top:500px;
+z-index: 100;
+margin-left: 100px;
+
+    }
+    .bg img{
+      margin-top: -50px;
+      z-index: 1;
+    } 
+          </style> 
+
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10.1.0/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<bodyid="mode">
+
+  
+
+        <!-- <div class="loader">
+          <h1>keesite</h1>
+        </div> -->
+        
+        
+        
+            <!-- <div class="sideMenu" id="side-menu">
+                <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">x</a> -->
+        
+              <!-- <div class="sidebar">
+                
+                <ul>
+                  <li><i class="bx bx-home"></i><a href="chrome.html">home</a></li>
+                  <li><i class="bx bx-home"></i><a href="chrome.html">course </a></li>
+                  <li><i class="bx bx-home"></i><a href="chrome.html">gallery</a></li>
+                  <li><i class="bx bx-github"></i><a href="chrome.html">github</a></li>
+          
+                </ul>
+            
+        </div>
+              </div> -->
+              <div id="stage">
+                <canvas id="Canvas" width="50" height="45"></canvas>
+             </div>
+        
+        
+              <nav class="navbar" id="navbar">
+                <div class="content-area">
+                   <!-- <button  class="content-area1" onclick="openNav()" style="font-size:20px;cursor:pointer"><i class="fa fa-navicon" style="color: black;"></i></button> -->
+              
+               <!-- <div class="dropdown-content" id="myDropdown">
+                 <a href="#">Link 1</a>
+                 <a href="#">Link 2</a>
+                 <a href="#">Link 3 &emsp;&emsp;&emsp;&emsp; <button class="content-area2" onclick="openNavy()" >&#62;</button>
+                 <div class="dropdown-content1" id="myDropdown1" >
+                   <a href="#">python</a>
+                   <a href="#">java</a> </div>
+                 </a>
+                 <a href="#">Link 2</a>
+               </div> -->
+            
+               <div class="hamburger-menu">
+                 <span class="line">Menu</span><!--☰-->
+               </div> 
+             
+               <div class="nav-menu hide">
+                <a onclick="view()" target="_top" > <i class='bx bx-star'  style="font-size: 20px;"></i>Explore</a>
+             <a href="https://github.com/keerthika1405" target="_top" >   <i class='bx bxl-github ' name='github' type="logo"  style="font-size: 20px;"></i> Github</a>
+             <a href="https://github.com/keerthika1405/keesite/discussions" target="_top" ><i class='bx bx-comment '  style="font-size: 20px;"></i>Community</a>
+          
+        
+             <!-- <a href="#">About</a> -->
+             </div>
+            </div>
+            
+            
+            <div class="search-box">
+            <div class="row">
+              <form id="search"  method="post" >
+                 <input type="text" id="input-box" placeholder="search here" autocomplete="off">
+                 <button type="submit"><i class='bx bx-search bx-sm'  id="input-box"></i></button>
+            </div>
+        
+        
+            </form>
+                 <form id="css" action="explore.html" methode="get"></form>
+                 <form id="HTML" action="chrome.html" methode="get"></form>
+                 <form id="javascript" action="about.html" methode="get"></form>
+                   
+            <div class="result-box">     </div>      
+            </div>
+            
+        
+
+        
+            <!-- <div class="containerprofile" id="profileform">
+             
+              <form  onsubmit="; reset(); " >
+               
+        
+                <h3 >profile</h3>
+               <div class="profile_img">
+                <img src="profile.png" alt="" id="profile_img">
+                <label for="image-preview">upload</label>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="image-preview" name="image" class="file-input"  >
+               </div>
+        
+               
+                <h1 ><span style="color: rgb(123, 100, 100);"><i class="fa fa-user-circle"></i></span>    <script> document.write(localStorage.getItem("name"));</script></button></h1>
+                <h1><span style="color: rgb(123, 100, 100);"><i class="fa fa-envelope" ></i>   </span><script> document.write(localStorage.getItem("email"));</script></h1>
+               <h1><span style="color: rgb(123, 100, 100);"><i class="fa fa-home" ></i></span> <a href="about.html">Home</a></h1>
+               <h1><span style="color: rgb(123, 100, 100);"><i class="fa fa-bookmark"></i></span>  <a href="#features">Course</a></h1>
+               <h1><span onclick="logout()" >Logout</span></h1>
+               <button type="button" class="btn cancel" onclick="logincloseForm()"> close</button>
+            
+              </form>
+             
+            </div> -->
+        
+           
+        
+        
+           
+           
+            <div class="darkLight-searchBox">
+              <div class="dark-light">
+                  <i class='bx bx-moon moon'></i>
+                  <i class='bx bx-sun sun'></i>
+              </div>
+              </div>
+        
+            <div class="webname">
+            <h2>keesite</h2>
+            </div>
+            
+            </nav>
+   
+            <button class="open-button" onclick="openForm()"><i class='bx bx-question-mark'></i></button>
+            <div class="container" id="myForm">
+            <form  onsubmit="sendEmail(); reset(); " >
+            <h3>Let's Solve</h3>
+            <input type="text" id="name" placeholder="Your Name" autocomplete="off"  required>
+            <input type="email" id="email" placeholder="Your Email Id" autocomplete="off" required>
+            <input type="text" id="phone" placeholder="phone no" autocomplete="off" >
+            <textarea  id="message" name="" id="message" cols="30" rows="5" placeholder="Write Your Query Here We Will Reach You Soon ?"  required></textarea>
+            <button type="submit">send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+            </div> 
+
+
+            <div   class="bg" id="bgcontent">
+                <img  id="bg" class="image-container" src="bgimg4.avif" height="100px" width=" 100%" alt="">
+                <!-- <h1>welcome  <script> document.write(localStorage.getItem("name").toUpperCase());</script> </h1> -->
+            </div>
+
+
+
+            <div class="menu__wrapper"  id="wrapper">
+    
+              <div class="menu__bar">
+            
+                <nav class="navi">
+                   
+                  <div class="navigation hide">
+                  <ul>
+                    <li>
+                        <button type="button" class="btn cancel" onclick="nonview()">X</button>
+                    </li>
+                      <li>
+                        
+                          <button>
+                              DSA
+                            
+                            
+                                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                                  <path
+                                      d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                                  </path>
+                              </svg>
+                          </button>
+            
+            
+            
+            
+                          <div class="dropdown__wrapper">
+                              <div class="dropdown">
+                                  <ul class="list-items-with-description">
+                                      <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                        <path d="M15 12v-3" />
+                                    </svg>
+                                         
+            
+                                          <div class="item-title">
+                                              <h3>DSA</h3>
+                                              <p>Tree Roadmap of dsa</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                       <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                              stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                              stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                          </svg>
+                                         
+                                          <div class="item-title">
+                                              <h3>Infrastructure</h3>
+                                              <p>Always fast always online</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                        <path d="M4 12l8 4l8 -4" />
+                                        <path d="M4 16l8 4l8 -4" />
+                                    </svg>
+                                          <div class="item-title">
+                                              <h3>Next js</h3>
+                                              <p>The native Next.js platform</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                              <path d="M3.6 9h16.8" />
+                                              <path d="M3.6 15h16.8" />
+                                              <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                              <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Edge Functions</h3>
+                                              <p>Dynamic pages, static speed</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Analytics</h3>
+                                              <p>Real-time insights, peak performance</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                              <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                              <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Storage</h3>
+                                              <p>Serverless storage for frontend</p>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </li>
+            
+            
+            
+            
+            
+                      <li>
+                         <button>
+                              JAVA
+                              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                                  <path
+                                      d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                                  </path>
+                              </svg>
+                          </button>
+            
+            
+            
+            
+                          <div class="dropdown__wrapper">
+                              <div class="dropdown">
+                                  <ul class="list-items-with-description">
+                                      <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                        <path d="M4 12l8 4l8 -4" />
+                                        <path d="M4 16l8 4l8 -4" />
+                                    </svg>
+                                          
+                                          <div class="item-title">
+                                              <h3>Previews</h3>
+                                              <p>Zero config, more innovation</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                    </svg>
+                                          <div class="item-title">
+                                              <h3>Infrastructure</h3>
+                                              <p>Always fast always online</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg"
+                                              class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                              <path d="M15 12v-3" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Next js</h3>
+                                              <p>The native Next.js platform</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                              <path d="M3.6 9h16.8" />
+                                              <path d="M3.6 15h16.8" />
+                                              <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                              <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Edge Functions</h3>
+                                              <p>Dynamic pages, static speed</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Analytics</h3>
+                                              <p>Real-time insights, peak performance</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                              <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                              <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Storage</h3>
+                                              <p>Serverless storage for frontend</p>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <!-- <a href="#docs" title="Docs">
+                              Docs
+                          </a> -->
+                      </li>
+                      <li>
+                        <button>
+                          frontend
+                          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                              <path
+                                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                              </path>
+                          </svg>
+                      </button>
+            
+            
+            
+            
+                      <div class="dropdown__wrapper">
+                          <div class="dropdown">
+                              <ul class="list-items-with-description">
+                                  <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                    <path d="M4 12l8 4l8 -4" />
+                                    <path d="M4 16l8 4l8 -4" />
+                                </svg>
+                                      
+                                      <div class="item-title">
+                                          <h3>Previews</h3>
+                                          <p>Zero config, more innovation</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                </svg>
+                                      <div class="item-title">
+                                          <h3>Infrastructure</h3>
+                                          <p>Always fast always online</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                          <path d="M15 12v-3" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Next js</h3>
+                                          <p>The native Next.js platform</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                          <path d="M3.6 9h16.8" />
+                                          <path d="M3.6 15h16.8" />
+                                          <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                          <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Edge Functions</h3>
+                                          <p>Dynamic pages, static speed</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Analytics</h3>
+                                          <p>Real-time insights, peak performance</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                          <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                          <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Storage</h3>
+                                          <p>Serverless storage for 
+                                            </p>
+                                          </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                           </li> 
+                           <li>
+            
+                              <button>
+                              Database
+                              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                                  <path
+                                      d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                                  </path>
+                              </svg>
+                          </button>
+            
+            
+                        
+                         
+            
+                          <div class="dropdown__wrapper">
+                              <div class="dropdown">
+                                  <ul class="list-items-with-description">
+                                      <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                        <path d="M4 12l8 4l8 -4" />
+                                        <path d="M4 16l8 4l8 -4" />
+                                    </svg>
+                                          
+                                          <div class="item-title">
+                                              <h3>Previews</h3>
+                                              <p>Zero config, more innovation</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                    </svg>
+                                          <div class="item-title">
+                                              <h3>Infrastructure</h3>
+                                              <p>Always fast always online</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg"
+                                              class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                              <path d="M15 12v-3" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Next js</h3>
+                                              <p>The native Next.js platform</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                              <path d="M3.6 9h16.8" />
+                                              <path d="M3.6 15h16.8" />
+                                              <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                              <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Edge Functions</h3>
+                                              <p>Dynamic pages, static speed</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Analytics</h3>
+                                              <p>Real-time insights, peak performance</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                              <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                              <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Storage</h3>
+                                              <p>Serverless storage for frontend</p>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                       </li>
+                          <!-- <a href="#templates" title="Templates">
+                              font-end
+                          </a> -->
+                     
+            
+                      <li>
+                       
+                        <button>
+                          SDLC/Networking
+                          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                              <path
+                                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                              </path>
+                          </svg>
+                      </button>
+            
+            
+            
+            
+                      <div class="dropdown__wrapper">
+                          <div class="dropdown">
+                              <ul class="list-items-with-description">
+                                  <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                    <path d="M4 12l8 4l8 -4" />
+                                    <path d="M4 16l8 4l8 -4" />
+                                </svg>
+                                      
+                                      <div class="item-title">
+                                          <h3>Previews</h3>
+                                          <p>Zero config, more innovation</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                </svg>
+                                      <div class="item-title">
+                                          <h3>Infrastructure</h3>
+                                          <p>Always fast always online</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                          <path d="M15 12v-3" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Next js</h3>
+                                          <p>The native Next.js platform</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                          <path d="M3.6 9h16.8" />
+                                          <path d="M3.6 15h16.8" />
+                                          <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                          <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Edge Functions</h3>
+                                          <p>Dynamic pages, static speed</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Analytics</h3>
+                                          <p>Real-time insights, peak performance</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                          <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                          <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Storage</h3>
+                                          <p>Serverless storage for frontend</p>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+            
+                      </li>
+                      <li>
+                           
+                        <button>
+                          Git/Github
+                          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                              <path
+                                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                              </path>
+                          </svg>
+                      </button>
+            
+            
+            
+            
+                      <div class="dropdown__wrapper">
+                          <div class="dropdown">
+                              <ul class="list-items-with-description">
+                                  <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                    <path d="M4 12l8 4l8 -4" />
+                                    <path d="M4 16l8 4l8 -4" />
+                                </svg>
+                                      
+                                      <div class="item-title">
+                                          <h3>Previews</h3>
+                                          <p>Zero config, more innovation</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                </svg>
+                                      <div class="item-title">
+                                          <h3>Infrastructure</h3>
+                                          <p>Always fast always online</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                          <path d="M15 12v-3" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Next js</h3>
+                                          <p>The native Next.js platform</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                          <path d="M3.6 9h16.8" />
+                                          <path d="M3.6 15h16.8" />
+                                          <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                          <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Edge Functions</h3>
+                                          <p>Dynamic pages, static speed</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Analytics</h3>
+                                          <p>Real-time insights, peak performance</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                          <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                          <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Storage</h3>
+                                          <p>Serverless storage for frontend</p>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+            
+                      </li>
+                      <!-- <li>
+                        <button>
+                         Gallery
+                          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                              <path
+                                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                              </path>
+                          </svg>
+                      </button>
+            
+            
+            
+            
+                      <div class="dropdown__wrapper">
+                          <div class="dropdown">
+                              <ul class="list-items-with-description">
+                                  <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                    <path d="M4 12l8 4l8 -4" />
+                                    <path d="M4 16l8 4l8 -4" />
+                                </svg>
+                                      
+                                      <div class="item-title">
+                                          <h3>Previews</h3>
+                                          <p>Zero config, more innovation</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                </svg>
+                                      <div class="item-title">
+                                          <h3>Infrastructure</h3>
+                                          <p>Always fast always online</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                          <path d="M15 12v-3" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Next js</h3>
+                                          <p>The native Next.js platform</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                          <path d="M3.6 9h16.8" />
+                                          <path d="M3.6 15h16.8" />
+                                          <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                          <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Edge Functions</h3>
+                                          <p>Dynamic pages, static speed</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Analytics</h3>
+                                          <p>Real-time insights, peak performance</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                          <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                          <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Storage</h3>
+                                          <p>Serverless storage for frontend</p>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                      </li> -->
+                      <!-- <li>
+                      <a href="#pricing" title="Pricing">
+                        Pricing
+                      </a>
+                      </li>
+                      <li>
+                        <a href="#pricing" title="Pricing">
+                          Pricing
+                        </a>
+                      </li> -->
+                  </ul>
+                </div>
+            
+              </nav>
+            </div>
+            </div>
+            
+
+
+
+            
+<div class="text">
+
+  <h1>what is git?</h1>
+  <ul>
+    <li>git is a free, open-source distributed version control system tool designed to track changes in <br>
+      computer files and coordinate work on those files among multiple people with speed and efficiency</li>
+      <li>used for source code management in software development</li>
+      <li>used to keep track of changes in any set of files.</li>
+      <li> git is one of the most widely used VCSs and it has become the de-facto standard of versioning,<br>
+         adopted by both open source as well as corporations in their development toolbelt.</li>
+      <li>git is called a DVCS (Distributed Version Control System)due to having a distributed architecture</li>
+      <li>Rather than have only one single place for the full version history of the software as<br>
+         is common in once-popular version control systems like CVS or Subversion (also known as SVN),</li>
+      <li>In git, every developer’s working copy of the code is also a repository that can contain the full history of all changes.</li>
+     
+  </ul>
+  <h1>A brief history of git?</h1>
+  <ul>
+    <li>In April 2005, while working on the 2.6.12 version of the Linux operating system,<br>
+      Linus Benedict Torvalds was not pleased with the existing VCSs available in the market to help him manage his code <br>
+      So he decided that he needed to create his own VCS to keep track of changes in the Linux core.</li>
+      <li>Although GIT is sometimes referred to as Global Information Tracker, Linus Torvalds the creator <br>
+        of GIT and Linux confirmed that GIT is named after the word “git”. <br>
+        In British English slang “git” means a stupid or unpleasant person.
+        Linus Torvalds explained that he believes that he is egotistical and stated <br>
+        “I name all my projects after myself. First Linux, now git.”<br>
+      <a href="https://www.pcmag.com/news/linuxs-linus-torvalds-sorry-for-being-a-jerk#:~:text=Linux%20creator%20Linus%20Torvalds%20is,both%20unprofessional%20and%20uncalled%20for.">story why in year of 2015 linus named it as a GIT  </a></li>
+      </ul>
+  <h1>Why is git called ‘the stupid content tracker’?</h1>
+  <ul>
+  <li>The earlier versions of git were barely accessible, and it wasn’t really trying to be smart. <br>
+    Basically, it’s just a file system because, as Linus Torvalds explained, file systems are something he understands.<br>
+     Tools were built on top to make it more accessible for more people, and as such, it seems smarter, <br>
+     but it’s really not trying to be smarter than it should be.<br>
+     This is a good thing because it means that it is in our means to correct something that might go wrong<br>
+      and mostly understand its inner workings, which helps us to use the tools better.</li>
+     <ul><br><br>
+      <h3>The git model is quite simple.</h3>
+      <li>A blob is a bunch of bytes that represent the content of a file at a point in time.<br>
+         It is important to note that it is the contents that are stored and tracked, not the files, their types, or filenames.</li>
+      <li>A tree is a collection of blobs. Directories in git basically correspond to trees.</li>
+      <li>A commit is a reference to a tree that also contains a reference to one or more parent commits <br>
+        (and some metadata, like a date, an author’s name, some explanatory text, etc.)</li>  
+      <li>A tag is an object that provides a permanent shorthand name for a particular commit.</li>
+      <li>The above are the four main object types in git, the first three being the most important to really understand the main functions of git.<br>
+     All of these types of objects are stored in the git object database, which is kept in the git directory, also known as a git repository.</li>
+  </ul> <br><br>
+  <p>
+    That’s it. Notice there’s nothing about patches, diffs, lines added or removed, etc. From the git conceptual model,<br>
+     each revision is a complete copy of the whole project.<br>
+    git is a stupid content tracker because it has no idea what’s inside those blobs,<br>
+     and it doesn’t try to store fine-grained information like “lines 235–250 added, lines 404–410 removed,” or anything like that.<br>
+      git doesn’t know anything about the type of content you put in it.<br>
+     It does, however, give you the exact content you put in it back out.
+  </p>
+    </ul><br><br>
+    <h1>Collaborating on git projects</h1>
+    <p>
+  To collaborate on git projects with other developers, you need to be able to manage remote repositories. A remote repository is,<br>
+  at its core, another instance of the repository you’re working in that is linked so that changes made to one can be pushed to the other.<br>
+  The remote repository could be hosted on a git hosting service like GitHub or GitLab,<br>
+  it could be on a co-worker’s machine, or it could even be another folder on your local machine.<br> <br>
+  In a typical git project, there is one remote repository known as the “Central” repository. The central repo is almost always hosted either on a<br>
+  private server setup for this explicit purpose or on a git hosting service. Since creating your own git server is fairly complex,<br>
+  most people rely on a git hosting service to house their central repositories.<br><br>
+  
+  The most widely used git hosting service in the world today is GitHub. GitHub offers all of the distributed version control and source code management<br>
+  (SCM) functionality of git and adds on the top of it its own features for code review, project management, integrations with other developer tools,<br>
+  team management, and documentation. The other alternative git hosting services like GitLab and BitBucket also have similar features.<br><br>
+  
+  However, these services are owned by corporations and carry many risks like vulnerable to censorship, single point of failure, lack of community <br>
+  say in policy-making, etc. These problems have encouraged many developers to start looking at alternative git hosting services to host their repositories.<br>
+  
+  
+  Gitopia is a decentralized git hosting service with many added features to make collaboration on code easy and accessible. Gitopia proposes a system that stores <br>
+  git repositories in a decentralized network, one that is highly accessible, censorship-resistant, and empowers communities to innovate, create and contribute open-source code.<br>
+  Gitopia introduces git version control to a wider audience. Gitopia, by using git as its base for version control and collaboration,<br>
+  empowers its users to track the history of changes as people and communities collaborate on projects together. As the project evolves,<br>
+  the community can run tests, fix bugs, and contribute new code with the confidence that any version can be recovered at any time.<br>
+  
+  Developers can review project history to find out:<br>
+  What changes were made?<br>
+  Who made the changes?<br>
+  When were the changes made?<br>
+  Why were the changes needed?<br>
+  With git and the power of blockchain, Gitopia ensures permanent storage of every single version of the code ever created by the developers.
+    </p>
+  
+<br><br><b></b>
+
+
+    <h1><u>table of content</u></h1><br>
+    <a href="#section1">why should learn git</a><br>
+    <a href="#section2">git workflow</a><br>
+    <a href="#section3">type of git workflow</a><br>
+    <a href="#section4">git vs bash vs gitbash</a><br>
+    <a href="#section5">why we need to run linux command on window with help of gitbash</a><br>
+    <a href="#section6">feature of git</a><br>
+    <a href="#section7">advantage of git</a><br>
+    <a href="#section8">disadvantage of git</a><br>
+    <a href="#section9">do and don’ts of git</a><br>
+    <a href="#section10">what is github</a><br>
+    <a href="#section11">git vs github</a><br>
+    <a href="#sectiion12">what is version control system</a><br>
+    <a href="#section13">centralized and decentralized vsc</a><br>
+    <a href="#section14">(svn )vs (tfvs)  vs (cvs) vs (vss)</a><br>
+    <a href="#section15">(git) vs (Mercurial) vs (bazaar)</a><br>
+    <a href="#secyion16">(github) vs (gitlab) vs (bitbuckets)</a><br>
+    <a href="#section17">different commands in git</a><br>
+
+
+
+    <br><br>
+    <div class="sectiongit">
+      <div id="section1">
+        <br><br><br>
+      <h1>why should learn git?</h1>
+      <h3>start with example</h3>
+      <p>
+        <mark>Imagine you are coloring on a flower-theme coloring book. You just thoroughly colored in green for the leaves and now it's time for you to get to the best part,
+         coloring the petal. You know you enjoy red the best but it looked horrible after you finished it. With git, you can revert your choice of red in a heartbeat and 
+         you are also free to reapply the red if you change your mind. You sister came across your coloring book and she wants a piece of this. This is your coloring book and 
+          you don't trust her color-theory ability. With Git, you can grant her access to this coloring book; where she can copy the current state of your work and give it her own spin.
+         Once she is done with it, you can accept or deny her work without affecting yours. With Git, a work doesn't have to be permanent; every action is recorded, reversible, and shareable.</mark></p>
+         <ul>
+          <li>Leverage online tutorials</li>
+          <p> override the code as the series continues. For example, the code from episode 1 gets replaced by the code from episode 2. They leave us with only the latest version of the code.
+            Git saves all versions of code as a separate commit. Therefore, we will have a variety of references when we develop our own project.</p>
+          <li>Rollback a mistake</li>
+          <p>We learn a lot by wrestling with bugs.
+            Nonetheless, there will be the time when we are stuck. For instance, bug logs are not helpful,<br>
+            Google gives a bunch of irrelevant results, or community supports, such as StackOverflow, don’t understand our problems.     
+            Git creates a checkpoint where we can rollback to, reassess the strategy, and get back in the ring.     
+            Furthermore, a rollback encourages trial-and-error.<br>
+            We experiment with the code, rollback if not satisfied, until we come up with the most elegant solution.</p>
+          <li>Learn to break things down</li>
+          <p>To leverage a rollback, a commit must be small. We would rather rollback 20 lines of code than 200 lines.
+            Using Git trains us to break a big problem down into small committable units. Breaking things down helps devising a bird-eye-view plan. <br>
+            The clear directional plan saves us from getting lost in the maze of code.</p>
+          <li>Revision made easy</li>
+          <p>How many of us return to the project after a long while and it looks at us as we are a stranger?</p><br>
+          <p><mark> — Programmer “Hey, sweetheart,”<br>
+            — Project      “Do I know you?”   <br>   
+            — Programmer  “Com’ on! I’ve been away for a while, but I never stop thinking about you,” <br>    
+            — Project      …  <br> 
+            — Programmer  “Oh, please. Not again,” 
+          </mark>
+            <br>
+            Looking at an old project can be bewildering, if not intimidating. The project repository consists of numerous files.<br>
+             Each file contains hundreds, if not thousands, lines of code.      <br>
+            We rub our head and question,<br>
+            
+            “Where do I start?”  <br>
+            Git gives us the simple answer,<br>
+            
+            “Start with the first commit and work the way up to where we left off.”     <br>
+            It helps us track the flow of the development, thus speeds up the revision.</p>
+            <br><p>
+              Git stores versions of code as a reference that helps speeding up learning and revision. It also encourages trial-and-error and trains us to plan before we code
+            </p>
+      
+        </ul>
+        </div>
+        <div id="section2">
+          <br><br><br>
+         <h1>git workflow</h1>
+         <p>Gitflow comes from the combination of “Git” and “workflow”. Gitflow is a popular Git branching model that organizes work into five or more branch types.  </p>
+         <p>These types of branches are the main branch, develop branch, feature branch, release branch, and hotfix branch.</p>
+         <p>Gitflow helps teams organize their work so that they can quickly and visually describe the workflows associated with their branching strategy and releases.</p>    
+         <ul>
+           <li>Step 1: Start with Your Master Branch</li>
+           <p>The master branch of your gitflow diagram describes production releases, so all changes and development work completed funnel up to this branch. 
+          <br>You can add additional circles to represent additional product releases and versions moving down this branch.
+           </p>
+           <li>step 2: Draw a Development Branch for Work in Progress</li>
+           <p>The second branch in your gitflow diagram is the development branch<br>
+             This branch is used throughout the development process for pre-production code — so a lot of work between released versions of your product will branch off of this line.</p>
+         <li>Step 3: Connect Your Branches to Show Where Work is Created and Merged</li>
+         <p>Using the connector tool, draw arrows between the circles on the master and development branches to show where work is being created and merged.</p>
+         <li>Step 4: Add Additional Branches for Features, Releases, and Hotfixes</li>
+         <p>While most of the work will take place on the develop branch and the master branch tracks what work is completed and released, <br>
+           there are three additional branches to support your work. These are the release, hotfix, and feature branches.<br>
+           Add feature branches below your develop branch; this allows you to describe the workflow of specific features being developed off of and merged back onto the development branch.<br>
+           If you add a release branch or hotfix branch, it would sit between the develop and master branches because it describes work being done to move work from development to the product.  </p>
+         
+           </ul>
+           <img src="GitflowDiagram.webp" width="700px" height="500px">
+         </div>
+
+
+         <div id="section3">
+          <br><br><br>
+          <h1>type of git workflow</h1>
+          <h2>Five Popular Git workflows For Better Code</h2>
+          <ul>
+            <li>Centralized Workflow</li>
+            <p>The centralized workflow is a simple and straightforward approach to using Git.<br>
+              there is a single central repository with a "master" branch where all developers push their changes. This workflow is similar to using a traditional version control system like Subversion<br>
+              Benefits of the centralized workflow include its simplicity and reduced overhead. With a single branch, developers can focus on making changes without the complexity of managing multiple branches.
+            </p>
+            <p>
+              <ul>
+             <li>Create a central repository on a remote server, such as GitHub or GitLab.</li> 
+              <li>Clone the repository locally, so each developer has their own working copy.</li>
+              <li>Make changes to the code locally, then commit and push these changes to the central repository.</li>
+              <li>Be aware that the centralized workflow can lead to merge conflicts if multiple developers are working on the same file simultaneously. To mitigate this, ensure developers communicate effectively <br>
+                and consider adopting a code review process to minimize conflicts.</li>
+            </ul>
+            </p>
+            <li>Feature Branch Workflow</li>
+            <p>The feature branch workflow is a popular approach that isolates the development of individual features in separate branches. Doing so helps maintain a clean and stable master<br>
+               branch while allowing developers to experiment and iterate on their features.<br>
+               Benefits of the feature branch workflow include improved collaboration and reduced risk of breaking the main branch. By isolating feature development, teams can better manage and integrate their work.</p>
+          <ul>
+      <li>Create a new branch for each feature, ideally with a descriptive name.</li>
+      <li>Make changes and commit them to the feature branch.</li> 
+      <li>When the feature is complete, merge it back into the master branch, resolving any conflicts.</li>
+      <li>Keep in mind that managing multiple feature branches can become complex. </li>
+      <li>Establish a clear naming convention for branches and ensure developers communicate about their work to avoid confusion</li>        
+      </ul>
+       <li>Gitflow Workflow</li>   
+       <p>The Gitflow workflow is an advanced branching model designed to support complex projects with multiple release cycles. It involves several branches, including "master," "develop," "feature," "release," and "hotfix" branches.
+        <br><br>In Gitflow, the master branch represents the latest stable release, while the development branch is used for ongoing development. Feature branches are created from the development branch, and once completed, <br>
+        they are merged back into development. When a release is ready, a release branch is created from development and eventually merged into the master. Hotfix branches are used to address critical issues in production and are merged directly into the master.
+      <p>Benefits of the Gitflow workflow include its structured approach to managing releases and addressing issues in production. This model is well-suited for projects with strict release schedules or those requiring a high degree of stability.</p> 
+      <br>To set up the Gitflow workflow, consider using a Git extension like "git-flow," which automates the process and enforces best practices. For a more organized version control history, explore techniques like Git squash commit to enhance code quality.</p>
+       
+      <li>Forking Workflow</li>
+      <p>The forking workflow is commonly used in open-source projects and encourages collaboration by allowing contributors to work independently. In this model, each developer forks the main repository, creating their own copy. They make changes in their fork<br>
+         and submit pull requests to the original repository when their work is complete.</p>
+         <p>Benefits of the forking workflow include its ability to support a large number of contributors and its emphasis on maintaining a clean and stable main repository. This workflow is particularly useful for open-source projects,<br>
+           where developers from different backgrounds and skill levels contribute.</p>
+           <ul>
+            <li> Fork the main repository to create a personal copy.</li>
+            <li>Clone the forked repository locally and make changes.</li>
+            <li>Push the changes to the forked repository.</li>
+            <li>Submit a pull request to the main repository, requesting that your changes be merged.</li>
+            <li>To keep your fork up-to-date with the main repository, regularly fetch and merge changes. Additionally,<br>
+               ensure that you communicate with the project maintainers and follow the project's guidelines for submitting pull requests.</li>
+           </ul>
+      <li>Pull Request Workflow</li>
+           <p>The pull request workflow is centered around the concept of code reviews and collaboration. In this model,<br>
+             developers create branches for their work and submit pull requests when their changes are ready for review.<br>
+             Team members review the changes, provide feedback, and approve or request modifications before the changes are merged into the main branch.</p>
+             <p>Benefits of the pull request workflow include improved code quality, knowledge sharing, and a collaborative development process.<br>
+               This workflow is often used in conjunction with other workflows, like the feature branch workflow or the Gitflow workflow.</p>
+      <ul>
+        <li>Create a new branch for your work, following your team's naming conventions.</li>
+        <li>Make changes and commit them to the new branch.</li>
+        <li>Push the branch to the remote repository and create a pull request.</li>
+        <li>Reviewers provide feedback, and the author addresses any requested changes.</li>
+        <li>Once approved, the pull request is merged into the main branch.</li>
+        <li>Best practices for pull requests include providing a clear and concise description, keeping the scope of the changes small and focused, and addressing feedback promptly.</li>
+      </ul>
+      
+      </ul>
+      </div>
+
+      <div id="section4">
+        <br><br><br>
+        <h1>git vs bash vs gitbash</h1>
+        <p>Every Windows PC comes with Command Prompt (cmd), a command-line textual interface to your operating system. Using Command Prompt, you can install programs, create new users, and run scripts.,<br>
+          The closest equivalent to Command Prompt for Unix-like machines is Bash. Bash is often seen as superior because of its powerful features. These include arithmetic, array variables, loops, and branches.<br>
+          Git Bash provides Windows users with access to Bash and its advanced features.
+          <ul>
+      <li>What Is Git?</li>
+            <p>Git is a version control system. It tracks the changes you make to a collection of files using commits. Commits allow you to capture the state of a project at a particular point in time.<br>
+               And Git allows you to go back to a previous commit whenever you want.
+              You can install and run Git locally or use one of its online hosts (such as GitHub or Bitbucket).<br>
+               But Git is fundamentally a Unix-style command-line utility program. It even comes installed on some macOS and Linux systems.<br>
+              Git is probably the most popular version control system in the world today. This is due to its collaborative features.<br>
+               Branching allows you to create independent local versions of a codebase that you can later merge with others.<br>
+               This is one of the main reasons why programmers use Git to share their contributions to source code development.       
+              Git is also open source, free to use, and easy to learn.</p>
+      <li>What Is Bash?</li>
+              <p>The acronym Bash stands for Bourne Again Shell.The Bourne shell is used for scripting. It provides command-based programming to interpret and execute user commands. As a user types a command,<br>
+                 the shell interprets it so the operating system can take action, such as automating a task. The Bourne shell was the default shell for Unix version 7.<br>
+                 Bash has all the Bourne shell core features such as grammar and variable expansion
+               </p>
+      <li>What Is Git Bash?</li>
+                 <p>Although Git is a collection of command-line utility programs, you can use it on Windows via a GUI-based app. Bash is only available on Unix-like operating systems, like macOS and Linux.
+                  Git Bash is strictly for Microsoft Windows users. It provides an emulation of both Git and the Bash command-line environment.<br>
+                   Installing Git Bash on your Windows machine gives you access to a shell environment that is native to macOS and Linux users.</p>
+      
+                  </ul>
+          
+        </p>
+      
+        </div>
+        <div id="section5">
+          <br><br><br>
+          <h1>why we need to run linux command on window with help of gitbash?</h1>
+          <p>A Linux command is a program or utility that runs on the command line. A command line is an interface that accepts lines of text and processes them into instructions for your computer.</p>
+          <p>You probably know what Git is. It’s a version control system developed by Linux creator Linus Torvalds.<br>
+            Git for Windows is a set of tools that allows you to use Git in both command line and graphical interfaces. One of the tools included in Git for Windows is Git Bash.   <br> 
+            Git Bash application provides and emulation layer for Git command line. Apart from Git commands, Git Bash also supports many Bash utilities such as ssh, scp, cat, find etc.<br>
+            In other words, you can run many common Linux/Bash commands using the Git Bash application</p>
+          <pre>
+      Command	       Usage
+      ls	          Lists the content of a directory
+      alias       	Define or display aliases
+      unalias	      Remove alias definitions
+      pwd	          Prints the working directory
+      cd	          Changes directory
+      cp	          Copies files and directories
+      rm          	Remove files and directories
+      mv	          Moves (renames) files and directories
+      mkdir	        Creates directories
+      man	          Displays manual page of other commands
+      touch	        Creates empty files
+      chmod	        Changes file permissions
+      ./	          Runs an executable
+      exit	        Exits the current shell session
+      sudo	        Executes commands as superuser
+      shutdown    	Shutdowns your machine
+      htop	        Displays processes and resources information
+      unzip	        Extracts compressed ZIP files
+      apt,          yum, pacman	Package managers
+      echo        	Displays lines of text
+      cat	          Prints file contents
+      ps  	        Reports shell processes status
+      kill         	Terminates programs
+      ping	        Tests network connectivity
+      vim	          Efficient text editing
+      history     	Shows a list of previous commands
+      passwd	      Changes user password
+      which        	Returns the full binary path of a program
+      shred        	Overwrites a file to hide its contents
+      less        	Inspects files interactively
+      tail	        Displays last lines of a file
+      head	        Displays first lines of a file
+      grep	        Prints lines that match patterns
+      whoami      	Outputs username
+      whatis      	Shows single-line descriptions
+      wc	          Word count files
+      uname	        Displays OS information
+      neofetch      Displays OS and hardware information
+      find        	Searches for files that follow a pattern
+      wget        	Retrieves files from the internet
+          </pre>
+          </div>
+
+
+          <div id="section6">
+            <br><br><br>
+            <h1>feature of git?</h1>
+            <ul>
+              <li>Distributed:</li>
+              <p> Git is a distributed version control system that enables developers to work on a codebase without needing to be connected to a central server
+                This allows for a more flexible and decentralized workflow, as developers can work independently and merge their changes later.
+              </p>
+              <li>Branching and merging:</li>
+              <p>Branching and merging: Git enables developers to create and manage branches of a codebase, which allows for parallel development and experimentation.<br>
+                 Git also provides tools for merging branches back into the main codebase, ensuring that changes are integrated smoothly.</p>
+            <li>History tracking:</li>
+            <p>Git maintains a detailed history of all changes made to a codebase, enabling developers to track the evolution of the codebase over time. <br>
+              This history can also be used to revert changes or to identify the source of bugs.</p>
+            <li>Staging:</li>
+            <p>Git provides a staging area, also known as the index, where changes can be reviewed and prepared for committing to the codebase. <br>
+              This enables developers to carefully review and selectively commit changes, rather than committing all changes at once.</p>  
+            <li>Speed: </li>
+            <p> Git is designed to be fast, even with large repositories. This is achieved through the use of efficient data structures and algorithms.</p>
+          <li>security:</li>
+          <p>Git uses hashes in two important ways. When you commit a file into your repository, Git calculates and remembers the hash of the contents of the file.<br>
+             When you later retrieve the file, Git can verify that the hash of the data being retrieved exactly matches the hash that was computed when it was stored.</p>  
+          <li>Open Source: </li>
+          <p> Git is an open-source project, which means that anyone can contribute to its development.<br>
+             This has led to a large community of users and contributors who provide support and contribute new features.</p>
+           
+           <li>Work flow</li>
+           <p>The most popular Git development workflow and the entry stage of every project. The idea is simple: there is one central repository.<br>
+             Each developer clones the repo, works locally on the code, creates a commit with changes, and pushes it to the central repository for other developers to pull and use in their work</p>
+          <li>scalable</li>
+            <p>Git LFS lets you push files that are larger than the storage limit to GitHub.<br>
+               It does this by storing references to the file in the repository, but not the actual file. In other words, Git LFS creates a pointer file that acts as a reference to the actual file, which will be stored somewhere else.</p>
+          <li>Supports non-linear development in git</li>
+          <p>Git allows users from all over the world to perform operations on a project remotely.<br>
+             A user can pick up any part of the project and do the required operation and then further update the project. This can be done by the Non-linear development behavior of the Git</p>
+             
+            <li>backup</li>
+          <p>GitHub can be used for:
+      
+            Backup your code on cloud. Coolaborate with people around the world on open and closed projects. Clone projects and use them as template. Make a virtual portfolio of your programming work.</p>
+          </ul>
+            </div> 
+
+
+
+            <div id="section7">
+              <br><br><br>  
+   <h1>Advantage of git</h1>
+      <pre> 
+      • Easy Code Hosting
+      • Modify History
+      • Increased Code Safety
+      • Debugging
+      • Easy Project Management
+      • Effective Team Management</pre>
+          </div>
+
+          <div id="section8">
+            <br><br><br>  
+            <h1>Disadvantage of git</h1>
+      <p>There are rather just a few limitations of the Git repos because, in comparison to other VCS or SVN, Git is still a #1 choice of developers for creating and storing contents of software application.</p>
+      <ul>
+        <li>Businesses who need to use advanced GUI features have to rely on third-party software in addition to Git.</li>
+        <li>The code merging tool of Git produces some time-consuming conflicts, thus it still needs some improvement.</li>
+        <li>People who are used to work with CVS (Concurrent Versions System) and SubVersion or are complete newcomers will have a hard time moving and learning Git.</li>
+        <li>The Git was primarily designed for the Linux kernel system, so the support for other systems would be rather slow.</li>
+        <li>The force pushing the remote repo will override the code and the existing code may get lost.</li>
+        <li>If any developer tries to rebase the remote repo, it will alter the commit history, which will then create issues if others try to pull the latest code from the same repo</li>
+      </ul>
+      </div>
+
+
+      <div id="section9">
+        <br><br><br>  
+        <h1>do's and don’ts of git</h1>
+        <h2>do's of git</h2>
+        <ul>
+        <li>Create a new repository for every new application development project.</li>
+        <li>Make a habit of creating a new branch for every bug, issue, or feature addition.</li>
+        <li>Commit and push changes to a remote repo so that loss of work is avoided.</li>
+        <li>Use gitignore in project files so that Git repo can ignore the untracked or unwanted files to be committed</li>
+        <li>Write up a commit message with a clear and concise subject line and description of the changes made and why were they made.</li>
+        <li>If something goes sideways than what actually you have planned, then stop the work and ask for help from your lead developer.<br>
+           The benefit of using DVCS like Git is that any changes or modifications made are reversible and there are high chances of getting a modified repo into its original form.</li>
+        <li>Run git gc periodically in the Git repos to speed them up and shrink the space consumed by them on the disk.</li>
+        <li>Safeguard your important Git repo branches like master and development against any accidental loss by adding protection layer.</li>
+        <li>Also, add permission to read/write to control who can access the Git repos to prevent any unauthorized use.</li>
+        <li>Merge distributed feature branches once the issue, the bug is fixed or features are added into the intended branch and then delete the rest repos.</li>
+        <li>Also, make a habit to create a pull request when merging the one repo branch to another.</li>
+        <li>Review the code changes you have made before going to create a pull request.</li>  
+      </ul>
+      <h2>don'ts of git</h2>
+      <ul>
+        <li>Don’t commit changed or modified branch to the master or development branch directly.</li>
+        <li>Refrain from making commit of application secrets in public repos.</li>
+        <li>Don’t name master and develop branches of repos with names like “Master” or “Develop/Development.”</li>
+        <li>Don’t change/delete the history of published repos.</li>
+        <li>Don’t make large commits because it can intermix the multiple unconnected changes.</li>
+      <li>Also, don’t commit large binaries to any Git repo because it will eat up the large chunk of storage space required to clone by others.</li>
+      <li>Refrain from working on multiple issues in one branch, if any feature is dropped, it might get hard to revert changes</li>
+      <li>Don’t reset a distributed branch before committing change/modifications, because after doing so you will lose all the changes.</li>
+      <li>Don’t create one pull request that addresses more than one or two issues.</li>
+      </ul>
+      </div>
+
+      <div id="section10">
+        <br><br>
+        <h1>what is github?</h1>
+        <p>GitHub is offers a cloud-based Git repository hosting service for software development and version control using Git, allowing developers to store and manage their code.<br>
+          Essentially, it makes it a lot easier for individuals and teams to use Git for version control and collaboration.<br>
+          Thomas Dohmke - Chief Executive Officer - GitHub <br>
+          Founding. Development of the GitHub platform began on October 19, 2007. The site was launched in April 2008 by Tom Preston-Werner, Chris Wanstrath, P. J. Hyett and Scott Chacon after it had been available for a few months as a beta release<br>
+          But by 2018, Microsoft had already become one of the heaviest users of GitHub and was maintaining many of the most actively developed<br>
+          June 2018, Microsoft said it was buying GitHub for a whopping $7.5 billion.</p>
+        
+        </div>
+
+        <div id="section11">
+          <br><br>
+          <h1>git vs github?</h1>
+          <table  cellspacing="25" >
+            <tr>
+                <th>git</th>
+                <th> github</th>
+              
+            </tr>
+            <tr>
+                <td>Git is software.</td>       
+                <td>  It is a service.</td>         
+            </tr>
+            <tr> 
+              <td>Linux maintains Git.</td>
+              <td>   Microsoft maintains GitHub. </td>
+            </tr>
+            <tr>    
+              <td>It is a command-line tool.</td>
+              <td>  It is a graphical user interface.</td>
+            </tr>
+            <tr>
+              <td>You can install it locally on the system. </td>
+              <td>   It is hosted on the web. It is exclusively cloud-based.</td>
+            </tr>
+            <tr>   
+              <td>It is a VCS to manage source code history. </td>
+              <td> It is a hosting service for Git repositories.</td>
+            </tr>
+            <tr> 
+              <td>focuses on code sharing and version control.</td>
+              <td>   It focuses on centralized source code hosting.</td>
+            </tr>
+            <tr>
+              <td>It lacks a user management feature.  </td>
+              <td>     It has a built-in user management feature.</td>
+            </tr>
+            <tr>     
+              <td>Git was launched in 2005. </td>
+              <td>  GitHub was released in 2008.</td>
+            </tr>
+            <tr>
+              <td>It is open-source licensed.</td>
+              <td>It has a free-tier and pay-for-use tier.</td>
+            </tr>
+            <tr>
+                <td>Its desktop interface is named Git Gui.</td>
+                <td>Its desktop interface is named GitHub Desktop.</td>   
+            </tr>
+           
+        </table>
+        </div>
+
+        <div id="section12">
+          <br><br>
+          <h1>Version control systems</h1>
+          <p> VCS are software tools that help software teams manage changes to source code over time</p>
+          <p> version control systems help software teams work faster and smarter.<br>
+             They are especially useful for DevOps teams since they help them to reduce development time and increase successful deployments.</p>
+        <p>Software developers working in teams are continually writing new source code and changing existing source code. The code for a project, app or software component <br>
+          is typically organized in a folder structure or "file tree". One developer on the team may be working on a new feature while another developer fixes an unrelated bug by changing code,<br>
+           each developer may make their changes in several parts of the file tree.
+          Version control helps teams solve these kinds of problems, tracking every individual change by each contributor and helping prevent concurrent work from conflicting.</p>
+            </div>
+
+
+
+            <div id="section13">
+              <br><br>
+              <h1>centralized and decentralized vsc</h1>
+              <table  cellspacing="25" >
+                <tr>
+                    <th>centralized</th>
+                    <th> decentralized</th>
+                  
+                </tr>
+                <tr>
+                  <td>In CVS, a client need to get local copy of source from server, do the changes and commit those changes to centeral source on server.</td>       
+                  <td>In DVS, each client can have a local branch as well and have a complete history on it. Client need to push the changes to branch which will then be pushed to server repository.</td>         
+              </tr>
+              <tr>
+                <td>CVS systems are easy to learn and set up.</td>       
+                <td>DVS systems are difficult for beginners. Multiple commands needs to be remembered.</td>         
+            </tr>
+            <tr>
+              <td>CVS system do not provide offline access.</td>       
+              <td>DVD systems are workable offline as a client copies the entire repository on their local machine./td>         
+          </tr>
+          <tr>
+            <td>	CVS is slower as every command need to communicate with server</td>       
+            <td>DVS is faster as mostly user deals with local copy without hitting server everytime.</td>         
+        </tr>
+        <tr>
+          <td>If CVS Server is down, developers cannot work.</td>       
+          <td>If DVS server is down, developer can work using their local copies.</td>         
+      </tr>
+      <tr>
+       
+        <td>focuses on synchronizing, tracking, and backing up files</td>       
+        <td> Focuses on sharing changes</td>         
+      </tr>
+      <tr>
+        <td>centralized version control is the simplest form of version control in which the central repository of the server provides the latest code to the client machines</td>       
+        <td>Distributed version control is a form of version control where the complete codebase (including its full history) is mirrored on every developer's computer</td>         
+      </tr>
+      
+      </table>
+      <br><br><br>
+                <table>
+                  <tr>
+                    <th>Centralized</th>
+                    <th>Decentralized</th>
+                  </tr>
+                  <tr>
+                    <td>→ TFVC</td>
+                    <td>→ Git</td>
+                  </tr>
+                  <tr>
+                    <td> → Subversion</td>
+                    <td> → Mercurial</td>
+                  </tr>
+                  <tr>
+                    <td>→ CVS</td>
+                    <td>→ Bazaar</td>
+                  </tr>
+                  <tr>
+                    <td>→ VSS</td> 
+                  </tr>
+                  <tr>
+                    <td>→ perforce</td> 
+                  </tr>
+                </table>
+            </div>
+
+            <div id="section14">
+              <br><br>
+              <h1>(svn )vs (tfvs)  vs (cvs) vs (vss)</h1>
+              <ol>
+                <li>svn</li>
+                <ul>
+                  <li>SVN stands for Subversion , It is a centralized version control system. It is an open-source tool for version control.</li>
+                  <li>SVN uses binary format to store repository</li>
+                  <li>SVN is used to manage the current and previous versions of files like source code, documentation, and files.</li>
+                  <li>Some other popular version control systems like Git are in trend now, but there are a large number of projects that are still running on the Subversion.</li>
+                  <li>Subversion is open-source and comes under the Apache License, and it was developed by CollabNet Inc in 2000. It was operated much like CVS (Concurrent versions system).<br>
+                     In 2009, Apache Incubator accepted it and made it a top-level apache product.<br>
+                     Programming language: C</li>
+                  <li>Apache Subversion is a software versioning and revision control system distributed as open source under the Apache License. Software developers use Subversion to maintain current and historical versions of files such as source code, web pages, and documentation</li>
+                  
+                  <pre>
+            feature of svn:
+            
+            Atomic Commits
+            Full Revision History.
+            File Locking
+            Versioning of Symbolic links
+            Path-based Authorization
+            Language Bindings
+            Standalone Server option
+            </pre>
+                </ul>
+                <li>Tfvc</li>
+                <ul>
+                  <li>Team Foundation Server (Microsoft TFS) </li>
+                  <li>you tell the version control system to take a snapshot of your files. The version control system saves that snapshot permanently so you can recall it later if you need it.</li>
+                <li>it is also known as Azure DevOps Server.</li>
+                </ul>
+                <p>
+                  Team Foundation Server is Microsoft's "all-in-one" Application Lifecycle Management solution. It contains capabilities for Agile project management,<br>
+                  source control, continuous integration (build), continuous delivery (release), manual test case management, and more. It also has SharePoint integration and a data warehouse to facilitate easy reporting.<br>
+                  It's been around for about 10 years now, introduced in 2005 as Visual Studio Team System. Since then it's received 5 major versions (2008, 2010, 2012, 2013, and now 2015)<br>
+                  with innumerable service packs, patches, and quarterly updates.
+                  TFS is an on-premise solution, consisting of (in a best-practices style setup) anywhere from 2 to 5 servers.
+                  There is no such thing as "Team Foundation Service" anymore. It's called Visual Studio Team Services these days. Team Services is "TFS in the cloud", hosted and maintained by Microsoft in the Azure data centers. <br>
+                  It's the exact same codebase as TFS on-prem, except it's updated more frequently (every 3 weeks). There are some capabilities in TFS on-prem that aren't available in Team Services and vice versa. For example,<br>
+                   Team Services does not have SharePoint integration or reporting. The upside here is that there's no infrastructure to maintain or software to <br>
+                  upgrade -- upgrades happen every 3 weeks, with no downtime. This is a huge draw for smaller shops.
+                  Team Foundation Version Control is one of the two native options for source control in TFS/Team Services. It's a centralized version control system, similar in paradigm to Subversion.</p>
+               <li>cvs</li>
+               <ul>
+               <li>Concurrent Versions System </li>
+               <li>CVS has a systematic mechanism of maintaining tags and branches.</li>
+               <li>CVS uses RFC-(Request for Comments) format to store repository.</li>
+               <li>CVS changes are time consuming.</li>
+               <li> CVS do not commit if there is error into the commit.</li></ul>
+               <p>Concurrent versions System is functional version control system which is developed by Dick Grune as series of shell scripts.<br>
+                 This helps the teams to be connected to the changes that are measured into repository when working on software.<br>
+                  This tool was used as the version control system for long for time.<br>
+                 It is reliable software tool but with new challenges other alternatives made it used as limited.</p>
+            <li>vss</li>
+            <ul>
+              <li>Visual Source Safe</li>
+              <li>VSS', is the source control system from Microsoft. This tool was originally developed by another company and later taken over by Microsoft. Microsoft recently developed a team collaboration tool called "Visual Studio Team System" (VSTS).</li>
+                <li>Microsoft Visual SourceSafe is a discontinued source control program oriented towards small software development projects. Like most source control systems, SourceSafe creates a virtual library of computer files</li> 
+              <li>VSS was one of the most popular source control and management tools from Microsoft, which is now discontinued.<br>
+                VSS commits are not atomic.<br>
+                Renaming a file or folder affects the whole history<br>
+                Users can get locked when trying to commit changes to a common file at the same time.</li>
+                <li>Initial release date: 1994Developer: Microsoft Corporation<br>
+              Final release: 2005 (8.0.50727.42) / October 2005; 17 years ago<br>
+              License: Proprietary commercial software<br>
+              Operating system: Windows</li>
+              </ul>
+              <li>Perforce</li>
+              <ul>
+              <li>perforce is chargable repo ,where the charges as increase where taem size increase</li>
+              <li>In Perforce, when you share a file  between the team, the receiving team has to manually separate the changes that they were implement in their project</li>
+            <li>perforce requires server to connected to make any changes in the repo<br>
+            In each developer tries to accessthe server to see the chance made it slow down the productivity in case </li>   
+            
+            </ul>
+            </ol>
+            </div>
+
+            <div id="section15">
+              <br><br>
+            <h1>(git) vs (Mercurial) vs (bazaar)</h1>
+            <ol>
+            <li>git</li>
+              <ul>
+              <li>Global Information Tracker</li>
+              <li>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+                Git is easy to learn and has a tiny footprint with lightning fast performance. It outclasses SCM tools like Subversion, CVS, Perforce,<br>
+                 and ClearCase with features like cheap local branching, convenient staging areas, and multiple workflows.</li>
+                <li>Programming languages: Python, C, C++, Shell script, Perl, Tcl<br>
+                  Developer: Linus Torvalds, Junio C Hamano<br>
+                  Initial release date: 7 April 2005<br>
+                  License: GPL-2.0-only<br>
+                  Operating system: POSIX (Linux, macOS, Solaris, AIX), Windows</li>
+                  <li>. Its goals include speed, data integrity, and support for distributed, non-linear workflows</li>
+                </ul>
+            
+            <li>Mercurial</li>
+            <ul>
+              <li>Mercurial came into existence in 2005 as an open-source version control system, as an alternative to the closed-source BitKeeper and was developed by Matt Mackall.</li> 
+              <li>Unlike SVN, which is a centralized version control system, Mercurial is a distributed version control system. That is, when you push changes to the repository, it will go to the local machine.<br>
+                 Because of this, the process becomes very faster, since you’re not constantly pushing to a remote serve
+              </li><li>Mercurial is a free, distributed version control system. It's also referred to as a revision control system or Mercurial source control. It is used by software development teams to manage and track changes across projects. <br>
+                It launched in 2005. But its popularity has since faded. It still has a handful of large development organizations using it — including Facebook, Mozilla, and World Wide Web Consortium (W3).<br>
+                 But it only has about 2% of the VCS market share.</li>
+                 <li>his is also one of the reasons that Mercurial is mostly used as a command-line tool, though there are GUI tools available. Mercurial has been the version <br>
+                  control system used by big brands like Adium, Mozilla, Netbeans, Vim, Growl and so forth. Apart from these, a lot of individual developers use Mercurial to manage their code.</li>
+            </ul>
+            <li>bazaar</li>
+            <ul>
+              <li>GNU Bazaar is a distributed and client–server revision control system sponsored by Canonical. Bazaar can be used by a single developer working on multiple branches of local content, or by teams collaborating across a network.</li>
+            <li>Programming languages: Python, C, Pyrex</li>
+            <li>Initial release date: 26 March 2005<br>
+              Installing on Ubuntu<br>
+              Developer: Canonical, Free Software Foundation<br>
+              Final release: 2.7.0 / 15 February 2016</li>
+              <li>Easily collaborate, track project history with an excellent free and open source version control software based on central and distributed repository model.</li>
+              <li>Bazaar supports number of different models. It consists of centralized, online-offline, feature branching and shared working tree models.</li>
+            <li>software teams can do code reviews for feature branching and email bundles. Bazaar has excellent plugin architecture that enables teams to extend the functionality. It supports APIs that developers can use to integrate with their existing tools.</li>
+            </ul>
+                </ol>
+            
+            </div>
+
+
+            <div id="section16">
+              <br><br>
+            <h1>(github) vs (gitlab) vs (bitbuckets)</h1>
+            <ol>
+              <li>github</li>
+              <p>GitHub allows developers to change, adapt and improve software from its public repositories for free, but it charges for private repositories, offering various paid plans. Each public and private repository contains all of a project's files, as well as each file's revision history.<br>
+                 Repositories can have multiple collaborators and can be either public or private<br>
+                 GitHub facilitates social coding by providing a hosting service and web interface for the Git code repository, as well as management tools for collaboration. The developer platform can be thought of as a social networking site for software developers.<br>
+                  Members can follow each other, rate each other's work, receive updates for specific open source projects, and communicate publicly or privately.</p>
+              <ul>
+                <li>GitHub Gist: lets users share pieces of code or other notes.</li>
+                <li>GitHub Flow: is a lightweight, branch-based workflow for regularly updated deployments</li>
+                <li>GitHub Pages: are static webpages to host a project, pulling information directly from an individual's or organization's GitHub repository.</li>
+                <li>GitHub Desktop: lets users access GitHub from Windows or Mac desktops, rather than going to GitHub's website.</li>
+                <li>GitHub Student Developer Pack: is a free offering of developer tools for students. It includes cloud resources, programming tools and support, and GitHub access.</li>
+              <li>GitHub Campus Experts: is a program students can use to become leaders at their schools and develop technical communities there.</li>
+            <li>GitHub CLI: is a free, open source command-line tool that brings GitHub features, such as pull requests, to a user's local terminal. This capability eliminates the need to switch contexts when coding, streamlining workflows.</li>  
+            <li>GitHub Codespaces: is a cloud-based development environment that gives users access to common programming languages and tools. The coding environment runs in a container and gives users a certain amount of free time before switching to a paid pricing model.</li>
+            </ul>
+                  <li>gitlab</li>
+                  <p>GitLab was found by Dmitriy Zaporozhets and Valery Sizov in October 2011. It was distributed under MIT license and the stable version of GitLab is 10.4 released in January 22, 2018.</p>
+                  <p>GitLab is great way to manage git repositories on centralized server. GitLab gives you complete control over your repositories or projects and allows you to decide whether they are public or private for free</p>
+              <h3>feature of gitlab</h3>
+                  <ul>
+              <li>GitLab hosts your (private) software projects for free.</li>
+              <li>GitLab is a user friendly web interface layer on top of Git, which increases the speed of working with Git.</li>
+              <li>GitLab provides its own Continuous Integration (CI) system for managing the projects </li>
+              <li>GitLab provides GitLab Community Edition version for users to locate, on which servers their code is present.</li>
+              <li>GitLab provides unlimited number of private and public repositories for free.</li>
+              <li>The Snippet section can share small amount of code from a project, instead of sharing whole project.</li>
+            <li>While pushing and pulling repositories, it is not as fast as GitHub</li>  
+            <li>GitLab interface will take time while switching from one to another page.</li> 
+            </ul>
+                  <li>bitbuckets</li>
+                  <p>Bitbucket is a Git-based source code repository hosting service owned by Atlassian. Bitbucket offers both commercial plans and free accounts with an unlimited number of private repositories.</p>
+                  <p>Developer(s)	Atlassian, Inc.<br>
+                    Initial release	2012<br>
+                    Stable release	<br>
+                    7.21.0 / 28 February 2022; 18 months ago<br>
+                    Written in	Java<br>
+                    Operating systemm,	Platform-independent Type	,distributed revision control , revision control <br>
+                    License	Proprietary, free for use by official non-profit organizations, charities, and open-source projects, 
+                    <br>but not governmental, academic or religious organizations</p>
+            <ul>
+            <li>Bitbucket Cloud:</li>
+                    <p> Bitbucket Cloud (previously known as Bitbucket) is written in Python using the Django web framework<br> Bitbucket is mostly used for code and code review.</p> 
+            <pre>
+            fearure of bitbucket cloud
+            
+            Pull requests with code review and comments
+            Bitbucket Pipelines, a continuous delivery service
+            Two-step verification and required two-step verification
+            IP whitelisting
+            Merge Checks
+            Code search (Alpha)
+            Git Large File Storage (LFS)
+            Documentation, including automatically rendered README
+             files in a variety of Markdown-like file formats
+            Issue tracking
+            Wikis[10]
+            Static sites hosted on Bitbucket Cloud: Static websites have 
+            the bitbucket.io domain in their URL
+            Add-ons and integrations
+            REST APIs to build third-party applications which can use any
+             development language
+            Snippets that allow developers to share code segments or files
+            Smart Mirroring
+            </pre>
+            <li>Bitbucket Server</li>
+            <p>Bitbucket Server (formerly known as Stash[18]) is a combination Git server and web interface product written in Java and built with Apache Maven.[19] It allows users to do basic Git operations (such as reviewing or merging code, similar to GitHub) while controlling read and write access to the code. It also provides integration with other Atlassian tools.<br>
+              Bitbucket Server is a commercial software product that can be licensed for running on-premises.[21] Atlassian provides Bitbucket Server for free to open source projects meeting certain criteria, and to organizations that are non-profit, non-government, non-academic, non-commercial, non-political, and secular.
+             </p>
+            
+            </ul>
+            </ol>
+            </div>
+
+
+            <div class="button" id="section17">
+              <br><br>
+              <h1>different commands in git</h1>
+              <br>
+            
+              <table>
+                <caption>Main Porcelain Commands</caption>
+                 <tr>
+                   <td>  add</td>
+                   <td>Add file contents to the index</td>
+                 </tr>                               
+                 <tr>
+                   <td>  am   </td>
+                   <td>  Apply a series of patches from a mailbox</td>
+                 </tr>
+                 <tr>
+                   <td>  archive </td>
+                   <td> Create an archive of files from a named tree</td>
+                 </tr>
+                 <tr>
+                   <td> bisect  </td>
+                   <td> Use binary search to find the commit that introduced a bug</td>
+                 </tr>
+                 <tr>
+                   <td>  branch</td>
+                   <td>   List, create, or delete branches</td>
+                 </tr>
+                 <tr>
+                   <td>  bundle </td>
+                   <td> Move objects and refs by archive</td>
+                 </tr>
+                 <tr>
+                   <td>checkout</td>
+                   <td> Switch branches or restore working tree files</td>
+                 </tr>
+                 <tr>
+                   <td>cherry-pick </td>
+                   <td>Apply the changes introduced by some existing commits</td>
+                 </tr>
+                 <tr>
+                   <td>  citool </td>
+                   <td>  Graphical alternative to git-commit</td>
+                 </tr>
+                 <tr>
+                   <td>  clean</td>
+                   <td>Remove untracked files from the working tree </td>
+                 </tr>
+                 <tr>
+                   <td> clone</td>
+                   <td>Clone a repository into a new directory </td>
+                 </tr>
+                        
+                 <tr>
+                   <td>  commit </td>
+                   <td>   Record changes to the repository </td>
+                 </tr>
+                 <tr>
+                   <td>  describe </td>
+                   <td> Give an object a human readable name based on an available ref</td>
+                 </tr>
+                 <tr>
+                   <td>diff</td>
+                   <td> Show changes between commits, commit and working tree, etc</td>
+                 </tr>
+                 <tr>
+                   <td>  fetch</td>
+                   <td>    Download objects and refs from another repository</td>
+                 </tr>
+                 <tr>
+                   <td> format-patch </td>
+                   <td>Prepare patches for e-mail submission</td>
+                 </tr>
+                 <tr>
+                   <td>  gc </td>
+                   <td>Cleanup unnecessary files and optimize the local repository</td>
+                 </tr>
+                 <tr>
+                   <td>  gitk   </td>
+                   <td> The Git repository browser</td>
+                 </tr>
+                 <tr>
+                   <td>  grep     </td>
+                   <td> Print lines matching a pattern</td>
+                 </tr>
+                 <tr>
+                   <td>  gui </td>
+                   <td> A portable graphical interface to Git</td>
+                 </tr>
+                   <tr>
+                   <td>  init </td>
+                   <td>  Create an empty Git repository or reinitialize an existing one</td>
+                 </tr>
+                 <tr>
+                   <td>  log  </td>
+                   <td> Show commit logs</td>
+                 </tr>
+                 <tr>
+                   <td>maintenance </td>
+                   <td>  Run tasks to optimize Git repository data</td>
+                 </tr>
+                 <tr>
+                   <td>  merge  </td>
+                   <td> Join two or more development histories together</td>
+                 </tr>
+                 <tr>
+                   <td>  mv  </td>
+                   <td>  Move or rename a file, a directory, or a symlink</td>
+                 </tr>
+                 <tr>
+                   <td>notes   </td>
+                   <td>Add or inspect object notes</td>
+                 </tr>                   
+                 <tr>
+                   <td>  pull    </td>
+                   <td> Fetch from and integrate with another repository or a local branch</td>
+                 </tr>
+                 <tr>
+                   <td>  push </td>
+                   <td>  Update remote refs along with associated objects</td>
+                 </tr>
+                 <tr>
+                   <td> range-diff </td>
+                   <td> Compare two commit ranges (e.g. two versions of a branch)</td>
+                 </tr>
+                 <tr>
+                   <td>  rebase </td>
+                   <td> Reapply commits on top of another base tip</td>
+                 </tr>
+                 <tr>
+                   <td>  reset </td>
+                   <td>  Reset current HEAD to the specified state</td>
+                 </tr>
+                 <tr>
+                   <td>  restore  </td>
+                   <td>  Restore working tree files</td>
+                 </tr>
+                 <tr>
+                   <td>  revert   </td>
+                   <td>  Revert some existing commits</td>
+                 </tr>
+                 <tr>
+                   <td> rm   </td>
+                   <td>  Remove files from the working tree and from the index</td>
+                 </tr>
+                 <tr>
+                   <td>  scalar </td>
+                   <td>   A tool for managing large Git repositories</td>
+                 </tr>
+                 <tr>
+                   <td>  shortlog  </td>
+                   <td>  Summarize 'git log' output</td>
+                 </tr>
+                 <tr>
+                   <td> show </td>
+                   <td> Show various types of objects</td>
+                 </tr>
+                 <tr>
+                   <td>  sparse-checkout</td>
+                   <td> Reduce your working tree to a subset of tracked files</td>
+                 </tr>
+                 <tr>
+                   <td> stash </td>
+                   <td> Stash the changes in a dirty working directory away</td>
+                 </tr>
+                 <tr>
+                   <td>  status  </td>
+                   <td> Show the working tree status</td>
+                 </tr>
+                 <tr>
+                   <td>  submodule </td>
+                   <td> Initialize, update or inspect submodules</td>
+                 </tr>
+                 <tr>
+                   <td>  switch </td>
+                   <td> Switch branches</td>
+                 </tr>
+                 <tr>
+                   <td> tag     </td>
+                   <td> Create, list, delete or verify a tag object signed with GPG</td>
+                 </tr>
+               <tr>
+                 <td>  worktree </td>
+               <td> Manage multiple working trees</td>
+               </tr>
+               
+              </table>
+            
+            <br>
+              <!-- Use any element to open/show the overlay navigation menu -->
+             <div class="but">
+            <button  ><a href="#myNav"> <span class="myNav" onclick="toggleNav('myNav')">git -v | git --version</span></button></a>
+            <br>
+            <button><a href="#myNav1"><span class="myNav1" onclick="toggleNav('myNav1')">git -h | git --help</span> </button> </a>
+            <br><br><br> 
+            <button><a href="#myNav2"><span class="myNav2" onclick="toggleNav('myNav2')">git add filename|git add .</span> </button> </a>
+            <br>
+            <button><a href="#myNav3"><span class="myNav3" onclick="toggleNav('myNav3')">git am</span> </button> </a>
+            <br>
+            <button><a href="#myNav4"><span class="myNav4" onclick="toggleNav('myNav4')">git archive</span> </button> </a>
+            <br>
+            <button><a href="#myNav5"><span class="myNav5" onclick="toggleNav('myNav5')">git bisect</span> </button> </a>
+            <br>
+            <button><a href="#myNav6"><span class="myNav6" onclick="toggleNav('myNav6')">git branch</span> </button> </a>
+            <br>
+            <button><a href="#myNav7"><span class="myNav7" onclick="toggleNav('myNav7')">git bundle</span> </button> </a>
+            <br>
+            <button><a href="#myNav8"><span class="myNav8" onclick="toggleNav('myNav8')">git checkout</span> </button> </a>
+            </div> 
+            </div>
+
+
+
+            <div id="myNav" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav')"><i class='bx bx-x '></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br>  g -v<br>g --version</p>
+                <h3>Prints the Git suite version that the git program came from.</h3>
+                <img src="gv.jpg">    
+              </div>
+            </div>
+            <div id="myNav1" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav1')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br>  g -h<br>g --help <br>-a <br> --all</p>
+                <h3>Prints the synopsis and a list of the most commonly used commands. If the option --all or -a is given then all available commands are printed.<br> If a Git command is named this option will bring up the manual page for that command..</h3>
+               <img src="gith.jpg">
+               <br><br>
+              </div>
+            </div>
+            <div id="myNav2" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav2')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br>git add  filename <br> git add .</p>
+                <h3>The git add command adds a change in the working directory to the staging area. It tells Git that you want to include updates to a particular file in the next commit</h3>
+               <img src="add.jpg">
+               <br><br>
+              </div>
+            </div>
+            <div id="myNav3" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav3')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br>git am</p>
+                <h3>first --&lt;Git patches are text files that contain code and Git commit metadata. Creating a Git patch is, in essence, copying and packaging up your work to send to someone else.<br>
+                   Applying a Git patch involves taking someone's work and adding it to your local Git repository.<br>
+                   <br>
+                   The git am command is used to import commits from email patches in the . mbox format, while git apply is used to directly apply the output of the git diff command as a new commit.<br>
+                    So git am and git apply serve very similar functions - adding new commits to your local branch based on some previously generated changes.</h3>
+               <a href="https://www.youtube.com/watch?v=DK63bv78Lg8">watch this for practice ( am with patches) </a>
+               <br><br>
+              </div>
+            </div>
+            <br>
+            
+            <div id="myNav4" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav4')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git archive</p>
+                <h3>Archiving repositories<br>
+            
+                  You can archive a repository to make it read-only for all users and indicate that it's no longer actively maintained. You can also unarchive repositories that have been archived.
+                  We recommend that you close all issues and pull requests, as well as update the README file and description, before you archive a repository.<br><br>
+                  Once a repository is archived, you cannot add or remove collaborators or teams. Contributors with access to the repository can only fork or star your project.
+                  When a repository is archived, its issues, pull requests, code, labels, milestones, projects, wiki, releases, commits, tags, branches, reactions, code scanning alerts,<br>
+                   comments and permissions become read-only. To make changes in an archived repository, you must unarchive the repository first.</h3>
+              
+             
+              </div>
+            </div>
+            <br><br>
+            <div id="myNav5" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav5')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br>git bisect</p>
+                <h3>If there are numerous commits and we want to check which commit is bad and causing errors then it will be a very tedious task.<br>
+                  Using the git bisect command, we can walk through all the recent commits and can check if we want that commit or not. The bisect command walks us through the most <br>
+                  recent commits in order and then lets us decide whether the commit is good or not. This process helps us to narrow down the search for the broken commit. The git bisect<br>
+                   command internally uses the concept of binary search to detect the commit that introduced the bug.
+                 <br><br>
+                 The git bisect command is a powerful tool that quickly checks out a commit halfway between a known good state and a known bad state and then asks you to identify the commit<br>
+                  as either good or bad. Then it repeats until you find the exact commit where the code in question was first introduced.</h3>
+                <pre>
+                  
+                  $ git bisect start
+                  $ git bisect good [bad hash]
+                  $ git bisect bad [good hash]
+                  $ git bisect reser
+                  $ git bisect run sh find_method.sh
+                </pre> 
+                  <img src="bisectgoodorbad.JPG">
+               <br><br>
+              </div>
+            </div>
+            <br>
+          
+            
+            
+            <div id="myNav6" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav6')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git branch</p>
+                <h3>Branches allow you to develop features, fix bugs, or safely experiment with new ideas in a contained area of your repository.<br>
+                   You always create a branch from an existing branch.<br>
+                   Typically, you might create a new branch from the default branch of your repository.</h3>
+                   <h3>Branches allow you to work on different parts of a project without impacting the main branch.<br>
+                    When the work is complete, a branch can be merged with the main project.<br>
+                    You can even switch between branches and work on different projects without them interfering with each other.<br>
+                    Branching in Git is very lightweight and fast!</h3>
+                <img src="branch.JPG">
+              
+             
+              </div>
+            </div>
+            <div id="myNav7" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav7')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git bundle</p>
+                <h3>The Git Bundle command creates a single file that essentially contains the entire repository. This file contains branches, history, tags,<br>
+                   in short everything you can find in a repository. Once the Bundle is generated, it can be cloned or forked using standard Git commands in<br>
+                    offline mode. It makes sharing the repository or part of the repository easy and fast.</h3>
+                <h3>Git bundles utility allows us to convert the Git repository or Git objects into a single file that can be shared offline with other computers. This bundle can be easily cloned using git clone or git fetch commands. The Git bundle is different from Git Archive as the Git bundle contains the Git metadata and version information which is absent in the Git Archive.</h3>
+                <h3>Git bundle creates a single file containing both file contents and history.</h3>
+                <h3>How to Use the “git bundle” Command in Git?<br>
+                  To use the “git bundle” command in Git, check out the below-stated steps:<br>
+                  
+                  Redirect to Git local repository.
+                  Create a bundle of all objects and references using the “git bundle” command.
+                  Verify the created bundle using the “git bundle verify” command.</h3>
+                 <a href="https://initialcommit.com/blog/git-bundle#:~:text=A%20Git%20bundle%20is%20a,repository%2C%20or%20git%20fetch%20myBundle.">refer this site </a>
+              
+             
+              </div>
+            </div>
+            
+            <div id="myNav8" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav8')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git checkout</p>
+                <h3>Often we need to move from one branch to another in the development process a lot of times. So, for moving or switching between the branches, we can use two Git commands: git checkout and git switch.<br>
+                  The git switch command is one of the latest commands being added to the list of Git commands. The git switch command was added in Git version 2.23. It can be seen as an alternative to its ancestor git checkout command.<br>
+                  The git checkout command lets us switch between the branches. The git checkout command is usually used with the git branch command. It helps in easy switching and creating a branch if we combine both these commands.</h3>
+              <img src="checkout.JPG">
+             
+              </div>
+            
+</div>
+
+
+            <footer>
+                <div class="content">
+                  <div class="top">
+                    <div class="logo-details">
+                      <!-- <i class="fab fa-slack"></i> -->
+                      <span class="logo_name">Keesite</span>
+                    </div>
+                    <!-- <div class="media-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div> -->
+                  </div>
+                  <div class="link-boxes">
+                    <ul class="box">
+                      <li class="link_name">Accont</li>
+                      <li><a href="#">Profile</a></li>
+                      <li><a href="#">Todo list</a></li>
+                      <li><a href="#">Roadmap</a></li>
+                      <li><a href="#">feedback</a></li>
+                    </ul>
+                    <ul class="box">
+                      <li class="link_name">100 Q/A challenge</li>
+                      <li><a href="#">Python</a><a href="#"></a></li>
+                      <li><a href="#"> javascript</a></li>
+                      <li><a href="#"> java</a></li>
+                      <li><a href="#"> sql</a></li>
+                    </ul>
+                    <ul class="box">
+                      <li class="link_name">frontend</li>
+                      <li><a href="#">HTML</a></li>
+                      <li><a href="#">CSS </a></li>
+                      <li><a href="#">JAVASCRIPT </a></li>
+                      <!-- <li><a href="#">dsa</a></li>
+                      <li><a href="#">jjjj</a></li> -->
+                     
+                    </ul>
+                    <ul class="box">
+                      <li class="link_name">courses</li>
+                      <li><a href="#">DSA(java and python)</a></li>
+                      <li><a href="#">github</a></li>
+                      <li><a href="#">Database</a></li>
+                      <li><a href="#">Machine Learning</a></li>
+                    </ul>
+                    <!-- <ul class="box input-box">
+                      <li class="link_name">Subscribe</li>
+                      <li><input type="text" placeholder="Enter your email"></li>
+                      <li><input type="button" value="Subscribe"></li>
+                    </ul> -->
+                  </div>
+                </div>
+                <div class="bottom-details">
+                  <div class="bottom_text">
+                     <span class="copyright_text">copyright @ keesite 2023  </span><!-- <a href="#">CodingLab.</a>All rights reserved-->
+                    <span class="policy_terms">
+                      <span>&#128187 keesitelearn@gmail.com</span>
+                      <!-- <a href="#">Privacy policy</a>
+                      <a href="#">Terms & condition</a> -->
+                    </span>
+                  </div>
+                </div>
+              </footer>    
+            
+
+
+    <script>
+        const canvas = document.getElementById('Canvas');
+        const ctx = canvas.getContext('2d');
+        // ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+        const cubeWidth = 26;
+        const cubeHeight =20;
+        const cubeDepth = 20;
+      
+        // Set cube position
+        const cubeX = (canvas.width - cubeWidth) / 2;
+        const cubeY = (canvas.height - cubeHeight) / 2;
+      
+        
+        function drawCube() {
+      
+          ctx.beginPath();// Front face
+          ctx.moveTo(cubeX, cubeY);
+          ctx.lineTo(cubeX + cubeWidth, cubeY);
+          ctx.lineTo(cubeX + cubeWidth, cubeY + cubeHeight);
+          ctx.lineTo(cubeX, cubeY + cubeHeight);
+          ctx.closePath();
+          ctx.fillStyle = '#8d8f84';
+          ctx.fill();
+      
+      
+          ctx.beginPath();//top face
+          ctx.moveTo(cubeX, cubeY);
+          ctx.lineTo(cubeX + cubeWidth / 2, cubeY - cubeDepth / 2);
+          ctx.lineTo(cubeX + cubeWidth / 2 + cubeWidth, cubeY - cubeDepth / 2);
+          ctx.lineTo(cubeX + cubeWidth, cubeY);
+          ctx.closePath();
+          ctx.fillStyle = 'white';
+          ctx.fill();
+      
+         
+          ctx.beginPath();//side face
+          ctx.moveTo(cubeX + cubeWidth, cubeY);
+          ctx.lineTo(cubeX + cubeWidth / 2 + cubeWidth, cubeY - cubeDepth / 2);
+          ctx.lineTo(cubeX + cubeWidth / 2 + cubeWidth, cubeY + cubeHeight - cubeDepth / 2);
+          ctx.lineTo(cubeX + cubeWidth, cubeY + cubeHeight);
+          ctx.closePath();
+          ctx.fillStyle = '#8d8f84';
+          ctx.fill();
+        }
+      
+        setTimeout( function() {
+      
+          ctx.fillStyle = '#f54500';
+          ctx.font = '10px FontAwesome';  
+          ctx.fillText("\uf084",25,9);
+        },1000);
+        drawCube();
+      
+      
+      </script> 
+
+<script>
+    function openForm() {
+  document.getElementById("myForm").style.display = "block";
+  
+  }
+  function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  }
+  </script>  
+
+
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+const submit=document.getElementsByClassName('container')[0];
+
+submit.addEventListener('submit',(e)=>
+{
+    e.preventDefault();
+
+// console.log(fname.value);
+// console.log(fphone.value);
+// console.log(fmessage.value);
+
+console.log("clicked");
+})
+
+ function sendEmail(){
+
+const fname=document.getElementById('name');
+console.log(name);
+const femail=document.getElementById('email');
+const fphone=document.getElementById('phone');
+const fmessage=document.getElementById('message');
+
+let ebody= ` 
+<b>Name: </b>${fname.value}<br>
+<b>Email: </b>${femail.value}<br>
+<b>phone NO: </b>${fphone.value}<br>
+<b>query:</b> ${fmessage.value} `
+
+            Email.send({
+                Host:"smtp.elasticemail.com",
+                Username:"keerthikaravi1405@gmail.com",
+                Password: "882FE9E23494C1F767E8347592F3DBBA1364",
+                To:'keesitelearn@gmail.com',
+                From:document.getElementById('email').value,
+                Subject:"New Contact Form Enquiry" + email.value,
+                Body: ebody
+            }).then(
+                message => alert("your query send successfully")
+            );
+           
+
+        };
+    </script> 
+
+
+<script>
+
+  const body = document.querySelector("body"),
+        nav = document.querySelector("nav"),
+        modeToggle = document.querySelector(".dark-light");
+        // imageContainer = document.querySelector(".image-container");
+  
+        let getMode = localStorage.getItem("mode");
+            if(getMode && getMode === "dark-mode"){
+              body.classList.add("dark");
+            //   updateImage("dark");
+            }
+  
+  
+       modeToggle.addEventListener("click" , () =>{
+          modeToggle.classList.toggle("active");
+          body.classList.toggle("dark");
+          // js code to keep user selected mode even page refresh or file reopen
+
+          if(!body.classList.contains("dark")){
+              localStorage.setItem("mode" , "light-mode");
+            //   updateImage("light");
+
+          }
+          else{
+              localStorage.setItem("mode" , "dark-mode");
+            //   updateImage("dark");
+          }
+        });
+
+//         function updateImage(mode) {
+  
+//     const lightImagePath = "river.gif";
+//     const darkImagePath = "night.gif";
+
+ 
+//     imageContainer.src = mode === "dark" ? darkImagePath : lightImagePath;
+//   }
+    </script>
+<script>
+  function view() {
+document.getElementById("wrapper").style.display = "block";
+
+}
+function nonview() {
+document.getElementById("wrapper").style.display = "none";
+}
+</script>  
+
+
+<script>
+   function toggleNav(navId) {
+    var overlay = document.getElementById(navId);
+    if (overlay.style.width === "50%") {
+      overlay.style.width = "0%";
+      document.body.style.backgroundColor = "white";
+    } else {
+      overlay.style.width = "50%";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.5)";
+      overlay.style.zIndex = getMaxZIndex() + 1;
+    }
+  }
+
+  function getMaxZIndex() {
+    // Find the maximum z-index among existing overlays
+    var overlays = document.getElementsByClassName('overlay');
+    var maxZIndex = 0;
+    for (var i = 0; i < overlays.length; i++) {
+      var zIndex = parseInt(window.getComputedStyle(overlays[i]).zIndex);
+      if (!isNaN(zIndex) && zIndex > maxZIndex) {
+        maxZIndex = zIndex;
+      }
+    }
+    return maxZIndex;
+  }
+</script>
+
+
+<!-- <script>
+      
+  document.addEventListener("scroll", function () {
+    var threshold = 50;
+
+    // document.getElementById("test").innerHTML = window.scrollY; //show the count
+    
+    var sidebar = document.getElementById("navbar");
+    var content = document.getElementById("bgcontent");
+
+    if (window.scrollY >= threshold) {
+      sidebar.classList.add("fixed");
+    } 
+    else {
+      sidebar.classList.remove("fixed");
+    }
+
+    var check = content.offsetHeight - sidebar.offsetHeight - 21;
+    console.log(check);//679
+
+    if (window.scrollY >= check) {
+      sidebar.classList.add("bottom");
+    } else {
+      sidebar.classList.remove("bottom");
+    }
+  });
+</script> -->
+</body>
+</html>

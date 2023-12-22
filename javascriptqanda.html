@@ -1,0 +1,2838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript practice</title>
+    <link rel="stylesheet" href="javascriptqanda.css">
+    <link rel="stylesheet" href="accordion.css">
+    <style>
+      
+
+:root{
+  --body-color: rgb(253, 253, 253);
+  --text-color:rgb(244, 245, 211);
+  --list-color: white;
+  --list-text-color:black;
+  --hover:grey;
+  --tab-content:white;
+  --containerprofile:white;
+}
+
+
+body.dark{
+  --hover:grey;
+  --list-text-color:white;
+ --list-color: rgb(48, 46, 46);
+  --body-color:rgb(0, 0, 0,0.7);
+  --text-color:rgb(255, 255, 255);
+  --gry-color:rgba(0, 0, 0);
+  --tab-content: rgb(48, 46, 46);
+  --containerprofile:rgb(48, 46, 46);
+ 
+
+}
+body {
+	/* background: var(--body-color); */
+	height: 100%;
+}
+
+
+.nav-bar .darkLight-searchBox{
+  display: flex;
+  align-items: center;
+}
+.darkLight-searchBox .dark-light
+{
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+}
+.dark-light i{
+  margin-left: 2200px;
+  position: absolute;
+  color: var(--text-color);
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+margin-top: -50px;
+}
+.dark-light i.sun{
+  opacity: 0;
+  pointer-events: none;
+}
+.dark-light.active i.sun{
+  opacity: 1;
+  pointer-events: auto;
+}
+.dark-light.active i.moon{
+  opacity: 0;
+  pointer-events: none;
+}
+.dark-light i.moon:hover{
+  color: rgb(0, 0, 0);
+}
+.dark-light i.sun:hover{
+  color: yellow;
+
+} 
+    </style>
+     <!-- <style>
+     
+      
+        .sidebar {
+          height: 100%;
+          width: 250px;
+          position: fixed;
+          z-index: 1;
+          top: 30;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidebar a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidebar a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidebar .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        .openbtn {
+          font-size: 20px;
+          cursor: pointer;
+          background-color: #111;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+        }
+        
+        .openbtn:hover {
+          background-color: #444;
+        }
+        
+        #main {
+       
+          position: fixed;
+          margin-top:50px;
+          transition: margin-left .5s;
+          padding: 6px;
+        }
+        
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+          .sidebar {padding-top: 15px;}
+          .sidebar a {font-size: 18px;}
+        }
+        </style> -->
+      <style>
+  
+        .hamburger-menu{
+         padding-right: 1.5rem;
+         cursor: pointer;
+       }
+       .hamburger-menu .line{
+       display: block; 
+       width:25px;
+       height: 20px; 
+       margin-top: -25px;
+       margin-left: 60px;
+       color: rgb(80, 80, 80);
+       cursor: pointer;
+       }
+       .nav-menu{
+         position: fixed;
+         width: 34%;
+         top: 0;
+         left: 50px;
+         background-color: rgb(255, 255, 255);
+         font-weight: 600;
+       
+       }
+       .nav-menu a{
+        margin-top: 40px;
+         font-size: 15px;
+         color: rgb(255, 255, 255);
+         text-decoration: none;
+         display: block;
+         text-align: center;
+         padding: 20px 0;
+       }
+  
+       .hide{
+         display: none;
+       }
+  
+           /* for Desktop view */
+           @media screen and (min-width:600px){
+             .navbar{
+               justify-content: space-around;
+             }
+             .nav-menu{
+               width: 60%;
+               display: block;
+               position: static;
+               margin-top: -25px;
+               margin-left: 70px;
+              
+               background: none;
+             }
+             .nav-menu a{
+               display: inline-block;
+             padding: 0px 10px;
+             cursor: pointer;
+               /* padding: -px 20px; */
+             
+             }
+         
+             .hamburger-menu{
+               display: none;
+             }
+           }
+           
+    </style>
+
+     <style type="text/css">
+  
+      #stage{
+      position: fixed;
+      margin-left: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      z-index: 200;
+  
+  
+      }
+          @font-face {
+           font-family: 'FontAwesome';
+           src: url('fontawesome/fonts/fontawesome-webfont.ttf');
+           font-weight: normal;
+           font-style: normal;
+       
+          }
+          #stage{
+            font-family:FontAwesome;
+          }
+
+          </style> 
+ <style>
+            #bg{
+  position: fixed;
+width: 100%;
+height:200px; 
+/* border: 1px solid black; */
+
+}
+
+.bg h1{
+color: rgb(251, 251, 251);
+ position: absolute;
+font-size: 30px;
+top:500px;
+z-index: 100;
+margin-left: 100px;
+
+    }
+    .bg img{
+      margin-top: -50px;
+      z-index: -1;
+    } 
+          </style> 
+
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10.1.0/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<bodyid="mode">
+
+  
+
+        <!-- <div class="loader">
+          <h1>keesite</h1>
+        </div> -->
+        
+        
+        
+            <!-- <div class="sideMenu" id="side-menu">
+                <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">x</a> -->
+        
+              <!-- <div class="sidebar">
+                
+                <ul>
+                  <li><i class="bx bx-home"></i><a href="chrome.html">home</a></li>
+                  <li><i class="bx bx-home"></i><a href="chrome.html">course </a></li>
+                  <li><i class="bx bx-home"></i><a href="chrome.html">gallery</a></li>
+                  <li><i class="bx bx-github"></i><a href="chrome.html">github</a></li>
+          
+                </ul>
+            
+        </div>
+              </div> -->
+              <div id="stage">
+                <canvas id="Canvas" width="50" height="45"></canvas>
+             </div>
+        
+        
+              <nav class="navbar" id="navbar">
+                <div class="content-area">
+                   <!-- <button  class="content-area1" onclick="openNav()" style="font-size:20px;cursor:pointer"><i class="fa fa-navicon" style="color: black;"></i></button> -->
+              
+               <!-- <div class="dropdown-content" id="myDropdown">
+                 <a href="#">Link 1</a>
+                 <a href="#">Link 2</a>
+                 <a href="#">Link 3 &emsp;&emsp;&emsp;&emsp; <button class="content-area2" onclick="openNavy()" >&#62;</button>
+                 <div class="dropdown-content1" id="myDropdown1" >
+                   <a href="#">python</a>
+                   <a href="#">java</a> </div>
+                 </a>
+                 <a href="#">Link 2</a>
+               </div> -->
+            
+               <div class="hamburger-menu">
+                 <span class="line">Menu</span><!--☰-->
+               </div> 
+             
+               <div class="nav-menu hide">
+                <a onclick="view()" target="_top" > <i class='bx bx-star'  style="font-size: 20px;"></i>Explore</a>
+             <a href="https://github.com/keerthika1405" target="_top" >   <i class='bx bxl-github ' name='github' type="logo"  style="font-size: 20px;"></i> Github</a>
+             <a href="https://github.com/keerthika1405/keesite/discussions" target="_top" ><i class='bx bx-comment '  style="font-size: 20px;"></i>Community</a>
+          
+        
+             <!-- <a href="#">About</a> -->
+             </div>
+            </div>
+            
+            
+            <div class="search-box">
+            <div class="row">
+              <form id="search"  method="post" >
+                 <input type="text" id="input-box" placeholder="search here" autocomplete="off">
+                 <button type="submit"><i class='bx bx-search bx-sm'  id="input-box"></i></button>
+            </div>
+        
+        
+            </form>
+                 <form id="css" action="explore.html" methode="get"></form>
+                 <form id="HTML" action="chrome.html" methode="get"></form>
+                 <form id="javascript" action="about.html" methode="get"></form>
+                   
+            <div class="result-box">     </div>      
+            </div>
+            
+        
+
+        
+            <!-- <div class="containerprofile" id="profileform">
+             
+              <form  onsubmit="; reset(); " >
+               
+        
+                <h3 >profile</h3>
+               <div class="profile_img">
+                <img src="profile.png" alt="" id="profile_img">
+                <label for="image-preview">upload</label>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="image-preview" name="image" class="file-input"  >
+               </div>
+        
+               
+                <h1 ><span style="color: rgb(123, 100, 100);"><i class="fa fa-user-circle"></i></span>    <script> document.write(localStorage.getItem("name"));</script></button></h1>
+                <h1><span style="color: rgb(123, 100, 100);"><i class="fa fa-envelope" ></i>   </span><script> document.write(localStorage.getItem("email"));</script></h1>
+               <h1><span style="color: rgb(123, 100, 100);"><i class="fa fa-home" ></i></span> <a href="about.html">Home</a></h1>
+               <h1><span style="color: rgb(123, 100, 100);"><i class="fa fa-bookmark"></i></span>  <a href="#features">Course</a></h1>
+               <h1><span onclick="logout()" >Logout</span></h1>
+               <button type="button" class="btn cancel" onclick="logincloseForm()"> close</button>
+            
+              </form>
+             
+            </div> -->
+        
+           
+        
+        
+           
+           
+            <div class="darkLight-searchBox">
+              <div class="dark-light">
+                  <i class='bx bx-moon moon'></i>
+                  <i class='bx bx-sun sun'></i>
+              </div>
+              </div>
+        
+            <div class="webname">
+            <h2>keesite</h2>
+            </div>
+            
+            </nav>
+   
+            <button class="open-button" onclick="openForm()"><i class='bx bx-question-mark'></i></button>
+            <div class="container" id="myForm">
+            <form  onsubmit="sendEmail(); reset(); " >
+            <h3>Let's Solve</h3>
+            <input type="text" id="name" placeholder="Your Name" autocomplete="off"  required>
+            <input type="email" id="email" placeholder="Your Email Id" autocomplete="off" required>
+            <input type="text" id="phone" placeholder="phone no" autocomplete="off" >
+            <textarea  id="message" name="" id="message" cols="30" rows="5" placeholder="Write Your Query Here We Will Reach You Soon ?"  required></textarea>
+            <button type="submit">send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+            </div> 
+
+
+            <div   class="bg" id="bgcontent">
+                <img  id="bg" class="image-container" src="bgimg12.avif" height="100px" width=" 100%" alt="">
+                <!-- <h1>welcome  <script> document.write(localStorage.getItem("name").toUpperCase());</script> </h1> -->
+            </div>
+
+
+
+            <div class="menu__wrapper"  id="wrapper">
+    
+              <div class="menu__bar">
+            
+                <nav class="navi">
+                   
+                  <div class="navigation hide">
+                  <ul>
+                    <li>
+                        <button type="button" class="btn cancel" onclick="nonview()">X</button>
+                    </li>
+                      <li>
+                        
+                          <button>
+                              DSA
+                            
+                            
+                                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                                  <path
+                                      d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                                  </path>
+                              </svg>
+                          </button>
+            
+            
+            
+            
+                          <div class="dropdown__wrapper">
+                              <div class="dropdown">
+                                  <ul class="list-items-with-description">
+                                      <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                        <path d="M15 12v-3" />
+                                    </svg>
+                                         
+            
+                                          <div class="item-title">
+                                              <h3>DSA</h3>
+                                              <p>Tree Roadmap of dsa</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                       <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                              stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                              stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                          </svg>
+                                         
+                                          <div class="item-title">
+                                              <h3>Infrastructure</h3>
+                                              <p>Always fast always online</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                        <path d="M4 12l8 4l8 -4" />
+                                        <path d="M4 16l8 4l8 -4" />
+                                    </svg>
+                                          <div class="item-title">
+                                              <h3>Next js</h3>
+                                              <p>The native Next.js platform</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                              <path d="M3.6 9h16.8" />
+                                              <path d="M3.6 15h16.8" />
+                                              <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                              <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Edge Functions</h3>
+                                              <p>Dynamic pages, static speed</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Analytics</h3>
+                                              <p>Real-time insights, peak performance</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                              <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                              <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Storage</h3>
+                                              <p>Serverless storage for frontend</p>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </li>
+            
+            
+            
+            
+            
+                      <li>
+                         <button>
+                              JAVA
+                              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                                  <path
+                                      d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                                  </path>
+                              </svg>
+                          </button>
+            
+            
+            
+            
+                          <div class="dropdown__wrapper">
+                              <div class="dropdown">
+                                  <ul class="list-items-with-description">
+                                      <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                        <path d="M4 12l8 4l8 -4" />
+                                        <path d="M4 16l8 4l8 -4" />
+                                    </svg>
+                                          
+                                          <div class="item-title">
+                                              <h3>Previews</h3>
+                                              <p>Zero config, more innovation</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                    </svg>
+                                          <div class="item-title">
+                                              <h3>Infrastructure</h3>
+                                              <p>Always fast always online</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg"
+                                              class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                              <path d="M15 12v-3" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Next js</h3>
+                                              <p>The native Next.js platform</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                              <path d="M3.6 9h16.8" />
+                                              <path d="M3.6 15h16.8" />
+                                              <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                              <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Edge Functions</h3>
+                                              <p>Dynamic pages, static speed</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Analytics</h3>
+                                              <p>Real-time insights, peak performance</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                              <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                              <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Storage</h3>
+                                              <p>Serverless storage for frontend</p>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <!-- <a href="#docs" title="Docs">
+                              Docs
+                          </a> -->
+                      </li>
+                      <li>
+                        <button>
+                          frontend
+                          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                              <path
+                                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                              </path>
+                          </svg>
+                      </button>
+            
+            
+            
+            
+                      <div class="dropdown__wrapper">
+                          <div class="dropdown">
+                              <ul class="list-items-with-description">
+                                  <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                    <path d="M4 12l8 4l8 -4" />
+                                    <path d="M4 16l8 4l8 -4" />
+                                </svg>
+                                      
+                                      <div class="item-title">
+                                          <h3>Previews</h3>
+                                          <p>Zero config, more innovation</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                </svg>
+                                      <div class="item-title">
+                                          <h3>Infrastructure</h3>
+                                          <p>Always fast always online</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                          <path d="M15 12v-3" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Next js</h3>
+                                          <p>The native Next.js platform</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                          <path d="M3.6 9h16.8" />
+                                          <path d="M3.6 15h16.8" />
+                                          <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                          <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Edge Functions</h3>
+                                          <p>Dynamic pages, static speed</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Analytics</h3>
+                                          <p>Real-time insights, peak performance</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                          <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                          <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Storage</h3>
+                                          <p>Serverless storage for 
+                                            </p>
+                                          </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                           </li> 
+                           <li>
+            
+                              <button>
+                              Database
+                              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                                  <path
+                                      d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                                  </path>
+                              </svg>
+                          </button>
+            
+            
+                        
+                         
+            
+                          <div class="dropdown__wrapper">
+                              <div class="dropdown">
+                                  <ul class="list-items-with-description">
+                                      <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                        <path d="M4 12l8 4l8 -4" />
+                                        <path d="M4 16l8 4l8 -4" />
+                                    </svg>
+                                          
+                                          <div class="item-title">
+                                              <h3>Previews</h3>
+                                              <p>Zero config, more innovation</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                    </svg>
+                                          <div class="item-title">
+                                              <h3>Infrastructure</h3>
+                                              <p>Always fast always online</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg"
+                                              class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                              <path d="M15 12v-3" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Next js</h3>
+                                              <p>The native Next.js platform</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                              <path d="M3.6 9h16.8" />
+                                              <path d="M3.6 15h16.8" />
+                                              <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                              <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Edge Functions</h3>
+                                              <p>Dynamic pages, static speed</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Analytics</h3>
+                                              <p>Real-time insights, peak performance</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                              <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                              <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Storage</h3>
+                                              <p>Serverless storage for frontend</p>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                       </li>
+                          <!-- <a href="#templates" title="Templates">
+                              font-end
+                          </a> -->
+                     
+            
+                      <li>
+                       
+                        <button>
+                          SDLC/Networking
+                          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                              <path
+                                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                              </path>
+                          </svg>
+                      </button>
+            
+            
+            
+            
+                      <div class="dropdown__wrapper">
+                          <div class="dropdown">
+                              <ul class="list-items-with-description">
+                                  <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                    <path d="M4 12l8 4l8 -4" />
+                                    <path d="M4 16l8 4l8 -4" />
+                                </svg>
+                                      
+                                      <div class="item-title">
+                                          <h3>Previews</h3>
+                                          <p>Zero config, more innovation</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                </svg>
+                                      <div class="item-title">
+                                          <h3>Infrastructure</h3>
+                                          <p>Always fast always online</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                          <path d="M15 12v-3" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Next js</h3>
+                                          <p>The native Next.js platform</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                          <path d="M3.6 9h16.8" />
+                                          <path d="M3.6 15h16.8" />
+                                          <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                          <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Edge Functions</h3>
+                                          <p>Dynamic pages, static speed</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Analytics</h3>
+                                          <p>Real-time insights, peak performance</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                          <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                          <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Storage</h3>
+                                          <p>Serverless storage for frontend</p>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+            
+                      </li>
+                      <li>
+                           
+                        <button>
+                          Git/Github
+                          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                              <path
+                                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                              </path>
+                          </svg>
+                      </button>
+            
+            
+            
+            
+                      <div class="dropdown__wrapper">
+                          <div class="dropdown">
+                              <ul class="list-items-with-description">
+                                  <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                    <path d="M4 12l8 4l8 -4" />
+                                    <path d="M4 16l8 4l8 -4" />
+                                </svg>
+                                      
+                                      <div class="item-title">
+                                          <h3>Previews</h3>
+                                          <p>Zero config, more innovation</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                </svg>
+                                      <div class="item-title">
+                                          <h3>Infrastructure</h3>
+                                          <p>Always fast always online</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                          <path d="M15 12v-3" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Next js</h3>
+                                          <p>The native Next.js platform</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                          <path d="M3.6 9h16.8" />
+                                          <path d="M3.6 15h16.8" />
+                                          <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                          <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Edge Functions</h3>
+                                          <p>Dynamic pages, static speed</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Analytics</h3>
+                                          <p>Real-time insights, peak performance</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                          <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                          <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Storage</h3>
+                                          <p>Serverless storage for frontend</p>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+            
+                      </li>
+                      <!-- <li>
+                        <button>
+                         Gallery
+                          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                              <path
+                                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                              </path>
+                          </svg>
+                      </button>
+            
+            
+            
+            
+                      <div class="dropdown__wrapper">
+                          <div class="dropdown">
+                              <ul class="list-items-with-description">
+                                  <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                    <path d="M4 12l8 4l8 -4" />
+                                    <path d="M4 16l8 4l8 -4" />
+                                </svg>
+                                      
+                                      <div class="item-title">
+                                          <h3>Previews</h3>
+                                          <p>Zero config, more innovation</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                </svg>
+                                      <div class="item-title">
+                                          <h3>Infrastructure</h3>
+                                          <p>Always fast always online</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                          <path d="M15 12v-3" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Next js</h3>
+                                          <p>The native Next.js platform</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                          <path d="M3.6 9h16.8" />
+                                          <path d="M3.6 15h16.8" />
+                                          <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                          <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Edge Functions</h3>
+                                          <p>Dynamic pages, static speed</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Analytics</h3>
+                                          <p>Real-time insights, peak performance</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                          <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                          <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Storage</h3>
+                                          <p>Serverless storage for frontend</p>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                      </li> -->
+                      <!-- <li>
+                      <a href="#pricing" title="Pricing">
+                        Pricing
+                      </a>
+                      </li>
+                      <li>
+                        <a href="#pricing" title="Pricing">
+                          Pricing
+                        </a>
+                      </li> -->
+                  </ul>
+                </div>
+            
+              </nav>
+            </div>
+            </div>
+            
+
+
+            <div class="faq-container">
+  
+              <details>
+                <summary>
+                  <span class="faq-title">1. What is JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content">JavaScript is a scripting or ( weakly typed language )dynamic  programming language that allows you to implement complex features on web pages 
+                  <br>It was created in 1995 by Brendan Eich while he was an engineer at Netscape. It was originally going to be named LiveScript but was renamed. Unlike most programming languages, JavaScript language has no concept of input or output. It is designed to run as a scripting language in a host environment, and it is up to the host environment to provide mechanisms for communicating with the outside world. The most common host environment is the browser.
+                  <br> It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS)<br>that enables you to create dynamically updating content, control multimedia, animate images, <br>As of 2023, 98.7% of websites use JavaScript on the client side for webpage behavior, <br>. 
+                <h2>Application</h2>
+                <ol>
+                  <li>Web Applications:<br>When we explore a map in Google Maps then we only need to click and drag the mouse. All detailed view is just a click away, and this is possible only because of JavaScrip</li>
+                  <li>server application<br>JavaScript made its way from client to server and Node.js is the most powerful on the server side.</li>
+                  <li>Games <br> The combination of JavaScript and HTML 5 makes JavaScript popular in game development as well. It provides the EaseJS library which provides solutions for working with rich graphics.</li>
+                  <li>Smartwatches<br>JavaScript is being used in all possible devices and applications. It provides a library PebbleJS which is used in smartwatch applications. This framework works for applications that require the Internet for their functioning </li>
+                  <li>Art<br>Artists and designers can create whatever they want using JavaScript to draw on HTML 5 canvas, and make the sound more effective also can be used p5.js library.</li>
+                  <li>Machine Learning<br> JavaScript ml5.js library can be used in web development by using machine learning.</li>
+                  <li>Mobile Applications<br> Using React Native, we can build mobile applications for different operating systems. We do not require to write code for different systems. Write once use it anywhere!</li>
+                </ol>
+                  <ul>
+                  <li><b>Client-side:</b> It supplies objects to control a browser and its Document Object Model (DOM). Like if client-side extensions allow an application to place elements on an HTML form and respond to user events such as mouse clicks, form input, and page navigation. Useful libraries for the client side are AngularJS, ReactJS, VueJS, and so many others.</li>
+                 <li><b>Server-side: </b>It supplies objects relevant to running JavaScript on a server. For if the server-side extensions allow an application to communicate with a database, and provide continuity of information from one invocation to another of the application, or perform file manipulations on a server. The useful framework which is the most famous these days is node.js.</li>
+                
+                </ul>
+                </div>
+              
+              </details>
+            
+              <details>
+                <summary>
+                  <span class="faq-title"> language</span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content">
+                  <p><b>Pretty much the entire digital world that is so central to our lives today is built on computer programs. These are essentially a set of instructions we give our devices to perform certain functions and solve problems. While machines work with binary code - just 0s and 1s - we humans have developed hundreds of programming languages that enable us to communicate with our computers.
+                    It’s not clear exactly how many programming languages exist today, but more are being created all the time. So it’s useful to organize these languages into categories that help us understand the similarities and differences between them. While there is no one definitive way to classify types of programming languages, one common approach is to divide them into core paradigms. These determine how your code is structured and organized.    
+                    </b></p><br>
+                 
+                    <b>Imperative programming</b><br> expresses commands for the computer to perform - it is focused on the explicit process of how a program operates
+                    <pre><code>
+                      // Imperative Programming
+                      let array = [1, 2, 3, 4, 5, 6]
+                      var evenNumbers: [Int] = []
+                      for i in 0 >array.count { if array[i] % 2 = 0 { evenNumbers.append(array[i]) }    }
+                    </code></pre>
+                    <ol>
+                    <li>Procedural Programming<br>This language deals with procedure calls, which are also known as routines or functions. These contain a series of computational commands to be carried out to achieve a certain outcome.<br>The code can easily be reused in different parts of the program. One benefit of this is that the code can be easy to learn and read in simple programs. However, when dealing with something more complex you run the risk of ending up with a huge volume of code. </li>
+                    <br><b>Examples: C, Pascal, BASIC.</b>
+                    <li>Object-Oriented Programming (OOP)<br>This paradigm is based on the idea that code can be broken down into ‘objects’ that have different properties and perform different actions. Objects can interact with each other to achieve desired outcomes.<br>
+                      A core principle of OOP is ‘encapsulation’, which involves wrapping all the object components (i.e. data and methods) into a single, self-sustaining unit (sometimes known as a ‘class’). OOP is a popular programming paradigm as it mimics our ‘real world’ view of objects, making it relatively simple to grasp
+                      <br>Due to encapsulation, objects/classes can be reused easily, while it is also scalable and secure.<br>
+                      <b>Examples: C++, Java, Python.</b>
+                    </li>
+                    
+                    <li>Parallel Processing<br>
+                      The basic idea behind this paradigm is to break up different parts of a task among multiple processors, which simultaneously work on a problem.<br>you reduce the time it takes to complete the whole task. With a computer, this implies connecting multiple processors to memory, which is either pooled across all processors or distributed over a network. The side effects of this include a requirement to use both software and hardware resources.<br>
+                    <br><b>Examples: C, C++, MPI(Message Passing Interface).</b>
+                    </li>
+                  </ol>
+    
+                  <br><br>
+    
+                 <b> Declarative programming </b>is a high level paradigm, focused on logic and concepts rather than procedural flow. In other words, it is concerned with what needs to be done rather than exactly how it should be done. It is viewed as an alternative to traditional imperative programming, including in mobile development. Using the same example as before, this is how declarative programming would solve the problem<br>
+                  
+                  <pre>
+                    <code>
+                      // Declarative
+                    let evenNumbers2 =   array.filter { $0 % 2 == 0 }
+                    </code>
+                  </pre>
+                  <ul>  
+                    <li><b>Logic</b><br> Programs are written as a series of facts and rules that follow a logical structure <br>
+                      Logic programming is primarily declarative as machines can use reason to solve a problem, though in some cases imperative commands can also be included in the code. Logic programming can be used for research and testing complex theorems - it is also closely connected to development of machine learning and artificial intelligence.</li>
+                    <br><b>Examples: Prolog, Datalog, Mercury.</b>
+    
+                      <li><b>Functional</b><br>this paradigm is based on the execution of a series of mathematical functions, which form the building blocks of the program and perform all manner of tasks
+                      <br> These functional languages avoid flow controls like loops and instead favor recursive functions. 
+                    <br>This paradigm reduces code complexity and can be used to solve complex problems. However, it can be difficult to learn and tricky to scale for larger projects.</li>
+                    <br><b>Examples: JavaScript, Haskell, Scala.</b>
+                    
+                      </ul>
+                  <p><b>As with many things in software development, there is no objectively ‘right’ or ‘best’ programming paradigm. It all depends on what you need to do, what resources you have available, what operating system you’re using, and who else is working on the project. Often, you’ll find that blending some declarative and imperative programming is the optimal solution<br>
+                    Most important is finding a skilled and experienced programmer that knows when to use the different paradigms to maximise the benefits of each.</b></p>
+                 </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  2. What are variables in JavaScript? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> A JavaScript variable is simply a name of storage location. There are two types of variables in JavaScript : local variable and global variable.
+                  There are some rules while declaring a JavaScript variable (also known as identifiers).
+                <br>
+                Name must start with a letter (a to z or A to Z), underscore( _ ), or dollar( $ ) sign.<br>
+                After first letter we can use digits (0 to 9), for example value1.<br>
+                JavaScript variables are case sensitive, for example x and X are different variables.<br>
+                <br>global variable:A JavaScript global variable is accessible from any function. A variable i.e. declared outside the function or declared with window object is known as global variable
+                <pre>
+                <code>
+                  var data=200;//gloabal variable  
+                function a(){  
+                document.writeln(data);  
+                }  
+                function b(){  
+                document.writeln(data);  
+                }  
+                a();//calling JavaScript function  
+                b(); 
+                </code>
+                </pre>
+                <br>local variable:A JavaScript local variable is declared inside block or function. It is accessible within the function or block only
+              <pre>
+                <code>
+                  function abc(){  
+                    var x=10;//local variable  
+                    }  
+                </code>
+              </pre>  
+              </div>
+            
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title" >  3. How do you declare a variable in JavaScript? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content">In JavaScript, a variable can be declared using var, let, const keywords.
+    
+                 <br> var keyword is used to declare variables since JavaScript was created. It is confusing and error-prone when using variables declared using var.
+                  <br>let keyword removes the confusion and error of var. It is the new and recommended way of declaring variables in JavaScript.
+                  <br>const keyword is used to declare a constant variable that cannot be changed once assigned a value. 
+                <pre><code>
+                  Example: Variable Declaration
+                  let msg; // declaring a variable without assigning a value</code></pre>
+                  <pre><code>
+                    Example: Variable Initialization
+                    let msg;
+                    msg = "Hello JavaScript!"; // assigning a string value
+                  </code></pre>
+                  <pre><code> Variable Declaration and Initialization
+                    let name = "Steve"; //assigned string value
+                    let num = 100; //assigned numeric value
+                    let isActive = true; //assigned boolean value</code></pre>
+                    <pre><code>Example: Multiple Variables
+                      let name = "Steve", num = 100, isActive = true;</code></pre>
+                      <pre><code>Example: Whitespace and Line Breaks
+                        let name = "Steve",
+                            num = 100,
+                            isActive = true;</code></pre>
+                            <pre><code>
+                              Example: Syntax Error
+                          let num = 100; 
+                          let num = 200; //syntax error  
+    
+                          var num = 100; 
+                          var num = 200; //Ok
+                            </code></pre>
+    
+                          <br>
+               <li>names are case-sensitive in JavaScript. So, the variable names msg, MSG, Msg, mSg are considered separate variables.</li> 
+               <li> Variable names can contain letters, digits, or the symbols $ and _.</li>
+               <li>A variable name cannot start with a digit 0-9.</li> 
+               <li> A variable name cannot be a reserved keyword in JavaScript, e.g. var, function, return cannot be variable names.</li>
+               Dynamic Typing
+              JavaScript is a loosely typed language. It means that you don't need to specify what data type a variable will contain. You can update the value of any type after initialization. It is also called dynamic typing.
+              <pre><code>
+                Example: Loosely Typed Variable
+                let myvariable = 1;  // numeric value
+                
+                myvariable = 'one'; // string value
+                
+                myvariable = 1.1; // decimal value
+                
+                myvariable = true; // Boolean value
+                
+                myvariable = null; // null value
+                </code></pre>
+    
+                Constant Variables in JavaScript
+                Use const keyword to declare a constant variable in JavaScript.
+    
+                Constant variables must be declared and initialized at the same time.
+                The value of the constant variables can't be changed after initialized them.
+                <pre><code>
+                  const num = 100; 
+                num = 200; //error  
+    
+                const name; //error
+                name = "Steve";
+                </code></pre>
+                Variables can be declared and initialized without the var or let keywords
+                <br>Variables should be initialized before accessing it. Unassigned variable has value undefined.
+              </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  4. What are data types in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> 
+                  <b>primitive Type</b>
+                  1. String
+                  2.Number
+                  3. Boolean
+                  4. Undefined
+                  5. Null
+                  6. Bigint
+                  7. Symbols
+                  <b>Reference Type</b>
+                  1 Array
+                  2. Object
+                  3. Function/class
+                  4. Map
+                  5. Set
+                </div>
+    
+                <pre>
+                  <code>
+                    let x = 16 + 4 + "Volvo"; //20Volvo
+                    let x = "Volvo" + 16 + 4; //Volvo164
+                    let x;       // Now x is undefined
+                    x = 5;       // Now x is a Number
+                    x = "John";  // Now x is a String
+                    const number1 = 3/0;  console.log(number1); // Infinity
+                    const number2 = -3/0; console.log(number2); // -Infinity
+                    const number3 = "abc"/3; console.log(number3);  // NaN // strings can't be divided by numbers
+                    const value1 = 900719925124740998n;  // BigInt value //BigInt was introduced in the newer version of JavaScript and is not supported by many browsers including Safari. Visit JavaScript BigInt support to learn more.
+                    const result1 = value1 + 1n; console.log(result1); // "900719925124740999n" // Adding two big integers
+                    const value2 = 900719925124740998n; const result2 = value2 + 1; console.log(result2); // Error! BitInt and number cannot be added
+                    let carName1 = "Volvo XC60";        // Using double quotes:
+                    let carName2 = 'Volvo XC60';// Using single quotes:
+                    const result = `The names are ${name} and ${name1}`;//backticks
+                    let answer1 = "It's alright";  // Single quote inside double quotes:
+                    let answer2 = "He is called 'Johnny'";// Single quotes inside double quotes:
+                    let answer3 = 'He is called "Johnny"';// Double quotes inside single quotes:
+                    let x1 = 34.00; // With decimals:
+                    let x2 = 34;// Without decimals:
+                    let y = 123e5;    // 12300000
+                    let z = 123e-5;   // 0.00123
+                    let x = BigInt("123456789012345678901234567890");
+                    let y = 123e5;    // 12300000//exponential notation//3 * 10^5
+                    let z = 123e-5;   // 0.00123
+                    let x = 5;
+                    let y = 5;
+                    let z = 6;
+                    (x == y)       // Returns true
+                    (x == z)       // Returns false
+                    const cars = ["Saab", "Volvo", "BMW"];//array
+                    const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};//JavaScript objects are written with curly braces {}. Object properties are written as name:value pairs, separated by commas.
+                    const date = new Date("2022-03-25");  // Date object:
+                    let car;    // Value is undefined, type is undefined
+                    car = undefined;    // Value is undefined, type is undefined
+                    let a = null;//null
+                    
+                    const value1 = Symbol('hello');// two symbols with the same description
+                    const value2 = Symbol('hello'); A value having the data type Symbol can be referred to as a symbol value. Symbol is an immutable primitive value that is unique//This data type was introduced in a newer version of JavaScript (from ES2015).
+                  
+                    const a = null;  typeof(a); // returns "object"
+                   // In Maps, the data is stored as a key-value pair whereas in Set data is a single collection of values that are unique
+                  </code>
+                </pre>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">    5. How do you check the type of a variable? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content">You can use typeof to check the data structure, or type, of a variable. This is useful in debugging when working with multiple data types.</div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  6. Explain the difference between 'null' and 'undefined".  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content">Undefined vs Null
+                  Undefined means the variable has been declared, but its value has not been assigned. Null means an empty value or a blank value.</div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   7. How can you comment in JavaScript?   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content">single-line comments start with //. Any code written after // will be ignored by Javascript.<br> multi-line comments start with /* and end with */. Any text or code written between /* and */ will be ignored by JavaScript at the time of execution.</div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">    8. What is the purpose of the 'alert() function in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content">The alert() method in JavaScript is used to display a virtual alert box. It is mostly used to give a warning message to the users. It displays an alert dialog box that consists of some specified message (which is optional) and an OK button. </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  9. How do you create an array in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> 
+                  <pre><code>
+                  1.  new Array()
+                  new Array(3)// [object Array] (3)   [,,]
+                  new Array(3).length //3
+                  new Array(3)[0] //undefined
+                  eg:
+                  let myFavoriteFoods = new Array("pizza", "ice cream", "salad");
+                  console.log(myFavoriteFoods); // ["pizza","ice cream","salad"]
+                  console.log(myFavoriteFoods.length); // 3
+                  console.log(myFavoriteFoods[1]); // "ice cream"
+                
+                  2.Array.of()
+                  let myFavoriteFoods = Array.of("pizza", "ice cream", "salad");
+                  console.log(myFavoriteFoods); // ["pizza","ice cream","salad"]
+                  console.log(myFavoriteFoods.length); // 3
+                  console.log(myFavoriteFoods[1]); // "ice cream"
+    
+                  let myArr = Array.of(4);
+                  console.log(myArr);// [object Array] (1) [4]
+                  let myArr = new Array(4);
+                  console.log(myArr);// [object Array] (4) [,,,]
+    
+                  3,split()
+                  const str = 'I love freeCodeCamp';
+                  console.log(str.split());// [object Array] (1) ["I love freeCodeCamp"]
+                  const str = "I love freeCodeCamp";
+                  console.log(str.split(""));// [object Array] (19)  ["I",""',"l","o","v","e", ","f","r","e","e", "C","o","d","e","C","a","m","p"]
+                  const str = "I love freeCodeCamp";
+                  console.log(str.split(" "));// [object Array] (3) ["I","love","freeCodeCamp"]
+                </code></pre>
+                </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">          10. How do you access the first element of an array?   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> 
+                  <ul>
+                      <li>Using length property in JavaScript</li>
+                      <li>Using Array.pop() and Array.shift() Methods</li>
+                      <li>Using Array.slice() Method</li>
+                      <li>Using Array.filter() Method</li>
+                      <li>Using Spread Operator</li>
+                </ul>
+              <pre><code>
+                let s = [3, 2, 3, 4, 5];
+                1.  let f = s[0];//3
+                1.  let l = s[s.length - 1];//5
+    
+                2. let f = s.shift(0);//3
+                2.  let l = s.pop();//5
+    
+                3. let f = s.slice(0, 1);//3
+                3.let l = s.slice(-1);//5
+    
+                4.let [f, l] = s.filter((item, i) => (i == 0) || (i == s.length - 1));
+    
+                5.const [firstItem, ...rest] = array;//3
+                5.const lastItem = rest.pop();//5
+              </code></pre>
+              </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">           11. What is a JavaScript function?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> A JavaScript function is a block of code designed to perform a particular task. A JavaScript function is executed when "something" invokes it (calls it).</div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">    12. How do you define a function in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content">To create a function in JavaScript, we have to first use the keyword function, separated by the name of the function and parameters within parenthesis. The part of the function inside the curly braces {} is the body of the function
+                <pre>
+                  <code>
+                    function functionName(Parameter1, Parameter2, ...)
+                    {
+                        // Function body
+                    }
+                  </code>
+                </pre>  
+                </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 13. Explain the difference between '=' and '==' and '===" in JavaScript.</span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content">
+                  = in JavaScript is used for assigning values to a variable.<br>
+                  == in JavaScript is used for comparing two variables, but it ignores the datatype of variable. <br>
+                  === is used for comparing two variables, but this operator also checks datatype and compares two values </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">    14. What is a closure in JavaScript? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> A closure is a feature of JavaScript that allows inner functions to access the outer scope of a function. (we can create nested functions in JavaScript. Inner function can access variables and parameters of an outer function )
+                  <pre><code>
+                    function OuterFunction() {
+    
+                      var outerVariable = 1;
+                  
+                      function InnerFunction() {
+                          alert(outerVariable);
+                      }
+                  
+                      InnerFunction();
+                  }
+                  </code></pre>
+    
+                  Closure is valid in multiple levels of inner functions.
+                  <pre>
+                    <code>
+                      function Counter() {
+        
+                        var counter = 0;
+                    
+                        setTimeout( function () {
+                            var innerCounter = 0;
+                            counter += 1;
+                            alert("counter = " + counter);
+                    
+                            setTimeout( function () {
+                                counter += 1;
+                                innerCounter += 1;
+                                alert("counter = " + counter + ", innerCounter = " + innerCounter)
+                            }, 500);
+                    
+                        }, 1000);
+                    };
+                    
+                    Counter();
+                    </code>
+                  </pre>
+                When to use Closure?
+                Closure is useful in hiding implementation detail in JavaScript. In other words, it can be useful to create private variables or functions.
+              <pre><code>
+                var counter = (function() {
+                  var privateCounter = 0;
+                  function changeBy(val) {
+                    privateCounter += val;
+                  }
+                  return {
+                    increment: function() {
+                      changeBy(1);
+                    },
+                    decrement: function() {
+                      changeBy(-1);
+                    },
+                    value: function() {
+                      return privateCounter;
+                    }
+                  };   
+                })();
+                
+                alert(counter.value()); // 0
+                counter.increment();
+                counter.increment();
+                alert(counter.value()); // 2
+                counter.decrement();
+                alert(counter.value()); // 1
+              </code></pre>  
+              </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 15. How do you loop through an array in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"><ul>
+                  <li><b> Using the forEach() method:</b><br>The forEach() method is used to execute code for each element in the array by looping through each of them. </li>
+                  <pre><code>
+                    function loopArray() {
+                      let arr = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+                   
+                      arr.forEach(element => {
+                         console.log(element);
+                      });
+                  }
+                   
+                  loopArray();
+                  </code></pre>
+                  <li><b> Using the for…of statement:</b><br>The for…of statement can be used to loop through iterable objects and perform the required functions. Iterable objects include arrays, strings, and other array-like objects. </li>
+                  <pre><code>
+                    function loopArray() {
+                      let arr = ['Item 1', 'Item 2', 'Item 3',  'Item 4', 'Item 5'];
+                   
+                      for (element of arr) {
+                         console.log(element);
+                      }
+                  }
+                   
+                  loopArray();
+                  </code></pre>
+                  <li><b> Using the basic for loop:</b><br>The default for loop can be used to iterate through the array and each element can be accessed by its respective index.</li>
+                  <pre>
+                    <code>
+                      function loopArray() {
+                        let arr = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+                     
+                        for (i = 0; i graterthan arr.length; i++) {
+                            console.log(arr[i]);
+                        }
+                    }                          
+                    loopArray();
+                    </code>
+                  </pre>
+                  <li> <b>Using While Loop:</b><br>A While Loop in JavaScript is a control flow statement that allows the code to be executed repeatedly based on the given boolean condition. </li>
+                  <pre><code>
+                    function loopArray() {
+                      let arr = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+                      let length = arr.length;
+                      while (length > 0) {
+                          console.log(arr[arr.length - length]);
+                          length--;
+                      }
+                  }
+                  loopArray();
+                  </code></pre>
+                </ul>
+                 
+                 
+                 
+                 </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">16. What is the 'this' keyword in JavaScript?     </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> JavaScript this keyword always holds the reference to a single object, which defines the current line of code’s execution context which means this keyword refers to the object that is currently executing the code.
+                  <a href="https://www.guru99.com/java-this-keyword.html">this ->referred this link for better understanding
+                    
+                  </a>
+                </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  17. Explain the concept of hoisting in JavaScript.  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> 
+                  Hoisting is a concept that enables us to extract values of variables and functions even before initializing/assigning value without getting errors and this happens during the 1st phase (memory creation phase) of the Execution Context.
+                  <br>
+                  Features of Hoisting:<br>
+    
+                <br>  In JavaScript, Hoisting is the default behavior of moving all the declarations at the top of the scope before code execution. Basically, it gives us an advantage that no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local. 
+                 <br> It allows us to call functions before even writing them in our code. 
+                 <br> Note: JavaScript only hoists declarations, not initializations.
+    <br>So you can access a variable declared with var before declaration without errors, but you cannot do the same with let or const.
+                 <br> JavaScript allocates memory for all variables and functions defined in the program before execution.
+                 <p><b>let and const variables are hoisted, only they are hoisted without a default initialization. This makes them inaccessible (as such variables are in a temporal dead zone).
+                  Variables declared with var, on the other hand, are hoisted with a default initialization of undefined.</b></p>
+                  <a href="https://dev.to/narottam04/hoisting-in-javascript-visually-explained-cfa">refer this site for hoisting in javascript</a>
+                  <a href="https://dev.to/passionate_coder/hoisting-in-javascript-4f2b" >refer this video link for hoisting in javascript</a>
+                <pre>
+                  <code>
+                    // Hoisting
+                  function codeHoist(){
+                      a = 10;
+                      let b = 50;
+                  }
+                  codeHoist();
+              
+                  console.log(a); // 10
+                  console.log(b); // ReferenceError : b is not defined
+                  </code>
+                </pre>
+                <pre>
+                  <code>
+                    console.log(name); // undefined
+                    let name = 'Mukul Latiyan';
+                  </code>
+                </pre>
+                
+                </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   18. What is the purpose of the 'return' statement in a function? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content">The purpose of the return statement in any language causes your function to exit and hand back value to its caller. The point of functions, in general, is to take in inputs and return something. The return statement is used when a function is ready to return a value to its caller</div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 19. What is an IIFE in JavaScript?</span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content">  an IIFE (Immediately Invoked Function Expression) allows for immediate execution of functions, after it has been created.
+    <br>
+                  We get the following benefits from IIFEs:
+                  <br>
+                  They don’t clog the global object with variables and functions<br>
+                  They are a simple way to isolate variable declarations
+                <pre><code>
+    
+                  (function() {
+                    /* */
+                  })()
+                  </code>
+                  </pre>
+                  <pre><code>
+                  (() => {
+                    /* */
+                  })()
+                </code></pre>
+                <pre>
+                  <code>
+                    The Global Object Issue
+                    When a function is created, it is added to the global object. Let us take the following code example:
+    
+                    function mult(x,y) {     
+                      return x * y; }
+                    This is a simple function called mult that takes in 2 parameters, variables x and y. It then returns the result as the product of the 2 variables.
+    
+                    The function, upon creation, is added to the window() global object. A variable declared outside of a function is also added to the global object.
+    
+                    var counter;
+                    We can see the result or output using the console.log() command.
+    
+                    console.log(window.mult)
+                    console.log(window.counter)
+                    When you have declared many global variables and functions, the JS engine only releases allocated memory when the global object loses its scopes. This leads to the inefficient use of memory.
+    
+                    Another problem this can create is name collisions. This pollutes the global object, clogging it up and making the program less efficient.
+                  </code>
+                </pre>
+                <pre>
+                  <code>
+                    For example, we can rewrite the code this way:
+    
+                    let mult = (function(x,y){     
+                      return x * y; 
+                    })(3, 8);  
+                    console.log(mult);
+                    We assign the function call to the variable called mult. This returns the answer which is 24.
+    
+                    Now lets create an IIFE using the general syntax by rewriting the code:
+    
+                    (function(x,y){         
+                      return x * y; 
+                    })(3,8);
+                    The function is created as an expression that executes immediately, without first having to be added to the global object.
+                  </code>
+                </pre>
+                </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  20. What is the difference between 'let', 'const', and 'var' for variable declaration?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> <b>var</b> variables can be updated and re-declared within its scope;<br><b>let </b>variables can be updated but not re-declared;<br> <b>const</b> variables can neither be updated nor re-declared.<br> They are all hoisted to the top of their scope.
+                <p>-> Global variables last as long as the application is running. -> Local variables last as long as a function is running. -> Block statements don't create a new scope and the block scope does not apply to var keyword. -> Const and Let can define scope to block statements</p>
+                </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   21. What are JavaScript promises?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">      22. How do you handle asynchronous operations in JavaScript   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   23. Explain the concept of callback functions.  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 24. What is the Event Loop in JavaScript? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  25. What is a closure and how is it useful? avoid it?    </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   26. Explain the concept of prototypal inheritance in JavaScript.    </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 27. How do you add and remove elements from an array in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   28. What is a callback hell (Pyramid of Doom) and how can you asynchronous code?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">       29. What is the difference between synchronous and   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">     30. How do you create and use objects in JavaScript?   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">    31. What is the purpose of the 'bind()' method?    </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">       32. What is a higher-order function in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">    33. Explain the concept of destructuring in JavaScript.  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">   34. What is a spread operator in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">    35. How do you handle exceptions in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">     36. What is the purpose of the 'try...catch' statement?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  37. Explain the difference between 'null' and 'undefined'.  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   38. How do you deep clone an object in JavaScript? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   39. What is a promise in JavaScript? How does it work?   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 40. What is event delegation in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 41. What is the purpose of the 'map()' method in JavaScript? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              
+              <details>
+                <summary>
+                  <span class="faq-title">    42. How do you sort an array in JavaScript? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              
+              <details>
+                <summary>
+                  <span class="faq-title">  43. Explain the concept of memoization in JavaScript </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>       
+                
+              <details>
+                <summary>
+                  <span class="faq-title"> 44. What is a closure and how is it useful?   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  45. How do you create and use classes in JavaScript (ES6)? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 46. What is a module in JavaScript? How do you import/export modules?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   47. What is the difference between "localStorage' and 'sessionStorage'?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  48. Explain the concept of "hoisting" in JavaScript.  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 49. How do you handle AJAX requests in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">    50. What is the difference between GET and POSTHTTP methods? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   51. What is a JavaScript closure, and can you provide a practical example? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  52.Explain JavaScript's function variable scope and lexical scope.  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">    53.Differentiate between for... in and for...of loops in JavaScript and their use cases.  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  54.How do you handle unhandled promise rejections in example JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 55.Describe function currying in JavaScript and provide an example  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  56. What is a JavaScript decorator, and how can it modify function or class behavior?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+            
+              <details>
+                <summary>
+                  <span class="faq-title">   57.Compare Object.freeze(), Object.seal(), and Object.preventExtensions() in JavaScript. </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  56.What is a JavaScript decorator, and how can it modifyfunction or class behavior?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  57.Compare Object.freeze(), Object.seal(), andObject.preventExtensions() in JavaScript.  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   58.How can you achieve private data encapsulation inJavaScript, and why is it essential? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+           
+              <span class="faq-title">    59. What are the benefits of using the JavaScript Proxy object, and when should you use it? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   60.Explain the Node.js event loop and its role in non-blocking operations.  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   61. Explain the concept of event bubbling and eventcapturing. </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   62. What are arrow functions in JavaScript? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   63. What is the purpose of the 'async/await' syntax in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   64. Explain the difference between 'null', 'undefined', and 'undeclared:  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">65. What are the different ways to create objects in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">    66. What is the purpose of the 'fetch()' API in JavaScript?   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  67. How do you handle cross-origin requests in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+            
+              <details>
+                <summary>
+                  <span class="faq-title">  68. What is a closure and when would you use one?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 69. Explain the concept of currying in JavaScript.   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  70. What is the JavaScript 'prototype' property? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">    71. How do you implement inheritance in JavaScript classes?   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 72. What is a generator function in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 73. Explain the concept of "callback hell" and how to mitigate it.  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   74. What is a memoization technique, and why is it useful?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  75. What is the difference between a shallow copy and a deep copy of an object?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   76. What is the purpose of the 'Symbol' data type in JavaScript? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  77. How do you use the 'reduce()' method on an array?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title"> 78. What is the difference between synchronous and asynchronous JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  79. Explain the concept of event delegation and provide an example. </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">    80. What is a closure, and how does it relate to garbage collection?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   81. What is the purpose of the JavaScript 'Proxy" object?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   82. How does the 'Set' data structure differ from an array in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">    83. Explain the concept of a "Promise chain" in JavaScript. </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  84. What is the difference between the 'localStorage' and 'sessionStorage' APIs?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">  85. How do you handle errors in asynchronous code? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+             
+            
+            
+    
+             
+            
+          
+             
+            
+           
+           
+            
+           
+             
+              <details>
+                <summary>
+                  <span class="faq-title"> 86. What is a Web Worker in JavaScript, and what is it used for   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+          
+                  <span class="faq-title">    87. Explain the differences between the 'for...in' and 'for...of loops.  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+    
+              <details>
+                <summary>
+                  <span class="faq-title">   88. How can you optimize the performance of JavaScript code?   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">    89. What are the differences between the 'let', 'const, and 'var'keywords in ES6?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">          90. Explain the concept of prototypal inheritance and classical inheritance. </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">91. How does JavaScript handle "truthy" and "falsy" values?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">  92. What are the benefits of using a transpiler like Babel in JavaScript development? </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">    93. What is the JavaScript event loop and how does it work?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">   94. Explain the difference between a closure and a callback function. </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title"> 95. What is the purpose of the 'yield' keyword in generator functions?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">   96. How do you handle memory leaks in JavaScript applications?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">  97. What is a closure, and why is it important for encapsulation?   </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title"> 98. How can you avoid common pitfalls when working with asynchronous code?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title">  99. What are some best practices for writing clean and maintainable JavaScript code?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+              <details>
+                <summary>
+                  <span class="faq-title"> 100. Can you explain the concept of a "Promise.all()" in JavaScript?  </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content"> </div>
+              </details>
+             
+       </div>
+
+
+            <footer>
+                <div class="content">
+                  <div class="top">
+                    <div class="logo-details">
+                      <!-- <i class="fab fa-slack"></i> -->
+                      <span class="logo_name">Keesite</span>
+                    </div>
+                    <!-- <div class="media-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div> -->
+                  </div>
+                  <div class="link-boxes">
+                    <ul class="box">
+                      <li class="link_name">Accont</li>
+                      <li><a href="#">Profile</a></li>
+                      <li><a href="#">Todo list</a></li>
+                      <li><a href="#">Roadmap</a></li>
+                      <li><a href="#">feedback</a></li>
+                    </ul>
+                    <ul class="box">
+                      <li class="link_name">100 Q/A challenge</li>
+                      <li><a href="#">Python</a><a href="#"></a></li>
+                      <li><a href="#"> javascript</a></li>
+                      <li><a href="#"> java</a></li>
+                      <li><a href="#"> sql</a></li>
+                    </ul>
+                    <ul class="box">
+                      <li class="link_name">frontend</li>
+                      <li><a href="#">HTML</a></li>
+                      <li><a href="#">CSS </a></li>
+                      <li><a href="#">JAVASCRIPT </a></li>
+                      <!-- <li><a href="#">dsa</a></li>
+                      <li><a href="#">jjjj</a></li> -->
+                     
+                    </ul>
+                    <ul class="box">
+                      <li class="link_name">courses</li>
+                      <li><a href="#">DSA(java and python)</a></li>
+                      <li><a href="#">github</a></li>
+                      <li><a href="#">Database</a></li>
+                      <li><a href="#">Machine Learning</a></li>
+                    </ul>
+                    <!-- <ul class="box input-box">
+                      <li class="link_name">Subscribe</li>
+                      <li><input type="text" placeholder="Enter your email"></li>
+                      <li><input type="button" value="Subscribe"></li>
+                    </ul> -->
+                  </div>
+                </div>
+                <div class="bottom-details">
+                  <div class="bottom_text">
+                     <span class="copyright_text">copyright @ keesite 2023  </span><!-- <a href="#">CodingLab.</a>All rights reserved-->
+                    <span class="policy_terms">
+                      <span>&#128187 keesitelearn@gmail.com</span>
+                      <!-- <a href="#">Privacy policy</a>
+                      <a href="#">Terms & condition</a> -->
+                    </span>
+                  </div>
+                </div>
+              </footer>    
+            
+              <script src="accordion.js"></script>
+
+    <script>
+        const canvas = document.getElementById('Canvas');
+        const ctx = canvas.getContext('2d');
+        // ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+        const cubeWidth = 26;
+        const cubeHeight =20;
+        const cubeDepth = 20;
+      
+        // Set cube position
+        const cubeX = (canvas.width - cubeWidth) / 2;
+        const cubeY = (canvas.height - cubeHeight) / 2;
+      
+        
+        function drawCube() {
+      
+          ctx.beginPath();// Front face
+          ctx.moveTo(cubeX, cubeY);
+          ctx.lineTo(cubeX + cubeWidth, cubeY);
+          ctx.lineTo(cubeX + cubeWidth, cubeY + cubeHeight);
+          ctx.lineTo(cubeX, cubeY + cubeHeight);
+          ctx.closePath();
+          ctx.fillStyle = '#8d8f84';
+          ctx.fill();
+      
+      
+          ctx.beginPath();//top face
+          ctx.moveTo(cubeX, cubeY);
+          ctx.lineTo(cubeX + cubeWidth / 2, cubeY - cubeDepth / 2);
+          ctx.lineTo(cubeX + cubeWidth / 2 + cubeWidth, cubeY - cubeDepth / 2);
+          ctx.lineTo(cubeX + cubeWidth, cubeY);
+          ctx.closePath();
+          ctx.fillStyle = 'white';
+          ctx.fill();
+      
+         
+          ctx.beginPath();//side face
+          ctx.moveTo(cubeX + cubeWidth, cubeY);
+          ctx.lineTo(cubeX + cubeWidth / 2 + cubeWidth, cubeY - cubeDepth / 2);
+          ctx.lineTo(cubeX + cubeWidth / 2 + cubeWidth, cubeY + cubeHeight - cubeDepth / 2);
+          ctx.lineTo(cubeX + cubeWidth, cubeY + cubeHeight);
+          ctx.closePath();
+          ctx.fillStyle = '#8d8f84';
+          ctx.fill();
+        }
+      
+        setTimeout( function() {
+      
+          ctx.fillStyle = '#f54500';
+          ctx.font = '10px FontAwesome';  
+          ctx.fillText("\uf084",25,9);
+        },1000);
+        drawCube();
+      
+      
+      </script> 
+
+<script>
+    function openForm() {
+  document.getElementById("myForm").style.display = "block";
+  
+  }
+  function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  }
+  </script>  
+
+
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+const submit=document.getElementsByClassName('container')[0];
+
+submit.addEventListener('submit',(e)=>
+{
+    e.preventDefault();
+
+// console.log(fname.value);
+// console.log(fphone.value);
+// console.log(fmessage.value);
+
+console.log("clicked");
+})
+
+ function sendEmail(){
+
+const fname=document.getElementById('name');
+console.log(name);
+const femail=document.getElementById('email');
+const fphone=document.getElementById('phone');
+const fmessage=document.getElementById('message');
+
+let ebody= ` 
+<b>Name: </b>${fname.value}<br>
+<b>Email: </b>${femail.value}<br>
+<b>phone NO: </b>${fphone.value}<br>
+<b>query:</b> ${fmessage.value} `
+
+            Email.send({
+                Host:"smtp.elasticemail.com",
+                Username:"keerthikaravi1405@gmail.com",
+                Password: "882FE9E23494C1F767E8347592F3DBBA1364",
+                To:'keesitelearn@gmail.com',
+                From:document.getElementById('email').value,
+                Subject:"New Contact Form Enquiry" + email.value,
+                Body: ebody
+            }).then(
+                message => alert("your query send successfully")
+            );
+           
+
+        };
+    </script> 
+
+
+<script>
+
+  const body = document.querySelector("body"),
+        nav = document.querySelector("nav"),
+        modeToggle = document.querySelector(".dark-light");
+        // imageContainer = document.querySelector(".image-container");
+  
+        let getMode = localStorage.getItem("mode");
+            if(getMode && getMode === "dark-mode"){
+              body.classList.add("dark");
+            //   updateImage("dark");
+            }
+  
+  
+       modeToggle.addEventListener("click" , () =>{
+          modeToggle.classList.toggle("active");
+          body.classList.toggle("dark");
+          // js code to keep user selected mode even page refresh or file reopen
+
+          if(!body.classList.contains("dark")){
+              localStorage.setItem("mode" , "light-mode");
+            //   updateImage("light");
+
+          }
+          else{
+              localStorage.setItem("mode" , "dark-mode");
+            //   updateImage("dark");
+          }
+        });
+
+//         function updateImage(mode) {
+  
+//     const lightImagePath = "river.gif";
+//     const darkImagePath = "night.gif";
+
+ 
+//     imageContainer.src = mode === "dark" ? darkImagePath : lightImagePath;
+//   }
+    </script>
+<script>
+  function view() {
+document.getElementById("wrapper").style.display = "block";
+
+}
+function nonview() {
+document.getElementById("wrapper").style.display = "none";
+}
+</script>  
+
+<!-- <script>
+      
+  document.addEventListener("scroll", function () {
+    var threshold = 50;
+
+    // document.getElementById("test").innerHTML = window.scrollY; //show the count
+    
+    var sidebar = document.getElementById("navbar");
+    var content = document.getElementById("bgcontent");
+
+    if (window.scrollY >= threshold) {
+      sidebar.classList.add("fixed");
+    } 
+    else {
+      sidebar.classList.remove("fixed");
+    }
+
+    var check = content.offsetHeight - sidebar.offsetHeight - 21;
+    console.log(check);//679
+
+    if (window.scrollY >= check) {
+      sidebar.classList.add("bottom");
+    } else {
+      sidebar.classList.remove("bottom");
+    }
+  });
+</script> -->
+</body>
+</html>
