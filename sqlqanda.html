@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sql/practice</title>
+    <link rel="stylesheet" href="sqlqanda.css">
+    <style>
+      
+
+:root{
+  --body-color: rgb(253, 253, 253);
+  --text-color:rgb(244, 245, 211);
+  --list-color: white;
+  --list-text-color:black;
+  --hover:grey;
+  --tab-content:white;
+  --containerprofile:white;
+}
+
+
+body.dark{
+  --hover:grey;
+  --list-text-color:white;
+ --list-color: rgb(48, 46, 46);
+  --body-color:rgb(0, 0, 0,0.7);
+  --text-color:rgb(255, 255, 255);
+  --gry-color:rgba(0, 0, 0);
+  --tab-content: rgb(48, 46, 46);
+  --containerprofile:rgb(48, 46, 46);
+ 
+
+}
+body {
+	/* background: var(--body-color); */
+	height: 100%;
+}
+
+
+.nav-bar .darkLight-searchBox{
+  display: flex;
+  align-items: center;
+}
+.darkLight-searchBox .dark-light
+{
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+}
+.dark-light i{
+  margin-left: 2200px;
+  position: absolute;
+  color: var(--text-color);
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+margin-top: -50px;
+}
+.dark-light i.sun{
+  opacity: 0;
+  pointer-events: none;
+}
+.dark-light.active i.sun{
+  opacity: 1;
+  pointer-events: auto;
+}
+.dark-light.active i.moon{
+  opacity: 0;
+  pointer-events: none;
+}
+.dark-light i.moon:hover{
+  color: rgb(0, 0, 0);
+}
+.dark-light i.sun:hover{
+  color: yellow;
+
+} 
+    </style>
+     <!-- <style>
+     
+      
+        .sidebar {
+          height: 100%;
+          width: 250px;
+          position: fixed;
+          z-index: 1;
+          top: 30;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidebar a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidebar a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidebar .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        .openbtn {
+          font-size: 20px;
+          cursor: pointer;
+          background-color: #111;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+        }
+        
+        .openbtn:hover {
+          background-color: #444;
+        }
+        
+        #main {
+       
+          position: fixed;
+          margin-top:50px;
+          transition: margin-left .5s;
+          padding: 6px;
+        }
+        
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+          .sidebar {padding-top: 15px;}
+          .sidebar a {font-size: 18px;}
+        }
+        </style> -->
+      <style>
+  
+        .hamburger-menu{
+         padding-right: 1.5rem;
+         cursor: pointer;
+       }
+       .hamburger-menu .line{
+       display: block; 
+       width:25px;
+       height: 20px; 
+       margin-top: -25px;
+       margin-left: 60px;
+       color: rgb(80, 80, 80);
+       cursor: pointer;
+       }
+       .nav-menu{
+         position: fixed;
+         width: 34%;
+         top: 0;
+         left: 50px;
+         background-color: rgb(255, 255, 255);
+         font-weight: 600;
+       
+       }
+       .nav-menu a{
+        margin-top: 40px;
+         font-size: 15px;
+         color: rgb(255, 255, 255);
+         text-decoration: none;
+         display: block;
+         text-align: center;
+         padding: 20px 0;
+       }
+  
+       .hide{
+         display: none;
+       }
+  
+           /* for Desktop view */
+           @media screen and (min-width:600px){
+             .navbar{
+               justify-content: space-around;
+             }
+             .nav-menu{
+               width: 60%;
+               display: block;
+               position: static;
+               margin-top: -25px;
+               margin-left: 70px;
+              
+               background: none;
+             }
+             .nav-menu a{
+               display: inline-block;
+             padding: 0px 10px;
+             cursor: pointer;
+               /* padding: -px 20px; */
+             
+             }
+         
+             .hamburger-menu{
+               display: none;
+             }
+           }
+           
+    </style>
+
+     <style type="text/css">
+  
+      #stage{
+      position: fixed;
+      margin-left: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      z-index: 200;
+  
+  
+      }
+          @font-face {
+           font-family: 'FontAwesome';
+           src: url('fontawesome/fonts/fontawesome-webfont.ttf');
+           font-weight: normal;
+           font-style: normal;
+       
+          }
+          #stage{
+            font-family:FontAwesome;
+          }
+
+          </style> 
+ <style>
+            #bg{
+  position: fixed;
+width: 100%;
+height:200px; 
+/* border: 1px solid black; */
+
+}
+
+.bg h1{
+color: rgb(251, 251, 251);
+ position: absolute;
+font-size: 30px;
+top:500px;
+z-index: 100;
+margin-left: 100px;
+
+    }
+    .bg img{
+      margin-top: -50px;
+      z-index: -1;
+    } 
+          </style> 
+ <link rel="stylesheet" href="accordion.css">
+
+ <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10.1.0/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+   
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<bodyid="mode">
+
+  
+
+        <!-- <div class="loader">
+          <h1>keesite</h1>
+        </div> -->
+        
+        
+        
+            <!-- <div class="sideMenu" id="side-menu">
+                <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">x</a> -->
+        
+              <!-- <div class="sidebar">
+                
+                <ul>
+                  <li><i class="bx bx-home"></i><a href="chrome.html">home</a></li>
+                  <li><i class="bx bx-home"></i><a href="chrome.html">course </a></li>
+                  <li><i class="bx bx-home"></i><a href="chrome.html">gallery</a></li>
+                  <li><i class="bx bx-github"></i><a href="chrome.html">github</a></li>
+          
+                </ul>
+            
+        </div>
+              </div> -->
+              <div id="stage">
+                <canvas id="Canvas" width="50" height="45"></canvas>
+             </div>
+        
+        
+              <nav class="navbar" id="navbar">
+                <div class="content-area">
+                   <!-- <button  class="content-area1" onclick="openNav()" style="font-size:20px;cursor:pointer"><i class="fa fa-navicon" style="color: black;"></i></button> -->
+              
+               <!-- <div class="dropdown-content" id="myDropdown">
+                 <a href="#">Link 1</a>
+                 <a href="#">Link 2</a>
+                 <a href="#">Link 3 &emsp;&emsp;&emsp;&emsp; <button class="content-area2" onclick="openNavy()" >&#62;</button>
+                 <div class="dropdown-content1" id="myDropdown1" >
+                   <a href="#">python</a>
+                   <a href="#">java</a> </div>
+                 </a>
+                 <a href="#">Link 2</a>
+               </div> -->
+            
+               <div class="hamburger-menu">
+                 <span class="line">Menu</span><!--☰-->
+               </div> 
+             
+               <div class="nav-menu hide">
+                <a onclick="view()" target="_top" > <i class='bx bx-star'  style="font-size: 20px;"></i>Explore</a>
+             <a href="https://github.com/keerthika1405" target="_top" >   <i class='bx bxl-github ' name='github' type="logo"  style="font-size: 20px;"></i> Github</a>
+             <a href="https://github.com/keerthika1405/keesite/discussions" target="_top" ><i class='bx bx-comment '  style="font-size: 20px;"></i>Community</a>
+          
+        
+             <!-- <a href="#">About</a> -->
+             </div>
+            </div>
+            
+            
+            <div class="search-box">
+            <div class="row">
+              <form id="search"  method="post" >
+                 <input type="text" id="input-box" placeholder="search here" autocomplete="off">
+                 <button type="submit"><i class='bx bx-search bx-sm'  id="input-box"></i></button>
+            </div>
+        
+        
+            </form>
+                 <form id="css" action="explore.html" methode="get"></form>
+                 <form id="HTML" action="chrome.html" methode="get"></form>
+                 <form id="javascript" action="about.html" methode="get"></form>
+                   
+            <div class="result-box">     </div>      
+            </div>
+            
+        
+
+        
+            <!-- <div class="containerprofile" id="profileform">
+             
+              <form  onsubmit="; reset(); " >
+               
+        
+                <h3 >profile</h3>
+               <div class="profile_img">
+                <img src="profile.png" alt="" id="profile_img">
+                <label for="image-preview">upload</label>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="image-preview" name="image" class="file-input"  >
+               </div>
+        
+               
+                <h1 ><span style="color: rgb(123, 100, 100);"><i class="fa fa-user-circle"></i></span>    <script> document.write(localStorage.getItem("name"));</script></button></h1>
+                <h1><span style="color: rgb(123, 100, 100);"><i class="fa fa-envelope" ></i>   </span><script> document.write(localStorage.getItem("email"));</script></h1>
+               <h1><span style="color: rgb(123, 100, 100);"><i class="fa fa-home" ></i></span> <a href="about.html">Home</a></h1>
+               <h1><span style="color: rgb(123, 100, 100);"><i class="fa fa-bookmark"></i></span>  <a href="#features">Course</a></h1>
+               <h1><span onclick="logout()" >Logout</span></h1>
+               <button type="button" class="btn cancel" onclick="logincloseForm()"> close</button>
+            
+              </form>
+             
+            </div> -->
+        
+           
+        
+        
+           
+           
+            <div class="darkLight-searchBox">
+              <div class="dark-light">
+                  <i class='bx bx-moon moon'></i>
+                  <i class='bx bx-sun sun'></i>
+              </div>
+              </div>
+        
+            <div class="webname">
+            <h2>keesite</h2>
+            </div>
+            
+            </nav>
+   
+            <button class="open-button" onclick="openForm()"><i class='bx bx-question-mark'></i></button>
+            <div class="container" id="myForm">
+            <form  onsubmit="sendEmail(); reset(); " >
+            <h3>Let's Solve</h3>
+            <input type="text" id="name" placeholder="Your Name" autocomplete="off"  required>
+            <input type="email" id="email" placeholder="Your Email Id" autocomplete="off" required>
+            <input type="text" id="phone" placeholder="phone no" autocomplete="off" >
+            <textarea  id="message" name="" id="message" cols="30" rows="5" placeholder="Write Your Query Here We Will Reach You Soon ?"  required></textarea>
+            <button type="submit">send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+            </div> 
+
+
+            <div   class="bg" id="bgcontent">
+                <img  id="bg" class="image-container" src="bgimg7.avif" height="100px" width=" 100%" alt="">
+                <!-- <h1>welcome  <script> document.write(localStorage.getItem("name").toUpperCase());</script> </h1> -->
+            </div>
+
+
+
+            <div class="menu__wrapper"  id="wrapper">
+    
+              <div class="menu__bar">
+            
+                <nav class="navi">
+                   
+                  <div class="navigation hide">
+                  <ul>
+                    <li>
+                        <button type="button" class="btn cancel" onclick="nonview()">X</button>
+                    </li>
+                      <li>
+                        
+                          <button>
+                              DSA
+                            
+                            
+                                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                                  <path
+                                      d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                                  </path>
+                              </svg>
+                          </button>
+            
+            
+            
+            
+                          <div class="dropdown__wrapper">
+                              <div class="dropdown">
+                                  <ul class="list-items-with-description">
+                                      <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                        <path d="M15 12v-3" />
+                                    </svg>
+                                         
+            
+                                          <div class="item-title">
+                                              <h3>DSA</h3>
+                                              <p>Tree Roadmap of dsa</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                       <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                              stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                              stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                          </svg>
+                                         
+                                          <div class="item-title">
+                                              <h3>Infrastructure</h3>
+                                              <p>Always fast always online</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                        <path d="M4 12l8 4l8 -4" />
+                                        <path d="M4 16l8 4l8 -4" />
+                                    </svg>
+                                          <div class="item-title">
+                                              <h3>Next js</h3>
+                                              <p>The native Next.js platform</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                              <path d="M3.6 9h16.8" />
+                                              <path d="M3.6 15h16.8" />
+                                              <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                              <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Edge Functions</h3>
+                                              <p>Dynamic pages, static speed</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Analytics</h3>
+                                              <p>Real-time insights, peak performance</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                              <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                              <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Storage</h3>
+                                              <p>Serverless storage for frontend</p>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </li>
+            
+            
+            
+            
+            
+                      <li>
+                         <button>
+                              JAVA
+                              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                                  <path
+                                      d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                                  </path>
+                              </svg>
+                          </button>
+            
+            
+            
+            
+                          <div class="dropdown__wrapper">
+                              <div class="dropdown">
+                                  <ul class="list-items-with-description">
+                                      <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                        <path d="M4 12l8 4l8 -4" />
+                                        <path d="M4 16l8 4l8 -4" />
+                                    </svg>
+                                          
+                                          <div class="item-title">
+                                              <h3>Previews</h3>
+                                              <p>Zero config, more innovation</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                    </svg>
+                                          <div class="item-title">
+                                              <h3>Infrastructure</h3>
+                                              <p>Always fast always online</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg"
+                                              class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                              <path d="M15 12v-3" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Next js</h3>
+                                              <p>The native Next.js platform</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                              <path d="M3.6 9h16.8" />
+                                              <path d="M3.6 15h16.8" />
+                                              <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                              <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Edge Functions</h3>
+                                              <p>Dynamic pages, static speed</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Analytics</h3>
+                                              <p>Real-time insights, peak performance</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                              <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                              <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Storage</h3>
+                                              <p>Serverless storage for frontend</p>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <!-- <a href="#docs" title="Docs">
+                              Docs
+                          </a> -->
+                      </li>
+                      <li>
+                        <button>
+                          frontend
+                          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                              <path
+                                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                              </path>
+                          </svg>
+                      </button>
+            
+            
+            
+            
+                      <div class="dropdown__wrapper">
+                          <div class="dropdown">
+                              <ul class="list-items-with-description">
+                                  <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                    <path d="M4 12l8 4l8 -4" />
+                                    <path d="M4 16l8 4l8 -4" />
+                                </svg>
+                                      
+                                      <div class="item-title">
+                                          <h3>Previews</h3>
+                                          <p>Zero config, more innovation</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                </svg>
+                                      <div class="item-title">
+                                          <h3>Infrastructure</h3>
+                                          <p>Always fast always online</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                          <path d="M15 12v-3" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Next js</h3>
+                                          <p>The native Next.js platform</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                          <path d="M3.6 9h16.8" />
+                                          <path d="M3.6 15h16.8" />
+                                          <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                          <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Edge Functions</h3>
+                                          <p>Dynamic pages, static speed</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Analytics</h3>
+                                          <p>Real-time insights, peak performance</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                          <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                          <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Storage</h3>
+                                          <p>Serverless storage for 
+                                            </p>
+                                          </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                           </li> 
+                           <li>
+            
+                              <button>
+                              Database
+                              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                                  <path
+                                      d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                                  </path>
+                              </svg>
+                          </button>
+            
+            
+                        
+                         
+            
+                          <div class="dropdown__wrapper">
+                              <div class="dropdown">
+                                  <ul class="list-items-with-description">
+                                      <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                        <path d="M4 12l8 4l8 -4" />
+                                        <path d="M4 16l8 4l8 -4" />
+                                    </svg>
+                                          
+                                          <div class="item-title">
+                                              <h3>Previews</h3>
+                                              <p>Zero config, more innovation</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                    </svg>
+                                          <div class="item-title">
+                                              <h3>Infrastructure</h3>
+                                              <p>Always fast always online</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg"
+                                              class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                              <path d="M15 12v-3" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Next js</h3>
+                                              <p>The native Next.js platform</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                              <path d="M3.6 9h16.8" />
+                                              <path d="M3.6 15h16.8" />
+                                              <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                              <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Edge Functions</h3>
+                                              <p>Dynamic pages, static speed</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Analytics</h3>
+                                              <p>Real-time insights, peak performance</p>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                              stroke-linecap="round" stroke-linejoin="round">
+                                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                              <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                              <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                              <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                          </svg>
+                                          <div class="item-title">
+                                              <h3>Storage</h3>
+                                              <p>Serverless storage for frontend</p>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                       </li>
+                          <!-- <a href="#templates" title="Templates">
+                              font-end
+                          </a> -->
+                     
+            
+                      <li>
+                       
+                        <button>
+                          SDLC/Networking
+                          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                              <path
+                                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                              </path>
+                          </svg>
+                      </button>
+            
+            
+            
+            
+                      <div class="dropdown__wrapper">
+                          <div class="dropdown">
+                              <ul class="list-items-with-description">
+                                  <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                    <path d="M4 12l8 4l8 -4" />
+                                    <path d="M4 16l8 4l8 -4" />
+                                </svg>
+                                      
+                                      <div class="item-title">
+                                          <h3>Previews</h3>
+                                          <p>Zero config, more innovation</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                </svg>
+                                      <div class="item-title">
+                                          <h3>Infrastructure</h3>
+                                          <p>Always fast always online</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                          <path d="M15 12v-3" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Next js</h3>
+                                          <p>The native Next.js platform</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                          <path d="M3.6 9h16.8" />
+                                          <path d="M3.6 15h16.8" />
+                                          <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                          <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Edge Functions</h3>
+                                          <p>Dynamic pages, static speed</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Analytics</h3>
+                                          <p>Real-time insights, peak performance</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                          <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                          <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Storage</h3>
+                                          <p>Serverless storage for frontend</p>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+            
+                      </li>
+                      <li>
+                           
+                        <button>
+                          Git/Github
+                          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                              <path
+                                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                              </path>
+                          </svg>
+                      </button>
+            
+            
+            
+            
+                      <div class="dropdown__wrapper">
+                          <div class="dropdown">
+                              <ul class="list-items-with-description">
+                                  <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                    <path d="M4 12l8 4l8 -4" />
+                                    <path d="M4 16l8 4l8 -4" />
+                                </svg>
+                                      
+                                      <div class="item-title">
+                                          <h3>Previews</h3>
+                                          <p>Zero config, more innovation</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                </svg>
+                                      <div class="item-title">
+                                          <h3>Infrastructure</h3>
+                                          <p>Always fast always online</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                          <path d="M15 12v-3" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Next js</h3>
+                                          <p>The native Next.js platform</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                          <path d="M3.6 9h16.8" />
+                                          <path d="M3.6 15h16.8" />
+                                          <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                          <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Edge Functions</h3>
+                                          <p>Dynamic pages, static speed</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Analytics</h3>
+                                          <p>Real-time insights, peak performance</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                          <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                          <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Storage</h3>
+                                          <p>Serverless storage for frontend</p>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+            
+                      </li>
+                      <!-- <li>
+                        <button>
+                         Gallery
+                          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                              <path
+                                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                              </path>
+                          </svg>
+                      </button>
+            
+            
+            
+            
+                      <div class="dropdown__wrapper">
+                          <div class="dropdown">
+                              <ul class="list-items-with-description">
+                                  <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                                    <path d="M4 12l8 4l8 -4" />
+                                    <path d="M4 16l8 4l8 -4" />
+                                </svg>
+                                      
+                                      <div class="item-title">
+                                          <h3>Previews</h3>
+                                          <p>Zero config, more innovation</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                                </svg>
+                                      <div class="item-title">
+                                          <h3>Infrastructure</h3>
+                                          <p>Always fast always online</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                          <path d="M15 12v-3" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Next js</h3>
+                                          <p>The native Next.js platform</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                          <path d="M3.6 9h16.8" />
+                                          <path d="M3.6 15h16.8" />
+                                          <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                          <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Edge Functions</h3>
+                                          <p>Dynamic pages, static speed</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Analytics</h3>
+                                          <p>Real-time insights, peak performance</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                          stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                          <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                          <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                          <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                                      </svg>
+                                      <div class="item-title">
+                                          <h3>Storage</h3>
+                                          <p>Serverless storage for frontend</p>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                      </li> -->
+                      <!-- <li>
+                      <a href="#pricing" title="Pricing">
+                        Pricing
+                      </a>
+                      </li>
+                      <li>
+                        <a href="#pricing" title="Pricing">
+                          Pricing
+                        </a>
+                      </li> -->
+                  </ul>
+                </div>
+            
+              </nav>
+            </div>
+            </div>
+            
+            <div class="faq-container">
+
+
+                <details>
+                    <summary>
+                      <span class="faq-title"> 1. What is SQL?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content">
+                      SQL, or Structured Query Language, is a domain-specific language used for managing and manipulating relational databases. It provides a standardized way to interact with relational database management systems (RDBMS) and is widely used for tasks such as querying data, updating data, inserting data, and deleting data in a database. 
+                  <br><br>
+                  SQL, or Structured Query Language, is a domain-specific language used for managing and manipulating relational databases. It provides a standardized way to interact with relational database management systems (RDBMS) and is widely used for tasks such as querying data, updating data, inserting data, and deleting data in a database.
+                  <br><br>Chamberlin and Boyce's work aimed to create a universal language for database management.
+                  In 1979, the first official standard for SQL, SQL-79, was published by the American National Standards Institute (ANSI). This marked the beginning of SQL as a standardized language across different database systems. Subsequent versions, such as SQL-86, SQL-89, and SQL-92, continued to refine and expand the standard. <br>
+                  <br>
+                  Chamberlin and Boyce's work aimed to create a universal language for database management.
+                In 1979, the first official standard for SQL, SQL-79, was published by the American National Standards Institute (ANSI). This marked the beginning of SQL as a standardized language across different database systems. Subsequent versions, such as SQL-86, SQL-89, and SQL-92, continued to refine and expand the standard.</div>
+                
+                  
+                    </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">2. What are the different SQL data types?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content">
+                <h2>Integer</h2>
+                      <ul>
+                        <li>  INT (Integer)</li>
+                        <li>SMALLINT (Small Integer)</li>
+                        <li>BIGINT (Big Integer)</li>
+                        <li>DECIMAL or NUMERIC (Exact numeric with a specified precision and scale)</li>
+                        <li>FLOAT (Floating-point number)</li>
+                        <li>REAL (Single-precision floating-point number)</li>
+                        <li>DOUBLE or DOUBLE PRECISION (Double-precision floating-point number)</li>
+                      </ul> 
+                      <h2>Character</h2>
+                      <ul><li>
+                        CHAR(n) (Fixed-length character string)</li>
+                      <li>VARCHAR(n) or VARCHAR2(n) (Variable-length character string)</li>
+                      <li>TEXT (Variable-length character string, often used for large text )</li>
+                    </ul>
+                <h2>  Date and Time</h2>
+                <ul>
+                  <li>DATE (Date)</li>
+                  <li>TIME (Time of day)</li>
+                  <li>  DATETIME or TIMESTAMP (Date and time together)</li>
+                </ul>
+                
+                <h2>Boolean </h2>
+                <ul>
+                  <li>BOOLEAN or BOOL</li>
+                </ul>
+                <h2>Binary </h2>
+                <ul>
+                  <li>BLOB (Binary Large Object, used for storing large binary data)</li>
+                <li>BINARY(n) (Fixed-length binary string)</li>
+                <li>VARBINARY(n) (Variable-length binary string)</li>
+                </ul>
+                
+                <h2>Miscellaneous</h2>
+                <ul>
+                <li>ENUM (Enumeration of values)</li>
+                <li>SET (A set of values chosen from a predefined list)</li>
+                <li>JSON (JSON-formatted data)</li>
+                </ul>
+                <h2>Spatial </h2>
+                Some databases, particularly those that support spatial data, have types like POINT, LINESTRING, POLYGON for representing geometric and geographic data.
+                
+                
+                
+                
+                    </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 3. Explain the difference between SQL and NoSQL </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">4. How do you filter records using a WHERE clause?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 5. Write a query to retrieve all records from a table.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 6. What is the purpose of the GROUP BY clause?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">7. Define a JOIN in SQL.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 8. Differentiate between INNER JOIN and OUTER JOIN.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">9. What is the PRIMARY KEY? 19. How can you calculate the total number of records in a table?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 10. How can you avoid duplicate records in a query result?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">11. What are aggregate functions in SQL? Name a few examples.
+                    </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">12. Write a query to find the second highest salary from a table.
+                    </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">13. How can you fetch alternate records from a table?
+                    </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">14. How do you add a column to an existing table?
+                    </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">15. What is the purpose of the ORDER BY clause? 
+                    </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">16. Explain the concept of Indexing in SQL.
+                    </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">17. How do you retrieve unique values from a column using SQL?
+                    </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 18. What is the difference between UNION and UNION ALL?
+                    </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 19. How can you calculate the total number of records in a table?
+                    </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 20. Write a SQL query to find the nth maximum value in a column. 
+                    </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 21. Explain the concept of Normalization in SQL. 
+                  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">22. What is Denormalization?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content">  </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  23. Explain the different types of normalization forms.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content">
+                    </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 24. What are subqueries, and how are they different from JOINs? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content">  </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">25. Write a query to find all employees whose salary is above the average salary.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content">  </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">26. How can you update records in SQL?   </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"></div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">27. How can you delete records in SQL?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">28. Explain the purpose of the HAVING clause.   </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"></div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">29. What is the difference between a Temporary Table and a Table Variable?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                  <details>
+                    <summary>
+                      <span class="faq-title">30. Write a SQL query to fetch intersecting records of two tables.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 31. How do you implement transactions in SQL? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">32. Explain the ACID properties in SQL?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">33. How can you create an index in SQL?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                   
+                  <details>
+                    <summary>
+                      <span class="faq-title">34. What is a Self Join, and how can it be performed?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 35. Write a query to find all employees who have the same role.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 36. How can you find the duplicate records in a table? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 37. Explain the difference between CHAR and VARCHAR data types.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 38. How can you perform pattern matching in SQL?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 39. How can you optimize a SQL query?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  40. What are views in SQL? How do you create one?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  41. How does database indexing work?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 42. Explain the different types of database indexes.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">    43. What is a stored procedure in SQL? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 44. What is a trigger in SQL?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                 
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 45. Explain the concept of Cursors in SQL.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 46. How do you handle NULL values in SQL?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  47. Write a SQL query to rank employees based on their salary.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">   48. Explain Partitioning in SQL and its types.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">   49. Explain different types of SQL constraints. </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  50. How can you copy data from one table to another?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 51. What is the difference between a Clustered and a Non-Clustered Index?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 52. How can you handle errors in SQL stored procedures?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">   53. Write a query to perform a full outer join on two tables. </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  54. How can you fetch common records from two tables?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 55. Explain the process of database normalization withexamples.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                   
+                  <details>
+                    <summary>
+                      <span class="faq-title">  56. Write a query to get the department-wise count of employees. </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">   57. How can you optimize subqueries? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">   58. How do you manage transactions in a stored procedure? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">   59. What is Data Warehousing? How is it different from a Database? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 60. What is a Composite Key? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  61. How do you perform database tuning?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">   62. How do you resolve a deadlock? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 63. Explain how indexing improves query performance. </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 64. How do you manage and optimize large databases?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">65. What is the Query Execution Plan?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">   66. Explain database sharding and its benefits.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  67. How do you design a scalable database? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">    68. What is database replication? How is it implemented? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  69. How do you implement high availability in databases? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  70. What are the considerations for database migration?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">   71. How do you secure a database? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">72. What is a Database Management System (DBMS), and how does it differ from a Relational Database Management System (RDBMS)?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  73. How do you maintain database integrity?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 74. Explain the steps involved in designing a database.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 75. How do you manage database concurrency?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  76. Explain the concept of Distributed Databases.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 77. How do you recover data in SQL?   </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  78. Explain the concept of Two-phase commit in SQL. </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 79. How can you convert a string to a number in SQL? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 80. How can you prevent SQL injection? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 81. Discuss the optimization techniques for OLAP systems.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 82. How can you optimize the storage of a database?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 83. Explain the process of query compilation.   </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 84. How does the query optimizer decide the best way to runa query?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                
+                
+                
+                
+                
+                
+                92. How do you optimize a SQL query in a real-time environment?
+                  <details>
+                    <summary>
+                      <span class="faq-title">  85. How do you choose between indexing and partitioning a table?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 86. How do you optimize a database schema? </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">87. Explain the process of denormalization with examples.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">88. Discuss different ways to optimize a stored procedure.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">89. Explain the role of database caching.   </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">90. How do you manage database dependencies?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title"> 91. Discuss the steps to optimize a recursive SQL query.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">93. Discuss how to manage relationships in a database schema.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">94. How can you optimize database transactions?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">95. Explain how to design a database for a large-scale application.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">96. How do you optimize the speed of data retrieval in a database?   </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">97. Explain different SQL database architectures and their use cases.  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">98. How do you manage the scalability of a database?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">99. Discuss how to handle complex relationships in databases.   </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">100. How do you optimize the overall performance of a database system?  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                  <details>
+                    <summary>
+                      <span class="faq-title">  </span>
+                      <img src="plus.svg" class="expand-icon" alt="Plus">
+                    </summary>        
+                    <div class="faq-content"> </div>
+                  </details>
+                
+                
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <footer>
+                <div class="content">
+                  <div class="top">
+                    <div class="logo-details">
+                      <!-- <i class="fab fa-slack"></i> -->
+                      <span class="logo_name">Keesite</span>
+                    </div>
+                    <!-- <div class="media-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div> -->
+                  </div>
+                  <div class="link-boxes">
+                    <ul class="box">
+                      <li class="link_name">Accont</li>
+                      <li><a href="#">Profile</a></li>
+                      <li><a href="#">Todo list</a></li>
+                      <li><a href="#">Roadmap</a></li>
+                      <li><a href="#">feedback</a></li>
+                    </ul>
+                    <ul class="box">
+                      <li class="link_name">100 Q/A challenge</li>
+                      <li><a href="#">Python</a><a href="#"></a></li>
+                      <li><a href="#"> javascript</a></li>
+                      <li><a href="#"> java</a></li>
+                      <li><a href="#"> sql</a></li>
+                    </ul>
+                    <ul class="box">
+                      <li class="link_name">frontend</li>
+                      <li><a href="#">HTML</a></li>
+                      <li><a href="#">CSS </a></li>
+                      <li><a href="#">JAVASCRIPT </a></li>
+                      <!-- <li><a href="#">dsa</a></li>
+                      <li><a href="#">jjjj</a></li> -->
+                     
+                    </ul>
+                    <ul class="box">
+                      <li class="link_name">courses</li>
+                      <li><a href="#">DSA(java and python)</a></li>
+                      <li><a href="#">github</a></li>
+                      <li><a href="#">Database</a></li>
+                      <li><a href="#">Machine Learning</a></li>
+                    </ul>
+                    <!-- <ul class="box input-box">
+                      <li class="link_name">Subscribe</li>
+                      <li><input type="text" placeholder="Enter your email"></li>
+                      <li><input type="button" value="Subscribe"></li>
+                    </ul> -->
+                  </div>
+                </div>
+                <div class="bottom-details">
+                  <div class="bottom_text">
+                     <span class="copyright_text">copyright @ keesite 2023  </span><!-- <a href="#">CodingLab.</a>All rights reserved-->
+                    <span class="policy_terms">
+                      <span>&#128187 keesitelearn@gmail.com</span>
+                      <!-- <a href="#">Privacy policy</a>
+                      <a href="#">Terms & condition</a> -->
+                    </span>
+                  </div>
+                </div>
+              </footer>    
+            
+
+              <script src="accordion.js"></script>
+    <script>
+        const canvas = document.getElementById('Canvas');
+        const ctx = canvas.getContext('2d');
+        // ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+        const cubeWidth = 26;
+        const cubeHeight =20;
+        const cubeDepth = 20;
+      
+        // Set cube position
+        const cubeX = (canvas.width - cubeWidth) / 2;
+        const cubeY = (canvas.height - cubeHeight) / 2;
+      
+        
+        function drawCube() {
+      
+          ctx.beginPath();// Front face
+          ctx.moveTo(cubeX, cubeY);
+          ctx.lineTo(cubeX + cubeWidth, cubeY);
+          ctx.lineTo(cubeX + cubeWidth, cubeY + cubeHeight);
+          ctx.lineTo(cubeX, cubeY + cubeHeight);
+          ctx.closePath();
+          ctx.fillStyle = '#8d8f84';
+          ctx.fill();
+      
+      
+          ctx.beginPath();//top face
+          ctx.moveTo(cubeX, cubeY);
+          ctx.lineTo(cubeX + cubeWidth / 2, cubeY - cubeDepth / 2);
+          ctx.lineTo(cubeX + cubeWidth / 2 + cubeWidth, cubeY - cubeDepth / 2);
+          ctx.lineTo(cubeX + cubeWidth, cubeY);
+          ctx.closePath();
+          ctx.fillStyle = 'white';
+          ctx.fill();
+      
+         
+          ctx.beginPath();//side face
+          ctx.moveTo(cubeX + cubeWidth, cubeY);
+          ctx.lineTo(cubeX + cubeWidth / 2 + cubeWidth, cubeY - cubeDepth / 2);
+          ctx.lineTo(cubeX + cubeWidth / 2 + cubeWidth, cubeY + cubeHeight - cubeDepth / 2);
+          ctx.lineTo(cubeX + cubeWidth, cubeY + cubeHeight);
+          ctx.closePath();
+          ctx.fillStyle = '#8d8f84';
+          ctx.fill();
+        }
+      
+        setTimeout( function() {
+      
+          ctx.fillStyle = '#f54500';
+          ctx.font = '10px FontAwesome';  
+          ctx.fillText("\uf084",25,9);
+        },1000);
+        drawCube();
+      
+      
+      </script> 
+
+<script>
+    function openForm() {
+  document.getElementById("myForm").style.display = "block";
+  
+  }
+  function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  }
+  </script>  
+
+
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+const submit=document.getElementsByClassName('container')[0];
+
+submit.addEventListener('submit',(e)=>
+{
+    e.preventDefault();
+
+// console.log(fname.value);
+// console.log(fphone.value);
+// console.log(fmessage.value);
+
+console.log("clicked");
+})
+
+ function sendEmail(){
+
+const fname=document.getElementById('name');
+console.log(name);
+const femail=document.getElementById('email');
+const fphone=document.getElementById('phone');
+const fmessage=document.getElementById('message');
+
+let ebody= ` 
+<b>Name: </b>${fname.value}<br>
+<b>Email: </b>${femail.value}<br>
+<b>phone NO: </b>${fphone.value}<br>
+<b>query:</b> ${fmessage.value} `
+
+            Email.send({
+                Host:"smtp.elasticemail.com",
+                Username:"keerthikaravi1405@gmail.com",
+                Password: "882FE9E23494C1F767E8347592F3DBBA1364",
+                To:'keesitelearn@gmail.com',
+                From:document.getElementById('email').value,
+                Subject:"New Contact Form Enquiry" + email.value,
+                Body: ebody
+            }).then(
+                message => alert("your query send successfully")
+            );
+           
+
+        };
+    </script> 
+
+
+<script>
+
+  const body = document.querySelector("body"),
+        nav = document.querySelector("nav"),
+        modeToggle = document.querySelector(".dark-light");
+        // imageContainer = document.querySelector(".image-container");
+  
+        let getMode = localStorage.getItem("mode");
+            if(getMode && getMode === "dark-mode"){
+              body.classList.add("dark");
+            //   updateImage("dark");
+            }
+  
+  
+       modeToggle.addEventListener("click" , () =>{
+          modeToggle.classList.toggle("active");
+          body.classList.toggle("dark");
+          // js code to keep user selected mode even page refresh or file reopen
+
+          if(!body.classList.contains("dark")){
+              localStorage.setItem("mode" , "light-mode");
+            //   updateImage("light");
+
+          }
+          else{
+              localStorage.setItem("mode" , "dark-mode");
+            //   updateImage("dark");
+          }
+        });
+
+//         function updateImage(mode) {
+  
+//     const lightImagePath = "river.gif";
+//     const darkImagePath = "night.gif";
+
+ 
+//     imageContainer.src = mode === "dark" ? darkImagePath : lightImagePath;
+//   }
+    </script>
+<script>
+  function view() {
+document.getElementById("wrapper").style.display = "block";
+
+}
+function nonview() {
+document.getElementById("wrapper").style.display = "none";
+}
+</script>  
+
+<!-- <script>
+      
+  document.addEventListener("scroll", function () {
+    var threshold = 50;
+
+    // document.getElementById("test").innerHTML = window.scrollY; //show the count
+    
+    var sidebar = document.getElementById("navbar");
+    var content = document.getElementById("bgcontent");
+
+    if (window.scrollY >= threshold) {
+      sidebar.classList.add("fixed");
+    } 
+    else {
+      sidebar.classList.remove("fixed");
+    }
+
+    var check = content.offsetHeight - sidebar.offsetHeight - 21;
+    console.log(check);//679
+
+    if (window.scrollY >= check) {
+      sidebar.classList.add("bottom");
+    } else {
+      sidebar.classList.remove("bottom");
+    }
+  });
+</script> -->
+</body>
+</html>
