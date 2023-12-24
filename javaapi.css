@@ -724,7 +724,10 @@ body {
   color: rgb(162, 138, 138)
 }
 .string h1{
-  color: rgb(33, 150, 4) ;
+
+  color: rgb(69, 227, 16);
+  width: fit-content;
+  margin-top: 50px;
 }
 
 pre{
@@ -832,3 +835,6 @@ pre code::-webkit-scrollbar {
  } 
  pre > button:active, pre > button:focus { opacity: 1;transition: all 1s ease-out;
  }
+
+
+ 
