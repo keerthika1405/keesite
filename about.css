@@ -1237,13 +1237,7 @@ font-size: 20px;
     line-height: 1;
   }
   
-  details {
-    color: #333;
-    background: #fffefe;
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-  }
+
   
 
   summary::-webkit-details-marker {
@@ -1296,7 +1290,8 @@ font-size: 20px;
     margin: -.5em 0 0 0;
     padding: 0 0 1em 0;
     width: 25em;
-    border: 1px solid black;
+  color: white;
+  font-weight: bolder;
 
   }
   
@@ -1308,8 +1303,10 @@ font-size: 20px;
 
 
   #Confirm {
-    background-color: #31A677;
+    background-color: #374218;
     color: #000;
+    font-weight: bolder;
+    
   }
   
   #Confirm summary {
@@ -1372,20 +1369,28 @@ font-size: 20px;
 
 
 
-  @media (max-width:1024px) {
+  @media (min-width:1024px) {
     div#Wrap {
    
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 10 / 9;
       display: grid;
       align-items: center;
       align-content: center;
       gap: 0;
-      width: 50em;
+      width: 800px;
       margin: 0 auto;
       overflow: hidden;
       margin-top: 100px;
       margin-left: 300px;
-  
+
+    }
+    details {
+
+      color: #333;
+      background: #c33333;
+      margin: 0;
+      padding: 0;
+      font-size: 100%;
     }
   }
 
@@ -1450,3 +1455,61 @@ font-size: 20px;
   }
   
   
+
+
+  /*bottom to top*/
+@media (min-width: 1024px) {
+  #myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+   /* Place the button at the bottom of the page */
+    right: 20px; 
+    bottom: 50px;
+  /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color:#8d67cf; /* Set a background color */
+    color: rgb(0, 0, 0); /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+  width: 30px;/* Some padding */
+  height: 30px;
+  padding: 2px 2px;
+    border-radius: 50%; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    
+    background-color: rgb(14, 223, 150); /* Add a dark-grey background on hover */
+  }
+  }
+  
+  
+  
+  
+  @media (max-width: 767px) {
+    #myBtn {
+      bottom:40px;
+      display: none; /* Hidden by default */
+      position: fixed; /* Fixed/sticky position */
+      /* Place the button at the bottom of the page */
+      right: 20px; 
+    /* Place the button 30px from the right */
+      z-index: 99; /* Make sure it does not overlap */
+      border: none; /* Remove borders */
+      outline: none; /* Remove outline */
+      background-color: #8d67cf; /* Set a background color */
+      color: rgb(0, 0, 0); /* Text color */
+      cursor: pointer; /* Add a mouse pointer on hover */
+    width: 30px;/* Some padding */
+    height: 30px;
+    padding: 2px 2px;
+      border-radius: 50%; /* Rounded corners */
+      font-size: 18px; /* Increase font size */
+    }
+    
+    #myBtn:hover {
+      background-color: rgb(14, 223, 150); /* Add a dark-grey background on hover */
+    }
+  }

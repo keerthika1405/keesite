@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA</title>
+    <link rel="stylesheet" href="dsa.css">
+    <link rel="stylesheet" href="treestructure.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+      .hamburger-menu{
+       padding-right: 1.5rem;
+       cursor: pointer;
+     }
+     .hamburger-menu .line{
+     display: block; 
+     width:25px;
+     height: 20px; 
+     margin-top: -25px;
+     margin-left: 60px;
+     color: rgb(80, 80, 80);
+     cursor: pointer;
+     }
+     .nav-menu{
+       position: fixed;
+       width: 34%;
+       top: 50px;
+       left: 50px;
+       background-color: rgb(255, 255, 255);
+       font-weight: 600;
+     
+     }
+     .nav-menu a{
+       font-size: 15px;
+       color: rgb(255, 255, 255);
+       text-decoration: none;
+       display: block;
+       text-align: center;
+       padding: 20px 0;
+     }
+
+     .hide{
+       display: none;
+     }
+
+         /* for Desktop view */
+         @media screen and (min-width:600px){
+           .navbar{
+             justify-content: space-around;
+           }
+           .nav-menu{
+             width: 60%;
+             display: block;
+             position: static;
+             margin-top: -25px;
+             margin-left: 70px;
+            
+             background: none;
+           }
+           .nav-menu a{
+             display: inline-block;
+           padding: 0px 10px;
+           
+             /* padding: -px 20px; */
+           
+           }
+       
+           .hamburger-menu{
+             display: none;
+           }
+         }
+         
+  </style>
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10.1.0/swiper-bundle.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">  
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body id="mode">
+  
+  <nav class="navbar">
+    <div class="content-area">
+       <button  class="content-area1" onclick="openNav()" style="font-size:20px;cursor:pointer"><i class="fa fa-navicon" style="color: black;"></i></button>
+  
+   <div class="dropdown-content" id="myDropdown">
+     <a href="#">Link 1</a>
+     <a href="#">Link 2</a>
+     <a href="#">Link 3 &emsp;&emsp;&emsp;&emsp; <button class="content-area2" onclick="openNavy()" >&#62;</button>
+     <div class="dropdown-content1" id="myDropdown1" >
+       <a href="#">python</a>
+       <a href="#">java</a> </div>
+     </a>
+     <a href="#">Link 2</a>
+   </div>
+
+   <div class="hamburger-menu">
+     <span class="line">Menu</span><!--☰-->
+   </div> 
+   <div class="nav-menu hide">
+ <a href="https://github.com/keerthika1405" target="_top" >   <i class='bx bxl-github ' name='github' type="logo"  style="font-size: 20px;"></i> Github</a>
+    <a href="https://github.com/keerthika1405/keesite/discussions" target="_top" ><i class='bx bx-comment '  style="font-size: 20px;"></i>Community</a>
+  
+    <!-- <a href="#">About</a> -->
+ </div>
+</div>
+
+
+<div class="search-box">
+<div class="row">
+  <form id="search"  method="post" >
+     <input type="text" id="input-box" placeholder="search here" autocomplete="off">
+     <button type="submit"><i class='bx bx-search bx-sm'  id="input-box"></i></button>
+</div>
+</form>
+     <form id="css" action="explore.html" methode="get"></form>
+     <form id="HTML" action="chrome.html" methode="get"></form>
+     <form id="javascript" action="about.html" methode="get"></form>
+       
+<div class="result-box">    
+</div>      
+</div>
+
+<button class="open-button" onclick="openForm()"><i class='bx bx-question-mark'></i></button>
+<div class="container" id="myForm">
+<form  onsubmit="sendEmail(); reset();">
+<h3>Let's Solve</h3>
+<input type="text" id="name" placeholder="Your Name" autocomplete="off"  required>
+<input type="email" id="email" placeholder="Your Email Id" autocomplete="off" required>
+<input type="text" id="phone" placeholder="phone no" autocomplete="off">
+<textarea  id="message" name="" id="message" cols="30" rows="5" placeholder="Write Your Query Here We Will Reach You Soon ?"  required></textarea>
+<button type="submit">send</button>
+<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+</form>
+</div> 
+
+
+<div class="webname">
+<h2>keesite</h2>
+</div>
+
+</nav>
+
+
+
+ 
+<div class="dsa">
+<div class="heading">
+  <h2>Data Structure And Algorithms (JAVA)</h2>
+</div>
+
+
+
+<div class="tree-box box-border">
+
+  <ul class="trees">
+    <li  class="has-child">
+      <input id="tree-controll1" type="checkbox" checked><span class="tree-control"></span>
+      <label>
+        <input type="checkbox" /> <i class="fa fa-tasks orange"   style="color:rgb(255, 8, 8)"></i> Introduction
+      </label>
+      <ul>
+
+        <li class="has-child">
+          <input type="checkbox" checked ><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Why DSA
+          </label>
+        
+        </li>
+        <li class="has-child">
+          <input type="checkbox" checked ><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Prons and cons
+          </label>
+        
+        </li>
+
+
+      </ul>
+    </li>
+<!--head2-->
+    <li  class="has-child">
+      <input id="tree-controll5" type="checkbox" checked><span class="tree-control"></span>
+      <label>
+        <input type="checkbox" /> <i class="fa fa-tasks orange"   style="color:rgb(255, 8, 8)"></i> Linear Data Structure
+      </label>
+      <ul>
+<!--array-->
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"   style="color:rgb(10, 192, 19)"></i>Array
+          </label>
+          <ul>
+            <li>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>One Dimensional
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox" id="myCheck" onclick="myFunction()"  />
+                <i class="fa fa-tasks orange"    style="color:rgb(204, 201, 32)"></i>Multi Dimensional
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Suffix Dimensional
+              </label>
+            </li>
+          </ul>
+        </li>
+<!--linkedlist-->
+        <li class="has-child">
+          <input type="checkbox" checked ><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i> LinkedList
+          </label>
+          <ul>
+            <li>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Single 
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"  style="color:rgb(204, 201, 32)"></i>Double
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Circular
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Double-Circular
+              </label>
+            </li>
+            
+            
+          </ul>
+        </li>
+<!--stack-->
+        <li class="has-child">
+          <input type="checkbox" checked ><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i> Stack
+          </label>
+        
+        </li>
+<!--queue-->
+        <li class="has-child">
+          <input type="checkbox" ><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Queue
+          </label>
+        
+        </li>
+<!--matrix-->
+<li class="has-child">
+  <input type="checkbox" checked><span class="tree-control"></span>
+  <label>
+    <input type="checkbox" />
+    <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Matrix
+  </label>
+  <ul>
+    <li>
+      <label>
+        <input type="checkbox" />
+        <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Two Dimensional 
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" />
+        <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Multi Dimensional 
+      </label>
+    </li>
+    </ul>
+</li>
+      </ul>
+    </li>
+
+    <li  class="has-child">
+      <input id="tree-controll5" type="checkbox" checked><span class="tree-control"></span>
+      <label>
+        <input type="checkbox" /> <i class="fa fa-tasks orange"   style="color:rgb(255, 8, 8)"></i> Pattern Problem
+      </label>
+      </li>
+
+</ul>
+</div>
+
+
+<!--non linear-->
+
+<div class="tree-box1 box-border">
+
+  <ul class="trees1">
+    <li class="has-child">
+      <input id="tree-controll2" type="checkbox" checked><span class="tree-control"></span>
+      <label>
+        <input type="checkbox" /><i class="fa fa-tasks orange"   style="color:rgb(255, 8, 8)"></i> Non Linear Data Structure
+      </label>
+      <ul>
+
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i> Graph
+          </label>
+         
+        </li>
+
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Tree
+          </label>
+          <ul>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Binary Tree
+  </label>
+         <ul>
+<li>  
+  <label>
+  <input type="checkbox" />
+  <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i> Strict Tree
+</label>
+          </li>
+<li>  <label>
+  <input type="checkbox" />
+  <i class="fa fa-tasks orange" style="color:rgb(223, 3, 150)"></i> CompleteTree
+</label>
+          </li>
+<li>  <label>
+  <input type="checkbox"/>
+  <i class="fa fa-tasks orange" style="color:rgb(223, 3, 150)"></i>degeneratetree
+</label>
+          </li>
+            <li>  <label>
+                          <input type="checkbox" />
+                          <i class="fa fa-tasks orange"   style="color:rgb(223, 3, 150)"></i>perfectTree
+                        </label>
+                      </li>
+                      <li>  <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>N-aryTree
+                      </label>
+                    </li>
+                        </ul>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>BinarySearchTree
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"    style="color:rgb(204, 201, 32)"></i> AVLorBalanceBST
+              </label>
+            </li>
+            
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"    style="color:rgb(204, 201, 32)"></i>SearchTree
+              </label>
+              <ul>
+                <li>  
+                  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i> 2,3 Tree
+                </label>
+              </li>
+                <li>  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange" style="color:rgb(223, 3, 150)"></i>2,3,4 Tree
+                </label>
+              </li>
+                <li>  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange" style="color:rgb(223, 3, 150)"></i>B Tree
+                </label>
+              </li>
+                <li>  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange"   style="color:rgb(223, 3, 150)"></i>Red Black Tree
+                </label>
+              </li>
+          </ul>
+        </li>      
+          </ul>
+        </li>
+
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i> Heap
+          </label>
+          <ul>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Min Heap
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Max Heap
+              </label>
+            </li>
+            </ul>
+         
+        </li>
+
+
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i> Trie
+          </label>
+          <ul>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Standard Trie
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>CompressedTrie
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Suffix Trie
+              </label>
+            </li>
+            </ul>
+         
+        </li>
+      </ul>
+    </li>
+
+</ul>
+</div>
+
+
+
+    <!--java API-->
+
+    
+<div class="tree-box2 box-border">
+
+  <ul class="trees2">
+    <li  class="has-child">
+      <input id="tree-controll3" type="checkbox" checked><span class="tree-control"></span>
+      <label>
+        <input type="checkbox" /> <i class="fa fa-tasks orange"   style="color:rgb(255, 8, 8)"></i>JAVA APIs
+      </label>
+      <ul>
+
+        <li class="has-child">
+          <input type="checkbox" checked ><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>String
+          </label>
+        
+        </li>
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Collection
+          </label>
+          <ul>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"    style="color:rgb(204, 201, 32)"></i>List
+              </label>
+              <ul>
+                <li>  
+                  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>Arraylist
+                </label>
+              </li>
+                <li>  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange" style="color:rgb(223, 3, 150)"></i>LinkedList
+                </label>
+              </li>
+                <li>  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange" style="color:rgb(223, 3, 150)"></i>Stack
+                </label>
+              </li>
+                <li>  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange"   style="color:rgb(223, 3, 150)"></i>Vector
+                </label>
+              </li>
+          </ul>
+        </li>
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"    style="color:rgb(204, 201, 32)"></i>Queue
+          </label>
+          <ul>
+            <li>  
+              <label>
+              <input type="checkbox" />
+              <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>PriorityQueue
+            </label>
+          </li>
+            <li>  <label>
+              <input type="checkbox" />
+              <i class="fa fa-tasks orange" style="color:rgb(223, 3, 150)"></i>Dequeue
+            </label>
+          </li>
+    
+      </ul>
+    </li>  
+    <li class="has-child">
+      <input type="checkbox" checked><span class="tree-control"></span>
+      <label>
+        <input type="checkbox" />
+        <i class="fa fa-tasks orange"    style="color:rgb(204, 201, 32)"></i>Set
+      </label>
+      <ul>
+        <li>  
+          <label>
+          <input type="checkbox" />
+          <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>HashSet
+        </label>
+      </li>
+      <li>  
+        <label>
+        <input type="checkbox" />
+        <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>linkedhashset
+      </label>
+    </li>
+        <li>  <label>
+          <input type="checkbox" />
+          <i class="fa fa-tasks orange" style="color:rgb(223, 3, 150)"></i>TreeSet
+        </label>
+      </li>
+
+       </ul>
+    </li>  
+  </ul>
+</li>
+  <li class="has-child">
+    <input type="checkbox" checked><span class="tree-control"></span>
+    <label>
+      <input type="checkbox" />
+      <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Map
+    </label>
+    <ul>
+      <li class="has-child">
+        <input type="checkbox" checked><span class="tree-control"></span>
+        <label>
+          <input type="checkbox" />
+          <i class="fa fa-tasks orange"    style="color:rgb(204, 201, 32)"></i> HashMap
+        </label>
+      </li>
+      <li class="has-child">
+        <input type="checkbox" checked><span class="tree-control"></span>
+        <label>
+          <input type="checkbox" />
+          <i class="fa fa-tasks orange"    style="color:rgb(204, 201, 32)"></i>LinkedHashMap
+        </label>
+      </li>
+      <li class="has-child">
+        <input type="checkbox" checked><span class="tree-control"></span>
+        <label>
+          <input type="checkbox" />
+          <i class="fa fa-tasks orange"    style="color:rgb(204, 201, 32)"></i>TreeMap
+        </label>
+      </li>
+    </ul> 
+  </li>
+  <li class="has-child">
+    <input type="checkbox" checked><span class="tree-control"></span>
+    <label>
+      <input type="checkbox" />
+      <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Dictionary
+    </label>
+    <ul>
+      <li class="has-child">
+        <input type="checkbox" checked><span class="tree-control"></span>
+        <label>
+          <input type="checkbox" />
+          <i class="fa fa-tasks orange"    style="color:rgb(204, 201, 32)"></i>HashTable
+        </label>
+      </li>
+      
+     
+    </ul> 
+  </li>
+      </ul>
+    </li>
+
+    </ul>
+</div>
+
+    
+<!--head5-->
+
+
+<div class="tree-box3 box-border">
+
+  <ul class="trees3">
+    <li  class="has-child">
+      <input id="tree-controll4" type="checkbox" checked><span class="tree-control"></span>
+      <label>
+        <input type="checkbox" /> <i class="fa fa-tasks orange"   style="color:rgb(255, 8, 8)"></i> Algorithms
+      </label>
+      <ul>
+
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Sorting
+          </label>
+          <ul>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Bubble Sort
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Insertion Sort
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Selection Sort
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Merge Sort
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Quick Sort
+              </label>
+            </li>
+            <!-- <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Heap Sort
+              </label>
+            </li> -->
+            </ul>
+        </li>
+
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Searching
+          </label>
+        <ul>
+            <li class="has-child">
+              <input type="checkbox" ><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Linear Search Algorithms
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Binary Search Algorithms
+              </label>
+            </li>
+            </ul>
+        </li>
+
+
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Optimization
+          </label>
+        
+        <ul>
+            <li class="has-child">
+              <input type="checkbox" ><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Dynamic Programming Algorithms
+              </label>
+              <ul>
+              
+                    <li>  
+                      <label>
+                      <input type="checkbox" />
+                      <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i> Top Down Approache
+                    </label>
+                  </li>
+                  <li>  
+                    <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i> Bottom Up Approache
+                  </label>
+                </li>
+           </ul>
+
+          </li>
+
+         <li class="has-child">
+              <input type="checkbox" ><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Greedy Algorithms
+              </label>
+              <ul>
+                        <li>  
+                          <label>
+                          <input type="checkbox" />
+                          <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i> Ford-Fulkerson Algorithms
+                        </label>
+                      </li>
+                      <li>  
+                        <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i> Dijkstra's Algorithms
+                      </label>
+                    </li>
+                    <li>  
+                      <label>
+                      <input type="checkbox" />
+                      <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>Kruskal Algorithms 
+                    </label>
+                  </li>
+                  <li>  
+                    <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>  Prim's Algorithms
+                  </label>
+                </li>
+                <li>  
+                  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i> Huffman Code Algorithms
+                </label>
+              </li>
+    
+           </ul>
+        </li>
+
+</ul>
+</li>
+
+
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Pattern Searching
+          </label>
+        <ul>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Brute Force Algorithms
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Rabin Karp Algorithms 
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Knuth Morris Pratt(KMP) Algorithms
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Boyer Moore Algorithms
+              </label>
+            </li>
+            </ul>
+        </li>
+
+
+
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Methods
+          </label>
+        <ul>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Divide And Conquer Algorithms
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Branch And Bound Algorithms
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Randomized Algorithms
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> BrackTracking Algorithms
+              </label>
+              <ul>
+                <li>  
+                  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i> Recursive BrackTracking
+                </label>
+              </li>
+              <li>  
+                <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>Non Recursive BrackTracking
+              </label>
+            </li>
+            </ul>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Linear Time Sorting
+              </label>
+              <ul>
+                <li>  
+                  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i> Counting Sort
+                </label>
+              </li>
+              <li>  
+                <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>Radix Sort
+              </label>
+            </li>
+            <li>  
+              <label>
+              <input type="checkbox" />
+              <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>Bucket Sort
+            </label>
+          </li>
+            </ul>
+            </li>
+            </ul>
+        </li>
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Recursion
+          </label>
+          <ul>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Directed and NonDirected
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Nested and NonNested
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Tail and NonTail
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Linear and Tree 
+              </label>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Excessive
+              </label>
+            </li>
+            </ul>
+        </li>
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Graph
+          </label>
+        <ul>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Graph Traversal
+              </label>
+              <ul>
+                <li>  
+                  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>Breadth First Search
+                </label>
+              </li>
+              <li>  
+                <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>Depth First Search
+              </label>
+            </li>
+            <li>  
+              <label>
+              <input type="checkbox" />
+              <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>BiDirectional Search
+            </label>
+          </li>
+            </ul>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i>Shortest Path
+              </label>
+              <ul>
+                <li>  
+                  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>Dijkstra Algorithms
+                </label>
+              </li>
+              <li>  
+                <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>Bellman Ford Algorithms
+              </label>
+            </li>
+            </ul>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> undirected
+              </label>
+              <ul>
+                <li>  
+                  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>Minimum Spaning Tree
+                 </label>
+              </li>
+              </ul>
+            </li>
+            <li class="has-child">
+              <input type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Directed
+              </label>
+              <ul>
+                <li>  
+                  <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-tasks orange"  style="color:rgb(223, 3, 150)"></i>Topological Sorting
+                 </label>
+              </li>
+              </ul>
+            </li>
+            </ul>
+        </li>
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Bitwise ,Number And Mathematical
+          </label>
+        </li>
+        <li class="has-child">
+          <input type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-tasks orange"  style="color:rgb(10, 192, 19)"></i>Asymptotic Analysis
+          </label>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+</div>
+
+</div>
+
+<!-- <div class =sort>
+  <div class="sortintro">
+
+  </div>
+  
+  <div class="Container">
+    <nav>
+      <div class="current"></div>
+      <a href="#one" class="active">Ruby</a>
+      <a href="#two">Python</a>
+       <a href="#three">Node</a>
+      <a href="#four">Go</a>  
+    </nav>
+
+<div class="Contents">
+
+<div class="Content" id="one">
+<pre><code>
+require "stripe" 
+        Stripe.api_key = "..."
+  
+  Stripe::Charge.create(
+    :amount => 2000,
+    :currency => "eur",
+    :source => "tok_mastercard", # obtained with Stripe.js
+    :description => "Charge for hello@thomascullen.io"
+  )
+</code></pre>
+</div>
+
+<div class="Content" id="two">
+<pre class="python"><code>
+import stripe
+  stripe.api_key = "..."
+  
+  stripe.Charge.create(
+    amount=2000,
+    currency="eur",
+    source="tok_amex", # obtained with Stripe.js
+    description="Charge for madison.wilson@example.com"
+  )
+</pre></code>
+</div> -->
+
+
+
+<!-- 
+</div>
+</div>
+</div> -->
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt bx-sm' style='color:#ffffff'  ></i></button>
+
+
+
+
+<footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <!-- <i class="fab fa-slack"></i> -->
+          <span class="logo_name">Keesite</span>
+        </div>
+        <!-- <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div> -->
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Accont</li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Todo list</a></li>
+          <li><a href="#">Roadmap</a></li>
+          <li><a href="#">feedback</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">100 Q/A challenge</li>
+          <li><a href="#">Python</a><a href="#"></a></li>
+          <li><a href="#"> javascript</a></li>
+          <li><a href="#"> java</a></li>
+          <li><a href="#"> sql</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">frontend</li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS </a></li>
+          <li><a href="#">JAVASCRIPT </a></li>
+          <!-- <li><a href="#">dsa</a></li>
+          <li><a href="#">jjjj</a></li> -->
+         
+        </ul>
+        <ul class="box">
+          <li class="link_name">courses</li>
+          <li><a href="#">DSA(java and python)</a></li>
+          <li><a href="#">github</a></li>
+          <li><a href="#">Database</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+        <!-- <ul class="box input-box">
+          <li class="link_name">Subscribe</li>
+          <li><input type="text" placeholder="Enter your email"></li>
+          <li><input type="button" value="Subscribe"></li>
+        </ul> -->
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+         <span class="copyright_text">@ keesite 2023  </span><!-- <a href="#">CodingLab.</a>All rights reserved-->
+        <span class="policy_terms">
+          <span>&#128187 keesitelearn@gmail.com</span>
+          <!-- <a href="#">Privacy policy</a>
+          <a href="#">Terms & condition</a> -->
+        </span>
+      </div>
+    </div>
+  </footer>    
+
+<script src="homepage.js"></script>
+
+
+
+
+
+<script>
+  const hamburger = document.querySelector('.hamburger-menu');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('hide');
+  });
+</script>
+
+<script>     
+  function openNav() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(e) {
+    if (!e.target.matches('.content-area1')) {    
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+    }
+  }
+  </script>
+
+
+  <script>
+    function openNavy() {
+      document.getElementById("myDropdown1").classList.toggle("show1");
+    }
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.content-area2')) {    
+      var myDropdown = document.getElementById("myDropdown1");
+        if (myDropdown.classList.contains('show1')) {
+          myDropdown.classList.remove('show1');
+        }
+      }
+    }
+    </script>
+   
+
+   <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+   <script>
+   const submit=document.getElementsByClassName('container')[0];
+   
+   submit.addEventListener('submit',(e)=>
+   {
+       e.preventDefault();
+   
+   // console.log(fname.value);
+   // console.log(fphone.value);
+   // console.log(fmessage.value);
+   
+   console.log("clicked");
+   })
+   
+    function sendEmail(){
+   
+   const fname=document.getElementById('name');
+   const femail=document.getElementById('email');
+   const fphone=document.getElementById('phone');
+   const fmessage=document.getElementById('message');
+   
+   let ebody= ` 
+   <b>Name: </b>${fname.value} <br>
+   <b>Email: </b>${femail.value}<br>
+   <b>phone NO: </b>${fphone.value}<br>
+   <b>query:</b> ${fmessage.value} `
+   
+               Email.send({
+                   Host:"smtp.elasticemail.com",
+                   Username:"keerthikaravi1405@gmail.com",
+                   Password: "882FE9E23494C1F767E8347592F3DBBA1364",
+                   To:'keesitelearn@gmail.com',
+                   From:document.getElementById('email').value,
+                   Subject:"New Contact Form Enquiry" + email.value,
+                   Body: ebody
+               }).then(
+                   message => alert("your query send successfully")
+               );
+           };
+       </script> 
+   
+   <script>
+     function openForm() {
+   document.getElementById("myForm").style.display = "block";
+   
+   }
+   function closeForm() {
+   document.getElementById("myForm").style.display = "none";
+   }
+   </script> 
+   <script>
+    function loginopenForm() {
+ document.getElementById('loginform').style.display = 'block';
+  
+  }
+
+  function logincloseForm() {
+  document.getElementById("loginform").style.display = "none";
+  }
+  </script>  
+  <script src="login.js"></script>
+
+<script>
+    function openNav() {
+      document.getElementById("myDropdown").classList.toggle("show");  
+    }
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.content-area1')) {    
+      var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+          myDropdown.classList.remove('show');        
+        }
+      }
+    }
+    </script>
+
+<script>
+       
+    function openNavy() {
+      document.getElementById("myDropdown1").classList.toggle("show1");
+     
+    }
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.content-area2')) {    
+      var myDropdown = document.getElementById("myDropdown1");
+        if (myDropdown.classList.contains('show1')) {
+          myDropdown.classList.remove('show1');
+        
+        }
+      }
+    }
+    </script>
+
+
+
+<script>
+  // Get the button:
+let mybutton = document.getElementById("myBtn");
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+  scrollFunction()
+};
+function scrollFunction() {
+if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+mybutton.style.display = "block";
+} else {
+mybutton.style.display = "none";
+}
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+//   document.body.scrollTop = 0; // For Safari
+document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+
+</body>
+</html>
+
+<!-- <li>
+  <label>
+    <input type="checkbox" />
+    <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Gérer les utilisateurs
+  </label>
+</li>
+<li>
+  <label>
+    <input type="checkbox" />
+    <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Déclarer les PO
+  </label>
+</li>
+<ul>
+  <li>
+    <label>
+      <input type="checkbox" />
+      <i class="fa fa-tasks orange"    style="color:rgb(204, 201, 32)"></i> Gérer les profils
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      <i class="fa fa-tasks orange"   style="color:rgb(204, 201, 32)"></i> Gérer les modules
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      <i class="fa fa-tasks orange"  style="color:rgb(204, 201, 32)"></i> Gérer les délégations
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      <i class="fa fa-tasks orange"    style="color:rgb(204, 201, 32)"></i> Gérer les utilisateurs
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox"/>
+      <i class="fa fa-tasks orange"  style="color:rgb(204, 201, 32)"></i> Déclarer les PO
+    </label>
+  </li>
+
+</ul> -->
