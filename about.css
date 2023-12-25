@@ -146,51 +146,7 @@ border-radius: 50%;
     
     }
   }*/
-
-   @media (max-width: 767px) {
-    .open-button {
-      z-index: 200;
-      margin-top: 100px;
-      background-color: #8d67cf;
-      color: rgb(0, 0, 0);
-      font-size: 18px;
-      font-weight: 300px;
-      padding: 6px 5px;
-      border: none;
-      cursor: pointer;
-      opacity: 0.8;
-      position: fixed;
-      padding: 3px 2px;
-      right: 20px;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      }
-      
-      .open-button {
-        top:540px;
-        bottom:0;
-       
-      }
-      
-      .container{
-      z-index: 400;
-      position: fixed;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      border-radius: 20px;
-      
-      
-      }
-      .container h1{
-   display: none;
-     
-  }
-  }
-
-
-
+  
   @media (min-width: 1024px) {
     .open-button {
      display: none;
@@ -276,73 +232,108 @@ border-radius: 50%;
   height:420px;
   margin-top: 150px;
   }
-  
   }
-  
-@media (max-width: 767px) {
-  .open-button {
-    top:540px;
-    bottom:0;
-   
-  }
-}
 
-@media (max-width: 767px) {
-  .container{
-  margin-left: 60px;
-  width: 300px;
-  height:340px;
-  margin-top: 150px;
-  }
-  .container form{
-    position: absolute;
-    z-index: 400;
-    position: fixed;
-    background-color: #8d67cf;
-    display: flex;
-    flex-direction: column;
-    padding: 20vm 4vm;
-    height: 65%;
-    border-radius: 10px;
+
+
+
+   @media (max-width: 767px) {
     
-    }
-    .container form input , .container form textarea {
-  
-      border:0;
-      margin: 10px 0;
-      padding: 10px;
-      outline: none;
-      background-color: rgb(255, 255, 255);
-      font-size: 16px;
-      width:270px;
-      margin-left: 10px;
-      margin-right: 20px;
-      border-radius: 10px;
+    .open-button {
+      z-index: 200;
+      margin-top: 100px;
+      background-color: #8d67cf;
+      color: rgb(0, 0, 0);
+      font-size: 18px;
+      font-weight: 300px;
+      padding: 6px 5px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      padding: 3px 2px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
       }
-      .container form button{
-        width: 30%;
-        margin-left:150px;
-        border-radius: 40px;
-        padding:10px 10px;
-        background-color: rgb(254, 252, 255);
-        color: rgb(0, 0, 0);
-        outline: none;
-        cursor: pointer;
-        border: 0;
-        }
-        .container form h3{
-          font-weight: 800px;
-          margin-top: 10px;
-          margin-left: 100px;
-          color: white;
-          }
-          
-  .container .btn {
-    
-  margin-left: 50px;
-  margin-top: -35px;
-  } 
+      
+      .open-button {
+        top:540px;
+        bottom:0;
+       
+      }
+      
+      .container{
+      z-index: 400;
+      position: fixed;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      
+      
+      }
+      .container h1{
+   display: none;
+     
   }
+  .container{
+    margin-left: 60px;
+    width: 300px;
+    height:340px;
+    margin-top: 150px;
+    }
+    .container form{
+      position: absolute;
+      z-index: 400;
+      position: fixed;
+      background-color: #8d67cf;
+      display: flex;
+      flex-direction: column;
+      padding: 20vm 4vm;
+      height: 65%;
+      border-radius: 10px;
+      
+      }
+      .container form input , .container form textarea {
+    
+        border:0;
+        margin: 10px 0;
+        padding: 10px;
+        outline: none;
+        background-color: rgb(255, 255, 255);
+        font-size: 16px;
+        width:270px;
+        margin-left: 10px;
+        margin-right: 20px;
+        border-radius: 10px;
+        }
+        .container form button{
+          width: 30%;
+          margin-left:150px;
+          border-radius: 40px;
+          padding:10px 10px;
+          background-color: rgb(254, 252, 255);
+          color: rgb(0, 0, 0);
+          outline: none;
+          cursor: pointer;
+          border: 0;
+          }
+          .container form h3{
+            font-weight: 800px;
+            margin-top: 10px;
+            margin-left: 100px;
+            color: white;
+            }
+            
+    .container .btn {
+      
+    margin-left: 50px;
+    margin-top: -35px;
+    }
+  }
+
   
   
   
