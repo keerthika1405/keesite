@@ -248,7 +248,7 @@ border-radius: 50%;
       color: rgb(0, 0, 0);
       font-size: 18px;
       font-weight: 300px;
-      padding: 6px 5px;
+      /* padding: 6px 5px; */
       border: none;
       cursor: pointer;
       opacity: 0.8;
