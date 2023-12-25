@@ -242,7 +242,7 @@ border-radius: 50%;
 
     .open-button {
       z-index: 200;
-      margin-top: 100px;
+      margin-top: 150px;
       background-color: #64ca5b;
       border: 1px solid black;
       color: rgb(0, 0, 0);
@@ -551,7 +551,7 @@ margin-left:300px;
   @media (max-width: 767px){
   footer{
     position: absolute;
-    margin-top:1000%;
+    margin-top:100px;
    
   }
   footer::before{
