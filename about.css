@@ -169,7 +169,7 @@ border-radius: 50%;
       @media (max-width: 767px) {
         .open-button {
           top:540px;
-          bottom:0;
+          bottom:20px;
          
         }
       }
