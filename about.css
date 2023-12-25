@@ -151,7 +151,7 @@ border-radius: 50%;
     .open-button {
       z-index: 200;
       margin-top: 100px;
-      background-color: #5fe341;
+      background-color: #8d67cf;
       color: rgb(0, 0, 0);
       font-size: 18px;
       font-weight: 300px;
@@ -161,18 +161,18 @@ border-radius: 50%;
       opacity: 0.8;
       position: fixed;
       padding: 3px 2px;
-    margin-left: 400px;
+      right: 20px;
       width: 30px;
       height: 30px;
       border-radius: 50%;
       }
-      @media (max-width: 767px) {
-        .open-button {
-          top:540px;
-          bottom:10px;
-         
-        }
+      
+      .open-button {
+        top:540px;
+        bottom:0;
+       
       }
+      
       .container{
       z-index: 400;
       position: fixed;
