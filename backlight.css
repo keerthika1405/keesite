@@ -1152,7 +1152,7 @@ color: #000000;
     </div>*/
 
    
-
+/* 
 .card{
   position: absolute;
   margin-top: 350px;
@@ -1310,7 +1310,7 @@ color: #000000;
 .card8:hover  .card-body,.card9:hover  .card-body,.card10:hover  .card-body, .card11:hover  .card-body
 {
   right: 0;
-}
+} */
 
 /*loader*/
 .loader h1{
@@ -1525,7 +1525,7 @@ background-color: var(--tab-content);
   }
 
 } 
-.feature-bullet1:hover , .feature-bullet4:hover, .feature-bullet8:hover, .feature-bullet10:hover, .feature-bullet13:hover,
+.feature-bullet1:hover , .feature-bullet4:hover, .feature-bullet7:hover, .feature-bullet8:hover, .feature-bullet10:hover, .feature-bullet13:hover,
 .feature-bullet15:hover, .feature-bullet18:hover, .feature-bullet21:hover, .feature-bullet22:hover , .feature-bullet2:hover ,
 .feature-bullet5:hover , .feature-bullet9:hover, .feature-bullet11:hover, .feature-bullet14:hover, .feature-bullet16:hover,
 .feature-bullet19:hover , .feature-bullet23:hover, .feature-bullet3:hover, .feature-bullet6:hover, .feature-bullet12:hover,
@@ -1536,6 +1536,7 @@ transform: translate(-20px);
 
 .feature-bullet1 ,
 .feature-bullet4,
+.feature-bullet7,
 .feature-bullet8,
 .feature-bullet10,
 .feature-bullet13,
