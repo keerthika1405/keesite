@@ -729,7 +729,75 @@ font-style: italic;
 
 
 
-            <!-- <button class="loginopen-button" onclick="loginopenForm()" >login/signup</button>            -->
+            <div class="container1" id="loginform">
+              <span class="close" onclick="document.getElementById('loginform').style.display='none'"></span>
+             <!-- loginpage -->
+            
+              <form class="form" id="login" >
+                 
+                  <h1 class="form__title">Login <button type="button" class="logincancel"  onclick="logincloseForm()"> X</button></h1>
+                 
+                  <div class="form__message form__message--error"></div>
+                  <div class="form__input-group">
+                      <input type="text" id="logemail" class="form__input" name="logemail" autocomplete="on" placeholder="email" required>
+                      <div class="form__input-error-message"></div>
+                  </div>
+                  <div class="form__input-group">
+                      <input type="password" id="logpassword" class="form__input" name="logpassword" autocomplete="on" autofocus placeholder="Password" required>
+                      <div class="form__input-error-message"></div>
+                  </div>
+                  <button class="form__button" onclick="savedata()" type="button">Continue</button> 
+               
+               <!-- <p class="form__text">
+                      <a href="#" class="form__link">Forgot your password?</a>
+                  </p>  -->
+                   <p class="form__text">
+                      <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+                  </p>
+                
+              </form> 
+            
+            <!--registrationpage-->
+             <form class="form form--hidden" id="createAccount" >
+                  <h1 class="form__title">Create Account</h1>
+                  <div class="form__message form__message--error"></div>
+            
+                  <div class="form__input-group">
+                      <input type="text" id="name1" class="form__input" name="name" autocomplete="on" required autofocus placeholder="Username">
+                      <div class="form__input-error-message"></div>
+                  </div>
+            
+                  <div class="form__input-group">
+                    <input type="text" id="email1" class="form__input1" name="email" spellcheck="false" required  autocomplete="on" autofocus placeholder="Email Address">
+                    <i class='bx bx-envelope  email-icon bx-sm' ></i>
+                    <div class="form__input-error-message"></div>
+                </div>
+            
+                  <div for="password" class="form__input-group">
+                      <input type="password" id="password" class="form__input" name="password" required  placeholder="Password">
+                      <i  id="togglepassword" class='bx bx-show show1 bx-sm'></i>
+                      <div class="form__input-error-message"></div>
+                  </div>
+                  <div class="form__input-group">
+                      <input type="password" id="passwords" class="form__input" name="passwords" required  placeholder="Confirm password">
+                      <i  id="togglepasswords" class='bx bx-show show2 bx-sm' ></i>
+                      <p id="message"></p>
+                      <div class="form__input-error-message"></div>
+                  </div>
+                  <button class="form__button" onclick="saveData()"   type="submit">Continue</button>
+                  <p class="form__text">
+                      <a class="form__link" id="linkLogin" href="./" >Already have an account? Sign in</a>
+                  </p>
+              </form>
+            
+            </div> 
+
+            <button class="loginopen-button" onclick="loginopenForm()" >login/signup</button>
+            
+            
+
+
+
             
             <img  class="frontpicture" src="Dawn.gif" alt="">
             <div class="fronttext">
@@ -764,7 +832,7 @@ font-style: italic;
            <div class="slide swiper-slide">
             <img src="swiper_dsa.png" alt="" class="image" />
             <div class="image-data">
-              <span class="text">We really like what we do.</span>
+              <span class="text">DSA</span>
               <h2>
                
               </h2>
@@ -774,7 +842,7 @@ font-style: italic;
            <div class="slide swiper-slide">
             <img src="swiper_sdlc.png" alt="" class="image" />
             <div class="image-data">
-              <span class="text">We really like what we do.</span>
+              <span class="text">SDLC</span>
               <h2>
                
               </h2>
@@ -785,7 +853,7 @@ font-style: italic;
           <div class="slide swiper-slide">
             <img src="swiper_html.png" alt="" class="image" />
             <div class="image-data">
-              <span class="text">We really like what we do.</span>
+              <span class="text">HTML</span>
               <h2>
                
               </h2>
@@ -795,7 +863,7 @@ font-style: italic;
           <div class="slide swiper-slide">
             <img src="swiper_css.png" alt="" class="image" />
             <div class="image-data">
-              <span class="text">We really like what we do.</span>
+              <span class="text">CSS</span>
               <h2>
               
               </h2>
@@ -805,7 +873,7 @@ font-style: italic;
           <div class="slide swiper-slide">
             <img src="swiper_javascript.png" alt="" class="image" />
             <div class="image-data">
-              <span class="text">We really like what we do.</span>
+              <span class="text">JAVASCRIPT</span>
               <h2>
               
               </h2>
@@ -815,7 +883,7 @@ font-style: italic;
           <div class="slide swiper-slide">
             <img src="swiper_aws.png" alt="" class="image" />
             <div class="image-data">
-              <span class="text">Making Our coffee with lover.</span>
+              <span class="text">AWS</span>
               <h2>
              
               </h2>
@@ -825,7 +893,7 @@ font-style: italic;
           <div class="slide swiper-slide">
             <img src="swiper_git.png" alt="" class="image" />
             <div class="image-data">
-              <span class="text">Making Our coffee with lover.</span>
+              <span class="text">GIT</span>
               <h2>
                 
               </h2>
@@ -835,7 +903,7 @@ font-style: italic;
           <div class="slide swiper-slide">
             <img src="swiper_network.png" alt="" class="image" />
             <div class="image-data">
-              <span class="text">Making Our coffee with lover.</span>
+              <span class="text">NETWORK</span>
               <h2>
                
               </h2>
@@ -845,7 +913,7 @@ font-style: italic;
           <div class="slide swiper-slide">
             <img src="swiper_sql.png" alt="" class="image" />
             <div class="image-data">
-              <span class="text">Making Our coffee with lover.</span>
+              <span class="text">SQL</span>
               <h2>
                 
               </h2>
@@ -855,11 +923,11 @@ font-style: italic;
           <div class="slide swiper-slide">
             <img src="swiper_ml.png" alt="" class="image" />
             <div class="image-data">
-              <span class="text">Making Our coffee with lover.</span>
+              <span class="text">Machine Learning</span>
               <h2>
                
               </h2>
-              <a href="#" class="button">Explore</a>
+              <a href="#" class="button">SOON</a>
             </div>
           </div>
           
@@ -1264,7 +1332,6 @@ console.log("clicked");
  function sendEmail(){
 
 const fname=document.getElementById('name');
-console.log(name);
 const femail=document.getElementById('email');
 const fphone=document.getElementById('phone');
 const fmessage=document.getElementById('message');
@@ -1469,5 +1536,151 @@ closeAllDisclosures();
 document.getElementById(openD).parentNode.setAttribute("open","");
 });
 </script>
+
+
+
+<script>
+  function saveData(){
+  
+  let name,email,password,passwords;
+  name=document.getElementById("name1").value;
+  email=document.getElementById("email1").value;
+  password=document.getElementById("password").value;
+  passwords=document.getElementById("passwords").value;
+
+
+let user_records=new Array();
+user_records=JSON.parse(localStorage.getItem("users"))?  JSON.parse(localStorage.getItem("users")) : []
+
+if(user_records.some((v)=>{
+  return v.email==email && v.password==password;  } ))
+{
+  alert("Already Loged with this account and check you filled all requirement  ");
+}
+else
+{
+  user_records.push({
+      "email":email,
+      "name":name,
+      "password":password,
+      "passwords":passwords 
+  })
+  localStorage.setItem("users",JSON.stringify(user_records));
+  document.getElementById('loginform').style.display = 'block';
+}
+};
+</script>
+
+<script>
+  function savedata(){
+  
+          let email,password;
+  
+          email=document.getElementById("logemail").value;
+          password=document.getElementById("logpassword").value;
+
+  let user_record=new Array();
+      user_record=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+  
+  
+      if(user_record.some((v)=>{
+          return v.email==email && v.password==password;
+      })){
+          alert("login successfully ")
+          let current_user=user_record.filter((v)=>{
+              return v.email==email && v.password==password 
+          })[0]
+  
+          localStorage.setItem("name",current_user.name);
+          localStorage.setItem("email",current_user.email);
+          window.location.href="backlight.html";
+      }
+      
+      else{
+         alert("login fail");
+      }
+  }
+ 
+
+  </script>
+
+
+<script>
+  const togglepassword = document.querySelector('#togglepassword');
+const password=document.querySelector('#password');
+togglepassword.addEventListener('click', function(e){
+const type=password.getAttribute('type')==='password' ? 'text' : 'password';
+password.setAttribute('type',type);
+this.classList.toggle('bxs-hide');});
+
+
+const togglepasswords = document.querySelector('#togglepasswords');
+const passwords=document.querySelector('#passwords');
+togglepasswords.addEventListener('click', function(e){
+const type=passwords.getAttribute('type')==='passwords' ? 'text' : 'passwords';
+passwords.setAttribute('type',type);
+this.classList.toggle('bxs-hide');})
+
+
+const input = document.querySelector(".form__input1");
+const emailIcon = document.querySelector(".email-icon");
+
+      input.addEventListener("keyup", () =>{
+     
+      let pattern = /^[^ ]+@gmail+\.[a-z]{2,3}$/;
+                      
+      if(input.value === ""){
+        console.log("state 1");
+        emailIcon.classList.replace("bx-check-circle", "bx-envelope");
+        return emailIcon.style.color = "#b4b4b4";//hash
+      }
+      if(input.value.match(pattern)){
+
+        console.log("state 2");
+        emailIcon.classList.replace("bx-envelope", "bx-check-circle");
+        return emailIcon.style.color = "#4bb543"//green
+      }
+   
+      emailIcon.classList.replace("bx-check-circle", "bx-envelope");
+      return emailIcon.style.color = "#de0611"//red
+});
+
+
+document.addEventListener("DOMContentLoaded", () => 
+    {
+      
+    const loginForm = document.querySelector("#login");
+    const createAccountForm = document.querySelector("#createAccount");
+
+
+    document.querySelector("#linkCreateAccount").addEventListener("click", e =>
+     {
+      console.log("inside");
+        e.preventDefault();
+        loginForm.classList.add("form--hidden");
+        createAccountForm.classList.remove("form--hidden");
+    });
+
+    document.querySelector("#linkLogin").addEventListener("click", e =>
+     {
+        e.preventDefault();
+        loginForm.classList.remove("form--hidden");
+        createAccountForm.classList.add("form--hidden");
+    });
+  
+});
+</script>
+
+<script>
+  function loginopenForm() {
+document.getElementById('loginform').style.display = 'block';
+
+}
+
+function logincloseForm() {
+document.getElementById("loginform").style.display = "none";
+}
+</script>  
+
 </body>
 </html>
