@@ -272,8 +272,26 @@ border-radius: 50%;
   
   }
   
+@media (max-width: 767px) {
+  .open-button {
+    top:540px;
+    bottom:0;
+   
+  }
+}
+
   
   @media (max-width: 767px) {
+    .container{
+      z-index: 400;
+      position: fixed;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      
+      
+      }
   .container{
   margin-left: 60px;
   width: 300px;
