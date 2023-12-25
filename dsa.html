@@ -8,71 +8,427 @@
     <link rel="stylesheet" href="treestructure.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
+  
+    
+<style>
 
-      .hamburger-menu{
-       padding-right: 1.5rem;
-       cursor: pointer;
+  :root{
+    --body-color: rgb(253, 253, 253);
+    --list-color:black;
+    /* --text-color:rgb(244, 245, 211);
+    --list-color: white;
+    --list-text-color:black;
+    --hover:grey;
+    --tab-content:white;
+    --containerprofile:white; */
+  }
+  
+  
+  body.dark{
+    --body-color:rgb(0, 0, 0,0.7);
+    --list-color:white;
+    /* --hover:grey;
+    --list-text-color:white;
+   --list-color: rgb(48, 46, 46);
+   
+    --text-color:rgb(255, 255, 255);
+    --gry-color:rgba(0, 0, 0);
+    --tab-content: rgb(48, 46, 46);
+    --containerprofile:rgb(48, 46, 46); */
+   
+  }
+  body {
+    background: var(--body-color);
+    height: 100%;
+  }
+  
+  
+  .nav-bar .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+  }
+  .darkLight-searchBox .dark-light
+  {
+    color:rgb(255, 255, 255);
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+  @media (min-width: 1024px) {
+    .darkLight-searchBox .dark-light{
+    position: fixed;
+    margin-left: 1120px;
+    margin-top: 13px;
+    width: 50px;
+  z-index: 200;
+    }
+  }
+  @media (min-width:768px )and (max-width: 1023px) {
+    .darkLight-searchBox .dark-light{
+    margin-left: 780px;
+    margin-top: 15px;
+    }
+  }
+  @media (max-width: 767px) {
+    .darkLight-searchBox .dark-light{
+      position: fixed;
+      width: 50px;
+      margin-top: 60px;
+     margin-left: 0px;
+    z-index: 1;
+    }
+  }
+  
+  
+  .dark-light i{
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  
+  }
+  .dark-light i.sun{
+    opacity: 0;
+    pointer-events: none;
+  }
+  .dark-light.active i.sun{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .dark-light.active i.moon{
+  
+    opacity: 0;
+    pointer-events: none;
+  }
+  .dark-light i.moon:hover{
+    color: rgb(0, 0, 0);
+  }
+  .dark-light i.sun:hover{
+    color: rgb(255, 255, 0);
+  
+  } 
+      </style>
+       <!-- <style>
+       
+        
+          .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 30;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+          }
+          
+          .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+          }
+          
+          .sidebar a:hover {
+            color: #f1f1f1;
+          }
+          
+          .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+          }
+          
+          .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+          }
+          
+          .openbtn:hover {
+            background-color: #444;
+          }
+          
+          #main {
+         
+            position: fixed;
+            margin-top:50px;
+            transition: margin-left .5s;
+            padding: 6px;
+          }
+          
+          /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+          @media screen and (max-height: 450px) {
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
+          }
+          </style> -->
+        <style>
+    
+         
+         /* .nav-menu{
+           position: fixed;
+           width: 34%;
+           top: 10;
+           left: 50px;
+           background-color: rgb(255, 255, 255);
+           font-weight: 600;
+         
+         } */
+         /* .nav-menu a{
+          margin-top: 40px;
+           font-size: 15px;
+           color: rgb(255, 255, 255);
+           text-decoration: none;
+           display: block;
+           text-align: center;
+           padding: 20px 0;
+         } */
+    
+        
+         .navbar{
+                 justify-content: space-around;
+               }
+             
+         @media (min-width: 1024px) {
+        
+               .nav-menu{
+                display: block;
+                position: static;
+                 width: 28%;
+                
+                 margin-top: 20px;
+                 margin-left: 70px;
+                 background: none;
+                 /* border: 1px solid black; */
+               }
+               .nav-menu a{
+                font-size: 15px;
+                font-weight: bolder;
+                 color: rgb(255, 255, 255);
+                 display: inline-block;
+                 text-decoration: none;
+                 text-align: center;
+                /* padding: 20px 0; */
+               padding: 0px 10px;
+               cursor: pointer;
+               }
+               .hamburger-menu{
+                 display: none;
+               }
+         }
+             /* for Desktop view */
+             @media (max-width: 767px) {
+  
+              .nav-menu{
+             z-index: -100;
+                display: block ;
+                position: static;
+                 width: 350px;
+                 margin-top: 10px;
+                 margin-left: 10px;
+                 background: none;
+                 background-color: #8d67cf;
+                 z-index: 400;
+                 /* border: 1px solid rgb(194, 8, 8); */
+               }
+               .nav-menu a{
+            
+                color:white;
+                text-decoration: none;
+                 display:inline-block ;
+               padding: 10px 10px;
+               cursor: pointer;
+               border-radius: 2%;
+               }
+               /* .hamburger-menu{
+                 display:contents;
+               } */
+               .hide{
+           display: none;
+         }
+  
+         .hamburger-menu{
+           padding-right: 1.5rem;
+           cursor: pointer;
+         }
+         .hamburger-menu .line{
+         display:  block ; 
+         width:25px;
+         height: 20px; 
+         margin-top: 120px;
+         margin-left: 10px;
+         color: rgb(255, 255, 255);
+         cursor: pointer;
+         }
+    }      
+      </style>
+  
+       <style type="text/css">
+   @media (min-width: 1024px) { 
+        #stage{
+        position: fixed;
+        margin-left: 1280px;
+        top:15px;
+        cursor: pointer;
+        z-index: 200;
+    
+        }
+      }
+      @media (max-width: 1023px) {
+     
+  
+      }
+      @media (max-width: 767px) {
+        #stage{
+    
+          position: fixed;
+        margin-left: 280px;
+        top:60px;
+        cursor: pointer;
+        z-index: 1;
+        }
+      }
+            @font-face {
+             font-family: 'FontAwesome';
+             src: url('fontawesome/fonts/fontawesome-webfont.ttf');
+             font-weight: normal;
+             font-style: normal;
+         
+            }
+            #stage{
+              font-family:FontAwesome;
+            }
+  
+            </style> 
+  
+  
+  
+   <style>
+  .bg{
+  position: fixed;
+  height: 160px;
+  width: 100%;
+  top:-10px;
+  
+  }
+  
+  .bg h1{
+  color: rgb(251, 251, 251);
+   position: absolute;
+  font-size: 30px;
+  top:500px;
+  z-index: 100;
+  margin-left: 100px;
+  
+      }
+   .bg img{
+    z-index: -1;
+    height: 160px;
+   } 
+  
+  
+  @media (min-width: 1024px) {
+    .bg {
+  width: 100%;
+  
+    }
+    .search-box{
+    
+      width: 450px;
+      margin-top:10px;
+      margin-left: 10px;
+    }
+    .search-box  button{
+    left: 380px;
+    }
+    .outer_searchbox{
+      position: fixed;
+      margin-left: 450px;
+  width: 460px;
+  height: 50px;
+  padding: 5px 5px;
+  z-index: 100;
      }
-     .hamburger-menu .line{
-     display: block; 
-     width:25px;
-     height: 20px; 
-     margin-top: -25px;
-     margin-left: 60px;
-     color: rgb(80, 80, 80);
-     cursor: pointer;
+  } 
+  
+  @media (max-width: 1023px) {
+    .bg {
+      width: 1000px;
+      
+    }
+    .search-box{
+      
+      width: 550px;
+      margin-top: 15px;
+      left: 150px;
+    }
+    .search-box  button{
+      left: 500px;
+      
+    }
+    
+  
+  }
+  
+  @media (max-width: 767px) {
+    .bg {
+  width:750px;
+  
+    }
+    .search-box{
+    
+      width: 300px;
+      margin-top: 10px;
+      left: -20px;
+      z-index: 1;
+    }
+    .search-box  button{
+     
+      left: 240px; 
+    }
+     
+    .outer_searchbox{
+      
+      position: fixed;
+      margin-left: 60px;
+      width: 300px;
+      height: 50px;
+      padding: 5px 5px;
+      z-index: 100;
      }
-     .nav-menu{
-       position: fixed;
-       width: 34%;
-       top: 50px;
-       left: 50px;
-       background-color: rgb(255, 255, 255);
-       font-weight: 600;
+  }
+  
+  .search-box{
+      position: absolute;
+      /* width:  450px; */
+      height: 40px;
+      color: white;
+      background-color: rgba(0, 0, 0,0.3);
+      /* margin-top: -30px; */
+      /* padding: 10px 10px; */
+    
+      z-index: 2;
+      border-radius: 5px;
      
      }
-     .nav-menu a{
-       font-size: 15px;
-       color: rgb(255, 255, 255);
-       text-decoration: none;
-       display: block;
-       text-align: center;
-       padding: 20px 0;
-     }
-
-     .hide{
-       display: none;
-     }
-
-         /* for Desktop view */
-         @media screen and (min-width:600px){
-           .navbar{
-             justify-content: space-around;
-           }
-           .nav-menu{
-             width: 60%;
-             display: block;
-             position: static;
-             margin-top: -25px;
-             margin-left: 70px;
-            
-             background: none;
-           }
-           .nav-menu a{
-             display: inline-block;
-           padding: 0px 10px;
-           
-             /* padding: -px 20px; */
-           
-           }
-       
-           .hamburger-menu{
-             display: none;
-           }
-         }
-         
-  </style>
+  
+           </style> 
+  
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10.1.0/swiper-bundle.min.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -81,71 +437,590 @@
 </head>
 <body id="mode">
   
-  <nav class="navbar">
-    <div class="content-area">
-       <button  class="content-area1" onclick="openNav()" style="font-size:20px;cursor:pointer"><i class="fa fa-navicon" style="color: black;"></i></button>
-  
-   <div class="dropdown-content" id="myDropdown">
-     <a href="#">Link 1</a>
-     <a href="#">Link 2</a>
-     <a href="#">Link 3 &emsp;&emsp;&emsp;&emsp; <button class="content-area2" onclick="openNavy()" >&#62;</button>
-     <div class="dropdown-content1" id="myDropdown1" >
-       <a href="#">python</a>
-       <a href="#">java</a> </div>
-     </a>
-     <a href="#">Link 2</a>
-   </div>
 
-   <div class="hamburger-menu">
-     <span class="line">Menu</span><!--☰-->
+  <nav class="navbar" id="navbar">
+    <div class="content-area">    
+   <div class="hamburger-menu" >
+     <span class="line"><svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-center"><line x1="18" y1="10" x2="6" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="18" y1="18" x2="6" y2="18"></line></svg></span><!--☰-->
    </div> 
-   <div class="nav-menu hide">
- <a href="https://github.com/keerthika1405" target="_top" >   <i class='bx bxl-github ' name='github' type="logo"  style="font-size: 20px;"></i> Github</a>
-    <a href="https://github.com/keerthika1405/keesite/discussions" target="_top" ><i class='bx bx-comment '  style="font-size: 20px;"></i>Community</a>
-  
-    <!-- <a href="#">About</a> -->
- </div>
-</div>
-
-
-<div class="search-box">
-<div class="row">
-  <form id="search"  method="post" >
-     <input type="text" id="input-box" placeholder="search here" autocomplete="off">
-     <button type="submit"><i class='bx bx-search bx-sm'  id="input-box"></i></button>
-</div>
-</form>
-     <form id="css" action="explore.html" methode="get"></form>
-     <form id="HTML" action="chrome.html" methode="get"></form>
-     <form id="javascript" action="about.html" methode="get"></form>
-       
-<div class="result-box">    
-</div>      
-</div>
-
-<button class="open-button" onclick="openForm()"><i class='bx bx-question-mark'></i></button>
-<div class="container" id="myForm">
-<form  onsubmit="sendEmail(); reset();">
-<h3>Let's Solve</h3>
-<input type="text" id="name" placeholder="Your Name" autocomplete="off"  required>
-<input type="email" id="email" placeholder="Your Email Id" autocomplete="off" required>
-<input type="text" id="phone" placeholder="phone no" autocomplete="off">
-<textarea  id="message" name="" id="message" cols="30" rows="5" placeholder="Write Your Query Here We Will Reach You Soon ?"  required></textarea>
-<button type="submit">send</button>
-<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-</form>
-</div> 
-
-
-<div class="webname">
-<h2>keesite</h2>
-</div>
-
-</nav>
-
-
-
  
+   <div class="nav-menu hide">
+  <a onclick="view()" target="_top" > <svg fill="#ffffff" width="24px" height="24px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.2">
+      <path d="M73.87573,111.39355l-.009-.03369L42.51636,148.98047a7.99958,7.99958,0,0,0-1.66358,6.85693l12.3628,55.63281a8,8,0,0,0,12.80713,4.51172L96,192C78.36523,161.44922,72.74268,134.47656,73.87573,111.39355Z"/>
+    </g>
+    <g opacity="0.2">
+      <path d="M181.52239,110.6714l.009-.03369,31.35034,37.6206a7.99958,7.99958,0,0,1,1.66358,6.85693l-12.3628,55.63282a8,8,0,0,1-12.80712,4.51172l-29.9773-23.98194C177.03289,160.72706,182.65544,133.75441,181.52239,110.6714Z"/>
+    </g>
+    <g>
+      <path d="M144,216H112a8,8,0,0,0,0,16h32a8,8,0,0,0,0-16Z"/>
+      <circle cx="128" cy="96" r="12"/>
+      <path d="M219.62891,143.85889l-30.23658-36.28418a124.52267,124.52267,0,0,0-7.98022-34.8833c-11.61719-30.21192-32.15625-49.999-43.36523-59.10547a16.07708,16.07708,0,0,0-20.07813-.0669C106.61328,22.61621,85.81055,42.38867,74.07617,72.605A122.76188,122.76188,0,0,0,65.979,108.32861L36.37109,143.85889A16.10066,16.10066,0,0,0,33.043,157.57275l12.36328,55.63282a15.98523,15.98523,0,0,0,25.61328,9.023L98.80566,200h58.38868l27.78515,22.22852a15.91184,15.91184,0,0,0,9.96485,3.51709,16.0905,16.0905,0,0,0,5.34668-.91944,15.90581,15.90581,0,0,0,10.30273-11.62012L222.957,157.57373A16.102,16.102,0,0,0,219.62891,143.85889ZM127.9668,26.01074C198.25391,83.126,169.43359,157.01074,155.25,184H100.67871C52.6709,96.27734,109.22559,41.02637,127.9668,26.01074ZM61.02539,209.73486l-12.36328-55.6333,17.92651-21.5122q3.40906,28.0371,19.14038,57.38281Zm133.94922,0-24.74976-19.7998q15.53064-29.55175,18.74341-57.87695l18.36963,22.04345Z"/>
+    </g>
+  </svg>Explore </a>
+ <a href="https://github.com/keerthika1405" target="_top" >     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Github</a>
+ <a href="https://github.com/keerthika1405/keesite/discussions" target="_top" ><svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>Community</a>
+
+ <!-- <a href="#">About</a> -->
+ </div>
+</div>     
+</nav>
+<div class="outer_searchbox">
+  <div class="search-box">
+    <div class="row">
+      <form id="search"  method="post" >
+         <input type="text" id="input-box" placeholder="search here" autocomplete="off">
+         <button type="submit"><i class='bx bx-search bx-sm'  id="input-box"></i></button>
+    </form>
+  </div>
+
+         <form id="css" action="explore.html" methode="get"></form>
+         <form id="HTML" action="chrome.html" methode="get"></form>
+         <form id="javascript" action="about.html" methode="get"></form>
+           
+    <div class="result-box"></div>      
+    </div>
+  </div>
+  
+
+  <div class="darkLight-searchBox">
+    <div class="dark-light">
+        <i class='bx bx-moon moon'></i>
+        <i class='bx bx-sun sun'></i>
+    </div>
+    </div>
+  
+  <div class="webname">
+  <h2>keesite</h2>
+  </div>
+
+  <button class="open-button" onclick="openForm()"><i class='bx bx-question-mark'></i></button>
+  <div class="container" id="myForm">
+  <form  onsubmit="sendEmail(); reset();">
+  <h3>Let's Solve</h3>
+  <input type="text" id="name" placeholder="Your Name" autocomplete="off"  required>
+  <input type="email" id="email" placeholder="Your Email Id" autocomplete="off" required>
+  <input type="text" id="phone" placeholder="phone no" autocomplete="off">
+  <textarea  id="message" name="" id="message" cols="30" rows="5" placeholder="Write Your Query Here We Will Reach You Soon ?"  required></textarea>
+  <button type="submit">send</button>
+  <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+  </div> 
+
+  <div   class="bg" id="bgcontent">
+    <img  id="bg" class="image-container" src="bgimg21.avif" height="100px" width=" 100%" alt="">
+    <!-- <h1>welcome  <script> document.write(localStorage.getItem("name").toUpperCase());</script> </h1> -->
+</div>
+ 
+
+
+<div class="menu__wrapper"  id="wrapper">
+    
+  <div class="menu__bar">
+
+    <nav class="navi">
+       
+      <div class="navigation hide">
+      <ul class="naviul">
+       
+          <li>
+            
+              <button>
+                  JAVA
+                
+                
+                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                      <path
+                          d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                      </path>
+                  </svg>
+              </button>
+
+
+
+
+              <div class="dropdown__wrapper">
+                  <div class="dropdown">
+                      <ul class="list-items-with-description">
+                          <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line>
+                              <line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg>
+                         
+
+                              <div class="item-title">
+                                  <h3>java</h3>
+                                  <p>list of java Topic</p>
+                              </div>
+                          </li>
+                      
+                         
+                          <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                              </svg>
+                              <div class="item-title">
+                                  <h3>Java_Practice_Q/A</h3>
+                                  <p>100 Q/A Challenge</p>
+                              </div>
+                          </li>
+                          <li>
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tool"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                             
+                              <div class="item-title">
+                                  <h3>Java Error | Exception</h3>
+                                  <p>meet java buggy</p>
+                              </div>
+                          </li>
+                          <!-- <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                  stroke-linecap="round" stroke-linejoin="round">
+                                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                  <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                  <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                  <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                              </svg>
+                              <div class="item-title">
+                                  <h3>Storage</h3>
+                                  <p>Serverless storage for frontend</p>
+                              </div>
+                          </li> -->
+                      </ul>
+                  </div>
+              </div>
+          </li>
+
+
+
+
+
+          <li>
+             <button>
+                  FRONT_END
+                  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                      <path
+                          d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                      </path>
+                  </svg>
+              </button>
+
+
+
+
+              <div class="dropdown__wrapper">
+                  <div class="dropdown">
+                      <ul class="list-items-with-description">
+                          <li>
+                            <svg width="800px" height="800px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <g id="icomoon-ignore">
+                              </g>
+                              <path d="M27.78 4.198c-0.312-0.312-0.722-0.468-1.131-0.468s-0.819 0.156-1.131 0.468l-4.706 4.705v-0.891h-17.060v20.259h20.259v-17.060h-0.981l4.75-4.751c0.625-0.624 0.625-1.637 0-2.262zM22.944 27.204h-18.126v-18.126h15.819l-8.356 8.355v2.307h2.219l8.444-8.445v15.908zM27.026 5.706l-12.967 12.968h-0.711v-0.8l12.924-12.924c0.135-0.135 0.294-0.155 0.376-0.155s0.242 0.020 0.377 0.156c0.136 0.136 0.157 0.295 0.157 0.377s-0.020 0.24-0.157 0.377z" fill="#000000">
+                              
+                              </path>
+                              </svg>
+                              
+                              <div class="item-title">
+                                  <h3>HTML</h3>
+                                  <p>Way to create Content</p>
+                              </div>
+                          </li>
+
+                          <li>
+                            <svg width="800px" height="800px" viewBox="-2 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <g id="icomoon-ignore">
+                              </g>
+                              <path d="M22.347 14.827v0l-10.4-10.453-0.213 0.16v-0.267c0-1.76-1.44-3.2-3.2-3.2s-3.2 1.44-3.2 3.2v6.667l-4.427 4.427c-1.227 1.227-1.227 3.2 0 4.427l6.027 6.027c0.587 0.64 1.44 0.907 2.24 0.907s1.6-0.32 2.24-0.907l7.627-7.68h6.56l-3.253-3.307zM6.4 4.267c0-1.173 0.96-2.133 2.133-2.133s2.133 0.96 2.133 2.133v1.333l-4.267 4.267v-5.6zM18.613 17.067l-8 8c-0.373 0.373-0.907 0.587-1.493 0.587-0.533 0-1.067-0.213-1.44-0.587l-6.027-6.027c-0.8-0.8-0.8-2.133 0-2.933l9.013-8.96v6.72h1.067v-7.787l0.16-0.16 11.147 11.147h-4.427z" fill="#000000">
+                              
+                              </path>
+                              <path d="M28.213 26.987c-0.32-2.88-3.413-6.72-3.413-6.72s-3.147 3.893-3.413 6.773c0 0.16 0 0.267 0 0.427 0 1.92 1.547 3.467 3.467 3.467s3.467-1.547 3.467-3.467c-0.053-0.16-0.053-0.32-0.107-0.48zM24.8 29.867c-1.333 0-2.4-1.067-2.4-2.4 0-0.107 0-0.16 0-0.267v0 0c0.16-1.6 1.387-3.68 2.347-5.12 0.96 1.387 2.187 3.52 2.4 5.067 0 0.107 0 0.213 0 0.32 0.053 1.333-1.013 2.4-2.347 2.4z" fill="#000000">
+                              
+                              </path>
+                              </svg>
+                  
+                           
+                              <div class="item-title">
+                                  <h3>CSS</h3>
+                                  <p>add some Bueaty</p>
+                              </div>
+                          </li>
+                          <li>
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+                            <path d="M4 12l8 4l8 -4" />
+                            <path d="M4 16l8 4l8 -4" />
+                        </svg> -->
+<!--                       dislike 
+<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.15" d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z" fill="#000000"/>
+<path d="M4.76786 12.5L12 20L19.2321 12.5M4.76786 12.5L4.3314 12.0474C3.47892 11.1633 3 9.96429 3 8.71405C3 6.11055 5.03517 4 7.54569 4C8.75128 4 9.90749 4.49666 10.76 5.38071L12 6.66667L13.24 5.38071C14.0925 4.49666 15.2487 4 16.4543 4C18.9648 4 21 6.11055 21 8.71405C21 9.96429 20.5211 11.1633 19.6686 12.0474L19.2321 12.5M4.76786 12.5H7.99997L8.99997 10.5L11 14.5L14 8L16 12.5H19.2321" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+             home           <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              heart          <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+               facebook         <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+             image          <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-image"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+           linkedin             <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> -->
+           <!-- square             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>
+
+           -->
+<svg width="800px" height="800px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="icomoon-ignore">
+</g>
+<path d="M7.47 6.661l16.010 9.339-16.010 9.339v-18.678zM6.404 4.804v22.391l19.192-11.196-19.192-11.196z" fill="#000000">
+
+</path>
+</svg>
+                              <div class="item-title">
+                                  <h3>Javascript</h3>
+                                  <p>Create some magic with this</p>
+                              </div>
+                          </li>
+                          <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                              <div class="item-title">
+                                  <h3>javascript_practice_Q/A</h3>
+                                  <p>100 Q/A Challenge of js</p>
+                              </div>
+                          </li>
+                         
+                      </ul>
+                  </div>
+              </div>
+              <!-- <a href="#docs" title="Docs">
+                  Docs
+              </a> -->
+          </li>
+          <li>
+            <button>
+              DSA
+              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                  <path
+                      d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                  </path>
+              </svg>
+          </button>
+
+
+
+
+          <div class="dropdown__wrapper">
+              <div class="dropdown">
+                  <ul class="list-items-with-description">
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path><polyline points="2.32 6.16 12 11 21.68 6.16"></polyline>
+                          <line x1="12" y1="22.76" x2="12" y2="11"></line><line x1="7" y1="3.5" x2="17" y2="8.5"></line></svg>
+                       
+                          
+                          <div class="item-title">
+                              <h3>DSA</h3>
+                              <p>Learn Basic Structure </p>
+                          </div>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+                        <!-- <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+                    </svg> -->
+                          <div class="item-title">
+                              <h3>Algorithms</h3>
+                              <p>Reduce the Complex</p>
+                          </div>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+                          <!-- <svg xmlns="http://www.w3.org/2000/svg"
+                              class="icon icon-tabler icon-tabler-brand-nextjs" width="24" height="24"
+                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                              stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                              <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                              <path d="M15 12v-3" />
+                          </svg> -->
+                          <div class="item-title">
+                              <h3>java API</h3>
+                              <p>The native Next.js platform</p>
+                          </div>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                    </svg>
+                          <div class="item-title">
+                              <h3>Non_Lineas DS</h3>
+                              <p>Complexity speak</p>
+                          </div>
+                      </li>
+                      <li>
+                        <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 7L13 15L9 11L3 17M21 7H15M21 7V13" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                          <div class="item-title">
+                              <h3>Linear DS</h3>
+                              <p>dividend of Structure</p>
+                          </div>
+                      </li>
+                      <li>
+                        <svg width="800px" height="800px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g id="icomoon-ignore">
+                          </g>
+                          <path d="M6.937 21.865c-1.766 0-3.199 1.432-3.199 3.198s1.432 3.199 3.199 3.199c1.766 0 3.199-1.432 3.199-3.199s-1.433-3.198-3.199-3.198zM6.937 27.195c-1.176 0-2.132-0.956-2.132-2.133s0.956-2.132 2.133-2.132c1.176 0 2.133 0.956 2.133 2.132s-0.956 2.133-2.133 2.133z" fill="#000000">
+                          
+                          </path>
+                          <path d="M6.937 3.738c-1.766 0-3.199 1.432-3.199 3.198s1.432 3.199 3.199 3.199c1.766 0 3.199-1.432 3.199-3.199s-1.433-3.198-3.199-3.198zM6.937 9.069c-1.176 0-2.132-0.956-2.132-2.133s0.956-2.132 2.133-2.132c1.176 0 2.133 0.956 2.133 2.132s-0.956 2.133-2.133 2.133z" fill="#000000">
+                          
+                          </path>
+                          <path d="M6.937 12.779c-1.766 0-3.199 1.432-3.199 3.198s1.432 3.199 3.199 3.199c1.766 0 3.199-1.432 3.199-3.199s-1.433-3.198-3.199-3.198zM6.937 18.11c-1.176 0-2.132-0.957-2.132-2.133s0.956-2.132 2.133-2.132c1.176 0 2.133 0.956 2.133 2.132s-0.956 2.133-2.133 2.133z" fill="#000000">
+                          
+                          </path>
+                          <path d="M16 21.865c-1.767 0-3.199 1.432-3.199 3.198s1.432 3.199 3.199 3.199c1.766 0 3.199-1.432 3.199-3.199s-1.433-3.198-3.199-3.198zM16 27.195c-1.176 0-2.133-0.956-2.133-2.133s0.956-2.132 2.133-2.132c1.176 0 2.133 0.956 2.133 2.132s-0.956 2.133-2.133 2.133z" fill="#000000">
+                          
+                          </path>
+                          <path d="M16 3.738c-1.767 0-3.199 1.432-3.199 3.198s1.432 3.199 3.199 3.199c1.766 0 3.199-1.432 3.199-3.199s-1.433-3.198-3.199-3.198zM16 9.069c-1.176 0-2.133-0.956-2.133-2.133s0.956-2.132 2.133-2.132c1.176 0 2.133 0.956 2.133 2.132s-0.956 2.133-2.133 2.133z" fill="#000000">
+                          
+                          </path>
+                          <path d="M16 12.779c-1.767 0-3.199 1.432-3.199 3.198s1.432 3.199 3.199 3.199c1.766 0 3.199-1.432 3.199-3.199s-1.433-3.198-3.199-3.198zM16 18.11c-1.176 0-2.133-0.957-2.133-2.133s0.956-2.132 2.133-2.132c1.176 0 2.133 0.956 2.133 2.132s-0.956 2.133-2.133 2.133z" fill="#000000">
+                          
+                          </path>
+                          <path d="M25.063 21.865c-1.767 0-3.199 1.432-3.199 3.198s1.432 3.199 3.199 3.199c1.766 0 3.199-1.432 3.199-3.199s-1.433-3.198-3.199-3.198zM25.063 27.195c-1.176 0-2.133-0.956-2.133-2.133s0.956-2.132 2.133-2.132c1.176 0 2.133 0.956 2.133 2.132s-0.956 2.133-2.133 2.133z" fill="#000000">
+                          
+                          </path>
+                          <path d="M25.063 10.135c1.766 0 3.199-1.432 3.199-3.199s-1.433-3.198-3.199-3.198c-1.767 0-3.199 1.432-3.199 3.198s1.432 3.199 3.199 3.199zM25.063 4.805c1.176 0 2.133 0.956 2.133 2.132s-0.956 2.133-2.133 2.133c-1.176 0-2.133-0.956-2.133-2.133s0.956-2.132 2.133-2.132z" fill="#000000">
+                          
+                          </path>
+                          <path d="M25.063 12.779c-1.767 0-3.199 1.432-3.199 3.198s1.432 3.199 3.199 3.199c1.766 0 3.199-1.432 3.199-3.199s-1.433-3.198-3.199-3.198zM25.063 18.11c-1.176 0-2.133-0.957-2.133-2.133s0.956-2.132 2.133-2.132c1.176 0 2.133 0.956 2.133 2.132s-0.956 2.133-2.133 2.133z" fill="#000000">
+                          
+                          </path>
+                          </svg>
+
+                          <div class="item-title">
+                              <h3>Pattern</h3>
+                              <p> Find Pattern on group</p>
+                              </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+               </li> 
+               <li>
+
+                  <button>
+                  Database
+                  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                      <path
+                          d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                      </path>
+                  </svg>
+              </button>
+
+
+            
+             
+
+              <div class="dropdown__wrapper">
+                  <div class="dropdown">
+                      <ul class="list-items-with-description">
+                          <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                              
+                              <div class="item-title">
+                                  <h3>AWS Services</h3>
+                                  <p>Bunch of service </p>
+                              </div>
+                          </li>
+                          <li>
+                            <svg width="800px" height="800px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <g id="icomoon-ignore">
+                              </g>
+                              <path d="M17.894 6.945c3.969 0 7.197 3.228 7.197 7.197 0 0.022-0.003 0.045-0.004 0.067-0.003 0.053-0.007 0.106-0.008 0.16l-0.027 1.088 1.090 0.004c2.637 0.007 4.783 2.16 4.783 4.797 0 2.63-2.141 4.782-4.773 4.796l-0.233 0.001h-19.517c-2.937-0.003-5.327-2.394-5.327-5.33 0-2.275 1.448-4.3 3.603-5.040l0.6-0.205 0.106-0.625c0.261-1.542 1.586-2.661 3.149-2.661 0.498 0 0.98 0.116 1.431 0.343l0.972 0.488 0.469-0.981c1.192-2.491 3.739-4.1 6.488-4.1zM17.894 5.878c-3.288 0-6.12 1.925-7.45 4.705-0.575-0.29-1.223-0.456-1.911-0.456-2.111 0-3.859 1.536-4.2 3.55-2.514 0.862-4.324 3.24-4.324 6.048 0 3.531 2.862 6.393 6.392 6.396l19.756-0.001c3.225-0.017 5.834-2.634 5.834-5.862 0-3.233-2.615-5.854-5.846-5.863 0.002-0.085 0.012-0.168 0.012-0.253 0-4.564-3.7-8.263-8.263-8.263v0z" fill="#000000">
+                              
+                              </path>
+                              </svg>
+                              <div class="item-title">
+                                  <h3>Cloud Computing</h3>
+                                  <p>Always fast always online</p>
+                              </div>
+                          </li>
+                          <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                  stroke-linecap="round" stroke-linejoin="round">
+                                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                  <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+                                  <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                                  <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                              </svg>
+                              <div class="item-title">
+                                  <h3>SQL</h3>
+                                  <p>Play With Database</p>
+                              </div>
+                          </li>
+                          <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                              <div class="item-title">
+                                  <h3>sql_practice_Q/A</h3>
+                                  <p>100 Q/A Challenge of sql</p>
+                              </div>
+                          </li>
+                        
+                      </ul>
+                  </div>
+              </div>
+           </li>
+              <!-- <a href="#templates" title="Templates">
+                  font-end
+              </a> -->
+         
+
+          <li>
+           
+            <button>
+              SDLC/Networking
+              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                  <path
+                      d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                  </path>
+              </svg>
+          </button>
+
+
+
+
+          <div class="dropdown__wrapper">
+              <div class="dropdown">
+                  <ul class="list-items-with-description">
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                        <path d="M3.6 9h16.8" />
+                        <path d="M3.6 15h16.8" />
+                        <path d="M11.5 3a17 17 0 0 0 0 18" />
+                        <path d="M12.5 3a17 17 0 0 1 0 18" />
+                    </svg>
+                          
+                          <div class="item-title">
+                              <h3>Networking</h3>
+                              <p>Zero config, more innovation</p>
+                          </div>
+                      </li>
+                      <li>
+                        <svg width="800px" height="800px" viewBox="-2.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g id="icomoon-ignore">
+                          </g>
+                          <path d="M20.48 18.613l-1.12 7.84 7.627-1.173-2.987-3.040c1.013-1.867 1.6-3.947 1.6-6.24 0-7.093-5.707-12.8-12.8-12.8v1.067c6.453 0 11.733 5.28 11.733 11.733 0 1.973-0.48 3.787-1.333 5.44l-2.72-2.827zM20.587 25.173l0.64-4.267 3.52 3.627-4.16 0.64z" fill="#000000">
+                          
+                          </path>
+                          <path d="M1.067 16c0-2.827 1.013-5.387 2.667-7.413l3.253 3.307 1.12-7.84-7.627 1.227 2.453 2.56c-1.813 2.187-2.933 5.067-2.933 8.16 0 7.093 5.707 12.8 12.8 12.8v-1.067c-6.453 0-11.733-5.28-11.733-11.733zM6.827 5.387l-0.64 4.267-3.52-3.627 4.16-0.64z" fill="#000000">
+                          
+                          </path>
+                          </svg>
+                          <div class="item-title">
+                              <h3>SDLC</h3>
+                              <p>Principle| Design</p>
+                          </div>
+                      </li>
+                      <li>
+                        <svg width="800px" height="800px" viewBox="-1 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g id="icomoon-ignore">
+                          </g>
+                          <path d="M25.6 18.453l4.267-0.427v-4l-4.267-0.427c-0.267-1.28-0.8-2.453-1.44-3.467l2.4-3.2-2.453-2.453-3.2 2.4c-1.013-0.64-2.187-1.173-3.413-1.44l-0.48-4.267h-4l-0.48 4.267c-1.227 0.267-2.347 0.747-3.36 1.387l-3.307-2.347-2.453 2.453 2.347 3.307c-0.64 1.013-1.12 2.133-1.387 3.36l-4.267 0.48v4l4.267 0.48c0.267 1.227 0.8 2.4 1.44 3.467l-2.4 3.2 2.453 2.453 3.2-2.4c1.013 0.64 2.187 1.173 3.413 1.44l0.533 4.267h4l0.533-4.267c1.227-0.267 2.347-0.747 3.36-1.387l3.253 2.347 2.453-2.453-2.4-3.36c0.64-1.067 1.12-2.187 1.387-3.413zM28.8 14.933v2.080l-3.2 0.32c0.053-0.427 0.107-0.907 0.107-1.387s-0.053-0.907-0.107-1.387l3.2 0.373zM23.947 5.76l1.173 1.173-1.76 2.4c-0.533-0.693-1.12-1.28-1.813-1.813l2.4-1.76zM13.867 2.133h2.133l0.373 3.2c-0.48-0.053-0.96-0.107-1.387-0.107-0.48 0-0.96 0.053-1.387 0.107l0.267-3.2zM4.693 6.987l1.227-1.227 2.453 1.707c-0.373 0.267-0.693 0.587-1.013 0.907s-0.64 0.64-0.907 1.013l-1.76-2.4zM1.067 17.067v-2.133l3.2-0.373c-0.053 0.48-0.107 0.96-0.107 1.44s0.053 0.96 0.107 1.387l-3.2-0.32zM5.92 26.187l-1.173-1.12 1.76-2.4c0.533 0.64 1.12 1.28 1.76 1.76l-2.347 1.76zM16 29.867h-2.133l-0.373-3.2c0.48 0.053 0.96 0.107 1.44 0.107v0 0c0.48 0 0.96-0.053 1.44-0.107l-0.373 3.2zM14.933 25.653c-5.333 0-9.653-4.32-9.653-9.653 0-2.56 1.013-5.013 2.827-6.827s4.267-2.827 6.827-2.827v0c5.333 0 9.653 4.32 9.653 9.653 0 2.56-1.013 5.013-2.827 6.827s-4.213 2.827-6.827 2.827zM25.173 25.013l-1.173 1.173-2.453-1.76c0.373-0.267 0.693-0.587 1.013-0.907s0.587-0.64 0.907-1.013l1.707 2.507z" fill="#000000">
+                          
+                          </path>
+                          </svg>
+                          <div class="item-title">
+                              <h3>API</h3>
+                              <p>Understanding about Waiter</p>
+                          </div>
+                      </li>
+                    
+                  </ul>
+              </div>
+          </div>
+
+          </li>
+
+
+          <li>
+               
+            <button>
+              GitHub
+              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+                  <path
+                      d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
+                  </path>
+              </svg>
+          </button>
+
+
+
+
+          <div class="dropdown__wrapper">
+              <div class="dropdown">
+                  <ul class="list-items-with-description">
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                          
+                          <div class="item-title">
+                              <h3>github</h3>
+                              <p>Basics of Version Control</p>
+                          </div>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></g></svg>
+                          <div class="item-title">
+                              <h3>git command</h3>
+                              <p>work on local</p>
+                          </div>
+                      </li>
+                      <li>
+                        <svg width="800px" height="800px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g id="icomoon-ignore">
+                          </g>
+                          <path d="M27.18 22.949h-22.497l4.492-4.494-0.754-0.754-5.743 5.744 5.743 5.743 0.754-0.754-4.419-4.42h23.491v-9.596h-1.066z" fill="#000000">
+                          
+                          </path>
+                          <path d="M4.793 9.088h22.488l-4.456 4.457 0.754 0.754 5.742-5.742-5.743-5.744-0.754 0.754 4.454 4.456h-23.552v9.596h1.066z" fill="#000000">
+                          
+                          </path>
+                          </svg>
+                          <div class="item-title">
+                              <h3>git Action</h3>
+                              <p>CI/CD Pipeline</p>
+                          </div>
+                      </li>
+                     
+                  </ul>
+              </div>
+          </div>
+
+          </li>
+          <li>
+            <button type="button" class="btn cancel" onclick="nonview()">
+              <svg width="20px" height="20px" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.32129 2.32363C2.72582 1.9191 3.38168 1.9191 3.78621 2.32363L25.6966 24.234C26.1011 24.6385 26.1011 25.2944 25.6966 25.6989C25.2921 26.1035 24.6362 26.1035 24.2317 25.6989L2.32129 3.78854C1.91676 3.38402 1.91676 2.72815 2.32129 2.32363Z" fill="#ffffff"/>
+                <path d="M25.6787 2.30339C25.2742 1.89887 24.6183 1.89887 24.2138 2.30339L2.30339 24.2138C1.89887 24.6183 1.89887 25.2742 2.30339 25.6787C2.70792 26.0832 3.36379 26.0832 3.76831 25.6787L25.6787 3.76831C26.0832 3.36379 26.0832 2.70792 25.6787 2.30339Z" fill="#ffffff"/></svg>
+          </button>
+        </li>
+          
+      </ul>
+    </div>
+
+  </nav>
+</div>
+</div>
+
+
+
+
 <div class="dsa">
 <div class="heading">
   <h2>Data Structure And Algorithms (JAVA)</h2>
@@ -1136,6 +2011,9 @@ import stripe
 </div>
 </div> -->
 
+<div id="stage">
+  <canvas id="Canvas" width="50" height="45"></canvas>
+</div>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt bx-sm' style='color:#ffffff'  ></i></button>
 
@@ -1210,6 +2088,114 @@ import stripe
 <script src="homepage.js"></script>
 
 
+<script>
+
+  const body = document.querySelector("body"),
+        nav = document.querySelector("nav"),
+        modeToggle = document.querySelector(".dark-light");
+        // imageContainer = document.querySelector(".image-container");
+  
+        let getMode = localStorage.getItem("mode");
+            if(getMode && getMode === "dark-mode"){
+              body.classList.add("dark");
+              modeToggle.classList.add("active");
+            //   updateImage("dark");
+            }
+  
+  
+       modeToggle.addEventListener("click" , () =>{
+          modeToggle.classList.toggle("active");
+          body.classList.toggle("dark");
+          // js code to keep user selected mode even page refresh or file reopen
+
+          if(!body.classList.contains("dark")){
+              localStorage.setItem("mode" , "light-mode");
+            //   updateImage("light");
+
+          }
+          else{
+              localStorage.setItem("mode" , "dark-mode");
+            //   updateImage("dark");
+          }
+        });
+
+//         function updateImage(mode) {
+  
+//     const lightImagePath = "river.gif";
+//     const darkImagePath = "night.gif";
+
+ 
+//     imageContainer.src = mode === "dark" ? darkImagePath : lightImagePath;
+//   }
+    </script>
+
+<script>
+  function view() {
+document.getElementById("wrapper").style.display = "block";
+
+}
+function nonview() {
+document.getElementById("wrapper").style.display = "none";
+}
+</script>  
+
+
+<script>
+  const canvas = document.getElementById('Canvas');
+  const ctx = canvas.getContext('2d');
+  // ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  const cubeWidth = 26;
+  const cubeHeight =20;
+  const cubeDepth = 20;
+
+  // Set cube position
+  const cubeX = (canvas.width - cubeWidth) / 2;
+  const cubeY = (canvas.height - cubeHeight) / 2;
+
+  
+  function drawCube() {
+
+    ctx.beginPath();// Front face
+    ctx.moveTo(cubeX, cubeY);
+    ctx.lineTo(cubeX + cubeWidth, cubeY);
+    ctx.lineTo(cubeX + cubeWidth, cubeY + cubeHeight);
+    ctx.lineTo(cubeX, cubeY + cubeHeight);
+    ctx.closePath();
+    ctx.fillStyle = '#8d8f84';
+    ctx.fill();
+
+
+    ctx.beginPath();//top face
+    ctx.moveTo(cubeX, cubeY);
+    ctx.lineTo(cubeX + cubeWidth / 2, cubeY - cubeDepth / 2);
+    ctx.lineTo(cubeX + cubeWidth / 2 + cubeWidth, cubeY - cubeDepth / 2);
+    ctx.lineTo(cubeX + cubeWidth, cubeY);
+    ctx.closePath();
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+   
+    ctx.beginPath();//side face
+    ctx.moveTo(cubeX + cubeWidth, cubeY);
+    ctx.lineTo(cubeX + cubeWidth / 2 + cubeWidth, cubeY - cubeDepth / 2);
+    ctx.lineTo(cubeX + cubeWidth / 2 + cubeWidth, cubeY + cubeHeight - cubeDepth / 2);
+    ctx.lineTo(cubeX + cubeWidth, cubeY + cubeHeight);
+    ctx.closePath();
+    ctx.fillStyle = '#8d8f84';
+    ctx.fill();
+  }
+
+  setTimeout( function() {
+
+    ctx.fillStyle = '#d27599';
+    ctx.font = '10px FontAwesome';  
+    ctx.fillText("\uf084",25,9);
+  },1000);
+  drawCube();
+
+
+</script> 
 
 
 

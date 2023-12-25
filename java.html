@@ -1420,6 +1420,7 @@ let ebody= `
     </script> 
 
 
+
 <script>
 
   const body = document.querySelector("body"),
@@ -1430,6 +1431,7 @@ let ebody= `
         let getMode = localStorage.getItem("mode");
             if(getMode && getMode === "dark-mode"){
               body.classList.add("dark");
+              modeToggle.classList.add("active");
             //   updateImage("dark");
             }
   
