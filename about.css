@@ -139,76 +139,88 @@ border-radius: 50%;
 
 /*send email*/
 
-.open-button {
-  z-index: 200;
-  margin-top: 100px;
-  background-color: #8d67cf;
-  color: rgb(0, 0, 0);
-  font-size: 18px;
-  font-weight: 300px;
-  padding: 6px 5px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  padding: 3px 2px;
-  right: 20px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  }
+/* 
   @media (min-width: 1023px){
     .open-button {
       top:495px;
     
     }
-  }
-  @media (max-width: 767px) {
+  }*/
+
+   @media (max-width: 767px) {
+    .open-button {
+      z-index: 200;
+      margin-top: 100px;
+      background-color: #000000;
+      color: rgb(255, 255, 255);
+      font-size: 18px;
+      font-weight: 300px;
+      padding: 6px 5px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      padding: 3px 2px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      }
     .open-button {
       top:540px;
       bottom:0;
      
-    }
+    } 
   }
+
   .container{
   z-index: 400;
-  position: fixed;
-  display: none;
+  position: absolute;
+  display: block;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
   
-  
   }
+
   @media (min-width: 1024px) {
+    .open-button {
+     display: none;
+      }
   .container{
-  margin-left: 950px;
-  width: 400px;
-  height:420px;
-  margin-top: 150px;
+  margin-left: 300px;
+  width: 820px;
+  height:480px;
+  margin-top: 2700px;
+
+  
   }
   .container form{
     position: absolute;
     z-index: 400;
-    position: fixed;
-    background-color: #8d67cf;
+    position: absolute;
+    background-color: #c0fac4;
+    width: 800px;
     display: flex;
     flex-direction: column;
     padding: 20vm 4vm;
-    height: 65%;
+    height: 100%;
     border-radius: 10px;
     }
-  
+    .container h1{
+          color: #31A677;
+       
+    }
     .container form input , .container form textarea {
   
       border:0;
       margin: 10px 0;
       padding: 10px;
       outline: none;
-      background-color: rgb(255, 255, 255);
+      background-color: rgb(250, 248, 248);
       font-size: 16px;
-      width:300px;
-      margin-left: 50px;
+      width:500px;
+      margin-left: 100px;
       margin-right: 20px;
       border-radius: 10px;
       }
@@ -223,18 +235,21 @@ border-radius: 50%;
         cursor: pointer;
         border: 0;
         }
+        .container form button:hover{
+          background-color: #31A677;
+        }
         .container form h3{
           font-weight: 800px;
           margin-top: 10px;
           margin-left: 150px;
-          color: white;
+          color: #31A677;
           }
           
   .container .btn {
   
-  margin-left: 70px;
-  margin-top: -35px;
+ display: none;
   } 
+ 
   }
   
   @media (max-width: 1023px) {
@@ -473,7 +488,8 @@ border-radius: 50%;
   
   @media (min-width: 1024px) {
   footer{
-    margin-top: 250%;
+    position: absolute;
+    margin-top: 60%;
     
   }
   footer .content .link-boxes{
@@ -1784,7 +1800,7 @@ border: 1px solid black;
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
-    background-color:#8d67cf; /* Set a background color */
+    background-color:rgb(139, 244, 134); /* Set a background color */
     color: rgb(0, 0, 0); /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
   width: 30px;/* Some padding */
@@ -1814,7 +1830,7 @@ border: 1px solid black;
       z-index: 99; /* Make sure it does not overlap */
       border: none; /* Remove borders */
       outline: none; /* Remove outline */
-      background-color: #8d67cf; /* Set a background color */
+      background-color: rgb(139, 244, 134); /* Set a background color */
       color: rgb(0, 0, 0); /* Text color */
       cursor: pointer; /* Add a mouse pointer on hover */
     width: 30px;/* Some padding */
