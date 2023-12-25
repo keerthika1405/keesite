@@ -150,8 +150,8 @@ border-radius: 50%;
    @media (max-width: 767px) {
     .open-button {
       z-index: 200;
-      margin-top: 100px;
-      background-color: #000000;
+      margin-top: 80px;
+      background-color: #5fe341;
       color: rgb(255, 255, 255);
       font-size: 18px;
       font-weight: 300px;
@@ -168,7 +168,7 @@ border-radius: 50%;
       }
     .open-button {
       top:540px;
-      bottom:0;
+      bottom:10px;
      
     } 
     .container{
