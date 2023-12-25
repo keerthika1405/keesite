@@ -166,18 +166,21 @@ border-radius: 50%;
       height: 30px;
       border-radius: 50%;
       }
-    .open-button {
-      top:540px;
-      bottom:20px;
-     
-    } 
-    .container{
+      @media (max-width: 767px) {
+        .open-button {
+          top:540px;
+          bottom:0;
+         
+        }
+      }
+      .container{
       z-index: 400;
-      position: absolute;
+      position: fixed;
       display: none;
       align-items: center;
       justify-content: center;
       border-radius: 20px;
+      
       
       }
   }
