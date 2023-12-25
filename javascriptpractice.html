@@ -1,0 +1,2430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT(practice)</title>
+    <link rel="stylesheet" href="javascriptpractice.css">
+    <link rel="stylesheet" href="accordion.css">
+    <style>
+
+      .hamburger-menu{
+       padding-right: 1.5rem;
+       cursor: pointer;
+     }
+     .hamburger-menu .line{
+     display: block; 
+     width:25px;
+     height: 20px; 
+     margin-top: -25px;
+     margin-left: 60px;
+     color: rgb(80, 80, 80);
+     cursor: pointer;
+     }
+     .nav-menu{
+       position: fixed;
+       width: 34%;
+       top: 50px;
+       left: 50px;
+       background-color: rgb(255, 255, 255);
+       font-weight: 600;
+     
+     }
+     .nav-menu a{
+       font-size: 15px;
+       color: rgb(173, 173, 173);
+       text-decoration: none;
+       display: block;
+       text-align: center;
+       padding: 20px 0;
+     }
+     .hide{
+       display: none;
+     }
+         /* for Desktop view */
+         @media screen and (min-width:600px){
+           .navbar{
+             justify-content: space-around;
+           }
+           .nav-menu{
+             width: 60%;
+             display: block;
+             position: static;
+             margin-top: -25px;
+             margin-left: 70px;
+            
+             background: none;
+           }
+           .nav-menu a{
+             display: inline-block;
+           padding: 0px 10px;
+           
+             /* padding: -px 20px; */
+           
+           }
+       
+           .hamburger-menu{
+             display: none;
+           }
+         }
+         
+      
+
+ @media only screen and (min-width : 150px) and (max-width : 780px)
+{
+	
+	.search-box
+	{
+		width: 100%;
+		margin: 0 auto;
+    margin-top: 30px;
+    
+	}
+ .features{
+  width: 230%;
+  height: 50%;
+ }
+.tab-cont{
+  display: inline-block;
+width: 30%;
+}
+.tab-item{
+  width: 20%;
+}
+.tab-content{
+  margin-left: -200px;
+  position: absolute;
+}
+.webname{
+  margin-left: -100px;
+}
+.foot{
+  width: 100%;
+  display: inline-block;
+}
+}         
+ </style>
+ <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css"> 
+</head>
+<body id="mode">
+
+    <nav class="navbar">
+             <div class="content-area">
+                <button  class="content-area1" onclick="openNav()" style="font-size:20px;cursor:pointer"><i class="fa fa-navicon" style="color: black;"></i></button>
+           
+            <div class="dropdown-content" id="myDropdown">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+             <a href="#">Link 3 &emsp;&emsp;&emsp;&emsp; <button class="content-area2" onclick="openNavy()" >&#62;</button>
+              <div class="dropdown-content1" id="myDropdown1" >
+                <a href="#">python</a>
+                <a href="#">java</a> </div>
+              </a>
+              <a href="#">Link 2</a>
+            </div>
+        
+            <div class="hamburger-menu">
+              <span class="line">Menu</span><!--☰-->
+            </div> 
+            <div class="nav-menu hide">
+              
+              <a href="#">Home</a>
+              <a href="#">Career</a>
+              <a href="#">About</a>
+              <a href="#">Contact</a>
+          </div>
+    </div>
+    
+    
+    <div class="search-box">
+    <div class="row">
+           <form id="search"  method="post" >
+              <input type="text" id="input-box" placeholder="search here" autocomplete="off">
+              <button type="submit"><i class='bx bx-search bx-sm' style="color: white;" id="input-box"></i></button>
+    </div>
+    </form>
+              <form id="css" action="explore.html" methode="get"></form>
+              <form id="HTML" action="chrome.html" methode="get"></form>
+              <form id="javascript" action="about.html" methode="get"></form>
+                
+    <div class="result-box">    
+    </div>      
+    </div>
+    
+    <button class="open-button" onclick="openForm()">Support</button>
+    <div class="container" id="myForm">
+    <form  onsubmit="sendEmail(); reset(); " >
+        <h3>Let's Solve</h3>
+        <input type="text" id="name" placeholder="Your Name" autocomplete="off"  required>
+        <input type="email" id="email" placeholder="Your Email Id" autocomplete="off" required>
+        <input type="text" id="phone" placeholder="phone no" autocomplete="off" >
+        <textarea  id="message" name="" id="message" cols="30" rows="5" placeholder="Write Your Query Here We Will Reach You Soon ?"  required></textarea>
+        <button type="submit">send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+    </div> 
+    
+    
+    <div class="webname">
+        <h2>keesite</h2>
+    </div>
+    
+    </nav>
+
+   
+    
+<div class="heading">
+  <h1>javascript(Lets practice some  question )</h1>
+</div>
+
+<div class="faq-container">
+  
+  <details>
+    <summary>
+      <span class="faq-title" id="sec1">1. What are the possible ways to create objects in JavaScript?  </span>
+      <img src="plus.svg" class="expand-icon" alt="Plus">
+    </summary>        
+    <div class="faq-content">
+ <p><b>An object is a collection of properties, and a property is an association between a name (or key) and a value. A property's value can be a function,
+   in which case the property is known as a method.</b></p>     
+<ul>
+<li><b>using constructor:</b> a constructor is used when we want to create multiple objects which have the same properties and methods</li>
+<b>Inside the constructor the given properties and values are bound to the newly created object by using 'this' -> 'this' is currently set to the newly created object.</b>
+<pre><Code>
+  // Constructor Function
+  function Student(name,id){
+               // add properties to this
+               this.name = name
+               this.id = id
+              // returns this 
+                  }
+  //Creating Objects
+  const student1 = new Student("Tony",101)
+  const student2 = new Student("Jack",102)
+  console.log(student1)
+  console.log(student2)
+
+  without 'new' :
+  const student1 = Student('Tony',101);
+  console.log(student1.name)//TypeError: Cannot read property 'name' of undefined
+</Code></pre>
+<p><b>To prevent constructor from being called without new keyword 'new.target' was introduced in ES6.,</b><br>
+  Explanation:<br>
+   Since we are calling the constructor without the new keyword new.target will return undefined, the if condition is triggered and a new object is created.
+<br>
+  Takeaway: <br>
+  new.target is used to prevent the users from calling the constructor without the new keyword. If a constructor is called 
+  with new then new.target will return a reference to the constructor function if not it will return undefined.</p>
+
+<pre><code>
+  function Student(name, id) {
+    if (!new.target) {
+        throw Error("Use the new keyword to call constructor");
+    }
+    this.name = name
+    this.id = id
+}
+const student1 = Student("Tony",101) //Error: Use the new keyword to call constructor
+
+or
+
+function Student(name, id) {
+  if (!new.target) {
+      return new Student(name,id)
+  }
+  this.name = name
+  this.id = id
+}
+let student1 = Student("Tony",101)
+console.log(student1.name);//Tony
+
+</code></pre>
+<p><b>Javascript also provides some built-in Constructors</b> Such as:<br>
+
+  Object - Creates new Object object <br>
+  Array - Creates new Array object <br>
+  String - Creates new String object <br>
+  Number - Creates new Number object etc.</p>
+  <pre><code>
+const a = new String("Scaler");   // A new String object
+const b = new Number(42);   // A new Number object
+const c = new Object();   // A new Object object
+const d = new Array("Awesome","Blogs");    // A new Array object
+c.name = "Tony"
+c.id = 101
+console.log(`String Created:`,a)
+console.log(`Number Created:`,b)
+console.log(`Object Created:`,c)
+console.log(`Array Created:`,d)
+
+//String Created: [String: 'Scaler']
+
+  </code></pre>
+  <p>We can add methods to Javascript constructor functions similar to how we have added other properties which are by using the this keyword.</p>
+<pre><code>
+  function Student(name,id){
+    // add properties to this
+    this.name = name
+    this.id = id
+    // add method to this
+    this.welcome = function() {
+      console.log("Welcome", this.name)
+    }
+       }
+
+//Creating Objects
+const student1 = new Student("Tony",101)
+const student2 = new Student("Jack",102)
+console.log(student1.welcome())
+console.log(student2.welcome())
+
+</code></pre>
+<b>Prototype is super useful and important because it allows us to easily define methods to all instances of a particular object.
+   Since the method is applied to the prototype,  it is only stored in the memory once but every instance of an object can access it!</b>
+<pre><code>
+  // Constructor Function
+function Student(name,id){
+             // add properties to this
+             this.name = name
+             this.id = id
+             
+            // returns this 
+                }
+//Creating Objects
+const student1 = new Student("Tony",101)
+const student2 = new Student("Jack",102)
+
+// adding new method to constructor function
+Student.prototype.programmer= function(){
+      
+  console.log(this.name,"is a programmer")
+}
+
+console.log(student1.programmer())//Tony is a programmer
+console.log(student2.programmer())//Jack is a programmer
+
+</code></pre>
+<p><b>Constructors in ES6</b></p>
+<p>Constructor methods work the same as constructor functions.</p>
+<pre><code>
+  class Student {
+
+    constructor(name,id) {
+      this.name = name
+      this.id = id
+    }
+  
+  }
+  
+  const student1 = new Student('Tony',101);
+  const student2 = new Student('Jack',102);
+  
+  console.log(student1)
+  console.log(student2)
+  
+</code></pre>
+<p> <b>Constructor in java is used to create the instance of the class. Constructors are almost similar to methods except for two things 
+  - its name is the same as the class name and it has no return type. Sometimes constructors are also referred to as special methods to initialize an object</b>
+</p>
+  </ul>
+    </div>
+  
+  </details>
+  
+  <details>
+    <summary>
+      <span class="faq-title">1.seven ways to create objects in JavaScript?  </span>
+      <img src="plus.svg" class="expand-icon" alt="Plus">
+    </summary>        
+    <div class="faq-content">
+      <pre><code>
+        /*using object literal{}*/
+ var emp1 = {};
+ emp1.firstName = "Nancy";
+ emp1.lastName = "Davolio";
+ emp1.showName = function () {
+ console.log(this.firstName + " " + this.lastName);
+ };
+
+ emp1.showName(); 
+
+
+
+
+
+/*Object literals using { key : value } */ 
+ var emp2 = {
+     "firstName": "Nancy",
+     "lastName": "Davolio",
+     "showName": function () {
+         console.log(this.firstName + " " + this.lastName);
+     }
+ };
+ emp2.showName();
+
+
+
+
+/* Using new Object()*/ 
+ var emp3 = new Object();
+ emp3.firstName = "Nancy";
+ emp3.lastName = "Davolio";
+ emp3.showName = function () {
+     console.log(this.firstName );
+ };
+ emp3.showName();
+
+/*Using Object.create()*/  
+ var emp4 = Object.create(null);
+ emp4.firstName = "Nancy";
+ emp4.lastName = "Davolio";
+ emp4.showName = function () {
+     console.log(this.firstName + " " + this.lastName);
+ };
+ emp4.showName();
+
+
+
+
+/*Using function constructor*/
+ function Employee(fname,lname) {
+     this.firstName = fname;
+     this.lastName = lname;
+     this.showName = function () {
+         console.log(this.firstName + " " + this.lastName);
+     };
+ }
+ var emp5 = new Employee("Nancy", "Davolio");
+ var emp6 = new Employee("sam", "Andrew");
+ emp5.showName();
+ emp6.showName();
+
+
+
+
+
+/*  Using anonymous function*/
+ var emp6 = new function () {
+     this.firstName = "Nancy";
+     this.lastName = "Davolio";
+     this.showName = function () {
+         this.age=23
+         console.log(this.firstName + " " + this.lastName +" "+"and his name is " +this.age);
+     };
+ }
+ emp6.showName();
+ console.log(emp6)
+
+
+
+/*Using ES6 class keyword*/
+ class Employee {
+     constructor(fname, lname) {
+         this._firstName = fname;
+         this._lastName = lname;
+     }
+
+     get firstName() {
+         return this._firstName;
+     }
+
+     set firstName(value) {
+         this._firstName = value;
+     }
+
+     get lastName() {
+         return this._lastName;
+     }
+
+     set lastName(value) {
+         this._lastName = value;
+     }
+
+     showName() {
+         console.log(this.firstName + " " + this.lastName);
+     }
+ }
+
+ var emp7 = new Employee("Nancy", "Davolio");
+ emp7.showName();
+ emp7.firstName = "Andrew";
+ emp7.showName();
+ emp7.lastName = "johny";
+ emp7.showName();
+      </code></pre>
+      </div>
+      </details>
+  
+      <details>
+        <summary>
+          <span class="faq-title">prototype inheritance or channing  </span>
+          <img src="plus.svg" class="expand-icon" alt="Plus">
+        </summary>        
+        <div class="faq-content">
+       <p><b>   Prototype inheritance in javascript is the linking of prototypes of a parent object to a
+         child object to share and utilize the properties of a parent class using a child class</b></p>
+          
+      <p>Prototypes are hidden objects that are used to share the properties and methods of a parent class to child classes.</p>
+    
+    <pre><code>
+      child.__proto__ = parent;
+    </code></pre></div>
+    <pre><code>
+      let company = {//company object
+        name: "A",
+        pay: function () {
+          console.log("Paying");
+        },
+      }; 
+      let worker = { //worker object
+        id: 1,
+        work: function () {
+          console.log("Working");
+        },
+      };
+
+      //worker object inherits company object
+      worker.__proto__ = company; 
+      console.log(worker);
+
+      worker.pay(); // calling method from company object using worker object.
+    
+      
+      output:
+id: 1
+work: ƒ ()
+[[Prototype]]: Object
+name: "A"
+pay: ƒ ()
+[[Prototype]]: Object
+
+Paying
+
+    </code></pre>
+    <pre><code>
+      let baseuser = {
+        read: true,
+      };
+      let developer = {
+        write: true,
+      };
+      developer.__proto__ = baseuser;
+      console.log(developer.read); //true
+    </code></pre>
+
+    <p><b>
+      Object.create<br>
+      Prototype inheritance can be easily done using the Object.create method, which is used to create a new object by using the existing object.
+      The new object just inherits the prototype of the given object </b>
+    </p>
+    <pre><code>
+      let company = {
+        name: "ABC",
+        pay: function () {
+          console.log("Paying");
+        },
+      };
+      let intern = Object.create(company, {
+        experience: { value: 2 },
+      }); //creating intern object from company object
+      console.log(intern);
+      
+    </code></pre>
+<p><b>
+  Object.prototype.constructor:<br>
+  Constructor is a method, present in every object in the Object [[prototype]].
+Every object has a default constructor and constructors can also be assigned to values</b></p>
+<pre><code>
+  let workers = []; // Array
+console.log(workers.constructor);
+let company = {
+  name: "BEST",
+}; // object
+console.log(company.constructor);
+
+
+output:
+ƒ Array() { [native code] }
+ƒ Object() { [native code] }
+
+</code></pre>
+
+
+<p><b>
+hasOwnProperty:<br>
+This method is used to check whether a property is present in the given object.
+</b></p>
+<pre><code>
+  let company = {
+    name: "prototype inheritance",
+  };
+  console.log(company.hasOwnProperty("name"));//true
+  
+</code></pre>
+
+<p><b>
+  The prototype chain:<br>
+The prototype chain is used for multiple inheritances at different hierarchy levels.
+</b></p>
+<pre><code>
+  let student = {
+    id: 1,
+  };
+  let tution = {
+    id: 2,
+  };
+  let school = {
+    id: 3,
+  };
+  student.__proto__ = school; //level1 inheritance
+  student.__proto__.__proto__ = tution; //level2 inheritance
+  console.log(student.id); //the student object's property
+  console.log(student.__proto__.id); //school object's property
+
+  //output
+  1
+  2
+  
+</code></pre>
+<p><b>get and set the property of object<br></b></p>
+
+<pre><code>
+  let baseuser = {
+    //parent object
+    read: true,
+    job: "",
+    showreadpermission: function () {
+      console.log(this.read);
+    },
+    //setter method to set the job of user
+    set detail(value) {
+      this.job = value;
+    },
+    //getter method to get job detail
+    get detail() {
+      return `${this.job}`;
+    },
+  };
+  let developer = {
+    //child object
+    write: true,
+  };
+  developer.__proto__ = baseuser;
+  developer.showreadpermission(); //calling parent function
+  developer.detail = "blogger"; //calling setter method
+  console.log(developer.detail); //calling getter method
+  
+  //output
+  true
+blogger
+</code></pre>
+<p><b>Property with the Same Keyboard <br>
+  If the objects have the same key then it will be overwritten from left to right 
+</b></p>
+<pre><code>
+  var sourceObj1 = { x: 10, y:20, z:30 };
+var sourceObj2 = { w: 15, z: 45, x: 25 };
+var sourceObj3 = { t: 45, x: 45, y:80 };
+
+var targetObject = Object.assign({t:40}, sourceObj1, sourceObj2, sourceObj3);
+console.log(targetObject);
+
+//output
+{ t: 45, x: 45, y: 80, z: 45, w: 15 }
+
+</code></pre>
+<p><b>the reference object is copied internally by the method object assign</b></p>
+<pre>
+  <code>
+    var sourceObj = { data:10, y: {
+      message:"Hello World"
+    } };
+    
+    var targetObject = Object.assign({}, sourceObj)
+    console.log(targetObject);
+    
+    //Change one of the property
+    targetObject.y.message = "Hi There";
+    
+    console.log(targetObject);
+    console.log(sourceObj);
+output:
+{ data: 10, y: { message: 'Hello World' } }
+{ data: 10, y: { message: 'Hi There' } }
+{ data: 10, y: { message: 'Hi There' } }
+
+  </code>
+</pre>
+<p><b>Multi-Tier Inheritance <br>
+  We can achieve more scalability in prototype inheritance by including the __proto__ property directly in the class.
+  We can have more complex relations which can be altered very easily when needed. This is a powerful feature of prototype inheritance in javascrip</b></p>
+   
+<pre><code>
+  let subject = {
+    topic: "javascript",
+    about: function () {
+      console.log("JS is amazing");
+    },
+  }; //base class
+  let course = {
+    __proto__: subject,
+    instructor: "professor",
+  }; //inherited from subject
+  let department = {
+    __proto__: course,
+    dept_name: "IT",
+  }; //inhserited from course
+  let student = {
+    __proto__: department,
+    id: 1,
+  }; // inherited from department
+  console.log(student.dept_name);
+  
+</code></pre>
+
+<p><b>, in javascript objects don't directly inherit from objects but use a property called prototype to accomplish inheritance.</b></p>
+<p><b>functions prototype:<br>
+function  also have a prototype and an empty constructor by default.
+We can add any properties to the prototype of functions by using the function. prototype property.</b></p>
+<pre><code>
+const course = function () {}; //adding prototype directly
+course.prototype.name = "javascript";
+const student = new course();
+student.id = 1; //adding property
+console.log(student);
+
+output
+id: 1
+[[Prototype]]: Object
+name: "javascript"
+constructor: ƒ ()
+[[Prototype]]: Object
+
+
+</code></pre>
+<p><b>Differential Inheritance<br>
+  In prototype inheritance, when using the Object.prototype method to assign properties to a prototype,
+   the properties are not actually copied from parent to child but they are just linked with each other.
+    This model is called Differential Inheritance in javascript and is more often referred to as prototype chain.
+  We can verify this using the hasOwnProperty() method. </b></p>
+  <pre><code>
+const course = function () {}; //adding prototype directly
+course.prototype.name = "javascript";
+const student = new course();
+student.id = 1; //adding property
+console.log(student);
+
+console.log(student.hasOwnProperty("name"));//false
+console.log(student.hasOwnProperty("id"));//true
+
+  </code></pre>
+</details>
+
+<details>
+  <summary>
+    <span class="faq-title">	What is the difference between Call, Apply and Bind  </span>
+    <img src="plus.svg" class="expand-icon" alt="Plus">
+  </summary>        
+  <div class="faq-content">
+    
+    Call method:<br>
+   The call() method calls a function with a given this value and arguments provided individually.
+    <pre><code>
+      func.call([thisArg[, arg1, arg2, ...argN]])
+
+'use strict'
+
+let name = {
+  firstName :'Ayush',
+  lastName :'Verma'
+}
+let name2 = {
+  firstName :'Ram',
+  lastName :'Verma'
+}
+let printFullName = function(hometown, state){
+ console.log(this.firstName+ " "+ this.lastName + " from "+ hometown + ", "+ state );
+}
+
+printFullName.call(name, "Surat", "Gujarat"); // Ayush Verma from Surat, Gujarat
+printFullName.call(name2, "Ahmedabad", "Gujarat"); // Ram Verma from Ahmedabad, Gujarat
+
+
+
+
+1) Using call to chain constructors for an object
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+function Engineer(name, age) {
+  Person.call(this, name, age);
+  this.category = 'Engineer';
+}
+function Doctor(name, age) {
+  Person.call(this, name, age);
+  this.category = 'Doctor';
+}
+const engineer = new Engineer('Ayush', 28);
+console.log(engineer);
+//Engineer {name: "Ayush", age: 28, category: "Engineer"}
+const doctor = new Doctor('Anu', 30);
+console.log(doctor);
+//Doctor {name: "Anu", age: 30, category: "Doctor"}
+
+
+
+2) Using call to invoke a function and specifying the context for 'this'
+const person = {
+  name: 'Ayush', 
+  age: '28'
+};
+function print() {
+const reply = [this.name, 'is', this.age, 'years old.'].join(' ');
+console.log(reply);
+}
+print.call(person);//Ayush is 28 years old.
+
+
+
+3) Using call to invoke a function and without specifying the first argument
+var name = 'Ayush';
+function display() {
+  console.log('Your name: ', this.name);
+}
+display.call();
+// Your name:  Ayush
+Caution: In strict mode, the value of this will be undefined.
+'use strict'
+var name = 'Ayush';
+function display() {
+  console.log('Your name: ', this.name);
+}
+display.call();
+//Uncaught TypeError: Cannot read property 'name' of undefined
+
+4)Using Call to Invoke Anonymous Functions
+const animals = [
+  { species: 'Lion', name: 'King' },
+  { species: 'Whale', name: 'Fail' }
+];
+
+for (let i = 0; i < animals.length; i++) {
+  (function(i) {
+    this.print = function() {
+      console.log('#' + i + ' ' + this.species
+                  + ': ' + this.name);
+    }
+    this.print();
+  }).call(animals[i], i);
+}
+
+    </code></pre>
+
+    Apply method<br>
+    The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object).
+  <pre><code>
+    func.apply(thisArg, [ argsArray])
+
+    const person = {
+      firstName: 'Ayush',
+      lastName: 'Verma'
+  }
+  function greet(greeting, message) {
+      return `${greeting} ${this.firstName} ${this.lastName}. ${message}`;
+  }
+  let result = greet.apply(person, ['Hello', 'How are you?']);
+  console.log(result);  //Hello Ayush Verma. How are you?
+
+  1) Using apply to append an array to another
+  const arr = [1, 2, 3]; 
+const numbers = [4, 5, 6];
+arr.push.apply(arr, numbers);  
+console.log(arr);//[1, 2, 3, 4, 5, 6]
+
+2) Using apply and built-in functions
+// Min/Max number in an array
+const numbers = [9, 8, 1, 2, 3, 5, 6, 7];
+// Using Math.min/Math.max apply
+let max = Math.max.apply(null, numbers);
+console.log(max); //9
+// This about equal to Math.max(numbers[0], ...)
+// or Math.max(5, 6, ...)
+let min = Math.min.apply(null, numbers);
+console.log(min); //1
+
+
+  
+
+  </code></pre> 
+  bind methods:<br>
+  The bind method looks exactly the same as the call method but the only difference is instead of directly calling this method here,
+   the bind method binds this method with the object and returns a copy of that method. And will return a function.
+So there is a catch over here, it doesn’t directly call that method rather it will return a method that can be called later.
+ This is basically used to just bind and keep the copy of that method and use it later.
+ 
+<pre>
+  <code>
+    'use strict'
+
+let name = {
+  firstName :'Ayush',
+  lastName :'Verma'
+}
+let name2 = {
+  firstName :'Ram',
+  lastName :'Verma'
+}
+let printFullName = function(hometown, state){
+ console.log(this.firstName+ " "+ this.lastName + " from "+ hometown + ", "+ state );
+}
+
+// let firstBind = printFullName.bind(name, "Surat");
+// firstBind("Gujarat") 
+// Ayush Verma from Surat, Gujarat
+
+// let firstBind = printFullName.bind(name);
+// firstBind("Surat","Gujarat") 
+// Ayush Verma from Surat, Gujarat
+
+let secondBind = printFullName.bind(name2);
+secondBind("Surat","Gujarat") 
+// Ram Verma from Surat, Gujarat
+
+
+
+1)bind() for function binding (with setTimeout())
+let person = {
+  firstName: 'John Doe',
+  getName: function() {
+      console.log(this.firstName);
+  }
+};
+setTimeout(person.getName, 1000); //undefined
+let f = person.getName; 
+setTimeout(f, 1000); //undefined
+
+setTimeout(function () {
+  person.getName();
+}, 1000);
+
+let g = person.getName.bind(person); 
+setTimeout(g, 1000); 
+
+2)Using bind() to borrow methods from a different object
+
+let runner = {
+  name: 'Runner',
+  run: function(speed) {
+      console.log(this.name + ' runs at ' + speed + ' mph.');
+  }
+};
+let flyer = {
+  name: 'Flyer',
+  fly: function(speed) {
+      console.log(this.name + ' flies at ' + speed + ' mph.');
+  }
+};
+let run = runner.run.bind(flyer, 20);
+run();
+// Flyer runs at 20 mph.
+
+
+3)
+const module = {
+  x: 42,
+  getX: function () {
+    return this.x;
+  },
+};
+const unboundGetX = module.getX;
+console.log(unboundGetX()); // The function gets invoked at the global scope
+// Expected output: undefined
+
+const boundGetX = unboundGetX.bind(module);
+console.log(boundGetX());
+// Expected output: 42
+  </code>
+</pre></div>
+</details>
+
+<details>
+  <summary>
+    <span class="faq-title">What is JSON and its common operations </span>
+    <img src="plus.svg" class="expand-icon" alt="Plus">
+  </summary>        
+  <div class="faq-content">
+    JSON is a text-based data - interchange format. This means that we can export JSON data to spreadsheets / XML as well as import data from spreadsheets / XML to JSON.
+<pre><code>
+  {
+    "name": "Santro",
+    "color": "white",
+    "carNumber": "XYZ123",
+    "modelYear": "2020"
+}
+</code></pre>
+A JSON data 'jsonData' can be converted into javascript data 
+<pre><code>
+  var jsObject = JSON.parse(jsonData);
+</code></pre>
+javascript object 'jsObject' can be converted to JSON data
+<pre><code>
+  var jsonData = JSON.stringify(jsObject);
+</code></pre>
+JSON Schema<br>
+JSON schema is a formal representation of the keys and the datatype of values in the key-value pairs which are stored in a JSON object.
+ It describes how a particular JSON object is structured, and what attributes and data types it contains
+<pre><code>
+  let schema = {
+    "name": {"type": "string"},
+    "category": {"type": "string"},
+    "address": {
+        "state": {"type": "string"},
+        "pincode": {"type": "string"}
+    }
+}
+
+why json schema
+valid JSON data with respect to the schema 
+{
+  "name": "Scaler",
+  "category": "Ed-Tech",
+  "address": {
+      "state": "Maharashtra" 
+      "pincode": "411028"
+  }
+}
+
+
+
+
+An invalid JSON data with respect to the schema 
+{
+  "name": "Scaler",
+  "category": "Ed-Tech",
+  "address": "Maharashtra 411028" // invalid because "address" should have been an object and not a string
+}
+</code></pre>  
+
+<pre><code>
+//JavaScript to illustrate JSON.parse() method.  
+var j = '{"Name":"Krishna","Email": "XYZ", "CN": "12345"}';  
+var data = JSON.parse(j);  
+document.write("Convert string in JSON format using parse() method<br>");  
+document.write(data.Email); //expected output: XYZ  
+  
+//JavaScript to illustrate JSON.stringify() method.  
+var j = {Name:"Krishna",  
+Email: "XYZ", CN : 12345};  
+var data = JSON.stringify(j);  
+document.write("<br>Convert string in JSON format using stringify()  method<br>");  
+document.write(data); //expected output: {"Name":"Krishna","Email":"XYZ","CN":12345}  
+</code></pre>
+</div>
+  </details>
+  <details>
+    <summary>
+      <span class="faq-title">What is the purpose of the array slice method </span>
+      <img src="plus.svg" class="expand-icon" alt="Plus">
+    </summary>        
+    <div class="faq-content">  The slice() function in Array class of Javascript
+       returns a shallow copy of a subarray into a new array object which includes the elements
+        from a user-specified start index to a user-specified end index (end not included). The original array is not modified.
+<pre><code>
+  1. Without Any Parameter
+  let brr = arr.slice()
+
+  2. With One Parameter
+  let br = ar.slice(start)
+
+  3. With Two Parameters
+  let br = ar.slice(start,end)
+
+  // define array animals
+const animals = ["Cat", "Dogs", "Tiger", "Lion"];
+
+
+const Sample_animals = animals.slice(0, 2);
+
+// output first two animals
+console.log(Sample_animals);//["Cat", "Dogs"]
+
+// animals array remains the same
+console.log(animals);//["Cat", "Dogs", "Tiger", "Lion"]
+
+
+
+4. Array-like Objects into Arrays
+We can also use the slice in Javascript to convert any array-like objects into arrays without having to manually create an array
+
+function convert(){
+  // use slice() to return an array of the passed arguments
+  return Array.prototype.slice.call(arguments);
+}
+
+// define an array of digits
+var digits;
+
+// call function to convert individual digits into an array
+digits = convert(0,3,9,7,6);
+
+// output digits array
+console.log(digits);//[ 0, 3, 9, 7, 6 ]
+
+</code></pre>
+      </div>
+      </details>
+
+
+      <details>
+        <summary>
+          <span class="faq-title">What is the purpose of the array splice method </span>
+          <img src="plus.svg" class="expand-icon" alt="Plus">
+        </summary>        
+        <div class="faq-content">
+          The splice() method of the Array class in JavaScript modifies the original array by changing its content.
+           It works by removing the existing elements and adding new ones, which might change the array's length.
+
+<pre><code>
+  //splice(start, delete_count, element1,..., elementN)
+
+
+//Program to demonstrate the use of splice() method on numbers
+let num = [0, 1, 2, 3, 4, 5, 6];
+
+//Array before any changes
+console.log("Before any modification:", num);
+
+//splice(start, delete_count, element1,..., elementN)
+
+// Removing one element at index 2 and the numbers 7, 8, 9
+let deletedElements = num.splice(2, 1, 7, 8, 9);
+//deletedElements will be an array containing the elements removed from the array 'num'
+
+//Printing the resultant array 'num'
+console.log("After removing elements:", num);
+
+//Printing the array of deleted elements
+console.log(deletedElements);
+
+
+output
+Before any modification: [ 0, 1, 2, 3, 4, 5, 6 ]
+After removing elements: [ 0, 1, 7, 8, 9, 3, 4, 5, 6 ]
+[ 2 ]
+
+alternative
+splice(start_index)
+splice(start_index, delete_count)
+
+*Using splice() for Different delete_count Values
+If delete_count is less than or equal to 0, then none of the elements will be removed.
+
+*//if start_index >= array.length, no element will be removed, and
+//specified elements in the arguments will be added to the end
+
+
+
+let letters = ['A', 'B', 'C', 'D', 'E', 'F']; 
+//if start_index + array.length < 0, the indexing starts from index 0
+letters.splice(-9, 1, 'X', 'Y', 'Z');
+console.log("When start_index + array.length < 0: ", letters);
+
+//output
+When start_index + array.length < 0:  [ 'X', 'Y', 'Z', 'B', 'C', 'D', 'E', 'F' ]
+
+
+</code></pre>
+          </div>
+          </details>
+
+
+          <details>
+            <summary>
+              <span class="faq-title">	What is the difference between slice and splice </span>
+              <img src="plus.svg" class="expand-icon" alt="Plus">
+            </summary>        
+            <div class="faq-content">
+              splice<br>
+              <ul>
+                <li>.splice() will mutate your original array</li>
+                <li>Used to delete or add items in the array</li>
+                <li>It takes three arguments, at least one parameter is required to delete an item</li>
+                <li>Returns the removed items in an array</li>
+              </ul>
+              slice<br>
+              <ul>
+                <li>.slice() won't mutate your original array.</li>
+                <li>This is only used to delete items from the array</li>
+                <li>It takes two parameters, both are optional</li>
+                <li>  Returns the portion of an array based on parameters</li>
+              
+
+              </ul>
+              </div>
+              </details>
+
+              <details>
+                <summary>
+                  <span class="faq-title">	 How do you compare an Object with a Map </span>
+                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                </summary>        
+                <div class="faq-content">
+                <b>object</b>
+<ul>
+  <li>n Object, the data type of the key can only be a string or symbols. Other types will automatically be converted to strings<br>
+    Handling code with this implicit conversion of data types is a challenge because the consistency of the data types is lost.</li>
+  <li>Map preserves the original order of elements with respect to the insertion.<br>This ordering in iteration is achieved by the s
+    o-called deterministic hash tables algorithm used by Javascript. Note that Maps are internally implemented using hash tables.</li>
+  <li>Objects are not iterable directly. To perform an iteration over the objects, we need to use Object.keys() or Object.values() 
+    to obtain the list of keys, values or the pairs. Similar is the case for the purpose of finding the length of the object, use the 
+    above methods and find the length of the returned array by .length. <br>
+  In short, it can be said that there are no proper helper methods for objects.</li>
+  <li></li>
+
+</ul>
+                <b>map</b>
+                <ul>
+                  <li>Map takes any type of key.</li>
+                  <li>this is not the case with objects. Sometimes when the order of insertion is importan,<br> Map will be preferred over objects.</li>
+                  <li> a simple method .size() returns the size of the map.</li>
+                </ul>
+
+                Map is an instance of an Object, but vice versa isn’t true.
+                <pre><code>var mp = new Map([[1,2],[3,4]]); 
+                  //another way of initiation of map
+                  console.log(mp instanceof Object); 
+                  //outputs true
+                  var obj = new Object();
+                  console.log(obj instanceof Map); 
+                  //outputs false
+                  </code></pre>
+
+                  <pre><code>
+                    <b>object</b>
+                  how they are declared, access 
+                  1)  By using direct literal
+
+                    var obj = {}; //An empty object
+
+                    var obj = {name: “Adam”, name: 5};
+
+                  2)  By using constructor
+
+                  var obj = new Object(); //An empty object 
+                  var obj = new Object; //Brackets are optional
+                  
+                  3)By using Object.prototype.create
+                  var obj = Object.create(null); //Empty Object
+
+                  function vehicles() {
+                    this.name = 'vehicles';
+                    this.model = 'LX';
+                  }
+                  function baleno() {
+                    vehicles.call(this);
+                  }
+
+                  baleno.prototype = Object.create(vehicles.prototype);
+                  const bal = new baleno();
+                  console.log(bal.name); //outputs vehicles
+                  console.log(bal.season); //outputs LX
+
+                  Accessing Element Object: We can use the dot operator or the bracket notations. (Object. and Object[‘key’])
+                  obj.name
+                  obj['name']
+                  
+                  adding
+                  obj['characters'] = 3; //{name: "one", characters:3}
+
+                  Object: check for already existed
+                  Using the ‘===’ operator to compare with undefined
+                  let exists = obj.name === undefined; //if the property is defined before, it will return false
+                  exists = 'name' in obj; //will also check for inherited property
+
+                  SIZE
+                  Object: For Object, there’s not a direct way, first we find the array of keys or values
+                   or the pairs using Object.keys() or Object.values() and then find the size of the array using .length.
+                  console.log(Object.keys(obj).length);
+
+                  iteration
+                  for(const key of Object.key(objectname)){
+                    const value = objectname[key]
+                    console.log(`${key}=>${value}`)
+                  }
+JSON has direct support for Object, but not with Map. So objects are preferred where there are a lot of tasks involving JSON.
+Again, Map is purely hash and Object is much more than that.
+                  </code></pre>  
+                  
+                  
+<pre><code>
+  Map: 
+var mp = new Map(); //An empty map
+var mp = new Map([[1,’One’],[2,’Two’]]); 
+
+
+2)
+use Map.prototype.get(key)
+mp.get('name')
+
+3) Check if a key already exists Map: Using the has() method
+mp.has(1); //return either true or false
+
+4) Adding new Element Map: Using Map.prototype.set() method
+It will add a new element to the map with the specified key-value pair, and if the key is already present it will overwrite the previous value corresponding to that key.
+ Because map preserves the order of insertio, the new element will appear in the last while iterating.
+ mp.set(5, ‘five’); //{5=>’five’}
+ mp.set(6, ‘six’); //{5=>’five’, 6=>’six’}
+ mp.set(5,’fifth’); //{5=>’fifth’}
+
+
+
+ 5) Getting the size Map: For map, it’s quite simple, map.size provides the size of the map
+ console.log(map.size);
+
+
+
+ 6)iteration
+ for(const [key,value] of onject){
+  console.log(`${key}=>${value}`)
+ }
+</code></pre>
+
+
+
+</div>
+</details>
+             
+<details>
+  <summary>
+    <span class="faq-title">	  What is the difference between == and === operators</span>
+    <img src="plus.svg" class="expand-icon" alt="Plus">
+  </summary>        
+  <div class="faq-content">
+    JavaScript provides both strict(===, !==) and type-converting(==, !=) equality comparison. 
+    The strict operators take type of variable in consideration, while non-strict operators make type correction/conversion based upon values of variables
+    
+  <pre><code>
+    0 == false   // true
+0 === false  // false
+1 == "1"     // true
+1 === "1"    // false
+null == undefined // true
+null === undefined // false
+'0' == false // true
+'0' === false // false
+[]==[] or []===[] //false, refer different objects in memory
+{}=={} or {}==={} //false, refer different objects in memory
+  </code></pre>
+
+  The strict operators follow the below conditions for different types,
+1) Two strings are strictly equal when they have the same sequence of characters, same length, and same characters in corresponding positions.
+2)Two numbers are strictly equal when they are numerically equal. i.e, Having the same number value. There are two special cases in this,
+NaN is not equal to anything, including NaN.
+Positive and negative zeros are equal to one another.
+
+3)Two Boolean operands are strictly equal if both are true or both are false.
+4)Two objects are strictly equal if they refer to the same Object.
+5)Null and Undefined types are not equal with ===, but equal with ==. i.e, null===undefined --> false but null==undefined --> true
+
+</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="faq-title">	What are lambda or arrow functions </span>
+        <img src="plus.svg" class="expand-icon" alt="Plus">
+      </summary>        
+      <div class="faq-content">
+        arrow function;
+        An arrow function expression is a compact alternative to a traditional function expression,
+        (param1, param2, ..., paramN) => expression
+
+By using the => (fat arrow) we don't need to use the function keyword. The parameters are passed in the brackets (), and the function expression is enclosed within the curly brackets {}
+<pre><code>
+  syntax:
+  () => expression
+  
+  param => expression
+  
+  (param) => expression
+  
+  (param1, paramN) => expression
+  
+  () => {
+    statements
+  }
+  
+  param => {
+    statements
+  }
+  
+  (param1, paramN) => {
+    statements
+  }
+
+
+  eg:
+  const a = 4;
+const b = 2;
+
+  // Traditional anonymous function
+(function (a, b) {
+  return a + b + 100;
+});
+
+// Arrow function
+(a, b) => a + b + 100;
+
+
+
+// Traditional anonymous function (no parameters)
+(function () {
+  return a + b + 100;
+});
+
+// Arrow function (no parameters)
+() => a + b + 100;
+
+
+
+  support:
+
+ 1) Rest parameters, :
+
+  function sum(...theArgs) {
+    let total = 0;
+    for (const arg of theArgs) {
+      total += arg;
+    }
+    return total;
+  }
+  console.log(sum(1, 2, 3));  // Expected output: 6
+  console.log(sum(1, 2, 3, 4));// Expected output: 10
+  
+
+  
+ 2) default parameters :
+
+  function multiply(a, b = 1) {
+    return a * b;
+  }
+  console.log(multiply(5, 2));   // Expected output: 10
+  console.log(multiply(5)); // Expected output: 5
+ 
+
+3)destructuring within params:
+
+let a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);// Expected output: 10
+console.log(b);// Expected output: 20
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+console.log(rest);// Expected output: Array [30, 40, 50]
+  are supported, and always require parentheses:
+
+ 4) Arrow functions can be async by prefixing the expression with the async keyword
+
+ async param => expression
+ async (param1, param2, ...paramN) => {
+   statements
+ }
+
+ 
+ The braces can only be omitted if the function directly returns an expression. 
+ If the body has additional lines of processing, the braces are required — and so is the return keyword.
+ Arrow functions cannot guess what or when you want to return.
+
+ // Traditional anonymous function
+(function (a, b) {
+  const chuck = 42;
+  return a + b + chuck;
+});
+
+// Arrow function
+(a, b) => {
+  const chuck = 42;
+  return a + b + chuck;
+};
+
+Arrow functions are always unnamed. If the arrow function needs to call itself, use a named function
+ expression instead. You can also assign the arrow function to a variable so it has a name.
+ // Traditional Function
+ function bob(a) {
+   return a + 100;
+ }
+ // Arrow Function
+ const bob2 = (a) => a + 100;
+
+
+ Function body
+ const func = (x) => x * x;
+// expression body syntax, implied "return"
+
+const func2 = (x, y) => {
+  return x + y;
+};
+// with block body, explicit "return" needed
+
+
+
+Returning object literals using the expression body
+const func = () => { foo: 1 };
+// Calling func() returns undefined!
+
+const func2 = () => { foo: function () {} };
+// SyntaxError: function statement requires a name
+
+const func3 = () => { foo() {} };
+// SyntaxError: Unexpected token '{'
+This is because JavaScript only sees the arrow function as having an expression body
+ if the token following the arrow is not a left brace, so the code inside braces ({}) 
+ is parsed as a sequence of statements, where foo is a label, not a key in an object literal.
+
+To fix this, wrap the object literal in parentheses:
+const func = () => ({ foo: 1 });
+
+
+
+limitations in usage:
+
+Arrow functions don't have their own bindings to this, arguments, or super, and should not be used as methods.
+Arrow functions cannot be used as constructors. Calling them with new throws a TypeError. They also don't 
+have access to the new.target keyword.
+Arrow functions cannot use yield within their body and cannot be created as generator functions.    
+
+Cannot be used as methods:
+"use strict";
+const obj = {
+  i: 10,
+  b: () => console.log(this.i, this),
+  c() {
+    console.log(this.i, this);
+  },
+};
+obj.b(); // logs undefined, Window { /* … */ } (or the global object)
+obj.c(); // logs 10, Object { /* … */ }
+
+Cannot be used as constructors:
+const Foo = () => {};
+const foo = new Foo(); // TypeError: Foo is not a constructor
+console.log("prototype" in Foo); // false
+
+
+</code></pre>
+<pre><code>
+  // An empty arrow function returns undefined
+const empty = () => {};
+
+(() => "foobar")();
+// Returns "foobar"
+// (this is an Immediately Invoked Function Expression)
+
+const simple = (a) => (a > 15 ? 15 : a);
+simple(16); // 15
+simple(10); // 10
+
+const max = (a, b) => (a > b ? a : b);
+
+// Easy array filtering, mapping, etc.
+const arr = [5, 6, 13, 0, 1, 18, 23];
+
+const sum = arr.reduce((a, b) => a + b);
+// 66
+
+const even = arr.filter((v) => v % 2 === 0);
+// [6, 0, 18]
+
+const double = arr.map((v) => v * 2);
+// [10, 12, 26, 0, 2, 36, 46]
+
+// More concise promise chains
+promise
+  .then((a) => {
+    // …
+  })
+  .then((b) => {
+    // …
+  });
+
+// Parameterless arrow functions that are visually easier to parse
+setTimeout(() => {
+  console.log("I happen sooner");
+  setTimeout(() => {
+    // deeper code
+    console.log("I happen later");
+  }, 1);
+}, 1);
+
+
+It has two types of descriptors - data descriptor and accessor descriptor.
+The data descriptor can be value or writeable.
+The accessor descriptor can be set or get.
+</code></pre>
+
+Lambda functions are similar to user-defined functions but without a name. 
+They're commonly referred to as anonymous functions. Lambda functions are efficient whenever you want to create a function that
+ will only contain simple expressions – that is, expressions that are usually a single line of a statement.25
+</div>
+        </details>
+
+        <details>
+          <summary>
+            <span class="faq-title">Different between anonymous and named function</span>
+            <img src="plus.svg" class="expand-icon" alt="Plus">
+          </summary>        
+          <div class="faq-content">
+            anonymous function:<br>
+            <ul>
+              <li>anonymous functions (function expression) are those that are produced without a name or identifier to refer to them</li>
+            <li>Anonymous functions are never hoisted (loaded into memory at compilation).</li>
+            <li>When invoking an anonymous function, you can only call it after the declaration line.</li>
+            <li> anonymous functions allow context scoping. When functions are utilized as data, arrow functions should be used.</li>
+            <li>Anonymous functions can be very handy when developing IIFEs (Instantly Invoked Function Expressions).</li>
+            
+            </ul>
+            (function(){<br>
+              return "hello world"<br>
+            })();
+            named function:<br>
+            <ul>
+              <li>Normal functions (function declaration) having a name or identifier to refer to them are referred to as named functions </li>
+           <li>Named functions are hoisted (loaded into memory at compilation).</li>
+           <li>A name function can be invoked before declaration.</li>
+           <li>A name function can be invoked before declaration</li>
+           <li>Named functions are easier to reuse, which aids in the creation of clean code.</li>
+            </ul>
+            function sayhello(){<br>
+              return "hello world"<br>
+            }(sayhello)();
+            </div>
+            </details>
+ 
+            
+            <details>
+              <summary>
+                <span class="faq-title">What is a first class function</span>
+                <img src="plus.svg" class="expand-icon" alt="Plus">
+              </summary>        
+              <div class="faq-content">
+                In JavaScript, functions are first-class objects, because they can be passed to other functions, returned from functions, and assigned to variables and properties. They can also have properties and methods just like any other object.
+                 What distinguishes them from other objects is that functions can be called.
+                 <pre><code>
+
+1) Assign function to a variable 
+                  const myVariable = function () { // Assigning a function to a variable
+                    console.log("Inside the function...");
+                 }
+                
+                 myVariable(); // Invoking the function using the variable
+                
+          output:
+          Inside the function...
+
+2)Inside the function
+function wishHappyNewYear() {
+  return "Happy New Year, ";
+}
+// Here in `wishMessage` we receive the function as a parameter.
+function wishPerson(wishMessage, name) { 
+ console.log(wishMessage() + name + '!!!');
+}
+// Pass `wishHappyNewYear` as an argument to the `wishPerson` function
+wishPerson(wishHappyNewYear, "John Doe");
+
+
+3)Return a function and call using another variable.
+function sayHello() {
+  // returning the function
+  return function() {
+     console.log("Hello!");
+  }
+}
+// Storing the returned function in the `newFun` variable
+const newFun = sayHello();
+// Calling the function which returned function with `newFun`
+newFun();
+
+4)Return a function and call using double parentheses
+function sayHello() {
+  // returning the function
+  return function() {
+     console.log("Hello!");
+  }
+}
+
+// Calling returned function using double parentheses
+sayHello()();
+                 </code>
+                 </pre>
+                 <pre><code>
+                  
+// Expression; the function is anonymous but assigned to a variable
+const multiply = function (x, y) {
+  return x * y;
+};
+
+// Expression; the function has its own name
+const multiply = function funcName(x, y) {
+  return x * y;
+};
+
+// Arrow function
+const multiply = (x, y) => x * y;
+
+// Method
+const obj = {
+  multiply(x, y) {
+    return x * y;
+  },
+};
+                 </code></pre>
+                </div>
+            </details>
+
+            <details>
+              <summary>
+                <span class="faq-title">What is a first order function</span>
+                <img src="plus.svg" class="expand-icon" alt="Plus">
+              </summary>        
+              <div class="faq-content">
+                A first-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
+<pre><code>
+  const firstOrder = () => console.log("I am a first order function!");
+</code></pre>
+              
+                </div>
+                </details>
+
+                <details>
+                  <summary>
+                    <span class="faq-title">What is a Higher order function</span>
+                    <img src="plus.svg" class="expand-icon" alt="Plus">
+                  </summary>        
+                  <div class="faq-content">
+                    
+                    We are using the getNum function to get the number. Here, getNum is a first-order function. Let's write another function,
+                    <pre><code>
+                      function getNum(number) {
+                        return number
+                      }                    
+                    </code></pre>
+                   We wrote a function that returns a function. Hence, the twiceNum is a Higher order function. Therefore, The function that returns a function, operates on another function, 
+                    or takes another function as an argument is called a higher-order function in javascript.
+                     <pre><code>
+
+                      function twiceNum(number) {
+                        return function () {
+                          return number * 2
+                        }
+                      }
+                      let twiceTwo = twiceNum(2)
+                      twiceTwo()
+                      
+                     </code></pre>
+<pre><code>
+
+1) higher order function
+  // add two numbers
+function sum(a, b) {
+  return a + b
+}
+// multiply two numbers
+function mul(a, b) {
+  return a * b
+}
+//operate with a higher-order function
+function calculate(operation, numsArray) {
+  if (numsArray.length <= 2) {
+    let a = numsArray[0]
+    let b = numsArray[1]
+
+    // return a function
+    return operation(a, b)
+  }
+}
+// calculate the sum of two numbers
+console.log(calculate(sum, [5, 6])) // output: 11
+
+// calculate the multiplication of two numbers
+console.log(calculate(mul, [10, 3])) // output: 30
+
+
+2)filter the function
+const numbers = [1, 2, 3, 4, 5]
+const evenNumbers = numbers.filter(function (number) {
+  return number % 2 === 0
+})
+console.log(evenNumbers)
+// Output: [2, 4]
+
+3)reduce and Arrayconst numbers = [1, 2, 3, 4, 5]
+
+const sum = numbers.reduce(function (total, number) {
+  return total + number
+}, 0)
+console.log(sum)
+// Output: 15
+
+
+4)Sorting an Array
+const numbers = [5, 1, 3, 2, 4]
+
+const sortedNumbers = numbers.sort(function (a, b) {
+  return a - b
+})
+console.log(sortedNumbers)
+// Output: [1, 2, 3, 4, 5]
+
+5)The Array.map Method
+// array of numbers
+const numsArray = [1, 2, 3, 4, 5]
+
+function callbackFn(number) {
+  return number * 2
+}
+const doubleNumbers = numsArray.map(callbackFn)
+console.log(doubleNumbers) // Output: [2, 4, 6, 8, 10]
+
+
+</code></pre>
+                    </div>
+                    </details>
+
+                    <details>
+                      <summary>
+                        <span class="faq-title">Higher-Order Functions vs Callback Functions</span>
+                        <img src="plus.svg" class="expand-icon" alt="Plus">
+                      </summary>        
+                      <div class="faq-content">
+                        Higher-Order Functions <br>
+                        <ul>
+                          <li>A function accepts a function as an argument or returns a function in the output.</li>
+                            <li>There is a built-in higher-order function in javascript. For example : map(), filter(), reduce()</li>
+                            <li></li>
+                            <li></li>      
+                        </ul>
+                        Callback functions<br>
+                        <ul>
+                          <li>A function that is passed to another function. But the function is called later when Any event occurs.</li>
+                          <li>Generally timer functions are a good example of a callback function. For example: addEventListner(), setTimeout()</li>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        </div>
+                        </details>
+
+                        <details>
+                          <summary>
+                            <span class="faq-title">What is a unary function</span>
+                            <img src="plus.svg" class="expand-icon" alt="Plus">
+                          </summary>        
+                          <div class="faq-content">
+                            To perform a mathematical operation like addition, subtraction, multiplication, or division in javascript, we need at least two operands, 
+                            but the unary operator in javascript works with only one operand and performs various unary operations
+                            <ul>
+                              <li> Increment(++)	Increment of the operand by one.</li>
+                              Increment operator in javascript increment the operand by one. It can be used as a prefix(++ operand) or as a postfix(operand ++).
+                              <li>Decrement(--)	Decrement of the operand by one.</li>
+                              The decrement operator in javascript decreases the operand by one. It can be used as a prefix(++ operand) or as a postfix(operand ++).
+                              <li>Unary plus(+)	Try to convert the operand into a number value.</li>
+                            <pre><code>
+                              +"20"	20
+                              +20	20
+                              "myname"	NaN
+                              +true	1
+                              +false	0
+                              +null	0
+                            </code></pre> 
+                           
+                              <li>Unary negation(-)	Try to convert the operand into a number value and negate the value.</li>
+                              <pre><code>
+                                -"20"	-20
+                                -20	-20
+                                -"myname"	NaN
+                                -true	-1
+                                -false	-0
+                                -null	-0
+                              </code></pre>
+                              <li>Logical Not(!)	Convert the operand into a boolean value then negate it.</li>
+                            <pre><code>
+                              !"20"	false
+                              !20	false
+                              !"myname"	false
+                              ! 0	true
+                              !false	true
+                              !null	true
+                            </code></pre>
+                              <li>Bitwise NOT(~)	Invert all the bits of the operand and return a number.</li>
+                              <pre><code>
+                                ~ -4	3
+                                ~ -4.5	3
+                                ~ true	-2
+                                ~ false	-1
+                                ~ null	-1
+                              </code></pre>
+                              <li>Void	Used for returning the undefined after evaluating an expression.</li>
+                              <pre><code>
+                                let myFun = void function () {
+                                  console.log('This is my function')
+                                }
+                                
+                                console.log(myFun)//undefined
+                              </code></pre>
+                              <li>delete	Remove the property of an object.</li>
+                              <pre><code>
+                                let myObj = {
+                                  name: 'abc',
+                                  age: 20,
+                                }
+                                
+                                delete myObj.name
+                                console.log(myObj)//age:20
+                              </code></pre>
+                              <li>typeof	Return the data type of the operand.</li>
+                              <pre><code>
+                                let myName = 'unknown'
+                                console.log(typeof myName)//'string'
+                              
+                                typeof 4	number
+                                typeof 4.5	number
+                                typeof "name"	string
+                                typeof true	boolean
+                                typeof null	object
+                              
+                              </code></pre>
+                              
+                            </ul>
+                            </div>
+                            </details>
+
+
+
+    <details>
+      <summary>
+        <span class="faq-title">What is a Currying function</span>
+        <img src="plus.svg" class="expand-icon" alt="Plus">
+      </summary>        
+      <div class="faq-content">
+        Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions each with only a single argument. Currying is named after a mathematician Haskell Curry.
+         By applying currying, an n-ary function turns into a unary function.
+         <pre><code>
+const multiArgFunction = (a, b, c) => a + b + c;
+console.log(multiArgFunction(1, 2, 3)); // 6
+
+const curryUnaryFunction = (a) => (b) => (c) => a + b + c;
+curryUnaryFunction(1); // returns a function: b => c =>  1 + b + c
+curryUnaryFunction(1)(2); // returns a function: c => 3 + c
+curryUnaryFunction(1)(2)(3); // returns the number 6
+         </code></pre>
+
+         WHY?
+1)Currying helps you avoid passing the same variable again and again.
+2)It helps to create a higher order function.
+<pre><code>
+  function sum(a) {
+    return (b) => {
+        return (c) => {
+            return a + b + c
+        }
+    }
+}
+console.log(sum(1)(2)(3)) // 6
+
+
+const sum1 = sum(1);
+const sum2 = sum1(2);
+const result = sum2(3);
+console.log(result); // 6
+</code></pre>
+        </div>
+        </details>
+        <details>
+          <summary>
+            <span class="faq-title">What is a pure function</span>
+            <img src="plus.svg" class="expand-icon" alt="Plus">
+          </summary>        
+          <div class="faq-content">
+            A pure function in JavaScript is a function that returns the same result if the same arguments(input) are passed in the function. 
+           
+          
+          /Pure functions are building blocks of functional programming. They always yield consistent result and does not manipulate non-local state or have any side effects.
+        <pre><code>
+ Consistent result
+
+1)Same result for the same input every time.
+2)Result is only dependent on the input arguments. As the function does not  perform any operation that requires any variable or data from outside the scope of the function.
+       
+No side effects some common side effects:
+
+1)Making an HTTP request
+2)Mutating any data that is not part of the function
+3)Printing to a screen or console
+4)DOM Query/Manipulation
+5)Using Math.random()
+6)Getting the current time
+</code></pre>
+
+Remember that Pure functions are important as they simplify unit testing without any side effects and no need for dependency injection. They also avoid tight coupling and make it harder to break your application by not having any side effects.
+ These principles are coming together with the Immutability concept of ES6: 
+
+ impure function:
+
+ impure functions in javascript are functions that can mutate non-local states and the result they return might not only be dependent on its input arguments.
+        </div>
+         
+        </details>
+<details>
+        <summary>
+          <span class="faq-title">What is the purpose of the let keyword</span>
+          <img src="plus.svg" class="expand-icon" alt="Plus">
+        </summary>        
+        <div class="faq-content">
+          The let statement declares a block scope local variable. Hence the variables defined with let keyword are limited in scope to the block, statement, or expression on which it is used. Whereas variables declared with the var keyword used to define a variable globally, 
+          or locally to an entire function regardless of block scope
+          <pre><code>
+ let counter = 30;
+if (counter === 30) {
+  let counter = 31;
+  console.log(counter); // 31
+}
+console.log(counter); // 30 (because the variable in if block won't exist here)
+          </code></pre>
+          </div>
+        </details>  
+
+
+        <details>
+          <summary>
+            <span class="faq-title">  What is the difference between let and var</span>
+            <img src="plus.svg" class="expand-icon" alt="Plus">
+          </summary>        
+          <div class="faq-content">
+            var:
+            <ul>
+              <li>It has been available from the beginning of JavaScript</li>
+              <li>It has function scope</li>
+              <li>Variables will be hoisted</li>
+            </ul>
+            let
+            <ul>
+              <li>Introduced as part of ES6</li>
+              <li>	It has block scope</li>
+              <li>Hoisted but not initialized</li>
+            </ul>
+
+            <pre><code>
+              function userDetails(username) {
+                if (username) {
+                  console.log(salary); // undefined due to hoisting
+                  console.log(age); // ReferenceError: Cannot access 'age' before initialization
+                  let age = 30;
+                  var salary = 10000;
+                }
+                console.log(salary); //10000 (accessible due to function scope)
+                console.log(age); //error: age is not defined(due to block scope)
+              }
+              userDetails("John");
+            </code></pre>
+            </div>
+            </details>
+
+            <details>
+              <summary>
+                <span class="faq-title"> What is the reason to choose the name let as a keyword</span>
+                <img src="plus.svg" class="expand-icon" alt="Plus">
+              </summary>        
+              <div class="faq-content">
+                The reason why the let keyword was introduced to javascript was because function scope is confusing and this led to a number of bugs and errors.
+                Let uses a more immediate block level limited scope
+</div>
+</details>      
+
+
+<details>
+  <summary>
+    <span class="faq-title"> How do you redeclare variables in a switch block without an error</span>
+    <img src="plus.svg" class="expand-icon" alt="Plus">
+  </summary>        
+  <div class="faq-content">If you try to redeclare variables in a switch block then it will cause errors because there is only one block
+  <pre><code>
+    eg;
+    let counter = 1;
+switch (x) {
+  case 0:
+    let name;
+    break;
+
+  case 1:
+    let name; // SyntaxError for redeclaration.
+    break;
+}
+</code></pre> 
+To avoid this error, you can create a nested block inside a case clause and create a new block scoped lexical environment.
+ <pre><code>
+  let counter = 1;
+switch (x) {
+  case 0: {
+    let name;
+    break;
+  }
+  case 1: {
+    let name; // No SyntaxError for redeclaration.
+    break;
+  }
+}
+ </code></pre>
+
+
+
+  </div>
+    </details>
+
+
+    <details>
+      <summary>
+        <span class="faq-title">What is the Temporal Dead Zone</span>
+        <img src="plus.svg" class="expand-icon" alt="Plus">
+      </summary>        
+      <div class="faq-content">
+        The Temporal Dead Zone is a behavior in JavaScript that occurs when declaring a variable with the let and const keywords, but not with var. In ECMAScript 6, accessing a let or const variable before its declaration (within its scope) causes a ReferenceError. The time span when that happens,
+         between the creation of a variable’s binding and its declaration, is called the temporal dead zone.
+         <pre><code>
+          function somemethod() {
+            console.log(counter1); // undefined
+            console.log(counter2); // ReferenceError
+            var counter1 = 1;
+            let counter2 = 2;
+          }
+        </code></pre>
+        The gap we see between the point at which the variable is in the uninitialized state and the point where it gets initialized is called the Temporal dead zone (TDZ)
+      <pre><code>
+        let variable-> declaration(but unintialized)
+        ||
+        (tdz)
+        ||
+        variable=undefined->inizitialized
+
+        [var is both declared and initialized during Hoisting, but let is not initialized it is only declared.
+         Hence when we try to access a let variable before it is declared we get an error.
+
+        ]
+
+      </code></pre>  
+      </div>
+        </details>
+
+
+        <details>
+          <summary>
+            <span class="faq-title">What is an IIFE (Immediately Invoked Function Expression) </span>
+            <img src="plus.svg" class="expand-icon" alt="Plus">
+          </summary>        
+          <div class="faq-content">
+            IIFE, Immediately Invoked Function Expression, is called immediately as soon as the function is defined. We do not need to call the function specifically with its name. We use IIFE to avoid overwriting variables and functions in the global scope and keep their scope to IIFE in Javascript.
+          <pre><code>
+ //file1.js
+var name = "IIFE"
+console.log(name)
+
+//file2.js
+var name = "IIFEs"
+console.log(name)
+
+// file3.js
+var name = "IIFE in Javascript"
+console.log(name)
+
+if we include all these javascript files in the same code. The variable will be overwritten as they exists in same scope 
+||
+||
+||
+//file1.js
+var file1 = (function(){
+    var name = "IIFE"
+    console.log(name)
+})()
+
+//file2.js
+var file2 = (function(){
+    var name = "IIFEs"
+    console.log(name)
+})()
+
+//file3.js
+var file3 = (function(){
+    var name = "IIFE in Javascript"
+    console.log(name)
+})()
+we converted normal functions into IIFE and assigned a return value to a variable as it creates its local scope and prevents overriding the variable name.
+</code></pre> 
+          </div>
+            </details>
+
+
+            <details>
+              <summary>
+                <span class="faq-title"></span>
+                <img src="plus.svg" class="expand-icon" alt="Plus">
+              </summary>        
+              <div class="faq-content">
+               
+                </div>
+                </details>
+
+
+                <details>
+                  <summary>
+                    <span class="faq-title"> How do you redeclare variables in a switch block without an error</span>
+                    <img src="plus.svg" class="expand-icon" alt="Plus">
+                  </summary>        
+                  <div class="faq-content">
+                    </div>
+                    </details>
+
+                    <details>
+                      <summary>
+                        <span class="faq-title"> How do you redeclare variables in a switch block without an error</span>
+                        <img src="plus.svg" class="expand-icon" alt="Plus">
+                      </summary>        
+                      <div class="faq-content">
+                        </div>
+                      </details>
+
+                      <details>
+                        <summary>
+                          <span class="faq-title"> How do you redeclare variables in a switch block without an error</span>
+                          <img src="plus.svg" class="expand-icon" alt="Plus">
+                        </summary>        
+                        <div class="faq-content">
+                          </div>
+                          </details>
+
+
+                          <details>
+                            <summary>
+                              <span class="faq-title"> How do you redeclare variables in a switch block without an error</span>
+                              <img src="plus.svg" class="expand-icon" alt="Plus">
+                            </summary>        
+                            <div class="faq-content">
+                              </div>
+                              </details>
+
+
+                              <details>
+                                <summary>
+                                  <span class="faq-title"> How do you redeclare variables in a switch block without an error</span>
+                                  <img src="plus.svg" class="expand-icon" alt="Plus">
+                                </summary>        
+                                <div class="faq-content">
+                                  </div>
+                                  </details>
+
+
+
+      
+    <footer class="foot">
+      <div class="content">
+        <div class="top">
+          <div class="logo-details">
+            <!-- <i class="fab fa-slack"></i> -->
+            <span class="logo_name">Keesite</span>
+          </div>
+          <!-- <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div> -->
+        </div>
+        <div class="link-boxes">
+          <ul class="box">
+            <li class="link_name">Accont</li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Todo list</a></li>
+            <li><a href="#">Roadmap</a></li>
+            <li><a href="#">feedback</a></li>
+          </ul>
+          <ul class="box">
+            <li class="link_name">100 Q/A challenge</li>
+            <li><a href="#">Python</a><a href="#"></a></li>
+            <li><a href="#"> javascript</a></li>
+            <li><a href="#"> java</a></li>
+            <li><a href="#"> sql</a></li>
+          </ul>
+          <ul class="box">
+            <li class="link_name">frontend</li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS </a></li>
+            <li><a href="#">JAVASCRIPT </a></li>
+            <!-- <li><a href="#">dsa</a></li>
+            <li><a href="#">jjjj</a></li> -->
+           
+          </ul>
+          <ul class="box">
+            <li class="link_name">courses</li>
+            <li><a href="#">DSA(java and python)</a></li>
+            <li><a href="#">github</a></li>
+            <li><a href="#">Database</a></li>
+            <li><a href="#">Machine Learning</a></li>
+          </ul>
+          <!-- <ul class="box input-box">
+            <li class="link_name">Subscribe</li>
+            <li><input type="text" placeholder="Enter your email"></li>
+            <li><input type="button" value="Subscribe"></li>
+          </ul> -->
+        </div>
+      </div>
+      <div class="bottom-details">
+        <div class="bottom_text">
+           <span class="copyright_text">@ keesite 2023  </span><!-- <a href="#">CodingLab.</a>All rights reserved-->
+          <span class="policy_terms">
+            <span>&#128187 keesitelearn@gmail.com</span>
+            <!-- <a href="#">Privacy policy</a>
+            <a href="#">Terms & condition</a> -->
+          </span>
+        </div>
+      </div>
+    </footer> 
+    
+    
+
+    <script src="homepage.js"></script>
+    <script src="accordion.js"></script>
+    
+    <script>
+      function openNav() {
+        document.getElementById("myDropdown").classList.toggle("show");  
+      }
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(e) {
+        if (!e.target.matches('.content-area1')) {    
+        var myDropdown = document.getElementById("myDropdown");
+          if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');        
+          }
+        }
+      }
+      </script>
+  
+  <script>
+         
+      function openNavy() {
+        document.getElementById("myDropdown1").classList.toggle("show1");
+       
+      }
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(e) {
+        if (!e.target.matches('.content-area2')) {    
+        var myDropdown = document.getElementById("myDropdown1");
+          if (myDropdown.classList.contains('show1')) {
+            myDropdown.classList.remove('show1');
+          
+          }
+        }
+      }
+      </script>
+  
+  <script>
+      const hamburger = document.querySelector('.hamburger-menu');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('hide');
+      });
+      
+  </script>
+  
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  
+  <script>
+  const submit=document.getElementsByClassName('container')[0];
+  
+  submit.addEventListener('submit',(e)=>
+  {
+      e.preventDefault();
+  
+  // console.log(fname.value);
+  // console.log(fphone.value);
+  // console.log(fmessage.value);
+  
+  console.log("clicked");
+  })
+  
+   function sendEmail(){
+  
+  const fname=document.getElementById('name');
+  const femail=document.getElementById('email');
+  const fphone=document.getElementById('phone');
+  const fmessage=document.getElementById('message');
+  
+  let ebody= ` 
+  <b>Name: </b>${fname.value} <br>
+  <b>Email: </b>${femail.value}<br>
+  <b>phone NO: </b>${fphone.value}<br>
+  <b>query:</b> ${fmessage.value} `
+  
+              Email.send({
+                  Host:"smtp.elasticemail.com",
+                  Username:"keerthikaravi1405@gmail.com",
+                  Password: "882FE9E23494C1F767E8347592F3DBBA1364",
+                  To:'keesitelearn@gmail.com',
+                  From:document.getElementById('email').value,
+                  Subject:"New Contact Form Enquiry" + email.value,
+                  Body: ebody
+              }).then(
+                  message => alert("your query send successfully")
+              );
+          };
+      </script> 
+  
+  <script>
+    function openForm() {
+  document.getElementById("myForm").style.display = "block";
+  
+  }
+  function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  }
+  </script> 
+
+
+<script>
+     
+  var codeBlocks = document.querySelectorAll("pre");
+  console.log(codeBlocks);
+  codeBlocks.forEach(function(t)
+  {
+      var o = document.createElement("button");
+ 
+      o.className="at_copy",
+      o.type="button",
+      o.ariaLabel="Copy code to clipboard",
+      o.innerHTML="Copy",
+      t.append(o),
+      o.addEventListener("click",function()
+      {
+      var e =t.querySelector("code").innerText.trim();
+      window.navigator.clipboard.writeText(e),
+ 
+      o.innerHTML="Copied";
+ 
+      setTimeout(function(){
+       o.innerHTML="Copy"
+     },1e3)
+  })
+ });
+ </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script> 
+    <script>hljs.highlightAll();</script> 
+
+
+
+</body>
+</html>
