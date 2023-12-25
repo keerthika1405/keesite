@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSI MODEL</title>
+    <link rel="stylesheet" href="osi.css">
+
+     <style>
+
+        .hamburger-menu{
+         padding-right: 1.5rem;
+         cursor: pointer;
+       }
+       .hamburger-menu .line{
+       display: block; 
+       width:25px;
+       height: 20px; 
+       margin-top: -25px;
+       margin-left: 60px;
+       color: rgb(80, 80, 80);
+       cursor: pointer;
+       }
+       .nav-menu{
+         position: fixed;
+         width: 34%;
+         top: 50px;
+         left: 50px;
+         background-color: rgb(255, 255, 255);
+         font-weight: 600;
+       
+       }
+       .nav-menu a{
+         font-size: 15px;
+         color: rgb(255, 255, 255);
+         text-decoration: none;
+         display: block;
+         text-align: center;
+         padding: 20px 0;
+       }
+  
+       .hide{
+         display: none;
+       }
+  
+           /* for Desktop view */
+           @media screen and (min-width:600px){
+             .navbar{
+               justify-content: space-around;
+             }
+             .nav-menu{
+               width: 60%;
+               display: block;
+               position: static;
+               margin-top: -25px;
+               margin-left: 70px;
+              
+               background: none;
+             }
+             .nav-menu a{
+               display: inline-block;
+             padding: 0px 10px;
+             
+               /* padding: -px 20px; */
+             
+             }
+         
+             .hamburger-menu{
+               display: none;
+             }
+           }
+           
+    </style>
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10.1.0/swiper-bundle.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">  
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="content-area">
+           <button  class="content-area1" onclick="openNav()" style="font-size:20px;cursor:pointer"><i class="fa fa-navicon" style="color: black;"></i></button>
+      
+       <div class="dropdown-content" id="myDropdown">
+         <a href="#">Link 1</a>
+         <a href="#">Link 2</a>
+         <a href="#">Link 3 &emsp;&emsp;&emsp;&emsp; <button class="content-area2" onclick="openNavy()" >&#62;</button>
+         <div class="dropdown-content1" id="myDropdown1" >
+           <a href="#">python</a>
+           <a href="#">java</a> </div>
+         </a>
+         <a href="#">Link 2</a>
+       </div>
+    
+       <div class="hamburger-menu">
+         <span class="line">Menu</span><!--☰-->
+       </div> 
+       <div class="nav-menu hide">
+     <a href="https://github.com/keerthika1405" target="_top" >   <i class='bx bxl-github ' name='github' type="logo"  style="font-size: 20px;"></i> Github</a>
+        <a href="https://github.com/keerthika1405/keesite/discussions" target="_top" ><i class='bx bx-comment '  style="font-size: 20px;"></i>Community</a>
+      
+        <!-- <a href="#">About</a> -->
+     </div>
+    </div>
+    
+    
+    <div class="search-box">
+    <div class="row">
+      <form id="search"  method="post" >
+         <input type="text" id="input-box" placeholder="search here" autocomplete="off">
+         <button type="submit"><i class='bx bx-search bx-sm'  id="input-box"></i></button>
+    </div>
+    </form>
+         <form id="css" action="explore.html" methode="get"></form>
+         <form id="HTML" action="chrome.html" methode="get"></form>
+         <form id="javascript" action="about.html" methode="get"></form>
+           
+    <div class="result-box">    
+    </div>      
+    </div>
+    
+    <button class="open-button" onclick="openForm()"><i class='bx bx-question-mark'></i></button>
+    <div class="container" id="myForm">
+    <form  onsubmit="sendEmail(); reset();">
+    <h3>Let's Solve</h3>
+    <input type="text" id="name" placeholder="Your Name" autocomplete="off"  required>
+    <input type="email" id="email" placeholder="Your Email Id" autocomplete="off" required>
+    <input type="text" id="phone" placeholder="phone no" autocomplete="off">
+    <textarea  id="message" name="" id="message" cols="30" rows="5" placeholder="Write Your Query Here We Will Reach You Soon ?"  required></textarea>
+    <button type="submit">send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+    </div> 
+    
+    
+    <div class="webname">
+    <h2>keesite</h2>
+    </div>
+    
+    </nav>
+    
+
+
+
+
+<div class="sevenlayer">
+ <div class="lay1">
+   
+      <a href="#section1">
+        <div class="layer1">
+            <h2>PHYSICAL LAYER</h2>
+        </div>
+    </a> 
+
+    <a href="#section2"> 
+        <div class="layer2">
+            <h2>DATA LINK LAYER</h2>
+        </div>
+    </a> 
+
+       <a href="#section3">
+        <div class="layer3">
+          <h2>NETWORK LAYER</h2>
+      </div>
+       </a>
+
+    </div>
+
+    <div class="lay2">
+
+      <a href="#section4">
+        <div class="layer4">
+          <h2>TRANSPORT LAYER</h2>
+      </div>
+      </a>
+       <a href="#section5">
+        <div class="layer5">
+          <h2>SESSION LAYER</h2>
+      </div>
+       </a>
+       
+<a href="#section6">
+  <div class="layer6">
+    <h2>PRESENTATION LAYER</h2>
+</div>
+</a>
+      
+    </div>
+        <div class="lay3">
+          <a href="#section7">
+            <div class="layer7">
+              <h2>APPLICATION LAYER</h2>
+          </div>
+          </a>
+           
+        </div>
+
+</div>
+
+<div class="osicontent">
+<h1>Introduction</h1>
+<h3>The OSI (Open Systems Interconnection) model was developed by the International Organization for Standardization (ISO) to provide a framework for designing and understanding computer networks. The development of the OSI model began in the late 1970s, and the standard was first published in 1984</h3>
+<ol>
+<li><b>Late 1970s:</b> The need for a standardized model for networking was recognized as computer networks were becoming increasingly complex. Different networking technologies were emerging, and there was a lack of consistency in how these technologies communicated with each other.</li>
+<li><b>Early 1980s:</b> The International Organization for Standardization (ISO) initiated efforts to create a universal networking model that could serve as a reference for network development and interoperability. </li>
+<li><b>1983:</b> The OSI model was officially introduced as a conceptual framework to standardize network communications. It aimed to provide a clear and comprehensive understanding of the various layers involved in network communication</li>
+<li><b>1984:</b> The OSI model was published as international standard ISO 7498. This standard defined seven abstraction layers, each serving a specific purpose in the process of network communication</li>
+</ol>
+<h3>There isn't a specific physical location associated with the development of the OSI model because it involved contributions from experts and organizations around the world. </h3>
+<h1>Seven Layer</h1>
+<ol>
+    <li><b>Physical Layer:</b> </li>
+    <p>This layer deals with the physical connection between devices. It defines the hardware elements involved, such as cables, switches, and network interface cards</p>
+    <li><b>Data Link Layer:</b> </li>
+    <p>This layer is concerned with creating a reliable link between two directly connected nodes. It ensures that data packets are delivered error-free and in the correct order.</p>
+    <li><b>Network Layer:</b></li>
+    <p> The network layer is responsible for determining the best path for data packets to reach their destination across a network. It handles routing and forwarding of data between different networks.</p>
+    <li><b>Transport Layer:</b></li>
+    <p>The transport layer is responsible for end-to-end communication between devices on different hosts. It ensures that data is delivered reliably and in the correct sequence. Protocols like TCP (Transmission Control Protocol) operate at this laye</p>
+    <li><b>Session Layer:</b></li>
+    <p> The session layer manages and maintains communication sessions between applications on different devices. It establishes, maintains, and terminates connections, ensuring that data is properly synchronized and organized</p>
+    <li><b>Presentation Layer:</b></li>
+    <p> This layer deals with data translation and encryption, ensuring that information sent from one system can be understood by the recipient system. It is responsible for data compression, encryption, and protocol conversion.</p>
+    <li><b>Application Layer:</b></li>
+    <p> The application layer provides network services directly to end-users or applications. It enables communication between different applications and provides various network services like email, file transfer, and remote access.</p>
+</ol>
+<div class="physicallayer" id="section1">
+    <br><br><br><br><br>
+    <h1 style="color:rgb(200, 8, 62);">physical layer</h1>
+    
+    <h3>This layer deals with the physical connection between devices
+        <br>the transmission and reception of raw data bits over a physical medium such as cables or wireless signals</h3>
+    <h4>key function</h4>
+    <h3> <b style="color: rgb(200, 8, 62)">Physical Media:</b> The Physical Layer defines the types of cables and connections used to transmit data, such as Ethernet cables, fiber-optic cables, or wireless <br> It also includes specifications for connectors, switches, and other networking hardware</h3> 
+    <h3><b style="color: rgb(200, 8, 62)">Data Rate and Bandwidth:</b>  It specifies the data rate, which is the speed at which data is transmitted over the network. It is usually measured in bits per second (bps). Bandwidth refers to the maximum data rate that a communication channel can support</h3>
+    <h3><b style="color: rgb(200, 8, 62)">Topology:</b>  The Physical Layer defines the physical layout or topology of the network, such as bus, star, ring, or mesh topology. Different network topologies have different implications for how data is transmitted and how devices are connected.</h3>
+    <h3><b style="color: rgb(200, 8, 62)">Transmission Modes: </b>The Physical Layer supports different transmission modes, including simplex (one-way communication), half-duplex (two-way communication, but not simultaneously), and full-duplex (two-way communication simultaneously).</h3>
+    <h3><b style="color: rgb(200, 8, 62)">Physical Signaling:</b> It includes specifications for electrical voltages, light pulses (in fiber-optic communication), or radio waves (in wireless communication) used to transmit data bits over the physical medium.</h3>
+    <h3><b style="color: rgb(200, 8, 62)">Bit Order:</b> The Physical Layer defines the order in which bits are transmitted over the medium, such as most significant bit first (MSB) or least significant bit first (LSB).</h3>
+    <h3><b style="color: rgb(200, 8, 62)">Data Encoding:</b> It specifies how digital data is encoded into signals for transmission. Different encoding schemes, such as Manchester encoding or NRZ (Non-Return-to-Zero) encoding, are used to represent binary data as electrical or optical signals.</h3>
+    <br><br><br><br>
+    <img src="physical.jpg" frameborder="0" width="800px" height="500px"></img>
+    
+</div>
+
+<div class="datalinklayer" id="section2">
+    <br><br><br><br><br>
+    <h1 style="color:rgb(11, 200, 8);">Data Link layer</h1>
+    <h3>This layer is responsible for creating a reliable link between two directly connected nodes on a network. <br>
+        It ensures that data frames are delivered error-free and in the correct order between devices on the same local network. <br>
+        The Data Link Layer achieves this by providing mechanisms for framing, addressing, error detection, and flow control</h3>
+    <h4>key function</h4>
+    <h3><b style="color: rgb(11, 200, 8)">Framing:</b> The Data Link Layer encapsulates network layer packets into frames. Frames include control information, such as source and destination MAC (Media Access Control) addresses, as well as error-checking mechanisms like Frame Check Sequence (FCS) for ensuring data integrity during transmission.</h3> 
+    <h3><b style="color: rgb(11, 200, 8)">MAC Addressing:</b>Each network device, such as network interface cards (NICs) and switches, has a unique MAC address assigned to its hardware. The Data Link Layer uses MAC addresses to identify the source and destination of data frames within a local network</h3>
+    <h3><b style="color: rgb(11, 200, 8)">Error Detection and Correction:</b> The Data Link Layer detects errors in transmitted frames <br>using techniques like Cyclic Redundancy Check (CRC). If errors are detected, the frames can be retransmitted to ensure data integrity.</h3>
+    <h3><b style="color: rgb(11, 200, 8)">Flow control:</b>Flow control mechanisms prevent fast senders from overwhelming slow receivers. This is particularly important in scenarios where data transmission rates differ between sender and receiver devices. Flow control ensures that data is sent at a rate that the receiver can handle without dropping frames..</h3>
+    <h3><b style="color: rgb(11, 200, 8)">Switching: </b> Switching is transparent to the user and does not require any configuration in the home network. Switches are used to forward the packets based on MAC addresses. A Switch is used to transfer the data only to the device that has been addressed <br>
+        Unlike hubs, switches are more intelligent and forward frames only to the specific devices that need them, reducing network congestion and improving efficiency.</h3>
+    <h3><b style="color: rgb(11, 200, 8)">Logical Link Control (LLC) Sublayer</b>The LLC sublayer of the Data Link Layer handles error checking and flow control. It also manages logical links between devices on a network, allowing multiple network protocols to share the same physical medium.</h3>
+    <h3><b style="color: rgb(11, 200, 8)"> Media Access Control (MAC) Sublayer:</b> The MAC sublayer is responsible for controlling access to the network medium. It determines how devices on a shared network can access and use the physical channel without causing data collisions. Ethernet protocols like CSMA/CD (Carrier Sense Multiple Access with Collision Detection) operate at this sublayer</h3>
+    <br><br><br><br>
+    <img src="osimage/frame.jpg" frameborder="0" width="800px" height="500px"></img>
+    <h3><b style="color: rgb(11, 200, 8)">Frame Structure</b></h3>
+    <img src="osimage/ethernetframeformate.jpg" frameborder="0" width="800px" height="200px"></img>
+    <ul>
+      <h3>Header</h3>
+
+      <li><b style="color: rgb(11, 200, 8)">Preamble: </b>The preamble is a series of bits (usually 7 bytes) at the beginning of the frame. It helps the receiving device synchronize its clock with the sender's clock. Synchronization is essential for the receiver to understand the timing of the incoming bits.</li>
+      <li><b style="color: rgb(11, 200, 8)">Start Frame Delimiter (SFD): </b> The SFD marks the end of the preamble and indicates the start of the frame's actual data. It tells the receiver where the frame's header begins.</li>
+      <li><b style="color: rgb(11, 200, 8)">Destination MAC Address: </b> This field contains the MAC address of the device to which the frame is being sent. Devices on the same network read the destination MAC address to determine if the frame is intended for them. The length of this field is typically 6 bytes.</li>
+      <li><b style="color: rgb(11, 200, 8)">Source MAC Address: </b> This field contains the MAC address of the sender or source device. It informs the recipient of the frame about the sender's identity. Like the destination MAC address, this field is usually 6 bytes long.</li>
+      <li><b style="color: rgb(11, 200, 8)">EtherType or Length: </b> In Ethernet frames, this field indicates the type of data in the frame. If the value in this field is greater than or equal to 1536 (0x600 in hexadecimal), it represents the EtherType, specifying the protocol carried in the frame (such as IPv4 or IPv6). If the value is less than or equal to 1500 (0x05DC in hexadecimal), it indicates the Length of the frame.</li>
+    
+      <h3>Payload</h3>
+      <li><b style="color: rgb(11, 200, 8)">Data: </b> This section of the frame contains the actual payload data from the higher layers of the OSI model. It could be an IP packet, a TCP segment, or any other higher-layer data.</li>
+      <h3>Trailer</h3>
+      <li><b style="color: rgb(11, 200, 8)">Frame Check Sequence (FCS): </b>The FCS is a field at the end of the frame used for error detection. It is generated by the sender based on the contents of the frame. When the frame is received, the recipient recalculates the FCS based on the received frame data. If the calculated FCS does not match the received FCS, the frame is considered corrupted and is typically discarded </li>
+      <li><b style="color: rgb(11, 200, 8)">End of Frame (EOF): </b>  The EOF marks the end of the frame. It signifies to the receiver that the frame transmission is complete</li>
+      <li><b style="color: rgb(11, 200, 8)">Flag: </b> It contains the points to the starting and the ending of the frame.</li>
+    </ul>
+</div>
+<div class="networklayer" id="section3">
+  <br><br><br><br><br>
+  <h1 style="color:rgb(10, 195, 202);">Network layer</h1>
+  
+  <h3>The Network Layer is responsible for managing logical addressing, routing, and the delivery of data packets from the source to the destination across multiple networks.</h3>
+  <h4>key function</h4>
+  <h3> <b style="color: rgb(10, 195, 202)">Logical Addressing:</b> Devices on a network are identified by logical addresses, such as IP (Internet Protocol) addresses in the case of the Internet. The Network Layer adds a header to the data packet, including the source and destination IP addresses</h3> 
+  <h3><b style="color: rgb(10, 195, 202)">Data Rate and Bandwidth:</b>Routing is the process of determining the optimal path for data packets to travel from the source to the destination. Routers are devices that operate at the Network Layer and use routing algorithms and tables to forward packets along the appropriate paths. They make decisions based on the destination IP address, network topology, and other factors.</h3>
+  <img src="osimage/routers1.png" frameborder="0" width="800px" height="500px"></img>
+  <h3><b style="color: rgb(10, 195, 202)">Packet Forwarding:</b> The Network Layer encapsulates data packets into packets. Each packet contains a header with source and destination IP addresses, among other information. Routers use this header information to forward packets towards their destination. Routing protocols, such as OSPF (Open Shortest Path First) and BGP (Border Gateway Protocol), are used to exchange routing information between routers.</h3>
+  <img src="osimage/protocol.webp" frameborder="0" width="800px" height="500px"></img>
+  <img src="osimage/routers.png" frameborder="0" width="800px" height="500px"></img>
+ 
+
+  <h3><b style="color: rgb(10, 195, 202)">Fragmentation and Reassembly: </b> The Network Layer can fragment large packets into smaller pieces for transmission over networks with smaller maximum frame sizes. Fragmentation allows data to be transmitted across networks with different media types and sizes. At the destination, these fragments are reassembled back into the original packet.</h3>
+  <img src="osimage/fragment.png" frameborder="0" width="800px" height="500px"></img>
+  <h3><b style="color: rgb(10, 195, 202)">Quality of Service (QoS): </b> The Network Layer can support QoS mechanisms, allowing different types of traffic to be prioritized based on requirements such as bandwidth, latency, and reliability. QoS ensures that critical applications, like voice and video, receive higher priority and better network resources than less time-sensitive applications.</h3>
+  <h3><b style="color: rgb(10, 195, 202)">Logical Network Address Translation (NAT):  </b>: NAT is a Network Layer function used to modify network address information in packet headers while in transit. It is often used to allow multiple devices in a private network to share a single public IP address, enabling them to access resources on the internet.</h3>
+  <h3><b style="color: rgb(10, 195, 202)"> IPv4 and IPv6: </b> IP (Internet Protocol) is the primary protocol used at the Network Layer. IPv4 (Internet Protocol version 4) and IPv6 (Internet Protocol version 6) are specific implementations of IP, with IPv6 designed to address the limitations of IPv4, particularly its limited address space.</h3>
+  <img src="osimage/ip.jpg" frameborder="0" width="800px" height="500px"></img>
+  <img src="osimage/ip1.webp" frameborder="0" width="800px" height="500px"></img>
+  <br><br>
+  <h3>
+    <ul>
+      <li>An IP address is a 32-bit number that uniquely identifies a host (computer or other device, such as a printer or router) on a TCP/IP network. IP addresses are normally expressed in dotted-decimal format, with four numbers separated by periods</li>
+      <li>Each number in the set can range from 0 to 255. So, the full IP addressing range goes from 0.0.0.0 to 255.255.255.255</li>
+    <li>Types of IP addresses </li>
+      <h3><b style="color: rgb(10, 195, 202)">Private: </b>A private network is a computer network that uses its own private address space of IP addresses while connected to the Internet. In home, office, and enterprise environments, these addresses are often used for local area networks. Private IP address ranges are defined under both IPv4 and IPv6 standards.
+      The IANA reserves the following IPv4 address ranges for private internets, according to the Internet Engineering Task Force (IETF) document RFC-1918, and they are not publicly routable on the global internet:</h3>
+      <h3><b style="color: rgb(10, 195, 202)">Public: </b>An IPv4 address that can be seen on the internet is known as a public IP address. A public IP address is required for any resource in your domain that must be directly accessible from the internet.
+        For communication between hosts on the worldwide Internet, public IP addresses can be utilized. The IP address assigned to the home's network by the ISP is known as a public IP address. By logging into the router configuration, it is also accessible locally in this situation</h3>
+      <li> Public IP addresses come in two types: dynamic IP addresses and static IP addresses.</li>
+      <h3><b style="color: rgb(10, 195, 202)">Dynamic IP Addresses: </b> A dynamic IP address refers to an address assigned to a device temporarily by an ISP. Dynamic IP addresses are typically assigned to devices such as computers, smartphones, or routers. They provide a level of anonymity and security as the IP address changes periodically, making it more difficult to track a specific device or user. When a device connects to the ISP's network, it is assigned an available IP address from a pool. This address is then borrowed for a specific duration before being returned to the pool and assigned to another device.</h3>      
+      <h3><b style="color: rgb(10, 195, 202)">Static IP Addresses: </b> A static IP address is a fixed address assigned to a device that remains constant. They are typically used for hosting websites or running servers. By having a fixed IP address, users can easily connect domain names to their servers, ensuring that their websites or services are always accessible. Static addresses are manually configured either on the device itself or by the network administrator. Static IP addresses are typically provided by the user’s ISP or network administrator, and typically come at an additional cost</h3>  
+    </ul>
+ </h3>
+</div>
+
+<div class="transportlayer" id="section4">
+  <br><br><br><br><br>
+  <h1 style="color:rgb(141, 19, 104)">Transport layer</h1>
+  
+  <h3>The Transport Layer is responsible for ensuring end-to-end communication between devices across a network. It plays a crucial role in managing the flow of data, error detection and correction, and ensuring that data is delivered reliably and in the correct order</h3>
+  <h4>key function</h4>
+  <h3> <b style="color:rgb(141, 19, 104)"> Segmentation and Reassembly: </b>The Transport Layer divides large messages into smaller segments for transmission and reassembles these segments back into the original message at the destination. Segmentation allows large amounts of data to be transmitted efficiently over the network.</h3> 
+  <h3><b style="color:rgb(141, 19, 104)">Flow Control:</b> The Transport Layer implements flow control mechanisms to prevent fast senders from overwhelming slow receivers. It ensures that the sender does not send data too quickly for the receiver to process, preventing data loss due to congestion.</h3>
+  <h3><b style="color:rgb(141, 19, 104)">Error Detection and Correction: </b>  The Transport Layer detects errors in the received data and may implement error correction techniques to ensure the integrity of the transmitted information. Error detection codes, such as checksums, are used to identify corrupted data, allowing for retransmission if errors are detected</h3>
+  <h3><b style="color:rgb(141, 19, 104)">Connection Establishment, Maintenance, and Termination:  </b> The Transport Layer can establish, maintain, and terminate connections between devices. For example, in TCP (Transmission Control Protocol), a widely used transport layer protocol, connections are established before data exchange and terminated after the data exchange is completed.</h3>
+  <h3><b style="color:rgb(141, 19, 104)">Port Numbers: </b> Ports are used to identify specific processes or services on devices. Transport Layer uses port numbers to distinguish different services running on the same device</h3>
+  <h3><b style="color:rgb(141, 19, 104)">Protocols:  </b>Common transport layer protocols include TCP (Transmission Control Protocol) and UDP (User Datagram Protocol). TCP provides reliable, connection-oriented communication, whereas UDP offers faster, connectionless communication with less overhead.</h3>
+  <br><br><br><br>
+  <img src="osimage/portnumber.webp" frameborder="0" width="800px" height="500px"></img>
+</div>
+
+<div class="sessionlayer" id="section5">
+  <br><br><br><br><br>
+  <h1 style="color:rgb(255, 242, 3)">Session layer</h1>
+  
+  <h3> the Session Layer focuses on managing communication sessions, ensuring that devices can establish connections, exchange data in an organized manner, recover from failures, and terminate sessions gracefully.Software applications and networking protocols handle session management tasks, ensuring that data exchange occurs smoothly and efficiently between devices.</h3>
+  <h4>key function</h4>
+  <h3> <b style="color:rgb(255, 242, 3)"> Dialog Control: </b>The Session Layer manages the flow of dialog between two devices. It allows devices to take turns sending data and ensures that data exchange is organized and structured</h3> 
+  <h3><b style="color:rgb(255, 242, 3)">Synchronization: </b>The Session Layer provides synchronization points in the data flow to allow for proper sequencing of exchanged data. It ensures that data is sent and received in the correct order, preventing issues like data duplication or out-of-sequence delivery.</h3>
+  <h3><b style="color:rgb(255, 242, 3)">Checkpointing: </b>Checkpointing is the process of creating checkpoints during a session, allowing devices to resume communication from a specific point in case of a failure. This feature ensures fault tolerance and data integrity during long communications.</h3>
+  <h3><b style="color:rgb(255, 242, 3)">Session Recovery:  </b>In case of a network failure or interruption, the Session Layer supports the recovery of ongoing sessions. It helps devices re-establish communication and resume the session from the last known checkpoint.</h3>
+  <h3><b style="color:rgb(255, 242, 3)">Session Termination: </b> When the data exchange is complete, the Session Layer is responsible for orderly termination of the session. It ensures that both devices agree that the session has ended and releases any resources associated with the session.</h3>
+  <h3><b style="color:rgb(255, 242, 3)">Connection Management:  </b> The Session Layer manages the opening, maintaining, and closing of logical connections between devices. These connections are established during the session establishment phase and are used for the duration of the session</h3>
+  <br><br><br><br>
+  <img src="osimage/session1.png" frameborder="0" width="800px" height="500px"></img>
+</div>
+
+<div class="sessionlayer" id="section6">
+  <br><br><br><br><br>
+  <h1 style="color:rgb(255, 145, 1)">Presentation layer</h1>
+  
+  <h3>The Presentation Layer is responsible for translating, encrypting, and compressing data exchanged between two devices. It ensures that the data sent by one system is in a format that can be understood by the receiving system, regardless of differences in data representation or encoding methods.</h3>
+  
+  <h4>key function</h4>
+  <h3> <b style="color:rgb(255, 145, 1)">Data Translation: </b>The Presentation Layer translates data between the format used by the application layer and the format that can be transmitted over the network. It handles issues related to data representation, character encoding, and data conversion between different formats</h3> 
+  <h3><b style="color:rgb(255, 145, 1)">Data Encryption and Decryption:</b>The Presentation Layer can encrypt data to ensure secure transmission over the network. Encryption converts the original data into an unreadable format, and decryption at the receiving end converts it back to the original form. This process helps in securing sensitive information during transmission.</h3>
+ 
+  <h3>Data Formate</h3>
+  <ul>
+<li>Text Format: <br>Text Format: Represents textual data. Characters are encoded using character encoding schemes like ASCII (American Standard Code for Information Interchange) or Unicode. Text formats include plain text (.txt), XML (eXtensible Markup Language), JSON (JavaScript Object Notation), and HTML (HyperText Markup Language). </li>
+<li>Binary Format <br> 0s and 1s. Binary formats are more compact and efficient for storing and transmitting data. Examples include image formats (JPEG, PNG), audio formats (MP3, WAV), and video formats (MP4, AVI).</li>
+<li> Numeric Format <br>Numeric formats include integers, floating-point numbers, and scientific notation. The format determines how numbers are represented, including precision and range.</li>  
+<li>Date and Time Format <br> Date and time formats specify how dates, times, and time zones are represented in data.</li>
+<li>Structured Format <br>Represents structured data, where data elements are organized into records or fields. Structured formats are common in databases and spreadsheets</li>
+<li>Binary-Coded Decimal (BCD) Format <br> BCD encodes each decimal digit into a 4-bit binary code.</li>
+</ul>
+<h3>Encoding</h3>
+<ul>
+  <li>Character Encoding: <br>Converts characters into binary code. ASCII, Unicode, and UTF-8 are popular character encoding schemes. </li>
+  <li>Compression Encoding: <br>Compression algorithms like Huffman coding and Run-Length Encoding are used for this purpose.</li>
+  <li>Error Detection and Correction Encoding <br>Error Detection and Correction Encoding </li>
+  <li>Image and Audio Encoding <br>: Converts images and audio signals into digital formats. Image encoding standards include JPEG, PNG, and GIF. Audio encoding standards include MP3, AAC, and PCM. </li>
+  <li>Encryption: <br> Converts data into a secure, unreadable form to protect it from unauthorized access. Encryption algorithms like AES (Advanced Encryption Standard) and RSA (Rivest-Shamir-Adleman) are used for secure communication and data protection</li>
+
+</ul>
+  <h3><b style="color:rgb(255, 145, 1)">Data Compression: </b>The Presentation Layer can compress data to reduce the amount of data that needs to be transmitted over the network. Data compression algorithms are used to shrink the size of files, making data transfer more efficient, especially in bandwidth-constrained environments.</h3>
+ <h3>These algorithms find patterns, repetitions, or redundancies within the data and represent them in a more compact form. </h3>
+  <ul>
+  <li>Removing Redundancies</li>
+  <li>Encoding Patterns</li>
+  <li>Using Dictionary-based Compression</li>
+  <li>Applying Huffman Coding</li>
+  <li>Lossless vs. Lossy Compression</li>
+ </ul>
+  <h3><b style="color:rgb(255, 145, 1)">Syntax Checking: </b> The Presentation Layer performs syntax checking to ensure that the data being transmitted conforms to the syntax rules of the communication protocol. It detects errors related to the structure of the data..</h3>
+  <h3><b style="color:rgb(255, 145, 1)">Data Formatting: </b> The Presentation Layer is responsible for formatting data into a readable and understandable format for the application layer. It prepares the data for display to users or for further processing by applications</h3>
+  <h3><b style="color:rgb(255, 145, 1)">Data Integrity Checks: </b>The Presentation Layer may include mechanisms for ensuring data integrity, such as checksums or hash functions. These checks help detect any errors or tampering that might have occurred during transmission</h3>
+ 
+  <br><br><br><br>
+  <img src="osimage/presentation.jpg" frameborder="0" width="800px" height="500px"></img>
+  <img src="osimage/present.jpg" frameborder="0" width="800px" height="500px"></img>
+</div>
+
+
+<div class="applicationlayer" id="section7">
+  <br><br><br><br><br>
+  <h1 style="color:rgb(82, 79, 80);">Application layer</h1>
+  
+  <h3>This layer deals with the physical connection between devices
+      <br>the transmission and reception of raw data bits over a physical medium such as cables or wireless signals</h3>
+  <h4>key function</h4>
+  <h3> <b style="color:rgb(82, 79, 80);">Interface with User Applications:  </b> It specifies the data rate, which is the speed at which data is transmitted over the network. It is usually measured in bits per second (bps). Bandwidth refers to the maximum data rate that a communication channel can support</h3>
+  <h3><b style="color:rgb(82, 79, 80);">Network Services:  </b> The Application Layer provides a wide range of network services, including email, file transfer, remote login, web browsing, and database access. Each of these services has specific protocols associated with them, such as SMTP for email, FTP for file transfer, HTTP for web browsing, and so on..</h3>
+  <h3><b style="color:rgb(82, 79, 80);">Data Exchange and Communication: </b> Applications at the Application Layer exchange data and communicate with each other using predefined protocols and standards. These protocols define the rules and formats for data exchange, ensuring compatibility between different applications regardless of their underlying hardware or operating systems..</h3>
+  <h3><b style="color:rgb(82, 79, 80);">User Authentication and Authorization: </b> The Application Layer supports user authentication and authorization processes, allowing users to log in, access specific resources, and perform actions based on their privileges. Security mechanisms, such as usernames, passwords, and access control lists, are often implemented at this layer</h3>
+  <h3><b style="color:rgb(82, 79, 80);">Presentation of Data:</b> The Application Layer is responsible for data presentation and formatting. It ensures that data is displayed to users in a readable and understandable format. It may involve tasks like data translation, encryption, and compression to ensure secure and efficient data exchange.</h3>
+  <h3><b style="color:rgb(82, 79, 80);">Network Virtual Terminal: </b> The primary purpose of NVT is to enable remote terminal connections over a network. It allows a user on one system to log into another system remotely and interact with it as if they were physically present at the remote machine. This capability is particularly important for scenarios where users need to access resources or run applications on a remote server</h3>
+  <h3><b style="color:rgb(82, 79, 80);">Support for Network Management and Administration: </b> These applications enable network administrators to configure, monitor, and troubleshoot network resources.</h3>
+  <h3><b style="color:rgb(82, 79, 80);">Support for Distributed Processing: </b>It enables applications to coordinate and share data across networked devices, facilitating distributed computing</h3>
+  <br><br><br><br>
+  <img src="osimage/application1.png" frameborder="0" width="800px" height="500px"></img>
+  <img src="osimage/application.jpg" frameborder="0" width="800px" height="500px"></img>
+  
+</div>
+<br><br><br>
+<h1>Attack and Exploit  of layers</h1>
+
+<div class="osiattack">
+  <table>
+    <thead>
+      <th>Layers</th>
+    <th>Attacks</th>
+    <th>Explaination</th>
+    <th>troubleshoot</th>
+    </thead>
+    
+<tbody>
+    <tr>
+      <td> Physical Layer </td>
+      <td>
+        <ul>
+          <li> Eavesdropping:</li>
+          <li> Hardware Tampering:</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li> Sniffing and intercepting network traffic to capture sensitive data.</li>
+          <li> Physically altering devices to gain unauthorized access or compromise their functionality.</li>
+        </ul>
+      </td>
+      <td>
+        <h4>Eavesdropping</h4>
+        <ul>
+          <li>Use Encryption: Encrypt sensitive data to prevent interception. Implement protocols like HTTPS.</li>
+          <li>Physical Security Measures: Secure network devices in locked rooms, limiting physical access.</li>
+          <li>VLANs and Segmentation: Segment the network using VLANs and enforce access controls.</li>
+          <li>Security Audits: Conduct regular security audits and penetration testing</li>
+          <li>Intrusion Detection Systems: Implement IDS to detect unauthorized access and activities.</li>
+        </ul>
+        <hr>
+        <h4>Hardware Tampering</h4>
+        <ul>
+          <li>Use Encryption: Encrypt sensitive data to prevent interception. Implement protocols like HTTPS.</li>
+          <li>Physical Security Measures: Secure network devices in locked rooms, limiting physical access.</li>
+          <li>VLANs and Segmentation: Segment the network using VLANs and enforce access controls.</li>
+          <li>Security Audits: Conduct regular security audits and penetration testing</li>
+          <li>Intrusion Detection Systems: Implement IDS to detect unauthorized access and activities.</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Data Link Layer</td>
+      <td>
+        <ul>
+          <li>MAC Spoofing:</li>
+          <li>ARP Spoofing/Poisoning:</li>
+          <li>VLAN Hopping:</li>
+        </ul>
+      </td>
+  
+      <td>
+        <ul>
+          <li>Forging MAC addresses to impersonate legitimate devices.</li>
+          <li>Manipulating ARP tables to redirect traffic.</li>
+          <li>Exploiting misconfigurations to jump between VLANs.</li>
+        </ul>
+      </td>
+
+      <td>
+        <h4>MAC Address Spoofing:</h4>
+        <ul>
+          <li>Port Security: Configure port security to restrict MAC addresses on switches.</li>
+          <li>802.1X Authentication: Implement port-based network access control.</li>
+        </ul>
+    <h4>  ARP Spoofing/Poisoning:</h4>
+    <ul>
+      <li>ARP Inspection: Enable ARP inspection to prevent ARP spoofing attacks.</li>
+    </ul>
+      <h4>VLAN Hopping:</h4>
+<ul>
+  <li>Native VLAN Configuration: Ensure proper native VLAN configuration to prevent VLAN hopping.</li>
+</ul>
+      </td>
+    </tr>
+
+   
+     
+    
+   
+    <tr>
+      <td> Network Layer</td>
+      <td>
+        <ul>
+          <li>IP Spoofing:</li>
+          <li>DDoS Attacks:</li>
+          <li> Routing Attacks:</li>
+        </ul>
+      </td>
+  
+      <td>
+        <ul>
+          <li>Faking the source IP address to bypass filters or launch attacks.</li>
+          <li> Flooding a target with excessive traffic to overwhelm and disrupt services.</li>
+          <li> Manipulating routing tables to redirect traffic through malicious nodes.</li>
+        </ul>
+      </td>
+
+      <td>
+        <h4>  IP Address Conflicts:</h4>
+        <ul>
+          <li>DHCP Management: Properly manage DHCP to avoid IP conflicts.</li>
+       
+        </ul>
+        <h4> Routing Errors:</h4>
+        <ul>
+          <li>Routing Table Inspection: Check and correct routing table entries.</li>
+        </ul>
+        <h4>Network Congestion:</h4>
+      <ul>
+        <li>Bandwidth Management: Monitor bandwidth usage and optimize network resources.</li>
+      </ul>
+    </td>
+    </tr>
+
+
+       
+    <tr>
+      <td>Transport Layer</td>
+      <td>
+        <ul>
+          <li>SYN Flood:</li>
+          <li>Session Hijacking: </li>
+          <li>UDP Flooding:</li>
+        </ul>
+      </td>
+  
+      <td>
+        <ul>
+          <li>   Sending a barrage of SYN packets to exhaust server resources.</li>
+          <li>   Stealing session tokens to impersonate authenticated users..</li>
+          <li>Overloading a server by sending a massive volume of UDP packets.</li>
+        </ul>
+      </td>
+     
+      <td>
+        <h4> Connection Failures:</h4>
+        <ul>
+          <li> Firewall Configuration: Configure firewalls to allow necessary ports for communication.</li>
+          <li>Software Conflicts: Identify and resolve software conflicts on specific ports.</li>
+        </ul>
+        <h4>Slow Data Transfer:</h4>
+        <ul>
+          <li>Bandwidth Optimization: Optimize bandwidth usage and implement traffic shaping.</li>
+        </ul>
+        <h4>Port Conflicts:</h4>
+      <ul>
+        <li>Port Usage Verification: Verify that ports are used for their intended purposes.</li>
+      </ul>
+    </td>
+    </tr>
+
+    <tr>
+      <td>session Layer </td>
+      <td>
+      <ul>
+        <li>Session Fixation:</li>
+        <li>Man-in-the-Middle (MitM) Attacks:</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Forcing a user's session ID to a known value to hijack the session.</li>
+        <li>Intercepting and altering communication between parties.</li>
+      </ul>
+    </td>
+    <td>
+      <h4>Session Establishment Failures:</h4>
+      <ul>
+        <li>Session Timeout Settings: Check and adjust session timeout settings. </li>
+        </ul>
+        <h4>Session Hijacking:</h4>
+        <ul>
+      <li>Encryption: Use encryption to secure session tokens and prevent hijacking.</li>
+      </ul>
+    
+
+
+    </td>
+    </tr>
+  
+    <tr>
+    <td>presentation Layer</td>
+    <td> 
+      <ul>
+        <li> Code Injection:</li>
+        <li>Malware Obfuscation: </li>
+      </ul>
+    </td>
+
+    <td>
+      <ul>
+        <li>Exploiting vulnerabilities to inject malicious code (e.g., SQL, JavaScript).</li>
+        <li>Encoding malware to evade detection by security tools.</li>
+      </ul>
+    </td>
+    <td>
+      <h4>Data Format Errors:</h4>
+      <ul>
+        <li>Data Format Settings: Check data format settings in applications.</li>
+      </ul>
+      <h4>Encryption/Decryption Failures:</h4>
+      <ul>
+        <li>Key Management: Verify encryption/decryption keys and algorithms.</li>
+      </ul>  
+  </td>
+</tr> 
+
+
+
+
+
+<tr>
+  <td>Application Layer</td>
+  <td> 
+    <ul>
+      <li>SQL Injection: </li>
+      <li>Cross-Site Scripting (XSS): </li>
+      <li>Cross-Site Request Forgery (CSRF):</li>
+    </ul>
+  </td>
+
+  <td>
+    <ul>
+      <li>Inserting malicious SQL code through user input fields.</li>
+      <li>Injecting malicious scripts into web pages viewed by users.</li>
+      <li>Forcing users to perform actions without their consent.</li>
+    </ul>
+  </td>
+  <td>
+    <h4>Application Errors:</h4>
+    <ul>
+      <li>Update Applications: Update or patch applications to the latest version.</li>
+    </ul>
+    <h4>Functionality Failures:</h4>
+    <ul>
+      <li>Server-side Configurations: Verify server-side configurations and database connections.</li>
+      <li>Application Logs: Review application logs for error messages and diagnose issues.</li>
+    </ul>  
+</td>
+</tr>
+
+
+
+
+
+
+
+
+  
+   
+
+
+  </table>
+</div>
+</div>
+
+</tbody>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt bx-sm' style='color:#ffffff'  ></i></button>
+
+    <footer>
+        <div class="content">
+          <div class="top">
+            <div class="logo-details">
+              <!-- <i class="fab fa-slack"></i> -->
+              <span class="logo_name">Keesite</span>
+            </div>
+            <!-- <div class="media-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div> -->
+          </div>
+          <div class="link-boxes">
+            <ul class="box">
+              <li class="link_name">Accont</li>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Todo list</a></li>
+              <li><a href="#">Roadmap</a></li>
+              <li><a href="#">feedback</a></li>
+            </ul>
+            <ul class="box">
+              <li class="link_name">100 Q/A challenge</li>
+              <li><a href="#">Python</a><a href="#"></a></li>
+              <li><a href="#"> javascript</a></li>
+              <li><a href="#"> java</a></li>
+              <li><a href="#"> sql</a></li>
+            </ul>
+            <ul class="box">
+              <li class="link_name">frontend</li>
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS </a></li>
+              <li><a href="#">JAVASCRIPT </a></li>
+              <!-- <li><a href="#">dsa</a></li>
+              <li><a href="#">jjjj</a></li> -->
+             
+            </ul>
+            <ul class="box">
+              <li class="link_name">courses</li>
+              <li><a href="#">DSA(java and python)</a></li>
+              <li><a href="#">github</a></li>
+              <li><a href="#">Database</a></li>
+              <li><a href="#">Machine Learning</a></li>
+            </ul>
+            <!-- <ul class="box input-box">
+              <li class="link_name">Subscribe</li>
+              <li><input type="text" placeholder="Enter your email"></li>
+              <li><input type="button" value="Subscribe"></li>
+            </ul> -->
+          </div>
+        </div>
+        <div class="bottom-details">
+          <div class="bottom_text">
+             <span class="copyright_text">copyright @ keesite 2023  </span><!-- <a href="#">CodingLab.</a>All rights reserved-->
+            <span class="policy_terms">
+              <span>&#128187 keesitelearn@gmail.com</span>
+              <!-- <a href="#">Privacy policy</a>
+              <a href="#">Terms & condition</a> -->
+            </span>
+          </div>
+        </div>
+      </footer>    
+
+
+      <script src="homepage.js"></script>
+
+<script>
+        // Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+//   document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+      <script>
+        const hamburger = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('hide');
+        });
+      </script>
+      
+      <script>     
+        function openNav() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+          if (!e.target.matches('.content-area1')) {    
+          var myDropdown = document.getElementById("myDropdown");
+            if (myDropdown.classList.contains('show')) {
+              myDropdown.classList.remove('show');
+            }
+          }
+        }
+        </script>
+      
+      
+        <script>
+          function openNavy() {
+            document.getElementById("myDropdown1").classList.toggle("show1");
+          }
+          // Close the dropdown if the user clicks outside of it
+          window.onclick = function(e) {
+            if (!e.target.matches('.content-area2')) {    
+            var myDropdown = document.getElementById("myDropdown1");
+              if (myDropdown.classList.contains('show1')) {
+                myDropdown.classList.remove('show1');
+              }
+            }
+          }
+          </script>
+         
+      
+         <script src="https://smtpjs.com/v3/smtp.js"></script>
+      
+         <script>
+         const submit=document.getElementsByClassName('container')[0];
+         
+         submit.addEventListener('submit',(e)=>
+         {
+             e.preventDefault();
+         
+         // console.log(fname.value);
+         // console.log(fphone.value);
+         // console.log(fmessage.value);
+         
+         console.log("clicked");
+         })
+         
+          function sendEmail(){
+         
+         const fname=document.getElementById('name');
+         const femail=document.getElementById('email');
+         const fphone=document.getElementById('phone');
+         const fmessage=document.getElementById('message');
+         
+         let ebody= ` 
+         <b>Name: </b>${fname.value} <br>
+         <b>Email: </b>${femail.value}<br>
+         <b>phone NO: </b>${fphone.value}<br>
+         <b>query:</b> ${fmessage.value} `
+         
+                     Email.send({
+                         Host:"smtp.elasticemail.com",
+                         Username:"keerthikaravi1405@gmail.com",
+                         Password: "882FE9E23494C1F767E8347592F3DBBA1364",
+                         To:'keesitelearn@gmail.com',
+                         From:document.getElementById('email').value,
+                         Subject:"New Contact Form Enquiry" + email.value,
+                         Body: ebody
+                     }).then(
+                         message => alert("your query send successfully")
+                     );
+                 };
+             </script> 
+         
+         <script>
+           function openForm() {
+         document.getElementById("myForm").style.display = "block";
+         
+         }
+         function closeForm() {
+         document.getElementById("myForm").style.display = "none";
+         }
+         </script> 
+         <script>
+          function loginopenForm() {
+       document.getElementById('loginform').style.display = 'block';
+        
+        }
+      
+        function logincloseForm() {
+        document.getElementById("loginform").style.display = "none";
+        }
+        </script>  
+        <script src="login.js"></script>
+</body>
+</html>
