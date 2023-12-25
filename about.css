@@ -161,7 +161,7 @@ border-radius: 50%;
       opacity: 0.8;
       position: fixed;
       padding: 3px 2px;
-    margin-left: 130px;
+    margin-left: 250px;
       width: 30px;
       height: 30px;
       border-radius: 50%;
@@ -1856,7 +1856,7 @@ border: 1px solid black;
       display: none; /* Hidden by default */
       position: fixed; /* Fixed/sticky position */
       /* Place the button at the bottom of the page */
-    margin-left: 120px;
+    margin-left: 250px;
     /* Place the button 30px from the right */
       z-index: 99; /* Make sure it does not overlap */
       border: none; /* Remove borders */
