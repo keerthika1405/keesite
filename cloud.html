@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cloud</title>
+   
+    <link rel="stylesheet" href="cloud.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css"> 
+
+    <style>
+
+        .hamburger-menu{
+           padding-right: 1.5rem;
+           cursor: pointer;
+       }
+       .hamburger-menu .line{
+       display: block; 
+       width:25px;
+       height: 20px; 
+       margin-top: -25px;
+       margin-left: 60px;
+       color: rgb(80, 80, 80);
+       cursor: pointer;
+       }
+       .nav-menu{
+           position: fixed;
+           width: 34%;
+           top: 50px;
+           left: 50px;
+           background-color: rgb(255, 255, 255);
+           font-weight: 600;
+       
+       }
+       .nav-menu a{
+         font-size: 15px;
+         color: rgb(255, 255, 255);
+         text-decoration: none;
+           display: block;
+           text-align: center;
+           padding: 20px 0;
+       }
+       .hide{
+           display: none;
+       }
+           /* for Desktop view */
+           @media screen and (min-width:600px){
+             .navbar{
+               justify-content: space-around;
+             }
+             .nav-menu{
+               width: 60%;
+               display: block;
+               position: static;
+               margin-top: -25px;
+               margin-left: 70px;
+              
+               background: none;
+             }
+             .nav-menu a{
+               display: inline-block;
+             padding: 0px 10px;
+             
+               /* padding: -px 20px; */
+             
+             }
+             .hamburger-menu{
+               display: none;
+             }
+         }          
+ </style>
+</head>
+<body id="mode">
+
+<nav class="navbar">
+  <div class="content-area">
+    <button  class="content-area1" onclick="openNav()" style="font-size:20px;cursor:pointer"><i class="fa fa-navicon" style="color: black;"></i></button>
+
+<div class="dropdown-content" id="myDropdown">
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Link 3 &emsp;&emsp;&emsp;&emsp; <button class="content-area2" onclick="openNavy()" >&#62;</button>
+  <div class="dropdown-content1" id="myDropdown1" >
+    <a href="#">python</a>
+    <a href="#">java</a> </div>
+  </a>
+  <a href="#">Link 2</a>
+</div>
+
+<div class="hamburger-menu">
+  <span class="line">Menu</span><!--☰-->
+</div> 
+<div class="nav-menu hide">
+<a href="https://github.com/keerthika1405" target="_top" >   <i class='bx bxl-github ' name='github' type="logo"  style="font-size: 20px;"></i> Github</a>
+ <a href="https://github.com/keerthika1405/keesite/discussions" target="_top" ><i class='bx bx-comment '  style="font-size: 20px;"></i>Community</a>
+
+ <!-- <a href="#">About</a> -->
+</div>
+</div>
+
+
+<div class="search-box">
+<div class="row">
+       <form id="search"  method="post" >
+          <input type="text" id="input-box" placeholder="search here" autocomplete="off">
+          <button type="submit"><i class='bx bx-search bx-sm' style="color: white;" id="input-box"></i></button>
+</div>
+</form>
+          <form id="css" action="explore.html" methode="get"></form>
+          <form id="HTML" action="chrome.html" methode="get"></form>
+          <form id="javascript" action="about.html" methode="get"></form>
+            
+<div class="result-box">    
+</div>      
+</div>
+
+<button class="open-button" onclick="openForm()"><i class='bx bx-question-mark'></i></button>
+<div class="container" id="myForm">
+<form  onsubmit="sendEmail(); reset(); " >
+    <h3>Let's Solve</h3>
+    <input type="text" id="name" placeholder="Your Name" autocomplete="off"  required>
+    <input type="email" id="email" placeholder="Your Email Id" autocomplete="off" required>
+    <input type="text" id="phone" placeholder="phone no" autocomplete="off" >
+    <textarea  id="message" name="" id="message" cols="30" rows="5" placeholder="Write Your Query Here We Will Reach You Soon ?"  required></textarea>
+    <button type="submit">send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+</form>
+</div> 
+
+
+<div class="webname">
+    <h2>keesite</h2>
+</div>
+
+</nav>
+
+<div>
+  <h1>AWS Cloud Partitioner </h1>
+</div>
+
+
+<div class="awsservices">
+  <button ><a href="allawsservice.html"><img src="awsservice.jpg" width="300px" height="200px"></a></button>
+  <h1>AWS Service 	&#8593</h1>
+  </div> 
+
+
+<div class="htmlsidebar1">
+    <h2>Overview</h2>
+    <h1> <a href="#section1">AWS fundamental</a></h1>
+    <h1> <a href="#section2">Compute Service</a></h1>
+    <h1> <a href="">Computing Service</a></h1>
+    <h1> <a href="">Networking Service</a></h1>
+    <h1> <a href="">Storage Service</a></h1>
+    <h1> <a href="">Security Service</a></h1>
+    <h1> <a href="">Monitoring and logging</a></h1>
+    <h1> <a href="">pricing and support</a></h1>
+    <h1> <a href="">migration and Innovation</a></h1>
+    <h1> <a href="">aws well architected framework</a></h1>
+    <h1> <a href="">Deployment/Management Tools</a></h1>
+    <h1> <a href="">Serverless and microservice</a></h1>
+  
+</div>
+
+
+
+
+<div class="sec">
+
+<div id="section1">
+  <br><br><br><br>
+<h2><span style="color: black;">Module 1 :</span> AWS fundamental</h2>
+<ul>
+    <li><a href="#m1.1">Introduction and History</a></li>
+    <li><a href="#m1.2">overview of cloud computing</a></li>
+    <li><a href="#m1.3">Aws Global Infrastructure</a></li>
+    <li><a href="#m1.4">Benefits of cloud Computing</a></li>
+    <li><a href="#m1.5">BenefitS Of Aws</a></li>
+    <li><a href="#m1.6">different between ondemand Delivery and Cloud Deployment</a></li>
+    <li><a href="#m1.7">pay as yo go pricing Methods</a></li>
+    <li><a href="#m1.8"> Disadvantage of Aws</a></li>
+   
+</ul>
+</div>
+
+<div class="sec1">
+    <div id="m1.1">
+      
+<br><br><br>
+    <h2>Introduction and History</h2>
+    <p>Amazon Web Services (AWS) is a cloud computing platform that was launched by Amazon in 2006. <br>
+        AWS was initially designed to support the needs of Amazon's own e-commerce business <br>
+        but was soon made available to other businesses as a way to build,
+        deploy, and scale applications in the cloud. <br>
+        AWS is now the leading cloud computing platform, <br>serving millions of customers worldwide
+        It offers over 200 different services </p>
+        <!-- <ul>
+            <li>In 2007, AWS launched its first major service, Amazon S3 (Simple Storage Service), which provided a scalable and durable storage solution for businesses. </li>
+            <li> This was followed by the launch of Amazon EC2 (Elastic Compute Cloud) in 2008, which provided scalable computing resources in the cloud. </li>
+            <li>2009: Launch of Amazon RDS (Relational Database Service) and Amazon Elastic MapReduce (EMR)</li>
+            <li>2010: Launch of Amazon VPC (Virtual Private Cloud) and Amazon CloudWatch</li>
+            <li> 2011: Launch of Amazon DynamoDB, Amazon Redshift, and Amazon Elastic Beanstalk</li>
+            <li>2012: Launch of Amazon SES (Simple Email Service) and Amazon SNS (Simple Notification Service) </li>
+            <li>2013: Launch of Amazon Kinesis, Amazon Machine Learning, and AWS Lambda</li>
+            <li>2014: Launch of Amazon EFS (Elastic File System) and Amazon ECS (Elastic Container Service)</li>
+            <li>2015: Launch of Amazon Aurora and Amazon Lex </li>
+            <li>2016: Launch of Amazon Athena, Amazon EC2 Container Registry, and Amazon EC2 Container Service for Kubernetes (EKS) </li>
+
+        </ul> -->
+</div>
+<br>
+<div id="m1.2">
+  <br><br><br>
+    <h2>overview of cloud computing</h2>
+<p>Cloud computing is the delivery of computing resources over the internet With Pay as ayo go Pricing<br>
+    The term Cloud refers to a Network or Internet. In other words, we can say that Cloud is something,<br>
+     which is present at remote location. 
+    Cloud can provide services over public and private networks,<br>
+     i.e., WAN, LAN or VPN.
+</p>
+    
+<p>the working models for cloud computing:</p>
+<ul>
+    <li><b>Deployment Models:</b>Deployment models define the type of access to the cloud ,<br>
+        four types of access: Public, Private, Hybrid, and Community. </li>
+
+      <p>1.Public Cloud<br>
+        Typically have massive amounts of available space, which translates into easy scalability. Recommended for software development and collaborative projects.</p>  
+        <br><b>eg:Google Workspace, Amazon Web Services (AWS), Dropbox, and Microsoft offerings like Microsoft 365 and Azure, as well as streaming services like Netflix.</b>
+
+      <p>2.Private Cloud<br>
+        Usually reside behind a firewall and are utilized by a single organization. Recommended for businesses with very tight regulatory requirement
+      </p><br><b>eg: Amazon VPC, HPE, VMware, and IBM</b>
+      <p>3.Hybrid Cloud:<br>
+        Combine public clouds with private clouds to allow the two platforms to interact seamlessly. Recommended for businesses balancing big data analytics with strict data privacy regulations.</p>
+    <br><b>eg:AWS Outposts, Azure Stack, Azure Arc, Microsoft Azure VMware Solution, Google Anthos, Nutanix Cloud Infrastructure, Nutanix Cloud Clusters, VMware Cloud Foundation, and VMware Cloud on AWS.</b>
+    <p>4.Community Cloud:<br>
+      A collaborative, multi-tenant platform used by several distinct organizations to share the same applications. Users are typically operating within the same industry or field</p>
+      <br><b></b>  
+      <li><b>Service Models:</b>Cloud computing is based on service models
+        <br> The services can be divided into three main categories: Software-as-a-Service (SaaS) , Platform-as-a-Service (PaaS) ,  Infrastructure-as-a-Service (IaaS)
+
+ </li>
+</ul>
+<br>
+
+    
+        <p>1.Software as a Service (SaaS)<br>
+            Software as a Service provides you with a completed product that is run and managed by the service provider. In most cases, people referring to Software as a Service are referring to end-user applications.<br>
+            With a SaaS offering you do not have to think about how the service is maintained or how the underlying infrastructure is managed; you only need to think about how you will use that particular piece of software. <br>
+            A common example of a SaaS application is web-based email where you can send and receive email without having to manage feature additions to the email product or maintaining the servers and operating systems that the email program is running on.<br>
+       
+            <p>
+                Eg:<b> Facebook , Instagram , Salesforce , Google Workspace(Gmail, Google Drive, Google Docs, Google Sheets, and Google Slides) ,Microsoft Office 365(Word, Excel, PowerPoint, and Outlook , OneDrive and SharePoint) , Zoom ,HubSpot ,Dropbox</b> 
+             </p>   
+        </p>
+ 
+         <p>2.Platform as a Service (PaaS)
+            Platforms as a service remove the need for organizations to manage the underlying infrastructure (usually hardware and operating systems) and allow you to focus on the deployment and management of your applications.<br>
+             This helps you be more efficient as you don’t need to worry about resource procurement, capacity planning, software maintenance, patching, or any of the other undifferentiated heavy lifting involved in running your application.<br>
+         
+             <p>
+                Eg:<b>Google App Engine , Microsoft Azure App Service ,Microsoft Azure App Service , AWS Elastic Beanstalk ,IBM Cloud Foundry </b> 
+             </p> 
+            </p>
+     
+        <p>3.Infrastructure as a Service (IaaS)
+            Infrastructure as a Service, sometimes abbreviated as IaaS, contains the basic building blocks for cloud IT and typically provide access to networking features, computers (virtual or on dedicated hardware), and data storage space.<br>
+             Infrastructure as a Service provides you with the highest level of flexibility and management control over your IT resources and is most similar to existing IT resources that many IT departments and developers are familiar with today.
+        
+             <p>
+                Eg:<b>Amazon Web Services (AWS) EC2 , Microsoft Azure Virtual Machines ,Google Cloud Platform (GCP) Compute Engine , IBM Cloud Infrastructure , Oracle Cloud Infrastructure (OCI) </b> 
+             </p> 
+            </p> 
+
+</div>
+<div id="m1.3">
+  <br><br><br>
+  <h2>Benefits of cloud Computing</h2>
+  <ul>
+    <li>Variable Expense</li>
+    <li>Stop Spending Money To run and mintain DataCenter</li>
+    <li>Stop Guessing Capacity </li>
+    <li>Increase speed and agility</li>
+    <li>go global in minutes</li>
+  </ul>
+  </div>
+  <br><br>
+<div id="m1.4">
+  <br><br><br>
+    <h2>Aws Global Infrastructure</h2>
+    <p>
+Why Cloud Infrastructure Matters
+The AWS Global Cloud Infrastructure is the most secure, extensive, and reliable cloud platform, offering over 200 fully featured services from data centers globally. <br>
+Whether you need to deploy your application workloads across the globe in a single click, or you want to build and deploy specific applications closer to your end-users with single-digit millisecond latency,<br>
+AWS provides you the cloud infrastructure where and when you need it.<br>
+
+With millions of active customers and tens of thousands of partners globally, AWS has the largest and most dynamic ecosystem. Customers across virtually every industry and of every size,<br>
+ including start-ups, enterprises, and public sector organizations, are running every imaginable use case on AWS.
+
+<ul>
+  <li><b>Regions</b>:</li><p>A region is a geographical area, Each region consists of 3 or more availability zones,    Each Amazon Region is designed to be completely isolated from the other Amazon Regions
+  <br>Each AWS Region has multiple Availability Zones and data centers, You can replicate data within a region and between regions using private or public Internet connections.<be>
+    When you work with an instance using the command line interface or API actions, you must specify its regional endpoint.<br>To reduce data latency in your applications, most Amazon Web Services offer a regional endpoint to make your requests.<br>
+    An endpoint is a URL that is the entry point for a web service.<br>
+    <b>The general syntax of a Regional endpoint is as follows. protocol :// service-code . region-code .amazonaws.com. For example, https://dynamodb.us-west-2.amazonaws.com is the endpoint for the Amazon DynamoDB service in the US West (Oregon) Region.</b>
+  </p>
+
+  
+  <li><b>Availability Zones</b></li>
+  <p>AZs span one or more data centers and have direct, low-latency, high throughput, and redundant network connections between each other, Each AZ is designed as an independent failure zone,When you launch an instance, you can select an Availability Zone or let AWS choose one for you.<br>
+    You can also use Elastic IP addresses to mask the failure of an instance in one Availability Zone by rapidly remapping the address to an instance in another Availability Zone.<br>
+    For example, the Availability Zone us-east-1a for your AWS account might not be the same location as us-east-1a for another AWS account.<br>
+    To coordinate Availability Zones across accounts, you must use the AZ ID, which is a unique and consistent identifier for an Availability Zone. 
+  <b> AZ IDs are the same for every account even though the Availability Zone names can map differently for each account.</b></p>
+
+account accessing the shared resource to know which Availability Zone to reference. To help with this, such resources also allow you to identify the actual location of your resources relative to your accounts by using the AZ ID.,<br>
+      An AZ ID is a unique and consistent identifier for an Availability Zone across all AWS accounts. For example, use1-az1 is an AZ ID for an Availability Zone in the us-east-1 Region and it represents the same physical location in every AWS account.  <p> you must identify not only the AWS Region, but also the Availability Zone. For example, an Amazon VPC subnet. Within a single account, the mapping of an Availability Zone to a specific name isn't important. But, when you use AWS RAM to share such a resource with other AWS accounts,<br>
+     the mapping is important. This random mapping complicates the ability of the 
+    You can use AZ IDs to determine the location of resources in one account relative to the resources in another account. For example, if you share a subnet in the Availability Zone with the AZ ID use1-az2 with another account, this subnet is available to that account in the Availability Zone whose AZ ID is also use1-az2.<br>
+     The AZ ID for each subnet is displayed in the Amazon VPC console, and can be queried using the AWS CLI.</p>
+  <pre><code>
+console:
+To view the AZ IDs for the Availability Zones in your account
+1. Navigate to the AWS RAM console page in the AWS RAM console.
+2. You can view the AZ IDs for the current AWS Region under Your AZ ID.
+
+AWS CLI:
+To view the AZ IDs for the Availability Zones in your account
+The following example command shows the AZ IDs for the Availability Zones in the us-west-2 Region and how they are mapped for the calling AWS account.
+ 
+
+$ aws ec2 describe-availability-zones \
+    --region us-west-2
+{
+    "AvailabilityZones": [
+        {
+            "State": "available",
+            "OptInStatus": "opt-in-not-required",
+            "Messages": [],
+            "RegionName": "us-west-2",
+            "ZoneName": "us-west-2a",
+            "ZoneId": "usw2-az2",
+            "GroupName": "us-west-2",
+            "NetworkBorderGroup": "us-west-2",
+            "ZoneType": "availability-zone"
+        },
+        {
+            "State": "available",
+            "OptInStatus": "opt-in-not-required",
+            "Messages": [],
+            "RegionName": "us-west-2",
+            "ZoneName": "us-west-2b",
+            "ZoneId": "usw2-az1",
+            "GroupName": "us-west-2",
+            "NetworkBorderGroup": "us-west-2",
+            "ZoneType": "availability-zone"
+        },
+        {
+            "State": "available",
+            "OptInStatus": "opt-in-not-required",
+            "Messages": [],
+            "RegionName": "us-west-2",
+            "ZoneName": "us-west-2c",
+            "ZoneId": "usw2-az3",
+            "GroupName": "us-west-2",
+            "NetworkBorderGroup": "us-west-2",
+            "ZoneType": "availability-zone"
+        },
+        {
+            "State": "available",
+            "OptInStatus": "opt-in-not-required",
+            "Messages": [],
+            "RegionName": "us-west-2",
+            "ZoneName": "us-west-2d",
+            "ZoneId": "usw2-az4",
+            "GroupName": "us-west-2",
+            "NetworkBorderGroup": "us-west-2",
+            "ZoneType": "availability-zone"
+        }
+    ]
+}
+
+</code></pre>
+  <p>The AWS Cloud spans 102 Availability Zones within 32 geographic regions around the world,<br>
+     with announced plans for 12 more Availability Zones and 4 more AWS Regions in Canada, Malaysia, New Zealand, and Thailand. </p>
+ 
+     <li><b>Local Zones</b></li>
+     <p>AWS Local Zones are a type of infrastructure deployment that places compute, storage, database, and other select
+      AWS services close to large population and industry centers. By bringing the cloud closer to end users and business
+      centers, AWS Local Zones enable application architectures that require single-digit-millisecond latency. Applications are
+      migrated to a nearby Local Zone, close to your on-premises, data center or end-users. The Local Zone can serve as a
+      cloud staging environment where refactoring, low latency, and data residency needs are met<br>
+      AWS Local Zones provide the features you need to support a hybrid migration and meet your specific requirements.</p><br>
+<b>Run low-latency applications at the edge:</b>Build and deploy applications close to end users to enable real-time gaming, live streaming, augmented and virtual reality (AR/VR), virtual workstations, and more.<br>
+<b>Simplify hybrid cloud migrations:</b>Migrate your applications to a nearby AWS Local Zone, while still meeting the low-latency requirements of hybrid deployment.<br>
+<b>Meet stringent data residency requirements:</b>Comply with state and local data residency requirements in sectors such as healthcare, financial services, iGaming, and government<br>
+<p>AWS launched Local Zones in Delhi and Kolkata this year and has plans to launch 2 more in Chennai and Bangalore by end of 2023.</p>
+  <li><b>AWS Wavelength</b></li>
+  <p>AWS Wavelength enables developers to build applications that deliver ultra-low latencies to mobile devices and end users. Wavelength deploys standard AWS compute and storage services to the edge of communications service providers' (CSP) 5G networks.<br>
+     You can extend a virtual private cloud (VPC) to one or more Wavelength Zones.</p>
+  
+<p>AWS resources on Wavelength:<br>
+ <b> You can create Amazon EC2 instances, Amazon EBS volumes, and Amazon VPC subnets and carrier gateways in Wavelength Zones and also
+  Amazon EC2 Auto Scaling , Amazon EKS clusters , Amazon ECS clusters , Amazon EC2 Systems Manager , Amazon CloudWatch ,AWS CloudTrail ,AWS CloudFormation</b></p>
+<pre>
+  <code>
+    You can create, access, and manage your EC2 resources, Wavelength Zones, and carrier gateways using any of the following interfaces:
+
+1.AWS Management Console— Provides a web interface that you can use to access your Wavelength resources.
+2.AWS Command Line Interface (AWS CLI) — Provides commands for a broad set of AWS services, including Amazon VPC,and is supported
+ on Windows,macOS, and Linux The services you use in Wavelength continue to use their own namespace, for example Amazon EC2 uses the "ec2" namespace, 
+ and Amazon EBS uses the "ebs" namespace. For more information, see AWS Command Line Interface.
+3.AWS SDKs — Provides language-specific APIs and takes care of many of the connection details, such as calculating
+ signatures, handling request retries, and handling errors. For more information
+</code>
+</pre>
+ <p>What is the difference between AWS Wavelength and local zones?
+  AWS Wavelength brings AWS services to the edge of the 5G network, minimizing the latency to connect to an application from a mobile device. Local Zones are an extension of an AWS Region that provide you the ability to place resources in multiple locations closer to your end users.</p>
+
+     <li><b>AWS Outposts</b></li>
+     <p>AWS Outposts is a family of fully managed solutions delivering AWS infrastructure and services to virtually any on-premises or edge location for a truly consistent hybrid experience</p>
+  <p>Outposts solutions allow you to extend and run native AWS services on premises, and is available in a variety of form factors, from 1U and 2U Outposts servers to 42U Outposts racks, and multiple rack deployments.</p>
+ <p>AWS Local Zones, Edge Locations, and Outposts are three distinct types of AWS infrastructure designed to address different needs related to latency, performance, and on-premises requirements.<br>
+   Here’s a comparison of their main characteristics: </p>
+
+<p>
+  <b>localzone:</b>
+  Local Zones extend AWS infrastructure into areas where a full AWS Region may not be available, providing low-latency access 
+  to AWS services for users in specific geographic locations.<br>
+  Local Zones offer a subset of AWS services, including Amazon EC2, Amazon VPC, Amazon EBS, and Amazon RDS, among others.<br>
+  Local Zones provide localized data storage<br>
+  Use cases: Suitable for latency-sensitive applications, such as gaming, real-time financial transactions, 
+  or media processing, where low-latency access to AWS services is crucial for better user experience.<br><br>
+
+  <b>Edge Locations </b>
+    are part of Amazon CloudFront CDN and AWS Global Accelerator infrastructure, strategically placed worldwide to cache
+     and serve content closer to end-users, reducing latency and improving performance.<br>
+    Edge Locations do not provide persistent data storage but cache and serve content such as web pages, images, videos, and API responses.<br>
+    Use cases: Suitable for applications and services that require content delivery, faster DNS resolution, and improved network performance.<br><br>
+
+ <b>Outposts</b>
+  Outposts bring native AWS services, infrastructure, and operating models to on-premises environments, allowing for a consistent hybrid cloud experience.<br>
+  Services: Outposts support a range of AWS services, including Amazon EC2, Amazon EBS, Amazon RDS, Amazon S3,
+   and container services such as Amazon EKS and Amazon ECS.<br>
+  Outposts provide on-premises data storage,<br>
+  Use cases: Suitable for workloads that require low-latency access to on-premises systems, applications with data residency requirements, 
+  and hybrid cloud scenarios where seamless integration between on-premises and cloud environments is needed.
+</p>
+ <p><b>In summary, AWS Local Zones address low-latency requirements in specific geographic areas, Edge Locations optimize content delivery and network performance,(A CDN (content delivery network), also called a content distribution network) and Outposts provide a hybrid cloud solution for on-premises environments with AWS services.</b></p>
+ 
+  <li><b>Edge Locations </b></li>
+  <p>A website that CloudFront uses as a cache allows copies of your content to be delivered more quickly to users wherever.<br>
+    AWS data centers called edge locations are built to provide services with the least amount of latency feasible.<br>
+    These data centers are located all around the world and are owned by Amazon. They are frequently located in large cities and closer<br>
+    to users than Regions or Availability Zones, allowing quick replies. Edge locations are used by a subset of services for which latency matters, such as:
+  </p>
+  <p>
+    CloudFront:<br>
+    It utilizes edge locations to cache versions of the content it delivers so that it can be provided to users more quickly because it is closer to them.
+   <br> Route 53:<br>
+    To speed up the resolution of local DNS queries, it serves DNS replies from edge locations.
+<br>    Web Application Firewall and AWS Shield:<br>
+    To as quickly as possible halt undesirable traffic, it analyzes traffic in edge areas.<br><br>
+    <b>when a user sends a request, it routes to the closest edge location and offers the response from there, making it rapid, rather than obtaining a response from the core server.</b>
+ <p>
+  Eg:For instance, some of your traffic may arrive from Canada if your data is stored in an S3 bucket located in Australia. In this case, AWS will begin caching your data in one of the edge locations in Canada, preventing the requirement 
+  for the request to travel to Australia by delivering it from the cache edge site in Canada.
+   As a result, the latency will be reduced, improving the user experience.</p>
+
+    <li><b> Regional Edge Caches</b></li>
+    <p>Edge locations are not tied to Availability Zones or regions. Regional Edge Caches are located between origin
+       web servers and global edge locations and have a larger cache. Regional Edge Caches have larger cache-width than any 
+       individual edge location, so your objects remain in cache longer at these locations.</p>
+      
+      <br><br>
+       <p>1.CloudFront Edge Locations or POPs make sure that popular content can be served quickly to the viewers.<br>
+        2.CloudFront also has Regional Edge Caches that help bring more content closer to the viewers, even when the content is not popular enough to stay at a POP, to help improve performance for that content.<br>
+     3.   Regional Edge Caches are deployed globally, close to the viewers, and are located between the origin servers and the Edge Locations.<br>
+     4.   Regional edge caches support multiple Edge Locations and support a larger cache size so objects remain in the cache longer at the nearest regional edge cache location.<br>
+       5. Regional edge caches help with all types of content, particularly content that tends to become less popular over time.</p>
+  
+</p>
+</ul>
+
+
+</p>
+</div>
+<div id="m1.5">
+  <br><br><br>
+  <h2>BenefiTS Of AWS </h2>
+  <ul>
+    <li><b>Easy to use:</b></li>
+    <p>AWS is designed to allow application providers, ISVs, and vendors to quickly and securely <b>host</b> your applications – whether an existing application or a new SaaS-based application. You can use the AWS Management
+       Console or well-documented web services APIs to <b>access</b> AWS’s application hosting platform.</p>
+    <li><b>Flexible:</b></li>
+    <p>AWS enables you to select the operating system, programming language, web application platform, database, and other services you need. With AWS, you receive a virtual environment
+      that lets you load the software and services your application require <br>
+      the migration process for existing applications while preserving options for building new solutions.</p>
+    <li><b>Cost-Effective</b></li>
+    <p>You pay only for the compute power, storage, and other resources you use, with no long-term contracts or up-front commitments</p>
+    <li><b>Relaiable:</b></li>
+    <p>you take advantage of a scalable, reliable, and secure global computing infrastructure,</p>
+    <li><b>Scalable and high-performance:</b></li>
+    <p>Using AWS tools, Auto Scaling, and Elastic Load Balancing, your application can scale up or down based on demand.</p>
+    <li><b>Secure:</b></li>
+    <p>AWS utilizes an end-to-end approach to secure and harden our infrastructure, including physical, operational, and software measures</p>
+  </ul>
+  </div>
+<br><br>
+  <div id="m1.6">
+    <br><br><br>
+    <h2>different between ondemand Delivery and Cloud Deployment</h2>
+    <br>
+    <br>
+    <table>
+      <tr>
+        <th>parameter</th>
+        <th>on permises</th>
+        <th>on cloud</th>
+      </tr>
+      <tr>
+        <td>Upfront cost</td>
+        <td>Requires considerable upfront investment</td>
+        <td> Employs pay-as-you-go model</td>
+      </tr>
+      <tr>
+        <td>Deployment of resources</td>
+        <td>Resources are deployed in-house</td>
+        <td>Deployment takes place on a third-party server</td>
+      </tr>
+  
+      <tr>
+        <td>Security of data</td>
+        <td>Offers complete control over data</td>
+        <td>Loss of authority over the data reduces the credibility</td>
+      </tr>
+      <tr>
+        <td>Compliance issues</td>
+        <td>The on-premise model is better with compliance policies</td>
+        <td>Losing authority over their data is a clear violation of their compliance policies</td>
+      </tr>
+      <tr>
+        <td>Flexibility & scalability of operations</td>
+        <td> Offers less flexibility because of physical servers</td>
+        <td>The scalability is superior to on-premise models</td>
+      </tr>
+
+    </table>
+    </div>
+    <br><br>
+
+    <div id="m1.7">
+      <br><br><br>
+      <h2>pay as yo go pricing Methods</h2>
+    What is the Pay-As-You-Go Business Model? The pay-as-you-go (PAYG) pricing model means that users pay based on how much they consume. For example, a cloud storage service
+     provider could charge based on the amount of storage used, while many phone carriers bill based on minutes used.
+   
+  </div>
+  <br><br>
+  <div id="m1.8">
+    <br><br><br>
+    <h2>Disadvantage of Aws</h2>
+    <ul>
+      <li>Confusing Bills</li>
+      <li>Less Number of AWS Experts</li>
+      <li> Limited Resources </li>
+      <li>Cloud Computing Concerns</li>
+    
+    </ul>
+  </div>
+    
+</div>
+ <br><br>
+  
+  <div id="section2">
+    <br><br><br><br>
+    <h2><span style="color: black;">Module 2 :</span> Compute Service</h2>
+    <ul>
+        <li><a href="#m2.1">Amazon EC2</a></li>
+        <li><a href="#m2.2">Benefits of Amazon EC2</a></li>
+        <li><a href="#m2.3">EC2 Instance and Type</a></li>
+        <li><a href="#m2.4">Different Betwwen Various Billing Option For Amazon EC2</a></li>
+        <li><a href="#m2.5">different between ondemand Delivery and Cloud Deployment</a></li>
+        <li><a href="#m2.6">Auto Scaling</a></li>
+        <li><a href="#m2.7"> Benefits  of Amazon EC2 Auto Scaling</a></li>
+        <li><a href="#m2.8">AWS Elastic Load Balancer</a></li>
+        <li><a href="#m2.9">Benefits of Elastic Load Balancing</a></li>
+        <li><a href="#m2.10">Example for uses of Elastic Load Balancing</a></li>
+        <li><a href="#m2.11">SNS and SQS</a></li>
+        <li><a href="#m2.12">Amazon ECS(Elastic Container Services)</a></li>
+        <li><a href="#m2.13">Amazon EKS(Elastic Kubernetes Services)</a></li>
+        <li><a href="#m2.14">Docker and Container</a></li>
+        <li><a href="#m2.15">ECS Cluster and Tasts</a></li>
+        <li><a href="#m2.16">AWS lambda</a></li>
+        <li><a href="#m2.17">ServerLess Computing</a></li>
+        <li><a href="#m2.18">AWS Fargate</a></li>
+       
+    </ul>
+    </div>
+    <br><br>
+    <div id="m2.1">
+      <br><br><br>
+      <h2>Amazon EC2</h2>
+
+      <p>An instance is a virtual copy of a server operating system running on a single physical machine.</p>
+      <p><b> Host:</b>
+        <br>
+        This is a device such as a computer that connects to a network.<br>
+        A host can be any machine that connects to or interacts with any other device in the network.<br>
+Just think about this for a moment and you will understand. A network consists of any number of devices all with their own IP address (Internet Protocol).<br>
+Not only that, but each one will have its own software allowing it to fulfill its purpose within the network.
+The IP address is there to identify each device when communicating with the other devices.
+Remember, that the different hosts may have ‘hostnames’ rather than IP numbers.
+In this case, the DNS (Domain Name System) converts the hostname to an IP address that the devices can read.
+Now for the complicated bit. Not all devices are hosts.
+If you have hubs, switches or routers in the network, these don’t have an IP address.
+They are therefore NOT hosts.
+      </p>
+      
+        <p><b>Server:</b><br>
+          This is a piece of hardware or software that provides services to other devices or programs in the network.</p>
+          <p>Remember, the devices may not necessarily be a host.
+            The devices using these services (called ‘Clients’) can be software or hardware too.
+            Someone always asks whether the relationship between client and server is ‘one to one’
+            Keep on reading and I’ll try to explain.
+            If it’s ‘one to one’, then the numbers of servers and clients suddenly become much larger than is practicable.
+            In fact, a bit of good news is that the server can serve multiple clients and the clients can obtain services from multiple servers.
+            So you see, there’s no need to panic.
+            Another thing to remember is that the server and client can be within the same device or in separate devices</p>
+
+<br><br>  
+        <b>Things change so rapidly in this field, that by the time they are commercially available everything written about them today will probably be redundant.
+          Instead, let’s talk a bit about more mundane topics such as virtualization and cloud computing.     
+          Virtualization allows a program to run on a specially configured shared server so that the user believes they’ve complete control over the server.         
+          This effectively allows data centers to reduce the number of servers while at the same time host more workloads.
+          Cloud computing also allows companies to have fewer physical servers on their premises while increasing the capability of file sharing and remote working.
+          Both these methods allow fewer physical boxes in the company IT room with the resulting lower overall capital expenditure, floor space, power consumption, and cooling demands.
+          But, let’s not forget that with more workloads being carried by fewer ‘boxes’, there is a possible problem when one of those boxes fails and needs to go offline for maintenance.
+          This will obviously cause problems for the business so you need to definitely consider the different options available before implementing. Decide on your priorities and act on them.</b>
+          
+<br><br>
+          <p>Amazon EC2 instance is a virtual server in Amazon's Elastic Compute Cloud (EC2) for running applications on the Amazon Web Services (AWS) infrastructure.Amazon provides various types of instances with different configurations of CPU, memory, storage and networking resources to suit user needs
+            <br>Instances are created from Amazon Machine Images (AMI). The machine images are like templates
+            <br><br> Amazon Machine Image (AMI):<br>
+             is a supported and maintained image provided by AWS that provides the information required to launch an instance. You must specify an AMI when you launch an instance. You can launch multiple instances from a single AMI when you require multiple instances with the same configuration.
+             You can use different AMIs to launch instances when you require instances with different configurations.
+          </p>
+          <p>Use an AMI
+             After you create and register an AMI, you can use it to launch new instances. (You can also launch instances from an AMI if the AMI owner grants you launch permissions.) You can copy an AMI within the same AWS Region or to different AWS Regions. When you no longer require an AMI, you can deregister it.</p>
+ 
+             
+    <br><br>  <a href="https://www.youtube.com/watch?v=UBVVq-xz5i0">vist this vedio for better understanding of virtualization</a>
+    <ul>
+    <h1>Amazon EC2 instance features</h1>
+    <li>Operating system.</li>
+    <p>Amazon EC2 currently supports a variety of operating systems including: Amazon Linux, Ubuntu, Windows Server, Red Hat Enterprise Linux, SUSE Linux Enterprise Server, openSUSE Leap, Fedora, Fedora CoreOS, Debian, CentOS, Gentoo Linux, Oracle Linux, and FreeBSD</p>
+    <li>Persistent storage</li>
+    <p>Amazon's Elastic Block Storage (EBS) service enables block-level storage volumes to be attached to EC2 instances and be used as hard drives. With EBS, it is possible to increase or decrease the amount of storage available to an EC2 instance and attach EBS volumes to more than one instance at the same time. </p>
+    <li>Elastic IP addresses</li>
+    <p>n assign to any EC2 instance in a particular region, until you choose to release it.</p>
+    <li>Amazon CloudWatch</li>
+    <p>Amazon CloudWatch collects and visualizes real-time logs, metrics, and event data in automated dashboards to streamline your infrastructure and application maintenance.<br>It can also proactively monitor applications, improve resource use, optimize costs and scale up or down based on changing workloads.</p>
+    <li>Automated scaling</li>
+    <p> Amazon EC2 Auto Scaling automatically adds or removes capacity from Amazon EC2 virtual servers in response to application demand. </p>
+  <li>Bare-metal instances</li>
+  <p>These virtual server instances consist of the hardware resources, such as a processor, storage and network. They are not virtualized and do not run an OS, reducing their memory footprint, providing extra security and increasing their processing power.</p>
+<li></li>
+<p>AWS Auto Scaling is a a Service on its own. EC2 fleet is a feature of EC2. You can also configure EC2 Fleet functionality to work with Auto Scaling.<br>
+  In simple terms:<br>
+  Auto Scaling allows you to provision, monitor and scale instances depending on the configuration you set for the group
+  EC2 fleet allows you to simplify the provision of a "group" of instances.</p>
+  <p>Amazon EC2 Fleet. This service enables the deployment and management of instances as a single virtual server. The Fleet service makes it possible to launch, stop and terminate EC2 instances across EC2 instance types with one action. Amazon EC2 Fleet also provides programmatic access to fleet operations using an API. Fleet management can be integrated into existing management tools. With EC2 Fleet, policies can be scaled to automatically adjust the size of a fleet to match the workload.
+    Pause and resume instances. EC2 instances can be paused and resumed from the same state later on. For example, if an application uses too many resources, it can be paused without incurring charges for instance usage.</p> 
+</ul>
+
+  
+  </div>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt bx-sm' style='color:#ffffff'  ></i></button>
+
+
+<footer class="foot">
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <!-- <i class="fab fa-slack"></i> -->
+          <span class="logo_name">Keesite</span>
+        </div>
+        <!-- <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div> -->
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Accont</li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Todo list</a></li>
+          <li><a href="#">Roadmap</a></li>
+          <li><a href="#">feedback</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">100 Q/A challenge</li>
+          <li><a href="#">Python</a><a href="#"></a></li>
+          <li><a href="#"> javascript</a></li>
+          <li><a href="#"> java</a></li>
+          <li><a href="#"> sql</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">frontend</li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS </a></li>
+          <li><a href="#">JAVASCRIPT </a></li>
+          <!-- <li><a href="#">dsa</a></li>
+          <li><a href="#">jjjj</a></li> -->
+         
+        </ul>
+        <ul class="box">
+          <li class="link_name">courses</li>
+          <li><a href="#">DSA(java and python)</a></li>
+          <li><a href="#">github</a></li>
+          <li><a href="#">Database</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+        <!-- <ul class="box input-box">
+          <li class="link_name">Subscribe</li>
+          <li><input type="text" placeholder="Enter your email"></li>
+          <li><input type="button" value="Subscribe"></li>
+        </ul> -->
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+         <span class="copyright_text">@ keesite 2023  </span><!-- <a href="#">CodingLab.</a>All rights reserved-->
+        <span class="policy_terms">
+          <span>&#128187 keesitelearn@gmail.com</span>
+          <!-- <a href="#">Privacy policy</a>
+          <a href="#">Terms & condition</a> -->
+        </span>
+      </div>
+    </div>
+  </footer>    
+
+<script src="homepage.js"></script>
+
+
+<script>
+    // Get the button:
+let mybutton = document.getElementById("myBtn");
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+    scrollFunction()
+};
+function scrollFunction() {
+if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+mybutton.style.display = "block";
+} else {
+mybutton.style.display = "none";
+}
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+//   document.body.scrollTop = 0; // For Safari
+document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+<script>
+     
+    var codeBlocks = document.querySelectorAll("pre");
+    console.log(codeBlocks);
+    codeBlocks.forEach(function(t)
+    {
+        var o = document.createElement("button");
+   
+        o.className="at_copy",
+        o.type="button",
+        o.ariaLabel="Copy code to clipboard",
+        o.innerHTML="Copy",
+        t.append(o),
+        o.addEventListener("click",function()
+        {
+        var e =t.querySelector("code").innerText.trim();
+        window.navigator.clipboard.writeText(e),
+   
+        o.innerHTML="Copied";
+   
+        setTimeout(function(){
+         o.innerHTML="Copy"
+       },1e3)
+    })
+   });
+   </script>
+      
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script> 
+      <script>hljs.highlightAll();</script> 
+
+<script>
+    function openNav() {
+      document.getElementById("myDropdown").classList.toggle("show");  
+    }
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.content-area1')) {    
+      var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+          myDropdown.classList.remove('show');        
+        }
+      }
+    }
+    </script>
+
+<script>
+       
+    function openNavy() {
+      document.getElementById("myDropdown1").classList.toggle("show1");
+     
+    }
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.content-area2')) {    
+      var myDropdown = document.getElementById("myDropdown1");
+        if (myDropdown.classList.contains('show1')) {
+          myDropdown.classList.remove('show1');
+        
+        }
+      }
+    }
+    </script>
+
+<script>
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('hide');
+    });
+    
+</script>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+const submit=document.getElementsByClassName('container')[0];
+
+submit.addEventListener('submit',(e)=>
+{
+    e.preventDefault();
+
+// console.log(fname.value);
+// console.log(fphone.value);
+// console.log(fmessage.value);
+
+console.log("clicked");
+})
+
+ function sendEmail(){
+
+const fname=document.getElementById('name');
+const femail=document.getElementById('email');
+const fphone=document.getElementById('phone');
+const fmessage=document.getElementById('message');
+
+let ebody= ` 
+<b>Name: </b>${fname.value} <br>
+<b>Email: </b>${femail.value}<br>
+<b>phone NO: </b>${fphone.value}<br>
+<b>query:</b> ${fmessage.value} `
+
+            Email.send({
+                Host:"smtp.elasticemail.com",
+                Username:"keerthikaravi1405@gmail.com",
+                Password: "882FE9E23494C1F767E8347592F3DBBA1364",
+                To:'keesitelearn@gmail.com',
+                From:document.getElementById('email').value,
+                Subject:"New Contact Form Enquiry" + email.value,
+                Body: ebody
+            }).then(
+                message => alert("your query send successfully")
+            );
+        };
+    </script> 
+
+<script>
+  function openForm() {
+document.getElementById("myForm").style.display = "block";
+
+}
+function closeForm() {
+document.getElementById("myForm").style.display = "none";
+}
+</script> 
+</body>
+</html>
