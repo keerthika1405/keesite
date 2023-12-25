@@ -678,7 +678,8 @@ font-style: italic;
              
             </div> -->
             
-       
+
+            
             <div class="outer_searchbox">
               <div class="search-box">
                 <div class="row">
@@ -727,22 +728,14 @@ font-style: italic;
                 <!-- <h1>welcome  <script> document.write(localStorage.getItem("name").toUpperCase());</script> </h1> -->
             <!-- </div>  -->
 
-
-
-          
-
             <button class="loginopen-button" onclick="loginopenForm()" >login/signup</button>
-            
-            
-
-
-
-            
+   
             <img  class="frontpicture" src="Dawn.gif" alt="">
             <div class="fronttext">
               <h1> <span style="color: white;"  > Welcome to Keesite</span> <br>
                 <span style="color: rgb(66, 64, 64);"> your premier destination for online education and skill development</span></h1>
             </div>
+
 
 <div class="coursename">
   <h1>Discover, Learn & Grow with Our Free Resources...</h1>
@@ -1133,12 +1126,14 @@ sql Commands <br> sql Q/A Practice
                   <i  id="togglepassword" class='bx bx-show show1 bx-sm'></i>
                   <div class="form__input-error-message"></div>
               </div>
+<!-- 
               <div class="form__input-group">
                   <input type="password" id="passwords" class="form__input" name="passwords" required  placeholder="Confirm password">
                   <i  id="togglepasswords" class='bx bx-show show2 bx-sm' ></i>
                   <p id="message"></p>
                   <div class="form__input-error-message"></div>
-              </div>
+              </div> -->
+
               <button class="form__button" onclick="saveData()"   type="submit">Continue</button>
               <p class="form__text">
                   <a class="form__link" id="linkLogin" href="./" >Already have an account? Sign in</a>
@@ -1546,7 +1541,7 @@ document.getElementById(openD).parentNode.setAttribute("open","");
   name=document.getElementById("name1").value;
   email=document.getElementById("email1").value;
   password=document.getElementById("password").value;
-  passwords=document.getElementById("passwords").value;
+  // passwords=document.getElementById("passwords").value;
 
 
 let user_records=new Array();
@@ -1562,8 +1557,8 @@ else
   user_records.push({
       "email":email,
       "name":name,
-      "password":password,
-      "passwords":passwords 
+      "password":password
+      // "passwords":passwords 
   })
   localStorage.setItem("users",JSON.stringify(user_records));
   document.getElementById('loginform').style.display = 'block';
