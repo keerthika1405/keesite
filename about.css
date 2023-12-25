@@ -171,17 +171,18 @@ border-radius: 50%;
       bottom:0;
      
     } 
+    .container{
+      z-index: 400;
+      position: absolute;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      
+      }
   }
 
-  .container{
-  z-index: 400;
-  position: absolute;
-  display: block;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  
-  }
+
 
   @media (min-width: 1024px) {
     .open-button {
@@ -250,6 +251,15 @@ border-radius: 50%;
  display: none;
   } 
  
+  .container{
+    z-index: 400;
+    position: absolute;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    
+    }
   }
   
   @media (max-width: 1023px) {
