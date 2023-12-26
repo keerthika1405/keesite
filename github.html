@@ -5,258 +5,344 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>github</title>
     <link rel="stylesheet" href="github.css">
+
+    
     <style>
+
+      :root{
+        --body-color: rgb(253, 253, 253);
+        --list-color:black;
+        /* --text-color:rgb(244, 245, 211);
+        --list-color: white;
+        --list-text-color:black;
+        --hover:grey;
+        --tab-content:white;
+        --containerprofile:white; */
+      }
       
-
-:root{
-  --body-color: rgb(253, 253, 253);
-  --text-color:rgb(244, 245, 211);
-  --list-color: white;
-  --list-text-color:black;
-  --hover:grey;
-  --tab-content:white;
-  --containerprofile:white;
-}
-
-
-body.dark{
-  --hover:grey;
-  --list-text-color:white;
- --list-color: rgb(48, 46, 46);
-  --body-color:rgb(0, 0, 0,0.7);
-  --text-color:rgb(255, 255, 255);
-  --gry-color:rgba(0, 0, 0);
-  --tab-content: rgb(48, 46, 46);
-  --containerprofile:rgb(48, 46, 46);
- 
-
-}
-body {
-	/* background: var(--body-color); */
-	height: 100%;
-}
-
-
-.nav-bar .darkLight-searchBox{
-  display: flex;
-  align-items: center;
-}
-.darkLight-searchBox .dark-light
-{
-  position: fixed;
-  height: 40px;
-  width: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 5px;
-}
-.dark-light i{
-  margin-left: 2200px;
-  position: absolute;
-  color: var(--text-color);
-  font-size: 22px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-margin-top: -50px;
-}
-.dark-light i.sun{
-  opacity: 0;
-  pointer-events: none;
-}
-.dark-light.active i.sun{
-  opacity: 1;
-  pointer-events: auto;
-}
-.dark-light.active i.moon{
-  opacity: 0;
-  pointer-events: none;
-}
-.dark-light i.moon:hover{
-  color: rgb(0, 0, 0);
-}
-.dark-light i.sun:hover{
-  color: yellow;
-
-} 
-    </style>
-     <!-- <style>
-     
       
-        .sidebar {
-          height: 100%;
-          width: 250px;
-          position: fixed;
-          z-index: 1;
-          top: 30;
-          left: 0;
-          background-color: #111;
-          overflow-x: hidden;
-          transition: 0.5s;
-          padding-top: 60px;
-        }
-        
-        .sidebar a {
-          padding: 8px 8px 8px 32px;
-          text-decoration: none;
-          font-size: 25px;
-          color: #818181;
-          display: block;
-          transition: 0.3s;
-        }
-        
-        .sidebar a:hover {
-          color: #f1f1f1;
-        }
-        
-        .sidebar .closebtn {
-          position: absolute;
-          top: 0;
-          right: 25px;
-          font-size: 36px;
-          margin-left: 50px;
-        }
-        
-        .openbtn {
-          font-size: 20px;
-          cursor: pointer;
-          background-color: #111;
-          color: white;
-          padding: 10px 15px;
-          border: none;
-        }
-        
-        .openbtn:hover {
-          background-color: #444;
-        }
-        
-        #main {
+      body.dark{
+        --body-color:rgb(0, 0, 0,0.7);
+        --list-color:white;
+        /* --hover:grey;
+        --list-text-color:white;
+       --list-color: rgb(48, 46, 46);
        
-          position: fixed;
-          margin-top:50px;
-          transition: margin-left .5s;
-          padding: 6px;
-        }
-        
-        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-        @media screen and (max-height: 450px) {
-          .sidebar {padding-top: 15px;}
-          .sidebar a {font-size: 18px;}
-        }
-        </style> -->
-      <style>
-  
-        .hamburger-menu{
-         padding-right: 1.5rem;
-         cursor: pointer;
-       }
-       .hamburger-menu .line{
-       display: block; 
-       width:25px;
-       height: 20px; 
-       margin-top: -25px;
-       margin-left: 60px;
-       color: rgb(80, 80, 80);
-       cursor: pointer;
-       }
-       .nav-menu{
-         position: fixed;
-         width: 34%;
-         top: 0;
-         left: 50px;
-         background-color: rgb(255, 255, 255);
-         font-weight: 600;
+        --text-color:rgb(255, 255, 255);
+        --gry-color:rgba(0, 0, 0);
+        --tab-content: rgb(48, 46, 46);
+        --containerprofile:rgb(48, 46, 46); */
        
-       }
-       .nav-menu a{
-        margin-top: 40px;
-         font-size: 15px;
-         color: rgb(255, 255, 255);
-         text-decoration: none;
-         display: block;
-         text-align: center;
-         padding: 20px 0;
-       }
-  
-       .hide{
-         display: none;
-       }
-  
-           /* for Desktop view */
-           @media screen and (min-width:600px){
+      }
+      body {
+        background: var(--body-color);
+        height: 100%;
+      }
+      
+      
+      .nav-bar .darkLight-searchBox{
+        display: flex;
+        align-items: center;
+      }
+      .darkLight-searchBox .dark-light
+      {
+        color:rgb(255, 255, 255);
+        position: fixed;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+      }
+      @media (min-width: 1024px) {
+        .darkLight-searchBox .dark-light{
+        position: fixed;
+        margin-left: 1120px;
+        margin-top: 13px;
+        width: 50px;
+      z-index: 100;
+        }
+      }
+      @media (min-width:768px )and (max-width: 1023px) {
+        .darkLight-searchBox .dark-light{
+        margin-left: 780px;
+        margin-top: 15px;
+        }
+      }
+      @media (max-width: 767px) {
+        .darkLight-searchBox .dark-light{
+          position: fixed;
+          width: 50px;
+          margin-top: 60px;
+         margin-left: 0px;
+        z-index: 1;
+        }
+      }
+      
+      
+      .dark-light i{
+        position: absolute;
+        color: var(--text-color);
+        font-size: 22px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      
+      }
+      .dark-light i.sun{
+        opacity: 0;
+        pointer-events: none;
+      }
+      .dark-light.active i.sun{
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .dark-light.active i.moon{
+      
+        opacity: 0;
+        pointer-events: none;
+      }
+      .dark-light i.moon:hover{
+        color: rgb(0, 0, 0);
+      }
+      .dark-light i.sun:hover{
+        color: rgb(255, 255, 0);
+      
+      } 
+          </style>
+          
+            <style>
+        
+            
              .navbar{
-               justify-content: space-around;
+                     justify-content: space-around;
+                   }
+                 
+             @media (min-width: 1024px) {
+            
+                   .nav-menu{
+                    display: block;
+                    position: static;
+                     width: 28%;
+                    
+                     margin-top: 20px;
+                     margin-left: 70px;
+                     background: none;
+                     /* border: 1px solid black; */
+                   }
+                   .nav-menu a{
+                    font-size: 15px;
+                    font-weight: bolder;
+                     color: rgb(255, 255, 255);
+                     display: inline-block;
+                     text-decoration: none;
+                     text-align: center;
+                    /* padding: 20px 0; */
+                   padding: 0px 10px;
+                   cursor: pointer;
+                   }
+                   .hamburger-menu{
+                     display: none;
+                   }
              }
-             .nav-menu{
-               width: 60%;
-               display: block;
-               position: static;
-               margin-top: -25px;
-               margin-left: 70px;
-              
-               background: none;
-             }
-             .nav-menu a{
-               display: inline-block;
-             padding: 0px 10px;
-             cursor: pointer;
-               /* padding: -px 20px; */
-             
-             }
-         
-             .hamburger-menu{
+                 /* for Desktop view */
+                 @media (max-width: 767px) {
+      
+                  .nav-menu{
+                 z-index: -100;
+                    display: block ;
+                    position: static;
+                     width: 350px;
+                     margin-top: 10px;
+                     margin-left: 10px;
+                     background: none;
+                     background-color: #8d67cf;
+                     z-index: 400;
+                     /* border: 1px solid rgb(194, 8, 8); */
+                   }
+                   .nav-menu a{
+                
+                    color:white;
+                    text-decoration: none;
+                     display:inline-block ;
+                   padding: 10px 10px;
+                   cursor: pointer;
+                   border-radius: 2%;
+                   }
+                   /* .hamburger-menu{
+                     display:contents;
+                   } */
+                   .hide{
                display: none;
              }
-           }
-           
-    </style>
-
-     <style type="text/css">
-  
-      #stage{
+      
+             .hamburger-menu{
+               padding-right: 1.5rem;
+               cursor: pointer;
+             }
+             .hamburger-menu .line{
+             display:  block ; 
+             width:25px;
+             height: 20px; 
+             margin-top: 120px;
+             margin-left: 10px;
+             color: rgb(255, 255, 255);
+             cursor: pointer;
+             }
+        }      
+          </style>
+      
+           <style type="text/css">
+       @media (min-width: 1024px) { 
+            #stage{
+            position: fixed;
+            margin-left: 1280px;
+            top:15px;
+            cursor: pointer;
+            z-index: 200;
+        
+            }
+          }
+          @media (max-width: 1023px) {
+         
+      
+          }
+          @media (max-width: 767px) {
+            #stage{
+        
+              position: fixed;
+            margin-left: 280px;
+            top:60px;
+            cursor: pointer;
+            z-index: 1;
+            }
+          }
+                @font-face {
+                 font-family: 'FontAwesome';
+                 src: url('fontawesome/fonts/fontawesome-webfont.ttf');
+                 font-weight: normal;
+                 font-style: normal;
+             
+                }
+                #stage{
+                  font-family:FontAwesome;
+                }
+      
+                </style> 
+      
+      
+      
+       <style>
+      .bg{
       position: fixed;
-      margin-left: 10px;
-      margin-top: 10px;
-      cursor: pointer;
-      z-index: 200;
-  
-  
+      height: 160px;
+      width: 100%;
+      top:-10px;
+      
       }
-          @font-face {
-           font-family: 'FontAwesome';
-           src: url('fontawesome/fonts/fontawesome-webfont.ttf');
-           font-weight: normal;
-           font-style: normal;
-       
+      
+      .bg h1{
+      color: rgb(251, 251, 251);
+       position: absolute;
+      font-size: 30px;
+      top:500px;
+      z-index: 100;
+      margin-left: 100px;
+      
           }
-          #stage{
-            font-family:FontAwesome;
-          }
-
-          </style> 
- <style>
-            #bg{
-  position: fixed;
-width: 100%;
-height:160px; 
-/* border: 1px solid black; */
-
-}
-
-.bg h1{
-color: rgb(251, 251, 251);
- position: absolute;
-font-size: 30px;
-top:500px;
-z-index: 100;
-margin-left: 100px;
-
-    }
-    .bg img{
-      margin-top: -50px;
-      z-index: 1;
-    } 
-          </style> 
+       .bg img{
+        z-index: -1;
+        height: 160px;
+       } 
+      
+      
+      @media (min-width: 1024px) {
+        .bg {
+      width: 100%;
+      
+        }
+        .search-box{
+        
+          width: 450px;
+          margin-top:10px;
+          margin-left: 10px;
+        }
+        .search-box  button{
+        left: 380px;
+        }
+        .outer_searchbox{
+          position: fixed;
+          margin-left: 450px;
+      width: 460px;
+      height: 50px;
+      padding: 5px 5px;
+      z-index: 100;
+         }
+      } 
+      
+      @media (max-width: 1023px) {
+        .bg {
+          width: 1000px;
+          
+        }
+        .search-box{
+          
+          width: 550px;
+          margin-top: 15px;
+          left: 150px;
+        }
+        .search-box  button{
+          left: 500px;
+          
+        }
+        
+      
+      }
+      
+      @media (max-width: 767px) {
+        .bg {
+      width:750px;
+      
+        }
+        .search-box{
+        
+          width: 300px;
+          margin-top: 10px;
+          left: -20px;
+          z-index: 1;
+        }
+        .search-box  button{
+         
+          left: 240px; 
+        }
+         
+        .outer_searchbox{
+          
+          position: fixed;
+          margin-left: 60px;
+          width: 300px;
+          height: 50px;
+          padding: 5px 5px;
+          z-index: 100;
+         }
+      }
+      
+      .search-box{
+          position: absolute;
+          /* width:  450px; */
+          height: 40px;
+          color: white;
+          background-color: rgba(0, 0, 0,0.3);
+          /* margin-top: -30px; */
+          /* padding: 10px 10px; */
+        
+          z-index: 2;
+          border-radius: 5px;
+         
+         }
+      
+               </style> 
+      
 
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10.1.0/swiper-bundle.min.css">
@@ -285,71 +371,68 @@ margin-left: 100px;
         
         
         
-            <!-- <div class="sideMenu" id="side-menu">
-                <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">x</a> -->
-        
-              <!-- <div class="sidebar">
-                
-                <ul>
-                  <li><i class="bx bx-home"></i><a href="chrome.html">home</a></li>
-                  <li><i class="bx bx-home"></i><a href="chrome.html">course </a></li>
-                  <li><i class="bx bx-home"></i><a href="chrome.html">gallery</a></li>
-                  <li><i class="bx bx-github"></i><a href="chrome.html">github</a></li>
-          
-                </ul>
-            
-        </div>
-              </div> -->
+           
               <div id="stage">
                 <canvas id="Canvas" width="50" height="45"></canvas>
              </div>
         
         
-              <nav class="navbar" id="navbar">
-                <div class="content-area">
-                   <!-- <button  class="content-area1" onclick="openNav()" style="font-size:20px;cursor:pointer"><i class="fa fa-navicon" style="color: black;"></i></button> -->
-              
-               <!-- <div class="dropdown-content" id="myDropdown">
-                 <a href="#">Link 1</a>
-                 <a href="#">Link 2</a>
-                 <a href="#">Link 3 &emsp;&emsp;&emsp;&emsp; <button class="content-area2" onclick="openNavy()" >&#62;</button>
-                 <div class="dropdown-content1" id="myDropdown1" >
-                   <a href="#">python</a>
-                   <a href="#">java</a> </div>
-                 </a>
-                 <a href="#">Link 2</a>
-               </div> -->
+             <nav class="navbar" id="navbar">
+              <div class="content-area">    
+             <div class="hamburger-menu" >
+               <span class="line"><svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-center"><line x1="18" y1="10" x2="6" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="18" y1="18" x2="6" y2="18"></line></svg></span><!--☰-->
+             </div> 
+           
+             <div class="nav-menu hide">
+            <a onclick="view()" target="_top" > <svg fill="#ffffff" width="24px" height="24px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.2">
+                <path d="M73.87573,111.39355l-.009-.03369L42.51636,148.98047a7.99958,7.99958,0,0,0-1.66358,6.85693l12.3628,55.63281a8,8,0,0,0,12.80713,4.51172L96,192C78.36523,161.44922,72.74268,134.47656,73.87573,111.39355Z"/>
+              </g>
+              <g opacity="0.2">
+                <path d="M181.52239,110.6714l.009-.03369,31.35034,37.6206a7.99958,7.99958,0,0,1,1.66358,6.85693l-12.3628,55.63282a8,8,0,0,1-12.80712,4.51172l-29.9773-23.98194C177.03289,160.72706,182.65544,133.75441,181.52239,110.6714Z"/>
+              </g>
+              <g>
+                <path d="M144,216H112a8,8,0,0,0,0,16h32a8,8,0,0,0,0-16Z"/>
+                <circle cx="128" cy="96" r="12"/>
+                <path d="M219.62891,143.85889l-30.23658-36.28418a124.52267,124.52267,0,0,0-7.98022-34.8833c-11.61719-30.21192-32.15625-49.999-43.36523-59.10547a16.07708,16.07708,0,0,0-20.07813-.0669C106.61328,22.61621,85.81055,42.38867,74.07617,72.605A122.76188,122.76188,0,0,0,65.979,108.32861L36.37109,143.85889A16.10066,16.10066,0,0,0,33.043,157.57275l12.36328,55.63282a15.98523,15.98523,0,0,0,25.61328,9.023L98.80566,200h58.38868l27.78515,22.22852a15.91184,15.91184,0,0,0,9.96485,3.51709,16.0905,16.0905,0,0,0,5.34668-.91944,15.90581,15.90581,0,0,0,10.30273-11.62012L222.957,157.57373A16.102,16.102,0,0,0,219.62891,143.85889ZM127.9668,26.01074C198.25391,83.126,169.43359,157.01074,155.25,184H100.67871C52.6709,96.27734,109.22559,41.02637,127.9668,26.01074ZM61.02539,209.73486l-12.36328-55.6333,17.92651-21.5122q3.40906,28.0371,19.14038,57.38281Zm133.94922,0-24.74976-19.7998q15.53064-29.55175,18.74341-57.87695l18.36963,22.04345Z"/>
+              </g>
+            </svg>Explore </a>
+           <a href="https://github.com/keerthika1405" target="_top" >     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Github</a>
+           <a href="https://github.com/keerthika1405/keesite/discussions" target="_top" ><svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>Community</a>
+
+           <!-- <a href="#">About</a> -->
+           </div>
+          </div>     
+        </nav>
             
-               <div class="hamburger-menu">
-                 <span class="line">Menu</span><!--☰-->
-               </div> 
-             
-               <div class="nav-menu hide">
-                <a onclick="view()" target="_top" > <i class='bx bx-star'  style="font-size: 20px;"></i>Explore</a>
-             <a href="https://github.com/keerthika1405" target="_top" >   <i class='bx bxl-github ' name='github' type="logo"  style="font-size: 20px;"></i> Github</a>
-             <a href="https://github.com/keerthika1405/keesite/discussions" target="_top" ><i class='bx bx-comment '  style="font-size: 20px;"></i>Community</a>
-          
-        
-             <!-- <a href="#">About</a> -->
-             </div>
-            </div>
-            
-            
-            <div class="search-box">
+         
+        <div class="outer_searchbox">
+          <div class="search-box">
             <div class="row">
               <form id="search"  method="post" >
                  <input type="text" id="input-box" placeholder="search here" autocomplete="off">
                  <button type="submit"><i class='bx bx-search bx-sm'  id="input-box"></i></button>
-            </div>
-        
-        
             </form>
+          </div>
+
                  <form id="css" action="explore.html" methode="get"></form>
                  <form id="HTML" action="chrome.html" methode="get"></form>
                  <form id="javascript" action="about.html" methode="get"></form>
                    
-            <div class="result-box">     </div>      
+            <div class="result-box"></div>      
             </div>
+          </div>
+          
+          <div class="darkLight-searchBox">
+            <div class="dark-light">
+                <i class='bx bx-moon moon'></i>
+                <i class='bx bx-sun sun'></i>
+            </div>
+            </div>
+      
+          <div class="webname">
+          <h2>keesite </h2>
+          </div> 
             
         
 
@@ -383,18 +466,8 @@ margin-left: 100px;
         
            
            
-            <div class="darkLight-searchBox">
-              <div class="dark-light">
-                  <i class='bx bx-moon moon'></i>
-                  <i class='bx bx-sun sun'></i>
-              </div>
-              </div>
-        
-            <div class="webname">
-            <h2>keesite</h2>
-            </div>
             
-            </nav>
+         
    
             <button class="open-button" onclick="openForm()"><i class='bx bx-question-mark'></i></button>
             <div class="container" id="myForm">
@@ -2183,23 +2256,52 @@ margin-left: 100px;
             <br>
               <!-- Use any element to open/show the overlay navigation menu -->
              <div class="but">
-            <button  ><a href="#myNav"> <span class="myNav" onclick="toggleNav('myNav')">git -v | git --version</span></button></a>
-            <br>
-            <button><a href="#myNav1"><span class="myNav1" onclick="toggleNav('myNav1')">git -h | git --help</span> </button> </a>
-            <br><br><br> 
-            <button><a href="#myNav2"><span class="myNav2" onclick="toggleNav('myNav2')">git add filename|git add .</span> </button> </a>
-            <br>
-            <button><a href="#myNav3"><span class="myNav3" onclick="toggleNav('myNav3')">git am</span> </button> </a>
-            <br>
-            <button><a href="#myNav4"><span class="myNav4" onclick="toggleNav('myNav4')">git archive</span> </button> </a>
-            <br>
-            <button><a href="#myNav5"><span class="myNav5" onclick="toggleNav('myNav5')">git bisect</span> </button> </a>
-            <br>
-            <button><a href="#myNav6"><span class="myNav6" onclick="toggleNav('myNav6')">git branch</span> </button> </a>
-            <br>
-            <button><a href="#myNav7"><span class="myNav7" onclick="toggleNav('myNav7')">git bundle</span> </button> </a>
-            <br>
-            <button><a href="#myNav8"><span class="myNav8" onclick="toggleNav('myNav8')">git checkout</span> </button> </a>
+            <a href="#myNav"> <span class="myNav" onclick="toggleNav('myNav')">git -v | git --version</span></a>
+            <a href="#myNav1"><span class="myNav1" onclick="toggleNav('myNav1')">git -h | git --help</span>  </a> 
+            <a href="#myNav2"><span class="myNav2" onclick="toggleNav('myNav2')">git add filename|git add .</span>  </a>
+            <a href="#myNav3"><span class="myNav3" onclick="toggleNav('myNav3')">git am</span>  </a>
+            <a href="#myNav4"><span class="myNav4" onclick="toggleNav('myNav4')">git archive</span>  </a>
+            <a href="#myNav5"><span class="myNav5" onclick="toggleNav('myNav5')">git bisect</span>  </a>
+            <a href="#myNav6"><span class="myNav6" onclick="toggleNav('myNav6')">git branch</span>  </a>
+            <a href="#myNav7"><span class="myNav7" onclick="toggleNav('myNav7')">git bundle</span>  </a>
+            <a href="#myNav8"><span class="myNav8" onclick="toggleNav('myNav8')">git checkout</span>  </a>
+            
+            <a href="#myNav9"><span class="myNav9" onclick="toggleNav('myNav9')">git  cherry-pick</span>  </a>
+            <a href="#myNav10"><span class="myNav10" onclick="toggleNav('myNav10')">git citool</span>  </a>
+            <a href="#myNav11"><span class="myNav11" onclick="toggleNav('myNav11')">git clean</span>  </a>
+            <a href="#myNav12"><span class="myNav12" onclick="toggleNav('myNav12')">git clone</span>  </a>
+            <a href="#myNav13"><span class="myNav13" onclick="toggleNav('myNav13')">git commit</span>  </a>     
+            <a href="#myNav14"><span class="myNav14" onclick="toggleNav('myNav14')">git describe</span>  </a>
+            <a href="#myNav15"><span class="myNav15" onclick="toggleNav('myNav15')">git diff</span>  </a>
+            <a href="#myNav16"><span class="myNav16" onclick="toggleNav('myNav16')">git fetch</span>  </a>
+            <a href="#myNav17"><span class="myNav17" onclick="toggleNav('myNav17')">git  format-patch</span>  </a>
+            <a href="#myNav18"><span class="myNav18" onclick="toggleNav('myNav18')">git  gc</span>  </a>
+            <a href="#myNav19"><span class="myNav19" onclick="toggleNav('myNav19')">git gitk</span>  </a>
+            <a href="#myNav20"><span class="myNav20" onclick="toggleNav('myNav20')">git grep</span>  </a>
+            <a href="#myNav21"><span class="myNav21" onclick="toggleNav('myNav21')">git gui</span>  </a>
+            <a href="#myNav22"><span class="myNav22" onclick="toggleNav('myNav22')">git  init  </span>  </a>
+            <a href="#myNav23"><span class="myNav23" onclick="toggleNav('myNav23')">git log</span>  </a>
+            <a href="#myNav24"><span class="myNav24" onclick="toggleNav('myNav24')">git maintenance</span>  </a>
+            <a href="#myNav25"><span class="myNav25" onclick="toggleNav('myNav25')">git  merge</span>  </a>
+            <a href="#myNav26"><span class="myNav26" onclick="toggleNav('myNav26')">git mv</span>  </a>
+            <a href="#myNav27"><span class="myNav27" onclick="toggleNav('myNav27')">git notes</span>  </a>
+            <a href="#myNav28"><span class="myNav28" onclick="toggleNav('myNav28')">git pull</span>  </a>
+            <a href="#myNav29"><span class="myNav29" onclick="toggleNav('myNav29')">git  push  </span>  </a>
+            <a href="#myNav30"><span class="myNav30" onclick="toggleNav('myNav30')">git  range-diff  </span>  </a>
+            <a href="#myNav31"><span class="myNav31" onclick="toggleNav('myNav31')">git rebase</span>  </a>
+            <a href="#myNav32"><span class="myNav32" onclick="toggleNav('myNav32')">git reset</span>  </a>
+            <a href="#myNav33"><span class="myNav33" onclick="toggleNav('myNav33')">git  restore</span>  </a>
+            <a href="#myNav34"><span class="myNav34" onclick="toggleNav('myNav34')">git revert</span>  </a>
+            <a href="#myNav35"><span class="myNav35" onclick="toggleNav('myNav35')">git scalar</span>  </a>
+            <a href="#myNav36"><span class="myNav36" onclick="toggleNav('myNav36')">git shortlog</span>  </a>
+            <a href="#myNav37"><span class="myNav37" onclick="toggleNav('myNav37')">git show</span>  </a>
+            <a href="#myNav38"><span class="myNav38" onclick="toggleNav('myNav38')">git  sparse-checkout  </span>  </a>
+            <a href="#myNav39"><span class="myNav39" onclick="toggleNav('myNav39')">git  stash  </span>  </a>
+            <a href="#myNav40"><span class="myNav40" onclick="toggleNav('myNav40')">git status</span>  </a>
+            <a href="#myNav41"><span class="myNav41" onclick="toggleNav('myNav41')">git submodule</span>  </a>
+            <a href="#myNav42"><span class="myNav42" onclick="toggleNav('myNav42')">git  switch</span>  </a>
+            <a href="#myNav43"><span class="myNav43" onclick="toggleNav('myNav43')">git tag</span>  </a>
+            <a href="#myNav44"><span class="myNav44" onclick="toggleNav('myNav44')">git worktree</span>  </a>    
             </div> 
             </div>
 
@@ -2354,9 +2456,21 @@ margin-left: 100px;
               <img src="checkout.JPG">
              
               </div>
-            
-</div>
+            </div>
 
+                      
+            <div id="myNav9" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav9')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git cherry-pick</p>
+                <h3>
+                  git cherry-pick is a Git command that allows you to apply the changes introduced by a specific commit to your current working branch. This can be useful in situations where you want to selectively pick and apply changes from one branch to another.</h3>
+              <img src="gitcherrypick.JPG">
+             
+              </div>
+            </div>
 
             <footer>
                 <div class="content">
