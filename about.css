@@ -1863,11 +1863,14 @@ border: 1px solid black;
     }
   }
 
-  
 
-  
+  .loginclass{
+    position:fixed;
+    text-decoration: none;
+  }
      
   .loginopen-button{
+
     z-index: 100;
     cursor: pointer;
     /* opacity: 0.8; */
