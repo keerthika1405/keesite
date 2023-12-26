@@ -1885,7 +1885,7 @@ border: 1px solid black;
       z-index: 400;
       font-weight: bolder;
   }
-
+/* 
  .form__input-group .email-icon {
       position: absolute;
       right: 50px;
@@ -2039,4 +2039,4 @@ border: none;
   
   .form__link:hover {
       text-decoration: underline;
-  } 
+  }  */
