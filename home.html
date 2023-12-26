@@ -306,6 +306,7 @@ z-index: -1;
 } 
 </style> 
    
+
 <style type="text/css">
   @media (min-width: 1024px) { 
        #stage{
@@ -398,15 +399,17 @@ z-index: -1;
    .outer_searchbox{
      position: absolute;
      margin-left: 450px;
- width: 460px;
- height: 50px;
- padding: 5px 5px;
- z-index: 100;
+      width: 460px;
+      height: 50px;
+      padding: 5px 5px;
+      z-index: 100;
     }
  } 
  
  @media (max-width: 1023px) {
+
    .bg {
+    background-color:#07bdba;
      width: 1000px;
      
    }
@@ -416,6 +419,7 @@ z-index: -1;
      margin-top: 15px;
      left: 150px;
    }
+
    .search-box  button{
      left: 500px;
      
@@ -731,7 +735,7 @@ font-style: italic;
 
           
 
-            <button class="loginopen-button" onclick="loginopenForm()" >login/signup</button>
+            <button class="loginopen-button"><a href="https://keesite1.infinityfreeapp.com/Login.php">login/signup</a> </button>
             
             
 
@@ -1086,68 +1090,7 @@ sql Commands <br> sql Q/A Practice
 
 
 
-        <div class="container1" id="loginform">
-          <span class="close" onclick="document.getElementById('loginform').style.display='none'"></span>
-         <!-- loginpage -->
-        
-          <form class="form" id="login" >
-             
-              <h1 class="form__title">Login <button type="button" class="logincancel"  onclick="logincloseForm()"> X</button></h1>
-             
-              <div class="form__message form__message--error"></div>
-              <div class="form__input-group">
-                  <input type="text" id="logemail" class="form__input" name="logemail" autocomplete="on" placeholder="email" required>
-                  <div class="form__input-error-message"></div>
-              </div>
-              <div class="form__input-group">
-                  <input type="password" id="logpassword" class="form__input" name="logpassword" autocomplete="on" autofocus placeholder="Password" required>
-                  <div class="form__input-error-message"></div>
-              </div>
-              <button class="form__button" onclick="savedata()" type="button">Continue</button> 
-           
-           <!-- <p class="form__text">
-                  <a href="#" class="form__link">Forgot your password?</a>
-              </p>  -->
-               <p class="form__text">
-                  <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
-              </p>
-            
-          </form> 
-        
-        <!--registrationpage-->
-         <form class="form form--hidden" id="createAccount" >
-              <h1 class="form__title">Create Account</h1>
-              <div class="form__message form__message--error"></div>
-        
-              <div class="form__input-group">
-                  <input type="text" id="name1" class="form__input" name="name" autocomplete="on" required autofocus placeholder="Username">
-                  <div class="form__input-error-message"></div>
-              </div>
-        
-              <div class="form__input-group">
-                <input type="text" id="email1" class="form__input1" name="email" spellcheck="false" required  autocomplete="on" autofocus placeholder="Email Address">
-                <i class='bx bx-envelope  email-icon bx-sm' ></i>
-                <div class="form__input-error-message"></div>
-            </div>
-        
-              <div for="password" class="form__input-group">
-                  <input type="password" id="password" class="form__input" name="password" required  placeholder="Password">
-                  <i  id="togglepassword" class='bx bx-show show1 bx-sm'></i>
-                  <div class="form__input-error-message"></div>
-              </div>
-              <div class="form__input-group">
-                  <input type="password" id="passwords" class="form__input" name="passwords" required  placeholder="Confirm password">
-                  <i  id="togglepasswords" class='bx bx-show show2 bx-sm' ></i>
-                  <p id="message"></p>
-                  <div class="form__input-error-message"></div>
-              </div>
-              <button class="form__button" onclick="saveData()"   type="submit">Continue</button>
-              <p class="form__text">
-                  <a class="form__link" id="linkLogin" href="./" >Already have an account? Sign in</a>
-              </p>
-          </form>
-        
-        </div> 
+       
 
 
         <button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt bx-sm' style='color:#ffffff'  ></i></button>
@@ -1220,7 +1163,7 @@ sql Commands <br> sql Q/A Practice
 
 <script src="homepage.js"></script>
 
-<script>
+<!-- <script>
 const canvas1 = document.getElementById('Canvas1');
 const ctx1 = canvas.getContext('2d');
 
@@ -1235,7 +1178,7 @@ setTimeout(function() {
 drawTextWithIcon('\uf084', 'Java', 160, 51, 25, 'navy');
 drawTextWithIcon('\uf084', 'Java', 160, 101, 25, 'orange');
 }, 1000);
-</script>
+</script> -->
 
     <script>
         const canvas = document.getElementById('Canvas');
@@ -1602,8 +1545,10 @@ else
 
 
 <script>
+
   const togglepassword = document.querySelector('#togglepassword');
 const password=document.querySelector('#password');
+
 togglepassword.addEventListener('click', function(e){
 const type=password.getAttribute('type')==='password' ? 'text' : 'password';
 password.setAttribute('type',type);
@@ -1667,7 +1612,7 @@ document.addEventListener("DOMContentLoaded", () =>
 });
 </script>
 
-<script>
+<!-- <script>
   function loginopenForm() {
 document.getElementById('loginform').style.display = 'block';
 
@@ -1676,7 +1621,7 @@ document.getElementById('loginform').style.display = 'block';
 function logincloseForm() {
 document.getElementById("loginform").style.display = "none";
 }
-</script>  
+</script>   -->
 
 </body>
 </html>

@@ -1986,7 +1986,7 @@ border: none;
   
   .form__input:focus ,
   .form__input1:focus{
-      border-color:gold;
+   border-color:gold;   
       background: #ffffff;
   }
   

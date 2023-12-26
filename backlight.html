@@ -112,18 +112,21 @@
   
   } 
       </style>
+
     <style>
 .profilecontainer{
   
-  margin-top: 1500px;
+  margin-top: 500px;
     position: absolute;
-     left: 300px;
+     left: 100px;
      border: 1px solid black;
     width: 80%;
     max-width: 1000px;
     height: 80%;
     border-radius: 5px;
     background-color: rgba(245, 244, 243, 0.7);
+    z-index: -1;
+
 }
 .profilecontainer h1{
   border: 1px solid black;
@@ -335,6 +338,8 @@ z-index: -1;
 } 
 </style> 
    
+
+
 <style type="text/css">
   @media (min-width: 1024px) { 
        #stage{
@@ -373,14 +378,10 @@ z-index: -1;
  
            </style> 
  
- 
- 
-
-
-
   
   <style>
  .bg{
+ background-color: rgb(247, 243, 240);
  position: fixed;
  height: 160px;
  width: 100%;
@@ -660,7 +661,22 @@ z-index: 100;
       <!-- <h1>welcome  <script> document.write(localStorage.getItem("name").toUpperCase());</script> </h1> -->
   </div>
 
-   
+
+  <div class="profilecontainer">
+    <h1>welcome to keesite :   <script>document.write(localStorage.getItem("name")); </script> </h1>
+       
+    <div class="profilecard">
+        <h2> Your profile_page</h2>
+        <button onclick="logout()" Style="float: right">Logout</button>
+        <hr>
+        <h3>Welcome</h3>
+        <h4>Name:  <script> document.write(localStorage.getItem("name")); </script> </h4>
+        <h4>Your Email is : <script>  document.write(localStorage.getItem("email")); </script> </h4>
+       <label for="text"> PhoneNumber <input type="text"  id="text"> </label>  
+      </div>
+      
+    </div> 
+
 
 
   <div class="features">
@@ -865,20 +881,6 @@ z-index: 100;
 
 
 
-    <div class="profilecontainer">
-      <h1>welcome to keesite :   <script>document.write(localStorage.getItem("name")); </script> </h1>
-         
-      <div class="profilecard">
-          <h2> Your profile_page</h2>
-          <button onclick="logout()" Style="float: right">Logout</button>
-          <hr>
-          <h3>Welcome</h3>
-          <h4>Name:  <script> document.write(localStorage.getItem("name")); </script> </h4>
-          <h4>Your Email is : <script>  document.write(localStorage.getItem("email")); </script> </h4>
-         <label for="text"> PhoneNumber <input type="text"  id="text"> </label>  
-        </div>
-        
-      </div> 
 
 
 
