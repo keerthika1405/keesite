@@ -55,9 +55,9 @@ body {
       position: absolute;
       width: 80px;
       margin-top: 50px;
-      margin-left: 200px;
+      margin-left: 1000px;
       z-index: 1;
-      color:orange;
+      color:rgb(0, 0, 0);
       }
   }
   
@@ -1841,7 +1841,32 @@ border: 1px solid black;
   }
   }
   
-  
+  @media screen and (min-width: 980px){
+    #myBtn {
+      display: none; /* Hidden by default */
+      position: fixed; /* Fixed/sticky position */
+     /* Place the button at the bottom of the page */
+      right: 20px; 
+      bottom: 50px;
+    /* Place the button 30px from the right */
+      z-index: 99; /* Make sure it does not overlap */
+      border: none; /* Remove borders */
+      outline: none; /* Remove outline */
+      background-color:rgb(139, 244, 134); /* Set a background color */
+      color: rgb(0, 0, 0); /* Text color */
+      cursor: pointer; /* Add a mouse pointer on hover */
+    width: 30px;/* Some padding */
+    height: 30px;
+    padding: 2px 2px;
+      border-radius: 50%; /* Rounded corners */
+      font-size: 18px; /* Increase font size */
+    }
+    
+    #myBtn:hover {
+      
+      background-color: rgb(14, 223, 150); /* Add a dark-grey background on hover */
+    }
+  }
   
   
   @media (max-width: 767px) {
@@ -1870,7 +1895,7 @@ border: 1px solid black;
     }
   }
 
- .loginclass{
+ /* .loginclass{
  position:fixed;
     text-decoration: none;
     width: 100px;
@@ -1894,7 +1919,7 @@ border: 1px solid black;
       height: 30px;
        border-radius: 100px; 
       font-weight: bolder; 
-  } 
+  }  */
 
     /* opacity: 0.8; 
       margin-left: 980px;
