@@ -145,7 +145,7 @@ border-radius: 50%;
     }
   }*/
   
-  @media (min-width: 1024px) {
+  @media (min-width: 1024px) and (min-width: 980px) {
     .open-button {
      display: none;
       }
@@ -271,8 +271,6 @@ border-radius: 50%;
       align-items: center;
       justify-content: center;
       border-radius: 20px;
-      
-      
       }
       .container h1{
    display: none;
