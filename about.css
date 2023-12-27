@@ -238,6 +238,7 @@ border-radius: 50%;
       display: none;
        }
    .container{
+    display: none;
    margin-left: 300px;
    width: 820px;
    height:480px;
