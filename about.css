@@ -550,7 +550,7 @@ border-radius: 50%;
   @media (max-width: 767px){
   footer{
     position: absolute;
-    margin-top: 200%;
+    margin-top: 250%;
    
   }
   footer::before{
