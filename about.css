@@ -1486,6 +1486,8 @@ font-size: 20px;
   }
 
 
+
+
   
   
   section[role][aria-labelledby] {
@@ -1664,7 +1666,7 @@ font-size: 20px;
     width: 20em;
     height: 1000px;
     margin: 0 auto;
-    margin-top: 1400px;
+    margin-top: 1600px;
     margin-left:30px;
     overflow: hidden;
     /* border :1px solid black; */
@@ -1837,7 +1839,7 @@ border: 1px solid black;
   
   @media (max-width: 767px) {
     #myBtn {
-      bottom:0;
+      bottom:10px;
       display: none; /* Hidden by default */
       position: fixed; /* Fixed/sticky position */
       /* Place the button at the bottom of the page */
