@@ -552,7 +552,7 @@ border-radius: 50%;
   @media (max-width: 767px){
   footer{
     position: absolute;
-    margin-top:800px;
+    margin-top:1000px;
    
   }
   footer::before{
@@ -1471,7 +1471,7 @@ font-size: 20px;
       width: 800px;
       margin: 0 auto;
       overflow: hidden;
-      margin-top: 100px;
+      margin-top: 200px;
       margin-left: 300px;
 
     }
