@@ -9,7 +9,7 @@ body {
   
   nav{
 
-  /* border-bottom: 1px solid black; */
+  border-bottom: 1px solid black;
   height: 50px;
   /* background-color: #3d4647; */
   z-index: 100;
@@ -369,6 +369,7 @@ border-radius: 50%;
 
 
 
+
  /*footer*/
  footer{
   z-index: -10;
@@ -507,8 +508,7 @@ border-radius: 50%;
   
   @media (min-width: 1024px) {
   footer{
-    position: absolute;
-    margin-top: 60%;
+    margin-top: 250%;
     
   }
   footer .content .link-boxes{
@@ -552,7 +552,7 @@ border-radius: 50%;
   @media (max-width: 767px){
   footer{
     position: absolute;
-    margin-top:1000px;
+    margin-top: 3000%;
    
   }
   footer::before{
@@ -571,6 +571,7 @@ border-radius: 50%;
     width: 100%;
   }
   } 
+  
   
 
     /*course location subheader*/

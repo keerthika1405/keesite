@@ -334,9 +334,8 @@ body {
 
 
 
-     
  /*footer*/
-footer{
+ footer{
   z-index: -10;
   background: hwb(186 24% 72%);
   position: absolute;
@@ -536,6 +535,7 @@ footer{
     width: 100%;
   }
   } 
+  
 
 
 /*course location subheader*/
