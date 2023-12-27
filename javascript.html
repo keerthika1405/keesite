@@ -396,33 +396,36 @@ cursor: pointer;
 </head>
 <body id="mode">
 
-    <nav class="navbar">
-             <div class="content-area">
-                <button  class="content-area1" onclick="openNav()" style="font-size:20px;cursor:pointer"><i class="fa fa-navicon" style="color: black;"></i></button>
-           
-            <div class="dropdown-content" id="myDropdown">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-             <a href="#">Link 3 &emsp;&emsp;&emsp;&emsp; <button class="content-area2" onclick="openNavy()" >&#62;</button>
-              <div class="dropdown-content1" id="myDropdown1" >
-                <a href="#">python</a>
-                <a href="#">java</a> </div>
-              </a>
-              <a href="#">Link 2</a>
-            </div>
-        
-            <div class="hamburger-menu">
-              <span class="line">Menu</span><!--☰-->
-            </div> 
-            <div class="nav-menu hide">
-              
-              <a href="#">Home</a>
-              <a href="#">Career</a>
-              <a href="#">About</a>
-              <a href="#">Contact</a>
-          </div>
-    </div>
-    </nav>
+  
+    <nav class="navbar" id="navbar">
+        <div class="content-area">    
+       <div class="hamburger-menu" >
+         <span class="line"><svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-center"><line x1="18" y1="10" x2="6" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="18" y1="18" x2="6" y2="18"></line></svg></span><!--☰-->
+       </div> 
+     
+       <div class="nav-menu hide">
+      <a onclick="view()" target="_top" > <svg fill="#ffffff" width="24px" height="24px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.2">
+          <path d="M73.87573,111.39355l-.009-.03369L42.51636,148.98047a7.99958,7.99958,0,0,0-1.66358,6.85693l12.3628,55.63281a8,8,0,0,0,12.80713,4.51172L96,192C78.36523,161.44922,72.74268,134.47656,73.87573,111.39355Z"/>
+        </g>
+        <g opacity="0.2">
+          <path d="M181.52239,110.6714l.009-.03369,31.35034,37.6206a7.99958,7.99958,0,0,1,1.66358,6.85693l-12.3628,55.63282a8,8,0,0,1-12.80712,4.51172l-29.9773-23.98194C177.03289,160.72706,182.65544,133.75441,181.52239,110.6714Z"/>
+        </g>
+        <g>
+          <path d="M144,216H112a8,8,0,0,0,0,16h32a8,8,0,0,0,0-16Z"/>
+          <circle cx="128" cy="96" r="12"/>
+          <path d="M219.62891,143.85889l-30.23658-36.28418a124.52267,124.52267,0,0,0-7.98022-34.8833c-11.61719-30.21192-32.15625-49.999-43.36523-59.10547a16.07708,16.07708,0,0,0-20.07813-.0669C106.61328,22.61621,85.81055,42.38867,74.07617,72.605A122.76188,122.76188,0,0,0,65.979,108.32861L36.37109,143.85889A16.10066,16.10066,0,0,0,33.043,157.57275l12.36328,55.63282a15.98523,15.98523,0,0,0,25.61328,9.023L98.80566,200h58.38868l27.78515,22.22852a15.91184,15.91184,0,0,0,9.96485,3.51709,16.0905,16.0905,0,0,0,5.34668-.91944,15.90581,15.90581,0,0,0,10.30273-11.62012L222.957,157.57373A16.102,16.102,0,0,0,219.62891,143.85889ZM127.9668,26.01074C198.25391,83.126,169.43359,157.01074,155.25,184H100.67871C52.6709,96.27734,109.22559,41.02637,127.9668,26.01074ZM61.02539,209.73486l-12.36328-55.6333,17.92651-21.5122q3.40906,28.0371,19.14038,57.38281Zm133.94922,0-24.74976-19.7998q15.53064-29.55175,18.74341-57.87695l18.36963,22.04345Z"/>
+        </g>
+      </svg>Explore </a>
+     <a href="https://github.com/keerthika1405" target="_top" >     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> Github</a>
+     <a href="https://github.com/keerthika1405/keesite/discussions" target="_top" ><svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>Community</a>
+
+     <!-- <a href="#">About</a> -->
+     </div>
+    </div>     
+  </nav>
+
+  
     <div class="outer_searchbox">
         <div class="search-box">
           <div class="row">
