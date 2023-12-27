@@ -117,12 +117,7 @@ max-height: 250px;
 overflow-y: scroll;
 } 
 
-.sidebar{
-position: absolute;
-width:300px;
-margin-top: 50px;
 
-}
 
 /*send email*/
 
@@ -511,7 +506,6 @@ justify-content: space-between;
 z-index: 2;
 gap: 15px;
 /* background-color: rgb(79, 110, 122); */
-
 align-items: center;
 /* box-shadow: 0 1px 0 0 rgba(0, 0, 0, .1); */
 }

@@ -20,980 +20,292 @@
 
 
 
+  .content123{
 
+    z-index: -1;
+    position: absolute;
+    margin-left: 20px;
+   margin-top:200px;
 
-
-
-
-  
-
-
-  .content{
-    border:1px solid black;
-    margin-left: 40px;
-    margin-top: 300px;
-  }
-  .content h1{
-    margin-top: 80px;
-  }
-  .content li, a{
+ }
+  .content123 li, a{
     font-weight: 300px;
     font-size: 20px;
     text-decoration: none;
     list-style: none;
   }
-  .array1 h2, .array2 h2, .array3 h2, .array4 h2, .array5 h2, .array6 h2 
-   {
-    color: white;
-    background-color:rgba(207, 127, 6, 0.9);
-    border: 1px solid black;
-  }
-.attr{
- 
-   margin-top: 20px;
-}
-.attr1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 180px;
-  height: 150px;
-}
 
-.attr1 h2{
-  color: white;
-  background-color:rgba(131, 129, 7, 0.9);
-  border: 1px solid black;
-}
-.content1{
-  margin-top: -200px;
-}
-  .content1 h2 
+
+
+
+  .array1 h2, .array2 h2, .array3 h2, .array4 h2, .array5 h2, .array6 h2 
   {
-    color: white;
-    background-color:rgba(153, 0, 255, 0.9);
-    border: 1px solid black;
+   background-color:rgba(207, 127, 6, 0.9);
   }
-   .clientreact h2
-   {
-    color: white;
-    background-color:rgba(27, 21, 116, 0.9);
-    border: 1px solid black;
+  .attr1 h2{
+    background-color:rgba(131, 129, 7, 0.9);
   }
+  .boolean h2 
+    {
+      background-color:rgba(153, 0, 255, 0.9);
+    }
+    .clientreact h2
+    {
+     background-color:rgba(27, 21, 116, 0.9);
+   }
    .childnode h2
    {
-    color: white;
     background-color:rgba(247, 41, 26, 0.9);
-    border: 1px solid black;
   }
   .console1 h2, .console2 h2, .console3 h2
   {
-    color: white;
     background-color:rgba(27, 130, 161, 0.9);
-    border: 1px solid black;
   }
- 
-  .array1{
-    border: 3px solid rgb(0, 0, 0);
-    width: 160px;
-    height: 200px;
-    text-decoration: none;
-  }
-
-  .array2{
-    margin-left: 180px;
-    margin-top: -240px;
-    border: 3px solid rgb(0, 0, 0);
-    width: 150px;
-    height: 250px;
-    text-decoration: none;
-  }
-  .array3{
-    margin-left: 360px;
-    margin-top: -250px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 300px;
-    height: 200px;
-    text-decoration: none;
-  }
-  .array4{
-    margin-left: 680px;
-    margin-top: -200px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 200px;
-    height: 180px;
-    text-decoration: none;
-  }
-  .array5{
-    margin-left: 900px;
-    margin-top: -180px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 200px;
-    height: 300px;
-  }
-  .array6{
-    margin-left: 1120px;
-    margin-top: -300px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 180px;
-    height: 200px;
-  }
-
-  /* content 1*/
-  .content1 {
-    margin-top: 160px;
-    width: 380px;
-  }
- 
-  .boolean h2{
-    border: 3px solid black;
-  }
-
-  /*content 2*/
-  .content2 {
-    margin-left: 10px;
-    margin-top: 120px;
-  }
-  .clientreact {
-    border: 3px solid rgb(0, 0, 0);
-    color: white;
-    width: 200px;
-    height: 230px;
-  }
-  .clientreact1 {
-   
-    border: 3px solid rgb(0, 0, 0);
-    color: white;
-    width: 310px;
-    height: 230px;
-  }
- 
-   .clidenode1 {
-    margin-top: -350px;
-    margin-left: 220px;
-   }
-   .childnode {
-    border: 3px solid rgb(0, 0, 0);
-    color: white;
-    width: 180px;
-    height: 130px;
-   }
-
-   .console{
-    margin-left: 430px;
-    margin-top: -250px;
-   }
-
-   .console1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 200px;
-    height: 280px;
-   
-   }
-   .console2{
-    margin-left: 230px;
-    margin-top: -280px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 180px;
-    height: 170px;
-   
-   }
-   .console3{
-    margin-left: 450px;
-    margin-top: -170px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 180px;
-    height: 200px;
-   
-   }
-
-   .date{
-    margin-left:1100px ;
-    margin-top: -320px;
-   }
-   /*content4*/
-   .date1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 150px;
-    height: 200px;
-   }
-   .date2{
-    margin-left: -1080px;
-    margin-top: 200px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 200px;
-    height: 250px;
-   }
-   .date3{
-    margin-left: -850px;
-    margin-top: -250px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 180px;
-    height: 280px;
-   }
-   .date4{
-    margin-left: -630px;
-    margin-top: -280px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 230px;
-    height: 300px;
-   }
-   .date1 h2, .date2 h2, .date3 h2, .date4 h2
-   {
-    color: white;
-    background-color:rgba(230, 15, 133, 0.9);
-    border: 1px solid black;
-  }
-
-  .document{
-    margin-top: -420px;
-    margin-left: 750px;
-  }
-  .document1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 230px;
-    height: 430px;
-  }
-  .document2{
-    margin-left: 260px;
-    margin-top: -430px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 230px;
-    height: 250px;
-   }
-   .document3{
-    margin-left:-750px;
-    margin-top: 320px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 260px;
-    height: 350px;
-   }
-   .document4{
-    margin-left: -470px;
-    margin-top: -350px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 200px;
-    height: 300px;
-   }
-   .document5{
-    margin-left: -250px;
-    margin-top: -300px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 230px;
-    height: 200px;
-   }
-   .document1 h2, .document2 h2, .document3 h2, .document4 h2, .document5 h2
-   {
-    color: white;
-    background-color:rgba(56, 109, 6, 0.9);
-    border: 1px solid black;
-  }
-
-  .error{
-    margin-left: 750px;
-   margin-top: -320px;
-  }
-  .error1{
-      
-    border: 3px solid  rgb(0, 0, 0);
-    width: 130px;
-    height: 270px;
-  }
-  .error1 h2
+  .date1 h2, .date2 h2, .date3 h2, .date4 h2
   {
-   color: white;
-   background-color:rgba(80, 7, 47, 0.9);
-   border: 1px solid black;
+   background-color:rgba(230, 15, 133, 0.9);
  }
+ .document1 h2, .document2 h2, .document3 h2, .document4 h2, .document5 h2
+ { 
+  background-color:rgba(56, 109, 6, 0.9);
+}
+.error1 h2
+{
+ background-color:rgba(80, 7, 47, 0.9);
+}
 
-.element{
-  margin-left: 900px;
-  margin-top: -390px;
-}
-.element1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 140px;
-    height: 240px;
-  
-}
-.element2{
-  margin-left: 160px;
-  margin-top: -240px;
-  border: 3px solid  rgb(0, 0, 0);
-  width: 220px;
-  height: 280px;
-}
-.element3{
-  margin-left:-910px;
-  margin-top: 180px;
-  border: 3px solid  rgb(0, 0, 0);
-  width: 200px;
-  height: 150px;
-}
-.element4{
-  margin-left: -700px;
-  margin-top: -150px;
-  border: 3px solid  rgb(0, 0, 0);
-  width: 260px;
-  height: 200px;
-}
-.element5{
-  margin-left: -430px;
-  margin-top: -200px;
-  border: 3px solid  rgb(0, 0, 0);
-  width: 170px;
-  height: 200px;
-}
-.element6{
-  margin-left: -250px;
-  margin-top: -200px;
-  border: 3px solid  rgb(0, 0, 0);
-  width: 180px;
-  height: 150px;
-}
 .element1 h2 , .element2 h2 , .element3 h2 , .element4 h2 , .element5 h2 , .element6 h2
 {
-  color: white;
   background-color:rgba(12, 168, 82, 0.9);
-  border: 1px solid black;
 }
-.event{
-  margin-left: 840px;
-  margin-top: -270px;
+.event1 h2 , .event2 h2 
+{
+  background-color:rgba(25, 235, 250, 0.9);
 }
-.event1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 180px;
-  height: 300px;
+.et1 h2 
+{
+  background-color:rgba(54, 24, 0, 0.9);
+}
 
+.events1 h2, .events2 h2, .events3 h2, .events4 h2, .events5 h2 , .events6 h2{
+  background-color:rgba(38, 255, 9, 0.9);
 }
-.event2{
-    margin-left: 190px;
-    margin-top: -300px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 270px;
-    height: 150px;
-  }
-  .event1 h2 , .event2 h2 
-  {
-    color: white;
-    background-color:rgba(25, 235, 250, 0.9);
-    border: 1px solid black;
-  }
-  .et{
-    margin-left: 0px;
-    margin-top: 220px;
-  }
-  .et1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 210px;
-    height: 150px;
-  }
-  .et1 h2 
-  {
-    color: white;
-    background-color:rgba(54, 24, 0, 0.9);
-    border: 1px solid black;
-  }
-  .events{
-    margin-left: 230px;
-    margin-top: -270px;
-  }
-  .events1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 180px;
-    height: 300px;
-  }
-  .events2{
-    margin-left: 200px;
-    margin-top: -300px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 150px;
-    height: 200px;
-  }
-  .events3{
-    margin-left: 370px;
-    margin-top: -200px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 250px;
-    height: 250px;
-  }
-  .events4{
-    margin-left: 640px;
-    margin-top: -250px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 150px;
-    height: 280px;
-  }
-  .events5{
-    margin-left: 810px;
-    margin-top: -280px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 250px;
-    height: 250px;
-  }
-  .events6{
-    margin-left: -210px;
-    margin-top: 200px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 280px;
-    height: 200px;
-  }
-  .events1 h2, .events2 h2, .events3 h2, .events4 h2, .events5 h2 , .events6 h2{
-    color: white;
-    background-color:rgba(38, 255, 9, 0.9);
-    border: 1px solid black;
-  }
-  
-  .function{
-    margin-left: 320px;
-    margin-top: -320px;
-  }
-  .function1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 160px;
-    height: 150px;
-  }
-  .function2{
-    margin-left: 180px;
-    margin-top: -150px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 120px;
-    height: 130px;
-  }
-  .function1 h2, .function2 h2{
-    color: white;
-    background-color:rgba(221, 40, 245, 0.9);
-    border: 1px solid black;
-  }
-  .global{
-    margin-left: 650px;
-    margin-top: -250px;
-  }
-  .global1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 230px;
-    height: 250px;
-  }
-  .generator{
-    margin-left: 900px;
-    margin-top: -370px;
-  }
-  .generator1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 150px;
-    height: 150px;
-  }
-  .global1 h2{
-    color: white;
-    background-color:rgba(104, 79, 79, 0.9);
-    border: 1px solid black;
-  }
-  .generator1 h2{
-    color: white;
-    background-color:rgba(255, 213, 213, 0.9);
-    border: 1px solid black;
-  }
-  .history{
-    margin-top: -270px;
-    margin-left: 1100px;
-  }
-  .history1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 150px;
-    height: 120px;
-  }
-  .history2{
-    margin-left: -1080px;
-    margin-top: 250px;
-    border: 3px solid  rgb(0, 0, 0);
-    width: 150px;
-    height: 200px;
-  }
-  .history1 h2 , .history2 h2{
-    color: white;
-    background-color:rgba(47, 0, 255, 0.9);
-    border: 1px solid black;
-  }
-  .json{
-    margin-top: -320px;
-    margin-left: 190px;
-  }
-  .json1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 130px;
-    height: 120px;
-  }
-  .json1 h2{
-    color: white;
-    background-color:rgba(39, 177, 147, 0.9);
-    border: 1px solid black;
-  }
-  .location{
-    margin-top: -240px;
-    margin-left: 340px; 
-  }
-  .location1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 170px;
-    height: 350px;
-  }
-  .location1 h2{
-    color: white;
-    background-color:rgba(128, 230, 11, 0.9);
-    border: 1px solid black;
-  }
-  .math{
-    margin-top: -470px;
-    margin-left: 540px; 
-  }
 
-  .math1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 150px;
-    height: 250px;
-  }
-  .math2{
-    margin-top: -250px;
-    margin-left: 180px; 
-    border: 3px solid  rgb(0, 0, 0);
-    width: 150px;
-    height: 470px;
-  }
-  .math3{
-    margin-top: -470px;
-    margin-left: 350px; 
-    border: 3px solid  rgb(0, 0, 0);
-    width: 150px;
-    height: 200px;
-  }
-  .math4{
-    margin-top: -200px;
-    margin-left: 550px; 
-    border: 3px solid  rgb(0, 0, 0);
-    width: 180px;
-    height: 400px;
-  }
-  .math1 h2, .math2 h2, .math3 h2, .math4 h2{
-    color: white;
-    background-color:rgba(247, 159, 124, 0.9);
-    border: 1px solid black;
-  }
-  .number{
-    margin-top: 130px;
-  }
-  .number1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 180px;
-    height: 220px;
-  }
-  .number2{
-    margin-top: -220px;
-    margin-left: 220px; 
-    border: 3px solid  rgb(0, 0, 0);
-    width: 180px;
-    height: 250px;
-  }
-  .number1 h2 ,.number2 h2{
-    color: white;
-    background-color:rgba(1, 7, 27, 0.9);
-    border: 1px solid black;
-  }
-  .node{
-    margin-top: -365px;
-    margin-left: 440px;
-  }
-  .node1{
-    border: 3px solid  rgb(0, 0, 0);
-    width: 180px;
-    height: 220px;
-  }
-  .node2{
-    margin-top: -220px;
-    margin-left: 220px; 
-    border: 3px solid  rgb(0, 0, 0);
-    width: 200px;
-    height: 280px;
-  }
-  .node3{
-    margin-top: -280px;
-    margin-left: 480px; 
-    border: 3px solid  rgb(0, 0, 0);
-    width: 300px;
-    height: 380px;
-  }
-  .node1 h2, .node2 h2 , .node3 h2
-  {
-    color: white;
-    background-color:#f83535e6;
-    border: 1px solid black;
-  }
-.ndtcn1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 400px;
-  height: 150px;
+.function1 h2, .function2 h2{
+  background-color:rgba(221, 40, 245, 0.9);
 }
-.ndtcn1 h2{
-  color: white;
-  background-color:#f7b9e2e6;
-  border: 1px solid black;
+
+.global1 h2{
+  background-color:rgba(104, 79, 79, 0.9);
 }
-.navi{
-  margin-top: -265px;
-  margin-left: 420px; 
+
+.generator1 h2{
+  background-color:rgba(255, 213, 213, 0.9);
 }
-  
-.navi1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 210px;
-  height: 250px;
+
+.history1 h2 , .history2 h2
+{
+  background-color:rgba(47, 0, 255, 0.9);
 }
-.navi2{
-  margin-top: -250px;
-  margin-left: 230px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 120px;
+.json1 h2{
+  background-color:rgba(39, 177, 147, 0.9);
 }
-.navi1 h2 , .navi2 h2{
-  color: white;
+.location1 h2{
+  background-color:rgba(128, 230, 11, 0.9);
+}
+.math1 h2, .math2 h2, .math3 h2, .math4 h2{
+  background-color:rgba(247, 159, 124, 0.9);
+}
+.number1 h2 , .number2 h2{
+  background-color:rgba(1, 7, 27, 0.9);
+}
+.node1 h2, .node2 h2 , .node3 h2
+{
+  background-color:#f83535e6;
+}
+.ndtcn h2{
   background-color:#f5c116e6;
-  border: 1px solid black;
-}
-.object{
-  margin-top: -240px;
-  margin-left: 820px; 
-}
-.object1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 100px;
-}
-.object2{
-  margin-top: -100px;
-  margin-left: 180px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 280px;
-  height: 500px;
-}
-.object3{
-  margin-top: 100px;
-  margin-left: -800px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 240px;
-  height: 300px;
+} 
+.navig1 h2 , .navig2 h2
+{
+  background-color:#f5c116e6;
 }
 .object1 h2 , .object2 h2, .object3 h2{
-  color: white;
   background-color:#161120e6;
-  border: 1px solid black;
-}
-.promise{
-  margin-top: -420px;
-  margin-left: 300px; 
-}
-.promise1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 250px
 }
 .promise1 h2{
-  color: white;
   background-color:#0f1a16e6;
-  border: 1px solid black;
-}
-.proxy{
-  margin-top: -370px;
-  margin-left: 500px; 
-}
-.proxy1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 280px;
-  height: 380px;
 }
 .proxy1 h2{
-  color: white;
   background-color:indigo;
-  border: 1px solid black;
-}
-.parentNode{
-  margin-top: -500px;
-  margin-left: 800px; 
-}
-
-.parentNode1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 200px;
-  height: 200px
 }
 .parentNode1 h2{
-  color: white;
   background-color:mediumaquamarine;
-  border: 1px solid black;
 }
-.performance{
-  margin-top: -330px;
-  margin-left: 1050px; 
-}
-.performance1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 220px;
-  height: 140px
-}
-.performance1 h2{
-  color: white;
+.performance1 h2
+{
   background-color:chocolate;
-  border: 1px solid black;
-}
-.regexp{
-  margin-top: 300px;
-}
-.regex1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 200px;
-  height: 250px
-}
-
-.regex2{
-  margin-top: -250px;
-  margin-left: 230px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 200px;
-}
-.regex3{
-  margin-top: -200px;
-  margin-left: 420px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 200px;
-}
- .regex4{
-  margin-top: -200px;
-  margin-left: 600px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 360px;
-}
-.regex5{
-  margin-top: -360px;
-  margin-left: 760px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 100px;
-}
-.regex6{
-  margin-top: -100px;
-  margin-left: 950px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 140px;
-}
-.regex7{
-  margin-top: -140px;
-  margin-left: 1130px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 140px;
 }
 
 .regex1 h2, .regex2 h2, .regex3 h2, .regex4 h2, .regex5 h2, .regex6 h2, .regex7 h2
 { 
-  color: white;
   background-color:rgb(46, 49, 2);
-  border: 1px solid black;
-}
-.string{
-  margin-top: 300px;
-}
-.string1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 130px;
-  height: 100px
-}
-.string2{
-  margin-top: -100px;
-  margin-left: 150px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 200px;
-  height: 550px;
-}
-.string1 h2, .string2 h2{
-  color: white;
-  background-color:rgb(222, 159, 252);
-  border: 1px solid black;
-}
-.set{
-  margin-top:-670px ;
-  margin-left:380px ;
-}
-.set1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 100px
-}
-.set2{
-  margin-top: -100px;
-  margin-left: 160px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 130px;
-  height: 150px;
-}
-.set3{
-  margin-top: -150px;
-  margin-left: 300px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 130px;
-  height: 150px;
-}
-.set4{
-  margin-top: -150px;
-  margin-left: 440px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 180px;
-  height: 130px;
 }
 .set1 h2, .set2 h2, .set3 h2, .set4 h2{
-  color: white;
   background-color:rgb(255, 72, 0);
-  border: 1px solid black;
 }
-.symbol{
-  margin-top:-250px ;
-  margin-left:1020px ;
-}
-.symbol1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 150px
-}
-.symbol2{
-  margin-top: -150px;
-  margin-left: 160px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 110px;
-  height: 130px;
-}
-.symbol1 h2 , .symbol2 h2{
-  color: white;
+.symbol1 h2 , .symbol2 h2
+{
   background-color:hotpink;
-  border: 1px solid black;
 } 
-.screen {
-  margin-top:500px ;
- 
-}
-.screen1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 250px
-}
-.screen2{
-  margin-top: -250px;
-  margin-left: 160px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 200px;
-  height: 130px;
-}
-.screen1 h2 , .screen2 h2{
-  color: white;
+.screen1 h2 , .screen2 h2
+{
   background-color:rgb(107, 2, 51);
-  border: 1px solid black;
 }
-.storage{
-  margin-top:-250px ;
-  margin-left:380px ;
-}
-.storage1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 100px;
-}
-.storage2{
-  margin-top: -100px;
-  margin-left: 160px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 150px;
-  height: 170px;
-}
+
 .storage1 h2, .storage2 h2{
-  color: white;
   background-color:powderblue;
-  border: 1px solid black;
 }
-.window{
-  margin-top:-290px ;
-  margin-left:720px ;
-}
-.window1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 180px;
-  height: 300px;
-}
-.window2{
-  margin-top: -300px;
-  margin-left: 200px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 200px;
-  height: 320px;
-}
-.window3{
-  margin-top: -320px;
-  margin-left: 430px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 145px;
-  height: 230px;
-}
-.window4{
-  margin-top: 180px;
-  margin-left: -700px;
-  border: 3px solid  rgb(0, 0, 0);
-  width: 180px;
-  height: 200px;
-}
-.window5{
-  margin-top: -200px;
-  margin-left: -500px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 180px;
-  height: 300px;
-}
-.window6{
-  margin-top: -300px;
-  margin-left: -300px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 240px;
-  height: 150px;
-}
-.window7{
-  margin-top: -150px;
-  margin-left: -50px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 180px;
-  height: 150px;
-}
-.window8{
-  margin-top: -150px;
-  margin-left:150px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 200px;
-  height: 200px;
-}
-.window9{
-  margin-top: -200px;
-  margin-left:380px; 
-  border: 3px solid  rgb(0, 0, 0);
-  width: 200px;
-  height: 150px;
-}
+
 .window1 h2,  .window2 h2, .window3 h2, .window4 h2, .window5 h2, .window6 h2, .window7 h2, .window8 h2, .window9 h2{
-  color: white;
   background-color:rgb(46, 26, 25);
-  border: 1px solid black;
 }
-.other{
-  margin-top: 250px;
+
+
+
+@media (min-width: 1024px) {
+  .Arr ,
+  .attr,
+  .bool,
+  .clientreact1 ,
+  .clidenode1,
+  .console,
+  .date,
+  .document, .document, .error,.element ,.event , .element , .et ,.events,
+  .function,   .global ,  .generator ,   .history ,  .json ,   .location , .math ,  .number ,  .node
+  , .ndtcn ,.navig ,.object ,.promise ,.proxy ,.parentNode ,.performance,.regexp ,.string ,.set ,
+  .symbol ,.screen ,.storage ,  .window ,.other{
+    width:fit-content;
+    margin-top: 20px;
+ 
+  }
+
+.array1,.array2,.array3,.array4,.array5,.array6,
+.attr1,
+.boolean,
+.clientreact,
+.clidenode,
+.console1,.console2,.console3,
+.date1 , .date2 , .date3 , .date4,
+.document1 , .document2, .document3 , .document4 , .document5 ,
+.error1 ,.element1  , .element2  , .element3  , .element4  , .element5  , .element6  ,  .event1  , .event2,
+.et1 ,.events1 , .events2, .events3 , .events4 , .events5  , .events6, .function1 , .function2 ,
+.global1 , .generator1 ,  .history1 ,  .history2 ,  .json1 ,.location1 ,  .math1 , .math2 ,.math3 ,.math4,
+.number1 , .number2 ,  .node1,  .node2, .node3,
+.ndtcn1 ,.navig1 ,.navig2 ,.object1 ,.object2 ,.object3 ,.promise1 ,.proxy1 ,.parentNode1 ,.performance1
+,.regex1 ,.regex2 ,.regex3 , .regex4 ,.regex5 ,.regex6 ,.regex7 ,
+.string1 , .string2  ,.set1 ,.set2 ,.set3 ,.set4 ,.symbol1 ,.symbol2 ,.screen1 ,.screen2 ,.storage1 ,.storage2, 
+ .window1 ,.window2 ,.window3 ,.window4,.window5 ,.window6 ,.window7,.window8 ,.window9 ,.other1{
+  
+  border: 1px solid  rgb(0, 0, 0);
+  display:inline-block;
+  width: fit-content;
+  height: fit-content;
+  text-decoration: none;
 }
-.other1{
-  border: 3px solid  rgb(0, 0, 0);
-  width: 200px;
-  height: 380px;
+.array1 h2, .array2 h2, .array3 h2, .array4 h2, .array5 h2, .array6 h2 
+  ,.attr1 h2, .bool h2,  .clientreact h2, .childnode h2,.console1 h2, .console2 h2, .console3 h2,
+  .date1 h2, .date2 h2, .date3 h2, .date4 h2,
+  .document1 h2, .document2 h2, .document3 h2, .document4 h2, .document5 h2 ,  .error1 h2, .element1 h2 ,
+   .element2 h2 , .element3 h2 , .element4 h2 , .element5 h2 , .element6 h2,  .et1 h2 
+  .event1 h2 , .event2 h2 , .events1 h2, .events2 h2, .events3 h2, .events4 h2, .events5 h2 , .events6 h2,
+  .function1 h2, .function2 h2,
+  .global1 h2 ,  .generator1 h2 , .history1 h2 , .history2 h2 ,  .json1 h2 ,.location1 h2 ,
+  .math1 h2, .math2 h2, .math3 h2, .math4 h2 ,  .number1 h2 , .number2 h2 ,
+  .node1 h2, .node2 h2 , .node3 h2 , 
+  .ndtcn1 h2 ,.navig1 h2 , .navig2 h2 ,.object1 h2 , .object2 h2, .object3 h2 ,.promise1 h2 ,.proxy1 h2
+  ,.parentNode1 h2 ,.performance1 h2, .regex1 h2, .regex2 h2, .regex3 h2, .regex4 h2, .regex5 h2, .regex6 h2, .regex7 h2
+  ,.string1 h2, .string2 h2,.set1 h2, .set2 h2, .set3 h2, .set4 h2,
+  .symbol1 h2 , .symbol2 h2 ,.screen1 h2 , .screen2 h2 ,.storage1 h2, .storage2 h2,
+  .window1 h2,  .window2 h2, .window3 h2, .window4 h2, .window5 h2, .window6 h2, .window7 h2, .window8 h2, .window9 h2{
+    font-size:18px;
+    color: white;
+  }
+
 }
+
+
+
+
+
+@media (max-width: 767px) {
+  .Arr ,
+  .attr,
+  .bool,
+  .clientreact
+   .clidenode1,
+  .console,
+  .date ,
+  .document, .document, .error,.element ,.event , .element , .et ,.events,
+  .function,   .global ,  .generator ,   .history ,  .json ,   .location , .math ,  .number ,  .node
+  , .ndtcn ,.navig ,.object ,.promise ,.proxy ,.parentNode ,.performance,.regexp ,.string ,.set ,
+  .symbol ,.screen ,.storage ,  .window ,.other  
+  {
+    position: relative;
+    width:fit-content;
+    margin-top: 20px;
+  
+ 
+  }
+  .array1,.array2,.array3,.array4,.array5,.array6 ,
+  .attr1,
+  .boolean,
+  .clientreact,
+  .clidenode,
+  .console1,.console2,.console3,
+  .date1 , .date2 , .date3 , .date4  ,
+  .document1 , .document2, .document3 , .document4 , .document5 ,
+  .error1 ,.element1  , .element2  , .element3  , .element4  , .element5  , .element6  ,  .event1  , .event2,
+  .et1 ,.events1 , .events2, .events3 , .events4 , .events5  , .events6, .function1 , .function2 ,
+  .global1 , .generator1 ,  .history1 ,  .history2 ,  .json1 ,.location1 ,  .math1 , .math2 ,.math3 ,.math4,
+  .number1 , .number2 ,  .node1,  .node2, .node3,
+  .ndtcn1 ,.navig1 ,.navig2 ,.object1 ,.object2 ,.object3 ,.promise1 ,.proxy1 ,.parentNode1 ,.performance1
+  ,.regex1 ,.regex2 ,.regex3 , .regex4 ,.regex5 ,.regex6 ,.regex7 ,
+  .string1 , .string2  ,.set1 ,.set2 ,.set3 ,.set4 ,.symbol1 ,.symbol2 ,.screen1 ,.screen2 ,.storage1 ,.storage2, 
+   .window1 ,.window2 ,.window3 ,.window4,.window5 ,.window6 ,.window7,.window8 ,.window9 ,.other1  
+   { 
+    border: 1px solid  rgb(0, 0, 0);
+    display:block;
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none;
+  }
+
+  .array1 h2, .array2 h2, .array3 h2, .array4 h2, .array5 h2, .array6 h2  ,.attr1 h2, .boolean h2 ,  .clientreact h2, .childnode h2,.console1 h2, .console2 h2, .console3 h2,
+  .date1 h2, .date2 h2, .date3 h2, .date4 h2,
+  .document1 h2, .document2 h2, .document3 h2, .document4 h2, .document5 h2 ,  .error1 h2, .element1 h2 ,
+   .element2 h2 , .element3 h2 , .element4 h2 , .element5 h2 , .element6 h2,  .et1 h2 
+  .event1 h2 , .event2 h2 , .events1 h2, .events2 h2, .events3 h2, .events4 h2, .events5 h2 , .events6 h2,
+  .function1 h2, .function2 h2,
+  .global1 h2 ,  .generator1 h2 , .history1 h2 , .history2 h2 ,  .json1 h2 ,.location1 h2 ,
+  .math1 h2, .math2 h2, .math3 h2, .math4 h2 ,  .number1 h2 , .number2 h2 ,
+  .node1 h2, .node2 h2 , .node3 h2 , 
+  .ndtcn1 h2 ,.navig1 h2 , .navig2 h2 ,.object1 h2 , .object2 h2, .object3 h2 ,.promise1 h2 ,.proxy1 h2
+  ,.parentNode1 h2 ,.performance1 h2, .regex1 h2, .regex2 h2, .regex3 h2, .regex4 h2, .regex5 h2, .regex6 h2, .regex7 h2
+  ,.string1 h2, .string2 h2,.set1 h2, .set2 h2, .set3 h2, .set4 h2,
+  .symbol1 h2 , .symbol2 h2 ,.screen1 h2 , .screen2 h2 ,.storage1 h2, .storage2 h2,
+  .window1 h2,  .window2 h2, .window3 h2, .window4 h2, .window5 h2, .window6 h2, .window7 h2, .window8 h2, .window9 h2 
+  {
+  color: white;
+  font-size:17px;
+  }
+  }
+
+ 
+
+ 
+  
+
+
+
+

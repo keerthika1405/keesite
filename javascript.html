@@ -22,6 +22,7 @@ background-color: rgba(248, 245, 141, 0.7);
         transition: opacity 500ms;
         visibility: hidden;
         opacity: 0;
+        z-index:300;
       }
       .overlay:target {
         visibility: visible;
@@ -193,18 +194,18 @@ background-color: rgba(248, 245, 141, 0.7);
     display: none;
   }
 }
-/* for Desktop view */
+
 @media (max-width: 767px) {
 
  .nav-menu{
 z-index: -100;
    display: block ;
    position: static;
-    width: 350px;
+    width: 380px;
     margin-top: 10px;
     margin-left: 10px;
     background: none;
-    background-color: #8d67cf;
+    background-color: #9c9c35;
     z-index: 400;
     /* border: 1px solid rgb(194, 8, 8); */
   }
@@ -280,115 +281,118 @@ cursor: pointer;
    
    
    
-    <style>
-   .bg{
-   position: fixed;
-   height: 160px;
-   width: 100%;
-   top:-10px;
-   
-   }
-   
-   .bg h1{
-   color: rgb(251, 251, 251);
-    position: absolute;
-   font-size: 30px;
-   top:500px;
-   z-index: 100;
-   margin-left: 100px;
-   
+
+ <style>
+ .bg{
+position: fixed;
+height: 160px;
+width: 100%;
+top:-10px;
+
+}
+
+.bg h1{
+color: rgb(251, 251, 251);
+ position: absolute;
+font-size: 30px;
+top:500px;
+z-index: 100;
+margin-left: 100px;
+
+    }
+ .bg img{
+  z-index: -1;
+  height: 160px;
+ } 
+
+    
+    
+    @media (min-width: 1024px) {
+      .bg {
+    width: 100%;
+    
+      }
+      .search-box{
+      
+        width: 450px;
+        margin-top:10px;
+        margin-left: 10px;
+      }
+      .search-box  button{
+      left: 380px;
+      }
+      .outer_searchbox{
+        position: fixed;
+        margin-left: 450px;
+    width: 460px;
+    height: 50px;
+    padding: 5px 5px;
+    z-index: 100;
        }
-    .bg img{
-     z-index: -1;
-     height: 160px;
     } 
-   
-   
-   @media (min-width: 1024px) {
-     .bg {
-   width: 100%;
-   
-     }
-     .search-box{
-     
-       width: 450px;
-       margin-top:10px;
-       margin-left: 10px;
-     }
-     .search-box  button{
-     left: 380px;
-     }
-     .outer_searchbox{
-       position: fixed;
-       margin-left: 450px;
-   width: 460px;
-   height: 50px;
-   padding: 5px 5px;
-   z-index: 100;
+    
+    @media (max-width: 1023px) {
+      .bg {
+        width: 1000px;
+        
       }
-   } 
-   
-   @media (max-width: 1023px) {
-     .bg {
-       width: 1000px;
-       
-     }
-     .search-box{
-       
-       width: 550px;
-       margin-top: 15px;
-       left: 150px;
-     }
-     .search-box  button{
-       left: 500px;
-       
-     }
-     
-   
-   }
-   
-   @media (max-width: 767px) {
-     .bg {
-   width:750px;
-   
-     }
-     .search-box{
-     
-       width: 300px;
-       margin-top: 10px;
-       left: -20px;
-       z-index: 1;
-     }
-     .search-box  button{
-      
-       left: 240px; 
-     }
-      
-     .outer_searchbox{
-       
-       position: fixed;
-       margin-left: 60px;
-       width: 300px;
-       height: 50px;
-       padding: 5px 5px;
-       z-index: 100;
+      .search-box{
+        
+        width: 550px;
+        margin-top: 15px;
+        left: 150px;
       }
-   }
-   
-   .search-box{
-       position: absolute;
-       /* width:  450px; */
-       height: 40px;
-       color: white;
-       background-color: rgba(0, 0, 0,0.3);
-       /* margin-top: -30px; */
-       /* padding: 10px 10px; */
-     
-       z-index: 2;
-       border-radius: 5px;
-      
+      .search-box  button{
+        left: 500px;
+        
       }
-      </style>
+    }
+    
+    @media (max-width: 767px) {
+      .bg {
+    width:750px;
+    
+      }
+      .search-box{
+      
+        width: 300px;
+        margin-top: 10px;
+        left: -20px;
+        z-index: 1;
+      }
+      .search-box  button{
+       
+        left: 240px; 
+      }
+       
+      .outer_searchbox{
+        
+        position: fixed;
+        margin-left: 60px;
+        width: 300px;
+        height: 50px;
+        padding: 5px 5px;
+        z-index: 100;
+       }
+    }
+    
+    .search-box{
+        position: absolute;
+        /* width:  450px; */
+        height: 40px;
+        color: white;
+        background-color: rgba(0, 0, 0,0.3);
+        /* margin-top: -30px; */
+        /* padding: 10px 10px; */
+      
+        z-index: 2;
+        border-radius: 5px;
+       
+
+        background-color: #9c9c35;
+       }
+    
+             </style> 
 
  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -472,8 +476,8 @@ cursor: pointer;
           <div   class="bg" id="bgcontent">
             <img  id="bg" class="image-container" src="bgimg24.avif" height="100px" width=" 100%" alt="">
             <!-- <h1>welcome  <script> document.write(localStorage.getItem("name").toUpperCase());</script> </h1> -->
-        </div>
-
+        </div>  
+       
 
 
         <div class="menu__wrapper"  id="wrapper">
@@ -486,11 +490,8 @@ cursor: pointer;
                 <ul class="naviul">
                  
                     <li>
-                      
                         <button>
                             JAVA
-                          
-                          
                               <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
                                 <path
                                     d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
@@ -987,15 +988,19 @@ cursor: pointer;
 
 
 
-<div class="content">
-    <h1>Array()</h1>
+<div class="content123">
+
+
+
+    <div class="Arr">
+        <h1>Array()</h1>
 <div class="array1">
     <h2>properties</h2>
     <ul>
         <li><a href="">.length() </a></li>
     </ul>
 </div>
-    <br><br>
+    
 
 <div class="array2"> 
     <h2>methods</h2>
@@ -1052,6 +1057,9 @@ cursor: pointer;
         <li><a href="">.unshift()</a></li>
     </ul>
 </div>
+</div>
+
+
 
 
 <div class="attr">
@@ -1065,14 +1073,17 @@ cursor: pointer;
     </div>
 </div>
 
-<div class="content1">
+
+<div class="bool">
 <h1>Boolean()</h1>
 <div class="boolean">
     <h2>No Owns Properties or Methods</h2>
 </div>
 </div>
 
-<div class="content2">
+
+
+<div class="clientreact1">
 <h1>clientReact()</h1>
 <div class="clientreact">
     <h2>properties</h2>
@@ -1087,6 +1098,7 @@ cursor: pointer;
 </div>
 </div>
 
+
 <div class="clidenode1">
 <h1>childNode()</h1>
 <div class="childnode">
@@ -1096,6 +1108,9 @@ cursor: pointer;
     </ul>
 </div>
 </div>
+
+
+
 
 
 <div class="console">
@@ -1134,7 +1149,10 @@ cursor: pointer;
                 <li><a href="">.error()</a></li> 
              </ul>
    </div>
-</div>
+</div> 
+
+
+
 
 
 <div class="date">
@@ -1267,11 +1285,13 @@ cursor: pointer;
             <li><a href="">.stylesheet</a></li> 
             <li><a href="">.preferredStyleSheetSet</a></li>
             <li><a href="">.selectedStyleSheetSet</a></li>
-   
         </ul>
-    </div>
-            
+    </div>    
 </div>
+
+
+
+
 
 <div class="error">
     <h1>Error()</h1>
@@ -1290,7 +1310,7 @@ cursor: pointer;
 
         </ul>
     </div>
-</div>
+</div> 
 
 <div class="element">
     <h1>Element()</h1>
@@ -1381,10 +1401,9 @@ cursor: pointer;
             <li><a href="">.stopImmediatePropagation()</a></li>
             <li><a href="">.stopPrpagation()</a></li>       
         </ul>
+</div> 
 </div>
-    
-    
-</div>
+
 
 <div class="et">
     <h1>EventTarget()</h1>
@@ -1396,8 +1415,6 @@ cursor: pointer;
             <li><a href="">.dispatchEvent()</a></li>  
         </ul>
 </div>
-
-
 </div>
 
 <div class="events">
@@ -1474,6 +1491,8 @@ cursor: pointer;
     </div>          
 </div>
 
+
+
 <div class="function">
     <h1>Function()</h1>
     <div class="function1">
@@ -1523,6 +1542,7 @@ cursor: pointer;
         </ul>
 </div>
 </div>
+
 <div class="history">
     <h1>History()</h1>
 <div class="history1">
@@ -1649,6 +1669,8 @@ cursor: pointer;
         </ul>
 </div>
 </div>
+
+
 <div class="number">
     <h1>Number()</h1>
     <div class="number1">
@@ -1677,6 +1699,8 @@ cursor: pointer;
         </ul>
     </div>  
 </div> 
+
+
 <div class="node">
         <h1>Node()</h1>
         <div class="node1">
@@ -1725,9 +1749,10 @@ cursor: pointer;
                 <li><a href="">.removechild()</a></li>
                        
             </ul>
-        </div>
-           
+        </div>     
 </div>
+
+
 <div class="ndtcn">
     <h1>NonDocumentType<br>ChildNode()</h1>
     <div class="ndtcn1">
@@ -1738,9 +1763,12 @@ cursor: pointer;
         </ul>
     </div>
 </div>
-<div class="navi">
+
+
+
+<div class="navig">
     <h1>Navigator()</h1>
-    <div class="navi1">
+    <div class="navig1">
         <h2>properties</h2>
         <ul>
             <li><a href="">.cookieEnabled()</a></li> 
@@ -1754,13 +1782,15 @@ cursor: pointer;
         </ul>
     </div>
 
-    <div class="navi2">
+    <div class="navig2">
         <h2> methods</h2>
         <ul>
             <li><a href="">.Vibrate()</a></li> 
           </ul>
     </div>  
 </div>
+
+
 
 <div class="object">
     <h1>Object()</h1>
@@ -1810,6 +1840,8 @@ cursor: pointer;
     </div>
        
 </div>
+
+
 <div class="promise">
     <h1>promise()</h1>
     <div class="promise1">
@@ -1824,6 +1856,8 @@ cursor: pointer;
         </ul>
     </div>
 </div>
+
+
 
 <div class="proxy">
     <h1>proxy()</h1>
@@ -1848,6 +1882,9 @@ cursor: pointer;
         </ul>
     </div>
 </div> 
+
+
+
     <div class="parentNode">
         <h1>parentNode()</h1>
     <div class="parentNode1">
@@ -1862,6 +1899,7 @@ cursor: pointer;
     </div>
     </div>
 
+
     <div class="performance">
         <h1>performance()</h1>
     <div class="performance1">
@@ -1874,6 +1912,8 @@ cursor: pointer;
         </ul>
     </div>
     </div>
+
+
 
     <div class="regexp">
         <h1>Regexp()</h1>
@@ -1964,6 +2004,8 @@ cursor: pointer;
         </div>
         
 </div>
+
+
 <div class="string">
     <h1>String()</h1>
     <div class="string1">
@@ -2003,6 +2045,8 @@ cursor: pointer;
     </div>
 </div>
 
+
+
 <div class="set">
     <h1>set()</h1>
 
@@ -2039,6 +2083,8 @@ cursor: pointer;
     </div>
 </div>
 
+
+
 <div class="symbol">
     <h1>Symbol()</h1>
 
@@ -2060,6 +2106,8 @@ cursor: pointer;
         </ul>
     </div>
 </div>
+
+
 <div class="screen">
     <h1>screen()</h1>
 
@@ -2086,6 +2134,7 @@ cursor: pointer;
     </div>
 </div>
 
+
 <div class="storage">
     <h1>Storage()</h1>     
 
@@ -2106,6 +2155,8 @@ cursor: pointer;
         </ul>
     </div>
 </div>
+
+
 
 <div class="window">
     <h1>window()</h1>     
@@ -2217,6 +2268,8 @@ cursor: pointer;
     </div>
 </div>
 
+
+
 <div class="other">
         <h1>Other()</h1>     
     
@@ -2239,6 +2292,16 @@ cursor: pointer;
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
 <div id="popup1" class="overlay">
 
     <div class="popup">
@@ -2515,8 +2578,7 @@ After removing elements: [ 0, 1, 7, 8, 9, 3, 4, 5, 6 ]
 
 
 
-
-<footer>
+ <footer>
     <div class="content">
       <div class="top">
         <div class="logo-details">
@@ -2580,11 +2642,10 @@ After removing elements: [ 0, 1, 7, 8, 9, 3, 4, 5, 6 ]
         </span>
       </div>
     </div>
-  </footer>    
+  </footer>  
 
 
-
-
+    
 
   <script>
     // Get the button:
@@ -2662,7 +2723,7 @@ ctx.fill();
 
 setTimeout( function() {
 
-ctx.fillStyle = '#8d67cf';
+ctx.fillStyle = '#9c9c35';
 ctx.font = '10px FontAwesome';  
 ctx.fillText("\uf084",25,9);
 },1000);
