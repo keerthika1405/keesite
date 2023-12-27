@@ -923,10 +923,9 @@ body {
     color: white;
     text-align: center;
   }
-  
+ 
 
-   
-/*bottom to top*/
+ /*bottom to top*/
 @media (min-width: 1024px) {
   #myBtn {
     display: none; /* Hidden by default */
@@ -938,7 +937,7 @@ body {
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
-    background-color:#ed1047; /* Set a background color */
+    background-color: #ed1047; /* Set a background color */
     color: rgb(0, 0, 0); /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
   width: 30px;/* Some padding */
@@ -953,11 +952,13 @@ body {
     background-color: rgb(14, 223, 150); /* Add a dark-grey background on hover */
   }
   }
-
+  
+  
+  
   
   @media (max-width: 767px) {
     #myBtn {
-      bottom:40px;
+      bottom:20px;
       display: none; /* Hidden by default */
       position: fixed; /* Fixed/sticky position */
       /* Place the button at the bottom of the page */
@@ -966,7 +967,7 @@ body {
       z-index: 99; /* Make sure it does not overlap */
       border: none; /* Remove borders */
       outline: none; /* Remove outline */
-      background-color: #ed1047;/* Set a background color */
+      background-color:  #ed1047; /* Set a background color */
       color: rgb(0, 0, 0); /* Text color */
       cursor: pointer; /* Add a mouse pointer on hover */
     width: 30px;/* Some padding */
