@@ -50,14 +50,14 @@ body {
   z-index: 1;
   }
   }
-  @media screen and (min-width: 980px){
+  @media screen and (min-width: 768px){
     .webname{
       position: absolute;
       width: 80px;
       margin-top: 50px;
       margin-left: 1000px;
       z-index: 1;
-      color:rgb(0, 0, 0);
+      color:rgb(237, 234, 83);
       }
   }
   
@@ -233,7 +233,7 @@ border-radius: 50%;
     
     }
   }
-  @media screen and (min-width: 980px){
+  @media screen and (min-width: 768px){
     .open-button {
       display: none;
        }
