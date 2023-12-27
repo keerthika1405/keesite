@@ -244,7 +244,7 @@ border-radius: 50%;
       z-index: 200;
       margin-top: 100px;
       background-color: #64ca5b;
-      border: 1px solid black;
+    
       color: rgb(0, 0, 0);
       font-size: 18px;
       font-weight: 300px;
@@ -261,7 +261,7 @@ border-radius: 50%;
       }
       
       .open-button {
-        top:540px;
+        top:600px;
         bottom:0;
        
       }
