@@ -54,8 +54,8 @@ body {
     .webname{
       position: absolute;
       width: 80px;
-      margin-top: 50px;
-      margin-left: 1200px;
+      margin-top: 0px;
+      margin-left: 1150px;
       z-index: 1;
       color:rgb(0, 0, 0);
       }
