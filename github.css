@@ -109,7 +109,7 @@ body {
   }
   .result-box ul li:hover{
   color: white;
-  background-color: #8d67cf;
+  background-color: #6f3838;
   }
   .result-box{
   
@@ -136,7 +136,7 @@ body {
 .open-button {
     z-index: -100;
      margin-top: 100px;
-    background-color: #f54500;
+    background-color: #6f3838;
      color: rgb(0, 0, 0);
      font-size: 18px;
      font-weight: 300px;
@@ -159,7 +159,7 @@ body {
     position: fixed;
      margin-top: 80px;
      margin-left: 80px;
-     background-color: #5867f3;
+     background-color: #6e5b5b;
      display: flex;
      flex-direction: column;
      padding: 20vm 4vm;
@@ -495,7 +495,7 @@ body {
   @media (min-width: 1024px) {
   .menu__wrapper {
   top: 60px;
-  width: 800px;
+  width: 850px;
   height:50px;
   padding: 0px 16px;
   /* background-color: blue; */
@@ -783,7 +783,7 @@ body {
   
   
   .list-items-with-description li:hover {
-  background-color: #8d67cf;
+  background-color: #6f3838;
   border-radius: 6px;
   
   /* list hover of green list */
@@ -802,7 +802,6 @@ body {
   /* border: 1px solid black; */
   margin-left: 20px;
   }
-  
   
   
 
@@ -963,7 +962,7 @@ color:#e4640e
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
-    background-color:#8d67cf; /* Set a background color */
+    background-color:#6f3838; /* Set a background color */
     color: rgb(0, 0, 0); /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
   width: 30px;/* Some padding */
@@ -993,7 +992,7 @@ color:#e4640e
       z-index: 99; /* Make sure it does not overlap */
       border: none; /* Remove borders */
       outline: none; /* Remove outline */
-      background-color: #8d67cf; /* Set a background color */
+      background-color: #6f3838; /* Set a background color */
       color: rgb(0, 0, 0); /* Text color */
       cursor: pointer; /* Add a mouse pointer on hover */
     width: 30px;/* Some padding */
