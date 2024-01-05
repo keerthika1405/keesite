@@ -2315,7 +2315,57 @@
               </div>
             </div>
 
- 
+              
+            <div id="myNav15" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav15')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git diff</p>
+                <h3>
+                  The git diff command is used to show the differences between two states of your Git repository. It can be used to compare changes between the working directory, the staging area (index), and the committed history </h3>
+                  <pre>
+                    git diff (Difference between Working Directory and Staging Area) ---This command shows the changes that have not been staged (added to the index). It compares the current state of your working directory with what has been staged.
+                    git diff --staged(Difference between Staging Area and Last Commit) ---This command shows the changes that are staged but not yet committed. It compares the changes in the staging area with the last committed state.
+                    git diff HEAD(Difference between Working Directory and Last Commit) ---This command shows the changes between the current state of your working directory and the last commit.
+                    git diff < commit-hash-1> < commit-hash-2>(Difference between Two Commits)---This command shows the differences between two specific commits. Replace < commit-hash-1> and < commit-hash-2> with the actual commit hashes.
+                    git diff < file-name>(Difference in a Specific File)---This command shows the changes made to a specific file that is not yet staged.
+                    git show < commit-hash>(Viewing Changes in a Specific Commit)---This command displays the changes introduced by a specific commit. It includes the commit message and the diff.
+                    git show < commit-hash> -- < file-name>(Viewing Changes in a Specific File in a Commit)---This command shows the changes made to a specific file in a specific commit.
+                    
+                                  </pre>
+                                      <img src="gitdiff.JPG">
+          
+             
+              </div>
+            </div>
+
+            <div id="myNav16" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav16')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git fetch</p>
+                <h3>
+                  The git fetch command is used to retrieve changes from a remote repository without automatically merging them into your current working branch. It allows you to update your local repository with changes made by others on the remote repository. </h3>
+             <pre>
+              git fetch [< remote> [< refspec>...]]
+                < remote>: The name of the remote repository. If not specified, it defaults to the remote repository specified during the clone operation.
+                < refspec>: Specifies which branches/tags to fetch. If not specified, it fetches all branches and tags.
+             </pre>
+             <pre>
+              git fetch(Fetch changes from the default remote (usually 'origin') )
+              git fetch remote_repo_name(Fetch changes from a specific remote repository )
+              git fetch origin master(Fetch changes from a specific branch of a remote repository)
+              git fetch origin '*:*'(Fetch changes from all branches of a specific remote repository)
+
+             </pre>
+             <h2>After running git fetch, the changes are downloaded to your local repository, but your working directory and local branches remain unchanged. To incorporate the
+               changes into your local branches, you would typically use git merge or git rebase</h2>
+            <img src="">
+             
+              </div>
+            </div>
           
 
 
