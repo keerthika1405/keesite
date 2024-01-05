@@ -460,14 +460,7 @@
               </form>
              
             </div> -->
-        
-           
-        
-        
-           
-           
-            
-         
+   
    
             <button class="open-button" onclick="openForm()"><i class='bx bx-question-mark'></i></button>
             <div class="container" id="myForm">
@@ -503,8 +496,7 @@
                         
                           <button>
                               JAVA
-                            
-                            
+
                                 <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
                                   <path
                                       d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z">
@@ -2203,7 +2195,7 @@
               </div>
             </div>
 
-            
+
             <div id="myNav10" class="overlay">
               <!-- Button to close the overlay navigation -->
               <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav10')"><i class='bx bx-x'></i></a>
@@ -2217,24 +2209,9 @@
              GUI when creating commit messages. Although veteran developers may prefer the standard git commit method because they can use their preferred text editors, and it provides a streamlined process.</h3>
 
             <br>
-            link: https://www.youtube.com/watch?v=icyOhrMNrOk
+          <h3> link: https://www.youtube.com/watch?v=icyOhrMNrOk</h3> 
              <pre>"The visual representation of modifications allows developers to easily grasp the changes made, making it an ideal choice for beginners and experts alike looking to streamline their workflow."</pre>
- 
- <pre>
--c, --create – Create a new commit with the selected changes rather than editing an existing commit.
--i, --include – Include the specified files in the commit. This flag can be used multiple times to include multiple files.
--e, --edit – Open the commit message in the user's editor rather than displaying it in the terminal.
--t, --template – Use the specified file as the commit message template.
--m, --message – Use the specified message as the commit message. This flag can be used multiple times to specify multiple lines of the commit message.
--s, --signoff – Add a "Signed-off-by" line to the end of the commit message, indicating that you have agreed to the Developer Certificate of Origin.
--S, --gpg-sign – GPG-sign the commit.
--p, --patch – Interactively select which changes to include in the commit.
--a, --all – Include all changes, including deleted files, in the commit.
--n, --no-verify – Bypass the pre-commit and commit-msg hooks.
---amend – Amend the commit message and include the specified changes in the last commit rather than creating a new commit.
---reset-author – Reset the author information for the commit to the user's current Git config settings.
---cleanup – Specify how to clean up the commit message. Valid options include "strip," "whitespace", "verbatim", and "default".
- </pre>
+
             <img src="gitcitool.JPG">
              
               </div>
@@ -2249,10 +2226,98 @@
                 <p><i class='bx bx-git-pull-request'></i><br> git clean</p>
                 <h3>
                   git clean is a Git command used to remove untracked files and directories from your working directory. Untracked files are files that are not part of the current commit or any previous commits in your Git repository.</h3>
-              <img src="gitcherrypick.JPG">
+              <h2>
+                <ul>
+                <li>git clean [options]</li>
+                <li>-n (or) -n -d (or) --dry-run: This option shows you a list of files and directories that would be removed without actually deleting them. It's a good way to preview what will be cleaned.</li>
+                <li>-f or --force: This option is required to actually remove the untracked files. Without it, git clean will only show you what would be removed.</li>
+                <li>-d: This option tells git clean to remove untracked directories as well.</li>
+               <li>-X: This option removes only the untracked files that are listed in the project's .gitignore file.</li> 
+                <li>-x: This option removes all untracked files, including those that are ignored by the .gitignore file.</li>
+              </ul>
+              </h2>
+              
+                  <img src="gitclean.JPG">
              
               </div>
             </div>
+                      
+            <div id="myNav12" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav12')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git clone</p>
+                <h3>
+             The git clone command is used to create a copy of a Git repository. It's commonly used when you want to obtain a local copy of a remote repository, allowing you to work on the project, track changes, and contribute to the development.</h3>
+             <pre>
+              git clone https://github.com/example/repository.git
+              git clone https://github.com/example/repository.git my-custom-directory
+             </pre>
+              </div>
+            </div>
+
+            <div id="myNav13" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav13')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git commit</p>
+                <h3>The git commit command is used to record the changes made to the files in your Git repository. When you run this command, Git will prompt you to enter a commit message that describes the changes you are committing.</h3>
+           <pre>
+            -c, --create – Create a new commit with the selected changes rather than editing an existing commit.
+            -i, --include – Include the specified files in the commit. This flag can be used multiple times to include multiple files.
+            -e, --edit – Open the commit message in the user's editor rather than displaying it in the terminal.
+            -t, --template – Use the specified file as the commit message template.
+            -m, --message – Use the specified message as the commit message. This flag can be used multiple times to specify multiple lines of the commit message.
+            -s, --signoff – Add a "Signed-off-by" line to the end of the commit message, indicating that you have agreed to the Developer Certificate of Origin.
+            -S, --gpg-sign – GPG-sign the commit.
+            -p, --patch – Interactively select which changes to include in the commit.
+            -a, --all – Include all changes, including deleted files, in the commit.
+            -n, --no-verify – Bypass the pre-commit and commit-msg hooks.
+            --amend – Amend the commit message and include the specified changes in the last commit rather than creating a new commit.
+            --reset-author – Reset the author information for the commit to the user's current Git config settings.
+            --cleanup – Specify how to clean up the commit message. Valid options include "strip," "whitespace", "verbatim", and "default".
+             </pre>
+             <pre>
+              git commit -c < commit-hash>
+                git commit -i file1.txt -i file2.txt
+                git commit -e
+                git commit -t my_template.txt
+                git commit -m "Initial commit" -m "Add README"
+                git commit -s
+                git commit -S
+                git commit -p
+                git commit -a
+                git commit -n
+                git commit --amend
+                git commit --reset-author
+                git commit --cleanup=default
+                
+             </pre>
+             <img src="gitcommit.JPG">
+              </div>
+            </div>
+
+           
+            <div id="myNav14" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav14')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git describe</p>
+                <h3>
+                  The git describe command is used to provide a human-readable description of the current or specified commit. It is often used to show the most recent tag that is reachable from a commit, along with additional information like the number of commits since the tag and a unique identifier for the commit.</h3>
+              <img src="gittagdescribe.JPG">
+              <img src="gittagdescribe1.JPG">
+              <img src="gittagdescribe2.JPG">
+             
+              </div>
+            </div>
+
+ 
+          
+
 
  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt bx-sm' style='color:#ffffff'  ></i></button>
             
