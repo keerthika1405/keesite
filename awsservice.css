@@ -675,7 +675,7 @@ padding: 0px 5px ;
 
   list-style-type: none;
   display: grid;
-  width: 100%;
+  width: fit-content;
   grid-template-columns: 1fr 1fr;
  
 }
