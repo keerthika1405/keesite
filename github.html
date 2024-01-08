@@ -2358,17 +2358,317 @@
               git fetch remote_repo_name(Fetch changes from a specific remote repository )
               git fetch origin master(Fetch changes from a specific branch of a remote repository)
               git fetch origin '*:*'(Fetch changes from all branches of a specific remote repository)
+=====
+git merge origin/master
+git rebase origin/master
 
              </pre>
              <h2>After running git fetch, the changes are downloaded to your local repository, but your working directory and local branches remain unchanged. To incorporate the
                changes into your local branches, you would typically use git merge or git rebase</h2>
-            <img src="">
+            <img src="gitfetch.JPG">
              
               </div>
             </div>
 
-modified
+            <div id="myNav17" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav17')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git format-patch</p>
+                <h3>    The git format-patch command is used to generate a set of patch files for a series of commits. These patch files can be easily shared, emailed, or applied by others.</h3>
+              <pre>
+                git format-patch -2(Generate patches for the last two commits)
+                git format-patch < commit-hash>(Generate patches for a specific commit)
+                git format-patch < start-commit-hash>..< end-commit-hash>(Generate patches for a range of commits)
+                git format-patch -o /path/to/output/directory < commit-hash>(Specify the output directory for the generated patches)
+                git format-patch -o /path/to/output/directory --attach < start-commit-hash>..< end-commit-hash>  (Generate patches for a specific commit range and send them as attachments in an email)
+
+              </pre>
+              After running git format-patch, you will get a set of patch files in the specified output directory or the current directory if not specified. Each patch file represents changes introduced by a single commit in the specified range.
+              These patch files can be applied using the git apply command or shared with others for them to apply the changes to their repositories
+              <pre>git apply < patch-file-name.patch </pre> 
+              <img src="gitformatepatch.JPG">
+            
+              </div>
+            </div>
+            
+            <div id="myNav18" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav18')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git describe</p>
+                <h3>
+                  
+The git gc (garbage collection) command in Git is used to perform housekeeping tasks that optimize and clean up the repository. It helps to improve performance by removing unnecessary or unreferenced objects in the Git database.
+</h3>
+<pre>
+  git gc [< options>]
+
+  -q or --quiet: Run quietly. Progress information and error messages are not displayed.
+  --aggressive: Perform more aggressive garbage collection, which may take more time but can lead to better repository optimization.
+  --auto: Enable automatic garbage collection. This is the default behavior, and Git runs garbage collection automatically when certain conditions are met, such as when there are too many loose objects or when the repository size exceeds a certain threshold.
+  
+</pre>
+<h3>
+Keep in mind that git gc is generally not something you need to run regularly. Git already performs automatic garbage collection when necessary. However, in some cases, running it manually might be beneficial, especially if you want to force a cleanup or optimize the repository size.
+If you're dealing with a large repository or experiencing performance issues, you might also consider using git prune or git repack commands, which are more specific tools for managing Git repository objects.</h3>
+              
+<pre>
+  git prune
+git repack -a -d --depth=250 --window=250
+
+</pre>
+<h3>Always exercise caution when running commands that directly impact the repository, and be sure to have a backup of your repository before making significant changes.
+</h3>
+             
+              </div>
+            </div>
+
+            <div id="myNav19" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav19')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> gitk</p>
+                <h3>
+                  gitk is a graphical user interface for Git that provides a visual representation of the commit history and allows you to explore and interact with your Git repository graphically. </h3>
+                  <pre>
+                    Commit History Graph: Displays a graphical representation of the commit history, with branches, merges, and commit details.
+                    Commit Details: Clicking on a specific commit in the graph will show detailed information about that commit, including the commit message, author, and changes introduced.
+                    Branches: Allows you to view and switch between branches easily.
+                    Searching and Filtering: Provides options to search for commits, filter by author, date, or commit message.
+                    Diff Viewer: Allows you to view changes introduced by a specific commit.
+                    File History: Displays the history of a specific file, showing when it was added, modified, or deleted.
                     
+                             </pre>
+                  <img src="gitk.JPG">
+             
+              </div>
+            </div>
+
+
+            <div id="myNav20" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav20')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git grep</p>
+                <h3>  The git grep command is used to search through your Git repository for a specific pattern in the content of files. It works similarly to the standard grep command but is specific to the tracked files in your Git repository.</h3>
+        <pre>
+          git grep "example" (Search for a specific word in the entire repository:)
+          git grep "pattern" path/to/directory(Search for a pattern in a specific directory)
+          git grep -n "pattern"(Search for a pattern and display line numbers)
+          git grep "pattern" my-feature-branch(Search for a pattern in a specific branch)
+          git grep -i "Pattern"(Search for a pattern with case-insensitive matching          )
+          git grep "pattern" -- '*.js'(Search for a pattern in a specific file type (e.g., only JavaScript files):)
+        </pre>
+                  <img src="gitgrep.JPG">
+             
+              </div>
+            </div>
+
+            <div id="myNav21" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav21')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git init</p>
+                <h3>
+                  The git init command is used to initialize a new Git repository. It transforms an existing directory into a Git repository, allowing you to start version-controlling your project</h3>
+              <pre>
+The (.git) directory, created by( git init), contains all the information Git needs to manage your repository.
+If you want to start a new project and clone an existing repository, you would typically use (git clone) instead of (git init).
+Be cautious when initializing a Git repository in an existing project with files you don't want to version control. It's a good idea to create a (.gitignore) file to specify which files or directories to ignore.
+              </pre>
+             
+              </div>
+            </div>
+
+            <div id="myNav22" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav22')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git log</p>
+                <h3>
+                  The git log command is used to display the commit history in a Git repository. When you run this command, it shows a list of commits, starting with the most recent, along with information about each commit, such as the commit hash, author, date, and commit message.</h3>
+             
+             <pre>
+    git log
+git log --oneline( Displays each commit on a single line, showing only the commit hash and the commit message)
+git log -n 5(Limits the number of commits displayed. For example, git log -5 shows only the last 5 commits)
+git log --graph( Draws an ASCII graph representing the branch and merge history.)
+git log --author="John Doe"(Filters the log to show only commits by a specific author)
+git log --since="2022-01-01" --until="2022-12-31"(Restricts the log to a specific time range)
+    
+</pre>     
+<img src="gitlog.JPG">
+             
+              </div>
+            </div>
+
+
+            <div id="myNav23" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav23')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git maintenance</p>
+                <h3>
+                  Git itself doesn't have a specific command or concept called "maintenances." </h3>
+        <h3>For general maintenance tasks in a Git repository,</h3>
+        <pre>
+          git gc(Run git gc for garbage collection. This command helps optimize the repository by cleaning up unnecessary or unreferenced objects)
+          git fetch --prune(Remove remote branches that have been deleted on the remote repository but still exist locally)
+          git clean -fdX(Remove untracked files from the working directory)
+          git count-objects -vH(Use git count-objects -vH to view information about the size of the repository.)
+
+
+        </pre>
+             
+              </div>
+            </div>
+
+            <div id="myNav24" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav24')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git merge</p>
+                <h3>
+                 
+The git merge command in Git is used to incorporate changes from one branch into another. Merging is a fundamental operation in
+ Git and is commonly used to integrate changes from feature branches back into the main development branch </h3>
+
+ <pre>
+  git merge < branch-name>(This command merges the specified branch (< branch-name>) into the currently checked-out branch)
+    git merge --ff-only < branch-name> Fast-forward merge(Git will perform a fast-forward merge. This means that the branch pointer will simply move forward to the latest commit on the other branch.)
+    git merge --squash < branch-name> (A squash merge condenses all the changes from the merged branch into a single new commit)
+    git merge < branch-1> < branch-2> ... < branch-n> (Git uses a recursive merge strategy by default, but an octopus merge is used when merging more than two branches)
+    git merge --abort (If you encounter conflicts during a merge and want to abort the merge operation)
+    (Remember to resolve any conflicts that might arise during the merge process. After resolving conflicts, you need to complete the merge with) git merge --continue
+
+  </pre>
+              <img src="gitmerge.JPG">
+             
+              </div>
+            </div>
+
+
+
+            <div id="myNav25" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav25')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git mv</p>
+               <h3>
+                The git mv command is used to move or rename files and directories in a Git repository. It is essentially a convenience command that
+                 combines the actions of renaming a file (using standard file system commands) and staging the change for a commit.
+                 After using git mv, you need to commit the changes to make them permanent:
+                </h3>
+               <img src="gitmv.JPG">
+              </div>
+            </div>
+
+            <div id="myNav26" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav26')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git notes</p>
+               <h3>
+               
+In Git, git notes is a command that allows you to attach and manage additional notes or annotations to a Git object, such as a commit.
+ These notes can contain supplementary information or comments that are not part of the commit message.
+               </h3>
+               <pre>
+                git notes add -m "Your note message" < commit-SHA>(To add a note to a specific commit, you can use the git notes add command                )
+                git log --show-notes=refs/notes/commits abcdef123(To display the notes associated with a commit, you can use the git log command with the --show-notes)
+                git notes list(To list all notes in the repository, you can use the git notes list command)
+                git notes edit < commit-SHA>(To edit an existing note, you can use the git notes edit command,This opens the default text editor to modify the note.)
+                git notes remove < commit-SHA>(To delete a note associated with a commit, you can use the git notes remove command)
+                git notes add -m "Custom note 1" --ref=custom-notes abcdef123(This creates a note with a custom reference name custom-notes for the commit)
+
+               </pre>
+               <img src="gitnotes.JPG">
+             
+              </div>
+            </div>
+
+
+
+            <div id="myNav27" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav27')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git pull</p>
+               <h3>
+                The git pull command in Git is used to fetch and integrate changes from a remote repository into the current branch. 
+                It is a combination of two other Git commands: git fetch and git merge
+               </h3>
+             <pre>
+              git pull < remote> < branch>
+                < remote>: The name of the remote repository from which you want to pull changes (commonly "origin").
+                  < branch>: The branch from the remote repository that you want to pull changes from.
+                  
+                  git pull --rebase(To incorporate your local changes before the changes from the remote, you can use rebase instead of the default merge)
+                  git pull --all(To fetch changes from all remotes and branches)
+                  git pull -p(-p or --prune: To remove remote-tracking branches that no longer exist on the remote:)
+
+
+
+             </pre>
+             <pre>
+              git pull and git fetch are both Git commands used to retrieve changes from a remote repository, but they have different behaviors.
+
+git fetch:
+Fetch Operation:
+
+git fetch is used to retrieve changes from a remote repository without merging them into your working directory.
+Local Changes Not Affected:
+
+Your local working directory and branches remain unaffected. Changes from the remote repository are stored in the remote-tracking branches (e.g., origin/master).
+Preview Changes:
+
+Before merging or incorporating changes, you can review the changes fetched using git log origin/master (replace "master" with your branch).
+Safe Operation:
+
+Fetching is a safer operation because it does not automatically modify your local working directory. You have the opportunity to review changes and decide how to integrate them.
+git pull:
+Fetch and Merge:
+
+git pull fetches changes from a remote repository and automatically merges them into the current branch.
+Direct Impact on Working Directory:
+
+It directly affects your working directory by applying changes from the remote branch to your local branch.
+Automatic Merging:
+
+Git attempts to merge the changes automatically. If there are conflicts, you need to resolve them before completing the pull.
+Convenience:
+
+git pull is a more convenient command when you want to quickly update your local branch with the latest changes from the remote.
+             </pre>
+              </div>
+            </div>
+
+
+            <div id="myNav28" class="overlay">
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('myNav27')"><i class='bx bx-x'></i></a>
+              <!-- Overlay content -->
+              <div class="overlay-content">
+                <p><i class='bx bx-git-pull-request'></i><br> git mv</p>
+               <h3>
+             
+               </h3>
+             
+              </div>
+            </div>
+                              
  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt bx-sm' style='color:#ffffff'  ></i></button>
             
  <footer>
