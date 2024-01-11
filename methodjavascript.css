@@ -18,7 +18,7 @@
 
 
 
-
+  
 
   .content123{
 
@@ -28,6 +28,9 @@
    margin-top:200px;
 
  }
+ .content123 li{
+margin-top: 5px;
+ }
   .content123 li, a{
     font-weight: 300px;
     font-size: 20px;
@@ -36,11 +39,16 @@
   }
 
 
-
+  .content123 h1{
+    color: rgb(0, 0, 0);
+    
+    font-size: 40px;
+  }
 
   .array1 h2, .array2 h2, .array3 h2, .array4 h2, .array5 h2, .array6 h2 
   {
-   background-color:rgba(207, 127, 6, 0.9);
+   background-color:#cf7f06e6;
+   
   }
   .attr1 h2{
     background-color:rgba(131, 129, 7, 0.9);
@@ -207,11 +215,12 @@
 .string1 , .string2  ,.set1 ,.set2 ,.set3 ,.set4 ,.symbol1 ,.symbol2 ,.screen1 ,.screen2 ,.storage1 ,.storage2, 
  .window1 ,.window2 ,.window3 ,.window4,.window5 ,.window6 ,.window7,.window8 ,.window9 ,.other1{
   
-  border: 1px solid  rgb(0, 0, 0);
+
   display:inline-block;
   width: fit-content;
   height: fit-content;
   text-decoration: none;
+  margin-left: 10px;
 }
 .array1 h2, .array2 h2, .array3 h2, .array4 h2, .array5 h2, .array6 h2 
   ,.attr1 h2, .bool h2,  .clientreact h2, .childnode h2,.console1 h2, .console2 h2, .console3 h2,

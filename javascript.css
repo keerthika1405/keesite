@@ -293,7 +293,7 @@ body {
     } 
     }
     
-  
+    
 
  /*footer*/
  footer{
@@ -433,7 +433,7 @@ body {
   
   @media (min-width: 1024px) {
   footer{
-    margin-top: 1050%;
+    margin-top: 2000%;
   }
   footer .content .link-boxes{
     flex-wrap: wrap;
@@ -445,6 +445,8 @@ body {
   }
   }
   
+  
+
   @media (max-width: 1023px){
   footer{
     position: absolute;

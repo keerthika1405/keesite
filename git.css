@@ -937,7 +937,6 @@ footer{
   position: absolute;
   height: fit-content;
   width: 900px;
-
 z-index:-1;
 }
 
@@ -1044,3 +1043,7 @@ color:rgb(242, 84, 110);
       right: 35px;
     }
   }
+
+  /* .content123 h1{
+    font-size: 38px;
+  } */

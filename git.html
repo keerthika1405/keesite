@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>git</title>
+    <title>keesite/git</title>
     <link rel="stylesheet" href="git.css">
     
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -341,7 +341,9 @@
             border-radius: 5px;
            
            }
-        
+           .btn_clear{
+margin-left: 60px;
+           }
                  </style> 
 
 </head>
@@ -380,14 +382,15 @@
  </div>
 </div>     
 </nav>
-  
 
 <div class="outer_searchbox">
 <div class="search-box">
   <div class="row">
     <form id="search"  method="post" >
-       <input type="text" id="input-box" placeholder="search here" autocomplete="off">
+       <input  type="text" id="input-box" placeholder="search here" autocomplete="off">
        <button type="submit"><i class='bx bx-search bx-sm'  id="input-box"></i></button>
+       <button type="button" class="btn_clear" onclick="clear()">clear</button>
+
   </form>
 </div>
 
@@ -398,6 +401,8 @@
   <div class="result-box"></div>      
   </div>
 </div>
+
+
 
 <div class="darkLight-searchBox">
   <div class="dark-light">
@@ -2686,7 +2691,7 @@ Avoid rebasing commits that have been shared with others, as it can rewrite hist
 
       </pre>
       <img src="gitrestore.JPG">
-      <img src="gitrestore1..JPG">
+      <img src="gitrestore1.JPG">
     </div>
   </div>
 
@@ -3429,6 +3434,18 @@ document.getElementById("wrapper").style.display = "none";
    return maxZIndex;
  }
 </script>
+
+
+<script>
+  function clear() {
+  
+        document.getElementById('input-box').value = '';
+    }
+ 
+  
+  
+</script>
+
 </body>
 </html>
 
