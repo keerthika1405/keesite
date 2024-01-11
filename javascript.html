@@ -1123,23 +1123,23 @@ margin-left: 100px;
         <h2>methods</h2>
         <ul>
             <li><a href="#popup31">.assert()</a></li> 
-            <li><a href="">.count()</a></li>
-            <li><a href="">.dir()</a></li>
-            <li><a href="">.group()</a></li>
-            <li><a href="">.groupcollapsed()</a></li>
-            <li><a href="">.groupEnd()</a></li>
-            <li><a href="">.table()</a></li> 
-            <li><a href="">.trace()</a></li>
-            <li><a href="">.timestamp()</a></li> 
+            <li><a href="#popup32">.count()</a></li>
+            <li><a href="#popup33">.dir()</a></li>
+            <li><a href="#popup34">.group()</a></li>
+            <li><a href="#popup35">.groupcollapsed()</a></li>
+            <li><a href="#popup36">.groupEnd()</a></li>
+            <li><a href="#popup37">.table()</a></li> 
+            <li><a href="#popup38">.trace()</a></li>
+            <li> <s> .timestamp()</s></li> 
         </ul>
     </div>
     <div class="console2">
         <h2>performance methods</h2>
         <ul>
-            <li><a href="">.profile()</a></li>
-            <li><a href="">.profileEnd()</a></li> 
-            <li><a href="">.time()</a></li>
-            <li><a href="">.timeEnd()</a></li> 
+            <li><a href="#popup39">.profile()</a></li>
+            <li><a href="#popup40">.profileEnd()</a></li> 
+            <li><a href="#popup41">.time()</a></li>
+            <li><a href="#popup42">.timeEnd()</a></li> 
         </ul>
     </div>
         
@@ -1147,10 +1147,10 @@ margin-left: 100px;
     <div class="console3">
         <h2>log level methods</h2>
             <ul>
-                <li><a href="">.log()</a></li>
-                <li><a href="">.info()</a></li> 
-                <li><a href="">.warm()</a></li>
-                <li><a href="">.error()</a></li> 
+                <li><a href="#popup43">.log()</a></li>
+                <li><a href="#popup44">.info()</a></li> 
+                <li><a href="#popup45">.warm()</a></li>
+                <li><a href="#popup46">.error()</a></li> 
              </ul>
    </div>
 </div> 
@@ -1164,11 +1164,11 @@ margin-left: 100px;
     <div class="date1">
         <h2>methods</h2>
         <ul>
-            <li><a href="">.UTC()</a></li> 
-            <li><a href="">.now()</a></li>
-            <li><a href="">.parse()</a></li>
-            <li><a href="">.setTime()</a></li>
-            <li><a href="">.getTime()</a></li>
+            <li><a href="#popup47">.UTC()</a></li> 
+            <li><a href="#popup48">.now()</a></li>
+            <li><a href="#popup49">.parse()</a></li>
+            <li><a href="#popup50">.setTime()</a></li>
+            <li><a href="#popup51">.getTime()</a></li>
             
         </ul>
     </div>
@@ -3585,77 +3585,411 @@ console.groupEnd(); // End of Expanded Group
 </div>
 </div>
 
-<div id="popup" class="overlay">
+<div id="popup36" class="overlay">
 
     <div class="popup">
-        <h2>Length</h2>
+        <h2>groupEnd</h2>
         <a class="close" href="#">&times;</a>
         <div class="content">
-<p></p>
-<pre></pre>
+<p>
+    The console.groupEnd() method in JavaScript is used to end a grouping of messages in the console. It is often
+     used in conjunction with console.group() to group related log messages together in a collapsible and visually organized way.</p>
+<pre>
+    console.group('Group 1');
+console.log('Message 1');
+console.log('Message 2');
+console.groupEnd();
+
+console.group('Group 2');
+console.log('Message 3');
+console.log('Message 4');
+console.groupEnd();
+
+</pre>
 </div>
 </div>
 </div>
 
-<div id="popup" class="overlay">
+<div id="popup37" class="overlay">
 
     <div class="popup">
-        <h2>Length</h2>
+        <h2>table</h2>
         <a class="close" href="#">&times;</a>
         <div class="content">
-<p></p>
-<pre></pre>
+<p>The .table() method in JavaScript is used in browsers to display a tabular representation of an array or an object in the console.
+     It is part of the console object, which is mainly used for debugging and logging messages.</p>
+<pre>
+    const data = [
+    { name: 'John', age: 25, city: 'New York' },
+    { name: 'Alice', age: 30, city: 'San Francisco' },
+    { name: 'Bob', age: 22, city: 'Los Angeles' }
+];
+
+console.table(data);
+
+</pre>
+ <img src="tablejs.JPG" alt="">
 </div>
 </div>
 </div>
 
 
-<div id="popup" class="overlay">
+<div id="popup38" class="overlay">
 
     <div class="popup">
-        <h2>Length</h2>
+        <h2>trace</h2>
         <a class="close" href="#">&times;</a>
         <div class="content">
-<p></p>
-<pre></pre>
+<p>
+    The .trace() method in JavaScript is part of the console object, and it outputs a stack trace to the console.
+     The stack trace includes information about the call stack at the point where console.trace() is called.</p>
+<pre>
+    function outerFunction() {
+        middleFunction();
+    }
+    
+    function middleFunction() {
+        innerFunction();
+    }
+    
+    function innerFunction() {
+        console.trace();
+    }
+    
+    outerFunction();
+    
+</pre>
+  <img src="tracejs.JPG" alt="">
 </div>
 </div>
 </div>
 
 
-<div id="popup" class="overlay">
+
+
+<div id="popup39" class="overlay">
 
     <div class="popup">
-        <h2>Length</h2>
+        <h2>profile</h2>
         <a class="close" href="#">&times;</a>
         <div class="content">
-<p></p>
-<pre></pre>
+<p>this method is used to initiate a JavaScript CPU profile.
+     It is commonly used for profiling and analyzing the performance of code execution.</p>
+<pre>
+    console.profile('MyProfile');
+
+// Your code to be profiled goes here
+
+console.profileEnd('MyProfile');
+
+
+Afterward, you can check the browser's developer tools (specifically the "Performance" or "Profiler" tab,
+ depending on the browser) to analyze the profiling data.
+</pre>
+ <img src="" alt="">
 </div>
 </div>
 </div>
 
-<div id="popup" class="overlay">
+
+
+<div id="popup40" class="overlay">
 
     <div class="popup">
-        <h2>Length</h2>
+        <h2>profileEnd</h2>
         <a class="close" href="#">&times;</a>
         <div class="content">
-<p></p>
-<pre></pre>
+<p>
+    The .profileEnd() method in JavaScript is used to stop recording a CPU profile that was previously started 
+    using console.profile().
+    
+    </p>
+<pre>
+    console.profile('MyProfile');
+
+// Your code to be profiled goes here
+
+console.profileEnd('MyProfile');
+
+</pre>
 </div>
 </div>
 </div>
 
 
-<div id="popup" class="overlay">
+
+
+<div id="popup41" class="overlay">
 
     <div class="popup">
-        <h2>Length</h2>
+        <h2>time</h2>
         <a class="close" href="#">&times;</a>
         <div class="content">
-<p></p>
-<pre></pre>
+<p>The .time() method in JavaScript is used to start a timer that you can use to measure the duration of a specific operation or a section of your code. This timer is associated with a specific label.
+     Once you start the timer, you can later stop it using .timeEnd() with the same label.</p>
+<pre>
+    console.time('myTimer');
+
+// Your code to be timed goes here
+
+console.timeEnd('myTimer');
+
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="popup42" class="overlay">
+
+    <div class="popup">
+        <h2>timeEnd</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+<p>The .timeEnd() method in JavaScript is used to stop a timer that was previously started with .time(). It calculates the elapsed time between the console.time() and console.timeEnd() 
+    calls and logs the result to the console, along with the label provided.</p>
+<pre>
+    console.time('myTimer');
+
+// Your code to be timed goes here
+
+console.timeEnd('myTimer');
+
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="popup43" class="overlay">
+
+    <div class="popup">
+        <h2>log</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+<p>
+    The .log() method in JavaScript is part of the console object and is used to log 
+    information to the console. It is a basic method for outputting messages during development or debugging.</p>
+<pre>
+    console.log('This is a log message.');
+
+    const variable = 42;
+console.log('The value of variable is:', variable);
+
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="popup44" class="overlay">
+
+    <div class="popup">
+        <h2>info</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+<p>
+    The .info() method in JavaScript is another logging method provided by the console object.
+     It is used to log informational messages to the console.</p>
+<pre>
+    console.info('This is an informational message.');
+
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="popup45" class="overlay">
+
+    <div class="popup">
+        <h2>warm</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+<p>The .warn() method is used to log warning messages to the console
+    When you run this code, it will output a warning message to the console. The console.warn() method is often visually distinct 
+    in the console, usually displayed with a warning icon or label. It is commonly used to 
+    highlight potential issues or situations that developers should be aware of during development.
+</p>
+<pre>
+    console.warn('This is a warning message.');
+
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="popup46" class="overlay">
+
+    <div class="popup">
+        <h2>error</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+<p>
+    The .error() method in JavaScript is used to log error messages to the console. 
+    It is part of the console object and is commonly used to report errors during development or debugging.</p>
+<pre>
+    console.error('This is an error message.');
+
+    const errorCode = 404;
+console.error(`Error ${errorCode}: Resource not found`);
+
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="popup47" class="overlay">
+
+    <div class="popup">
+        <h2>UTC</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+<p>
+    In JavaScript, the Date.UTC() method is used to create a date in Coordinated Universal Time (UTC). 
+    It returns the number of milliseconds since January 1, 1970, 00:00:00 UTC, also known as the Unix Epoch.</p>
+<pre>
+    Date.UTC(year, month[, day[, hour[, minute[, second[, millisecond]]]]]);
+
+    year: The four-digit year (e.g., 2022).
+    month: The month, where January is 0 and December is 11.
+    day: (Optional) The day of the month (1 to 31).
+    hour: (Optional) The hour (0 to 23).
+    minute: (Optional) The minute (0 to 59).
+    second: (Optional) The second (0 to 59).
+    millisecond: (Optional) The millisecond (0 to 999).
+
+const year = 2022;
+const utcDate = new Date(Date.UTC(year, 0, 1, 12, 0, 0));
+
+console.log(utcDate.toUTCString()); // Outputs: Sat, 01 Jan 2022 12:00:00 GMT
+
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="popup48" class="overlay">
+
+    <div class="popup">
+        <h2>now</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+<p>
+    The Date.now() method in JavaScript returns the current timestamp in milliseconds since the Unix Epoch (January 1, 1970, 00:00:00 UTC). It provides a simple way to obtain the current
+     time for various purposes, such as measuring performance or creating timestamps.</p>
+<pre>
+
+const currentTime = Date.now();
+console.log(currentTime);
+
+
+const timestamp = 1704975023466;
+const date = new Date(timestamp);
+
+console.log(date.toString());
+ 
+
+
+console.log(date.toLocaleString()); // Format based on user's locale
+console.log(date.toLocaleDateString()); // Date portion based on user's locale
+console.log(date.toLocaleTimeString()); // Time portion based on user's locale
+
+</pre>
+ <img src="nowjs" alt="">
+</div>
+</div>
+</div>
+
+<div id="popup49" class="overlay">
+
+    <div class="popup">
+        <h2>parse</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+<p>
+    The Date.parse() method in JavaScript is used to parse a string representation of a date and time and return the corresponding timestamp in milliseconds since the Unix Epoch (January 1, 1970, 00:00:00 UTC).
+     The string can be in a variety of formats recognized by the JavaScript engine.</p>
+<pre>
+    const dateString = "2022-01-12T15:30:00.000Z";
+const timestamp = Date.parse(dateString);
+
+console.log(timestamp); // Output: 1642024200000
+
+
+
+
+const invalidDateString = "This is not a valid date string";
+const timestamps = Date.parse(invalidDateString);
+
+if (isNaN(timestamps)) {
+    console.log("Invalid date string");
+} else {
+    console.log(timestamp);
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="popup50" class="overlay">
+
+    <div class="popup">
+        <h2>setTime</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+<p>
+    The setTime() method in JavaScript is a method of the Date object. It is used to set the time value of a 
+    Date object based on a specified number of milliseconds since the Unix Epoch.</p>
+<pre>
+    const myDate = new Date();
+console.log("Original Date:", myDate);
+
+// Set the time to a specific timestamp (in milliseconds)
+const timestamp = 1642024200000; // For example, January 12, 2022, 15:30:00
+myDate.setTime(timestamp);
+
+console.log("Updated Date:", myDate);
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="popup51" class="overlay">
+
+    <div class="popup">
+        <h2>getTime</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+<p>
+    The .getTime() method in JavaScript is a method of the Date object. It returns the numeric 
+    value corresponding to the time for the specified date according to universal time. The value returned by .getTime() 
+    is the number of milliseconds since the Unix Epoch (January 1, 1970, 00:00:00 UTC).</p>
+<pre>
+    const currentDate = new Date();
+const timestamp = currentDate.getTime();
+
+console.log(timestamp);
+
+</pre>
 </div>
 </div>
 </div>
