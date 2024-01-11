@@ -389,7 +389,7 @@ margin-left: 60px;
     <form id="search"  method="post" >
        <input  type="text" id="input-box" placeholder="search here" autocomplete="off">
        <button type="submit"><i class='bx bx-search bx-sm'  id="input-box"></i></button>
-       <button type="button" class="btn_clear" onclick="clear()">clear</button>
+       <button type="button" class="btn_clear" onclick="clearInput()">&times;</button>
 
   </form>
 </div>
@@ -3437,7 +3437,7 @@ document.getElementById("wrapper").style.display = "none";
 
 
 <script>
-  function clear() {
+  function clearInput() {
   
         document.getElementById('input-box').value = '';
     }
