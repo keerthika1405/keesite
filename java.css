@@ -440,7 +440,7 @@ body {
   
   @media (min-width: 1024px) {
   footer{
-    margin-top: 250%;
+    margin-top: 500%;
     
   }
   footer .content .link-boxes{
@@ -529,7 +529,7 @@ body {
   @media (min-width: 1024px) {
   .menu__wrapper {
   top: 60px;
-  width: 800px;
+  width: 830px;
   height:50px;
   padding: 0px 16px;
   /* background-color: blue; */
@@ -568,7 +568,7 @@ body {
   .list-items-with-description {
     list-style-type: none;
     display: grid;
-    width: 100%;
+    width: fit-content;
     grid-template-columns: 1fr 1fr;
     /* background-color: #f54500; */
     /* background-color: green;//group of inside list  ofgold*/
@@ -840,135 +840,6 @@ body {
 
  
 
-.faq-container1 {
-  z-index: -10; 
- position: absolute;
- width: 500px;
- display: flex;
- flex-direction: column;
- gap: 50px;
- margin-top: 13em;
- margin-left: 600px;
-
-
-
-}
-.faq-container {
-  z-index: -10; 
- position: absolute;
- width: 500px;
- display: flex;
- flex-direction: column;
- gap: 50px;
- margin-top: 13em;
- margin-left: 50px;
-
-
-
-}
-.part1, .part2, .part3,
-.part4, .part5,.part6, .part7,.part8
-,.part9 ,.part10{
-
-   font-size: 1rem;
-   margin: 0 auto;
-   width: 300px;
-   border-radius: 8px;
-   position: relative;
- border: 2px solid #afaaaa;
- transition: all 0.3s ease-in-out;
-}
-
-.part1{
- background-color: aquamarine;
-}
-.part2{
- background-color: rgb(244, 255, 127);
-}
-.part3{
- background-color: rgb(110, 141, 220);
-}
-.part4{
- background-color: rgb(247, 200, 216);
-}
-.part5{
- background-color: rgb(253, 167, 167);
-}
-.part6{
- background-color: rgb(164, 243, 180);
-}
-.part7{
- background-color: rgb(248, 185, 149);
-}
-.part8{
- background-color: rgb(214, 250, 234);
-}
-.part9{
- background-color: rgb(219, 219, 219)
-}
-.part10{
- background-color: rgb(249, 239, 203);
-}
-
-
-details:hover {
- border: 2px solid rgb(193, 137, 239);
-}
-
-
-summary {
- user-select: none;
- cursor: pointer;
- font-weight: 600;
- display: flex;
- list-style: none;
- padding: 1em;
- align-items: center;
-}
-
-summary:hover .faq-title {
- opacity: 1;
-}
-
-summary::-webkit-details-marker {
- display: none;
-}
-
-summary:focus {
- outline: none;
-}
-
-summary:hover .expand-icon {
- opacity: 1;
-}
-
-.faq-title {
- color: #000000;
- width: 90%;
- opacity: 0.65;
- transition: all 250ms ease-in-out;
-}
-
-.faq-content {
-background-color: rgb(242, 242, 242);
- color: #000000;
- padding: 0.2em 1em 1em 1em;
- font-weight: 300;
- line-height: 1.5;
-}
-p{
- font-weight:200 bolder;
-}
-.expand-icon {
- opacity: 0.65;
-}
-
-.expand-icon {
- pointer-events: none;
- position: absolute;
- right: 1em;
- transition: all 150ms ease-out;
-}
 
 
 
@@ -1028,3 +899,61 @@ p{
       background-color: rgb(14, 223, 150); /* Add a dark-grey background on hover */
     }
    }
+
+   .jse{
+    position:absolute;
+    margin-top:250px;
+    border:1px solid rgb(168, 167, 167);
+    margin-left:150px;
+    width:900px;
+    background-color: rgb(255, 252, 252);
+    border-radius:  20px;
+    z-index:-1;
+   
+   }
+   .jse1{
+    width: 800px;
+    height: 100px;
+    margin-left: 20px;
+   
+    padding: 10px 10px;
+   }
+   .jseimg img{
+   
+      width: 150px;
+      height:100px;
+      margin-left:10px;
+      border-radius: 10px;
+  
+     }
+     .jseimg img:hover{
+       transform: scale(0.9);
+       transition: transform 0.5s linear ;
+     }
+  
+.contentjse{
+  margin-top:-100px;
+
+    width: 500px;
+    margin-left:200px;
+   }
+   .contentjse h3{
+    color:rgb(0, 0, 0);
+    font-family:'Times New Roman', Times, serif;
+   }
+   .contentjse button{
+    position:absolute;
+margin-top:-50px;
+margin-left:400px;
+    border-radius: 20px;
+    border:none;
+    color:#070707;
+    cursor: pointer;
+    padding: 6px 6px;
+    border:1px solid rgb(194, 226, 248);
+    background-color: rgb(219, 237, 238);
+    }
+    .contentjse button:hover{
+background-color: #9cdbff;
+border: 2px solid rgb(2, 83, 177);
+    }

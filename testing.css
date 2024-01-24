@@ -1185,94 +1185,52 @@ body {
       }
     }
 
+   
     .text{
-        position:absolute;
-        border: 1px solid black;
+        position:fixed;
         margin-top: 150px;
- margin-left:100px;
- z-index: -1;
+        width:100%;
+background-color: #f7f5f5;
+border-bottom: 1px solid black;
     }
-
-    .text pre , 
-    .text1 pre{
-        background-color: rgb(241, 241, 241);
-        color:rgb(0, 0, 0);
+    .text li{
+        display: inline;
+        padding:0px 20px;
+        
+    }
+    .text  a{
+        text-decoration: none;
+        color: #140B5C;
         font-weight: bolder;
+        font-size: 20px;
+        z-index:-1;
     }
-    
+    .text li a:hover{
+        color: red;
+    }
+    .text1 p{
+      font-family:Arial, Helvetica, sans-serif;
+
+    }
     .text1{
-        position:absolute;
-
-        width:1200px;
-        margin-left:20px;
-        z-index: -1;
-                position: absolute;
-        border:1px solid black;
-        margin-top: 1000px;
+     position:absolute ;
+     border:1px solid black;
+     margin-top:300px;
+     z-index:-10;
+     margin-left: 100px;
+     width: 1180px;
     }
-    /* .text1 pre{
-        width:500px;
-        background-color: rgb(207, 206, 206);
-    } */
-
-
-
-
-
-
-    
-    /*pre drop */
-pre { 
-    overflow-x: auto;
-       margin: 1rem 0;
-        padding: 30px;
-        position:relative; 
-        max-width: 100%;
-         color: var(--gray85); 
-         font-size: 16px; 
-         line-height: 1.5em;
-           /* background: rgb(138, 175, 197);  */
-          text-align: left; 
-          white-space: pre; 
-          word-spacing: normal;
-           word-break: normal; 
-           word-wrap: normal;
-           tab-size: 4;
-            -webkit-hyphens: none;
-             -moz-hyphens: none;
-              -ms-hyphens: none;
-               hyphens: none; 
-            }
-               
-  pre code {
-     padding: 0;
-      font-size: inherit; 
-      line-height: inherit;
-       background: 0 0; 
+    .text1 ol{
+  font-family:Arial, Helvetica, sans-serif;
+       
+    }
+    .text1 img{
+      margin-left: 400px;
+    }
    
   
-      }
-  pre code::-webkit-scrollbar {
-    background-color: #4c4c4c;
-      width:5px;
-  } 
-  .at_copy{
-      position: absolute; 
-      top:0;
-       right: 0px; 
-      background: rgb(57, 243, 11);
-       color: black;
-        padding: 5px 12px;
-         border: 0;
-         z-index:9;
-         cursor: pointer;
-      }
-  /* optional*/
-    pre> button { 
-      opacity: 0;
-   } 
-   pre:hover > button { 
-      opacity: 1;transition: all 1s ease-out;
-   } 
-   pre > button:active, pre > button:focus { opacity: 1;transition: all 1s ease-out;
-   }
+    .text1 h3{
+ 
+    font-size:22px;
+    }
+  
