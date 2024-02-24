@@ -47,7 +47,21 @@ inputbox.onkeyup=function(){
     resultbox.innerHTML='';
  }
 
-
+//  'HTML',
+//  'css',
+//  'javascript',
+//  'java practice Q/A',
+//  'python practice Q/A',
+//  'DSA',
+//  'cloud computing',
+//  'git',
+//  'github',
+//  'OSI Model',
+//  'testing',
+//  'sdlc',
+//  'Networking',
+//  'JAVA SE / EE',
+//  'Java API',
  document.getElementById("search").addEventListener("submit", function(e){
    e.preventDefault();
    var searchvalue=document.getElementById("input-box").value;
@@ -59,6 +73,46 @@ inputbox.onkeyup=function(){
    }
    else if(searchvalue ==="javascript"){
     document.getElementById("javascript").submit();
+  }
+
+
+  else if(searchvalue ==="java practice Q/A"){
+    document.getElementById("java practice Q/A").submit();
+  }
+  else if(searchvalue ==="python practice Q/A"){
+    document.getElementById("python practice Q/A").submit();
+  }
+  else if(searchvalue ==="DSA"){
+    document.getElementById("DSA").submit();
+  }
+
+
+  else if(searchvalue ==="cloud computing"){
+    document.getElementById("cloud computing").submit();
+  }
+  else if(searchvalue ==="git"){
+    document.getElementById("git").submit();
+  }
+  else if(searchvalue ==="github"){
+    document.getElementById("github").submit();
+  }
+  else if(searchvalue ==="OSI Model"){
+    document.getElementById("OSI Model").submit();
+  }
+  else if(searchvalue ==="testing"){
+    document.getElementById("testing").submit();
+  }
+  else if(searchvalue ==="sdlc"){
+    document.getElementById("sdlc").submit();
+  }
+  else if(searchvalue ==="Networking"){
+    document.getElementById("javascript").submit();
+  }
+  else if(searchvalue ==="JAVA SE / EE"){
+    document.getElementById("javascript").submit();
+  }
+  else if(searchvalue ==="Java API"){
+    document.getElementById("Java API").submit();
   }
    else{
      alert("invalid search input")
