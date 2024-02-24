@@ -2,18 +2,18 @@ let availablekeywords=[
     'HTML',
     'css',
     'javascript',
-    'java practice Q/A',
-    'python practice Q/A',
+    'java_practice_Q/A',
+    'python_practice_Q/A',
     'DSA',
-    'cloud computing',
+    'cloud_computing',
     'git',
     'github',
-    'OSI Model',
+    'OSI_Model',
     'testing',
     'sdlc',
     'Networking',
-    'JAVA SE / EE',
-    'Java API',
+    'JAVA_SE_/_EE',
+    'Java_API',
 ];
 
 const resultbox =document.querySelector(".result-box");
@@ -76,19 +76,19 @@ inputbox.onkeyup=function(){
   }
 
 
-  else if(searchvalue ==="java practice Q/A"){
-    document.getElementById("java practice Q/A").submit();
+  else if(searchvalue ==="java_practice_Q/A"){
+    document.getElementById("java_practice_Q/A").submit();
   }
-  else if(searchvalue ==="python practice Q/A"){
-    document.getElementById("python practice Q/A").submit();
+  else if(searchvalue ==="python_practice_Q/A"){
+    document.getElementById("python_practice_Q/A").submit();
   }
   else if(searchvalue ==="DSA"){
     document.getElementById("DSA").submit();
   }
 
 
-  else if(searchvalue ==="cloud computing"){
-    document.getElementById("cloud computing").submit();
+  else if(searchvalue ==="cloud_computing"){
+    document.getElementById("cloud_computing").submit();
   }
   else if(searchvalue ==="git"){
     document.getElementById("git").submit();
@@ -96,8 +96,8 @@ inputbox.onkeyup=function(){
   else if(searchvalue ==="github"){
     document.getElementById("github").submit();
   }
-  else if(searchvalue ==="OSI Model"){
-    document.getElementById("OSI Model").submit();
+  else if(searchvalue ==="OSI_Model"){
+    document.getElementById("OSI_Model").submit();
   }
   else if(searchvalue ==="testing"){
     document.getElementById("testing").submit();
@@ -106,13 +106,13 @@ inputbox.onkeyup=function(){
     document.getElementById("sdlc").submit();
   }
   else if(searchvalue ==="Networking"){
-    document.getElementById("javascript").submit();
+    document.getElementById("Networking").submit();
   }
-  else if(searchvalue ==="JAVA SE / EE"){
-    document.getElementById("javascript").submit();
+  else if(searchvalue ==="JAVA_SE_/_EE"){
+    document.getElementById("JAVA_SE_/_EE").submit();
   }
-  else if(searchvalue ==="Java API"){
-    document.getElementById("Java API").submit();
+  else if(searchvalue ==="Java_API"){
+    document.getElementById("Java_API").submit();
   }
    else{
      alert("invalid search input")
