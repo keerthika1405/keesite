@@ -9,8 +9,9 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="testing.css">
-    
-<style>
+ 
+   
+  <style>
 
     :root{
       --body-color: rgb(253, 253, 253);
@@ -38,8 +39,8 @@
      
     }
     body {
-        background: var(--body-color);
-        height: 100%;
+      background: var(--body-color);
+      height: 100%;
     }
     
     
@@ -64,7 +65,7 @@
       margin-left: 1120px;
       margin-top: 13px;
       width: 50px;
-    z-index: 100;
+    z-index: 200;
       }
     }
     @media (min-width:768px )and (max-width: 1023px) {
@@ -114,128 +115,149 @@
     } 
         </style>
         
-          <style>
-      
-          
-           .navbar{
-                   justify-content: space-around;
-                 }
-               
-           @media (min-width: 1024px) {
-          
-                 .nav-menu{
-                  display: block;
-                  position: static;
-                   width: 28%;
-                  
-                   margin-top: 20px;
-                   margin-left: 70px;
-                   background: none;
-                   /* border: 1px solid black; */
-                 }
-                 .nav-menu a{
-                  font-size: 15px;
-                  font-weight: bolder;
-                   color: rgb(255, 255, 255);
-                   display: inline-block;
-                   text-decoration: none;
-                   text-align: center;
-                  /* padding: 20px 0; */
-                 padding: 0px 10px;
-                 cursor: pointer;
-                 }
-                 .hamburger-menu{
-                   display: none;
-                 }
-           }
-               /* for Desktop view */
-               @media (max-width: 767px) {
+        <style>
     
-                .nav-menu{
-               z-index: -100;
-                  display: block ;
-                  position: static;
-                   width: 350px;
-                   margin-top: 10px;
-                   margin-left: 10px;
-                   background: none;
-                   background-color: #8d67cf;
-                   z-index: 400;
-                   /* border: 1px solid rgb(194, 8, 8); */
-                 }
-                 .nav-menu a{
-              
-                  color:white;
-                  text-decoration: none;
-                   display:inline-block ;
-                 padding: 10px 10px;
-                 cursor: pointer;
-                 border-radius: 2%;
-                 }
-                 /* .hamburger-menu{
-                   display:contents;
-                 } */
-                 .hide{
-             display: none;
-           }
-    
-           .hamburger-menu{
-             padding-right: 1.5rem;
-             cursor: pointer;
-           }
-           .hamburger-menu .line{
-           display:  block ; 
-           width:25px;
-           height: 20px; 
-           margin-top: 120px;
-           margin-left: 10px;
-           color: rgb(255, 255, 255);
-           cursor: pointer;
-           }
-      }      
-        </style>
-    
-         <style type="text/css">
-     @media (min-width: 1024px) { 
-          #stage{
-          position: fixed;
-          margin-left: 1280px;
-          top:15px;
-          cursor: pointer;
-          z-index: 200;
-      
-          }
-        }
-        @media (max-width: 1023px) {
-       
-    
-        }
-        @media (max-width: 767px) {
-          #stage{
-      
+         
+          /* .nav-menu{
             position: fixed;
-          margin-left: 280px;
-          top:60px;
-          cursor: pointer;
-          z-index: 1;
+            width: 34%;
+            top: 10;
+            left: 50px;
+            background-color: rgb(255, 255, 255);
+            font-weight: 600;
+          
+          } */
+          /* .nav-menu a{
+           margin-top: 40px;
+            font-size: 15px;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            padding: 20px 0;
+          } */
+     
+         
+          .navbar{
+                  justify-content: space-around;
+                }
+              
+          @media (min-width: 1024px) {
+         
+                .nav-menu{
+                 display: block;
+                 position: static;
+                  width: 28%;
+                 
+                  margin-top: 20px;
+                  margin-left: 70px;
+                  background: none;
+                  /* border: 1px solid black; */
+                }
+                .nav-menu a{
+                 font-size: 15px;
+                 font-weight: bolder;
+                  color: rgb(255, 255, 255);
+                  display: inline-block;
+                  text-decoration: none;
+                  text-align: center;
+                 /* padding: 20px 0; */
+                padding: 0px 10px;
+                cursor: pointer;
+                }
+                .hamburger-menu{
+                  display: none;
+                }
           }
-        }
-              @font-face {
-               font-family: 'FontAwesome';
-               src: url('fontawesome/fonts/fontawesome-webfont.ttf');
-               font-weight: normal;
-               font-style: normal;
-           
-              }
-              #stage{
-                font-family:FontAwesome;
-              }
+              /* for Desktop view */
+              @media (max-width: 767px) {
+   
+               .nav-menu{
+              z-index: -100;
+                 display: block ;
+                 position: static;
+                  width: 350px;
+                  margin-top: 10px;
+                  margin-left: 10px;
+                  background: none;
+                  background-color: #8d67cf;
+                  z-index: 400;
+                  /* border: 1px solid rgb(194, 8, 8); */
+                }
+                .nav-menu a{
+             
+                 color:white;
+                 text-decoration: none;
+                  display:inline-block ;
+                padding: 10px 10px;
+                cursor: pointer;
+                border-radius: 2%;
+                }
+                /* .hamburger-menu{
+                  display:contents;
+                } */
+                .hide{
+            display: none;
+          }
+   
+          .hamburger-menu{
+            padding-right: 1.5rem;
+            cursor: pointer;
+          }
+          .hamburger-menu .line{
+          display:  block ; 
+          width:25px;
+          height: 20px; 
+          margin-top: 120px;
+          margin-left: 10px;
+          color: rgb(255, 255, 255);
+          cursor: pointer;
+          }
+     }      
+       </style>
     
-              </style> 
+
+    <style type="text/css">
+      @media (min-width: 1024px) { 
+           #stage{
+           position: fixed;
+           margin-left: 1280px;
+           top:15px;
+           cursor: pointer;
+           z-index: 200;
+       
+           }
+         }
+         @media (max-width: 1023px) {
+        
+     
+         }
+         @media (max-width: 767px) {
+           #stage{
+       
+             position: fixed;
+           margin-left: 280px;
+           top:60px;
+           cursor: pointer;
+           z-index: 1;
+           }
+         }
+               @font-face {
+                font-family: 'FontAwesome';
+                src: url('fontawesome/fonts/fontawesome-webfont.ttf');
+                font-weight: normal;
+                font-style: normal;
+            
+               }
+               #stage{
+                 font-family:FontAwesome;
+               }
+     
+               </style> 
     
     
     
-     <style>
+   <style>
     .bg{
     position: fixed;
     height: 160px;
@@ -346,6 +368,7 @@
     
              </style> 
     
+    
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
       <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10.1.0/swiper-bundle.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
@@ -401,13 +424,7 @@
                  </div>
                 </div>     
               </nav>
-            
-            
-               
-                 
-               
-       
-         
+
     
             <div class="outer_searchbox">
                 <div class="search-box">
@@ -967,12 +984,13 @@
     <ol>
     
 <li><a href="#text1">Definition and goals of testing</a></li>
-<li><a href="#text2">Types of testing</a></li>
+<li><a href="#text2">Software Testing Hierarchy</a></li>
 <li><a href="">Testing life cycle</a></li>
     </ol>
     </div>
-    <div id="text1"> </div>
-<div class="text1"  >
+
+  <div id="text1"> </div>
+<div class="text1">
   
     <h1>Software Testing Life Cycle</h1> 
     
@@ -1134,14 +1152,15 @@
 
 
 
-<h1>Type of Testing</h1>
+<h1>Software Testing Hierarchy</h1>
+
 <div class="tree-box box-border">
 
-  <ul class="trees">
+  <ul class="trees1">
     <li  class="has-child">
       <input id="tree-controll1" type="checkbox" checked><span class="tree-control"></span>
       <label>
-        <input type="checkbox" /> <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(255, 8, 8)"></i> Type of Testing
+        <input type="checkbox" /> <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i> unit Testing
       </label>
       <ul>
 <br>
@@ -1149,100 +1168,1141 @@
           <input type="checkbox" checked ><span class="tree-control"></span>
           <label>
             <input type="checkbox" />
-            <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i><b>Unit Testing</b>
+            <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i><b>Structural Technique</b>
           </label>
-        
-        </li><br>
-        <li class="has-child">
-          <input type="checkbox" checked ><span class="tree-control"></span>
-          <label>
-            <input type="checkbox" />
-            <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i> <b>System Testing</b>
-          </label>
-        
-        </li>
-<br>
-        <li class="has-child">
-          <input type="checkbox" checked ><span class="tree-control"></span>
-          <label>
-            <input type="checkbox" />
-            <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i> <b>Integration Testing</b>
-          </label>
-        
-        </li>
+          <ul> 
+            <li>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-wrench"  style="color:rgb(10, 192, 19)"></i>Statement Testing
+              </label>
+            </li> 
 
+            <li>
+              <label>
+                <input type="checkbox" id="myCheck" onclick="myFunction()"  />
+                <i class="fa fa-wrench"   style="color:rgb(10, 192, 19)"></i>Condition Testing
+              </label>
+            </li> 
+
+
+            <li>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-wrench"   style="color:rgb(10, 192, 19)"></i>Branch Testing
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-wrench"   style="color:rgb(10, 192, 19)"></i>Path Testing
+              </label>
+            </li>
+
+          </ul>
+        </li>
         <br>
         <li class="has-child">
           <input type="checkbox" checked ><span class="tree-control"></span>
           <label>
             <input type="checkbox" />
-            <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i><b>Acceptance Testing</b>
+            <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i> <b>Functional Testing</b>
           </label>
-        
         </li>
-
-        <br>
         <li class="has-child">
           <input type="checkbox" checked ><span class="tree-control"></span>
           <label>
             <input type="checkbox" />
-            <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i><b>Performance Testing</b>
+            <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i> <b>Error Based Testing</b>
           </label>
-        
         </li>
-
-        <br>
-        <li class="has-child">
-          <input type="checkbox" checked ><span class="tree-control"></span>
-          <label>
-            <input type="checkbox" />
-            <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i><b>Regression Testing</b>
-          </label>
-        
-        </li>
-
-        <br>
-        <li class="has-child">
-          <input type="checkbox" checked ><span class="tree-control"></span>
-          <label>
-            <input type="checkbox" />
-            <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i><b>Security Testing</b>
-          </label>
-        
-        </li>
-
-        <br>
-        <li class="has-child">
-          <input type="checkbox" checked ><span class="tree-control"></span>
-          <label>
-            <input type="checkbox" />
-            <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i><b>Load Testing</b>
-          </label>
-        
-        </li>
-
-        <br>
-        <li class="has-child">
-          <input type="checkbox" checked ><span class="tree-control"></span>
-          <label>
-            <input type="checkbox" />
-            <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(10, 192, 19)"></i><b>End-to-End Testing</b>
-          </label>
-        
-        </li>
+<br><br>
       </ul>
     </li>
     </ul>
+
+
     </div>
 
+
+    <div class="tree-box box-border">
+
+      <ul class="trees2">
+        <li  class="has-child">
+          <input id="tree-controll1" type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" /> <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(35, 214, 246)"></i>Integrated Testing
+          </label>
+          <ul>
+    <br>
+            <li class="has-child">
+              <input type="checkbox" checked ><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(35, 214, 246)"></i><b>Big Bang Approach</b>
+              </label>
+              </li>
+
+              <li class="has-child">
+                <input type="checkbox" checked ><span class="tree-control"></span>
+                <label>
+                  <input type="checkbox" />
+                  <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(35, 214, 246)"></i> <b>Incremental Approach</b>
+                </label>
+              
+              <ul> 
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"   style="color:rgb(35, 214, 246)"></i>Top-down Integration
+                  </label>
+                </li> 
+    
+                <li>
+                  <label>
+                    <input type="checkbox" id="myCheck" onclick="myFunction()"  />
+                    <i class="fa fa-wrench"    style="color:rgb(35, 214, 246)"></i>Bottom-up Integration
+                  </label>
+                </li> 
+    
+    
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"  style="color:rgb(35, 214, 246)"></i>Mixed/Sandwich Integration
+                  </label>
+                </li><br>
+    
+               
+    
+              </ul>
+            </li>
+            <br>
+          
+    
+          </ul>
+        </li>
+        </ul>
+        </div>
+
+
+        
+    <div class="tree-box box-border">
+
+      <ul class="trees3">
+        <li  class="has-child">
+          <input id="tree-controll1" type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" /> <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(255, 8, 123)"></i>System Testing
+          </label>
+          <ul>
+    <br>
+            <li class="has-child">
+              <input type="checkbox" checked ><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(255, 8, 123)"></i><b>Functional Testing</b>
+              </label>
+              <ul> 
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>User Interface Testing
+                  </label>
+                </li> 
+    
+                <li>
+                  <label>
+                    <input type="checkbox" id="myCheck" onclick="myFunction()"  />
+                    <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>Objdct Properties Testing
+                  </label>
+                </li> 
+    
+    
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>Error Guessing Testing
+                  </label>
+                </li>
+    
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>Input Domain  Testing
+                  </label>
+                </li> 
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"  style="color:rgb(255, 8, 123)"></i>Database Testing
+                  </label>
+                </li> 
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>Calculation Testing
+                  </label>
+                </li> 
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>Links & URLs Testing
+                  </label>
+                </li> 
+    
+              </ul>
+            </li>
+            <br>
+            <li class="has-child">
+              <input type="checkbox" checked ><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(255, 8, 123)"></i> <b>NonFunctional Testing</b>
+              </label>
+              <ul>
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"  style="color:rgb(255, 8, 123)"></i>Usability Testing
+                  </label>
+                </li>
+    
+                <li class="has-child">
+                  <input type="checkbox" checked><span class="tree-control"></span> 
+                  <label>
+                    <input type="checkbox" id="myCheck" onclick="myFunction()"  />
+                    <i class="fa fa-wrench"    style="color:rgb(255, 8, 123)"></i>Performance Testing
+                  </label>
+                  <ul>
+                    <li >  
+                      <label>
+                      <input type="checkbox" />
+                      <i class="fa fa-wrench"  style="color:rgb(255, 8, 123)"></i>Load Testing
+                    </label>
+                              </li>
+                    <li>  <label>
+                      <input type="checkbox" />
+                      <i class="fa fa-wrench" style="color:rgb(255, 8, 123)"></i>Stress Testing
+                    </label>
+                              </li>
+                    <li>  <label>
+                      <input type="checkbox"/>
+                      <i class="fa fa-wrench" style="color:rgb(255, 8, 123)"></i>Soak Testing
+                    </label>
+                  </li>
+                    <li> 
+                       <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>Accessibility Testing
+                        </label>
+                              </li>
+                              <li>  <label>
+                                <input type="checkbox" />
+                                <i class="fa fa-wrench"  style="color:rgb(255, 8, 123)"></i>Scalability Testing
+                              </label>
+                            </li>
+            </ul>
+                </li> 
+
+
+
+
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>Memory Leakage Testing
+                  </label>
+                </li>
+    
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>Volume Testing
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"  style="color:rgb(255, 8, 123)"></i>Compatibility Testing
+                  </label>
+                </li>
+
+                <li class="has-child">
+                <input type="checkbox" checked><span class="tree-control"></span>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"  style="color:rgb(255, 8, 123)"></i>Security Testing
+                  </label>
+
+                  <ul>
+                    <li>  
+                      <label>
+                      <input type="checkbox" />
+                      <i class="fa fa-wrench" style="color:rgb(255, 8, 123)"></i>Authentication
+                    </label>
+                              </li>
+                    <li>  <label>
+                      <input type="checkbox" />
+                      <i class="fa fa-wrench" style="color:rgb(255, 8, 123)"></i>Authorization/Permission
+                    </label>
+                              </li>
+                    <li>  <label>
+                      <input type="checkbox"/>
+                      <i class="fa fa-wrench" style="color:rgb(255, 8, 123)"></i>Cookies Testing
+                    </label>
+                  </li>
+                    <li> 
+                       <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-wrench" style="color:rgb(255, 8, 123)"></i>Session Testing
+                        </label>
+                              </li>
+                              <li> 
+                                 <label>
+                                <input type="checkbox" />
+                                <i class="fa fa-wrench" style="color:rgb(255, 8, 123)"></i>Encryption/Decryption
+                              </label>
+                            </li>
+                            <li>  
+                              <label>
+                              <input type="checkbox" />
+                              <i class="fa fa-wrench"  style="color:rgb(255, 8, 123)"></i>Penetration/Pen Testing
+                            </label>
+                          </li>
+            </ul>
+                </li>
+
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>Configuration Testing
+                  </label>
+                </li>
+
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"  style="color:rgb(255, 8, 123)"></i>Recovery Testing
+                  </label>
+                </li>
+
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"  style="color:rgb(255, 8, 123)"></i>Installation Testing
+                  </label>
+                </li>
+
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>Compliance Testing
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>Documentation Testing
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench"   style="color:rgb(255, 8, 123)"></i>Interoperability Testing
+                  </label>
+                </li>
+               
+<br><br>              </ul>
+
+            </li>
+          </ul>
+        </li>
+        </ul>
+        </div>
+
+        
+    <div class="tree-box box-border">
+
+      <ul class="trees4">
+        <li  class="has-child">
+          <input id="tree-controll1" type="checkbox" checked><span class="tree-control"></span>
+          <label>
+            <input type="checkbox" /> <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(216, 199, 110)"></i> Acceptance Testing
+          </label>
+
+          <ul>
+            <li class="has-child">
+              <input type="checkbox" checked ><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(216, 199, 110)"></i><b>Alpha Testing</b>
+              </label>
+            </li>
+
+            <li class="has-child">
+              <input type="checkbox" checked ><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" />
+                <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(216, 199, 110)"></i> <b>Beta Testing</b>
+              </label>
+            </li>
+    <br><br>
+          </ul>
+        </li>
+        </ul>
+        </div>
+
+        <div class="tree-box box-border">
+
+          <ul class="trees5">
+            <li  class="has-child">
+              <input id="tree-controll1" type="checkbox" checked><span class="tree-control"></span>
+              <label>
+                <input type="checkbox" /> <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(7, 38, 93)"></i> Testing Methods
+              </label>
+    
+              <ul>
+                <li class="has-child">
+                  <input type="checkbox" checked ><span class="tree-control"></span>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(7, 38, 93)"></i><b>White Box Testing</b>
+                  </label>
+                </li>
+    
+                <li class="has-child">
+                  <input type="checkbox" checked ><span class="tree-control"></span>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(7, 38, 93)"></i> <b>Black Box Testing</b>
+                  </label>
+                </li>
+                <li class="has-child">
+                  <input type="checkbox" checked ><span class="tree-control"></span>
+                  <label>
+                    <input type="checkbox" />
+                    <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(7, 38, 93)"></i> <b>Gray Box Testing</b>
+                  </label>
+                </li>
+        <br><br>
+              </ul>
+            </li>
+            </ul>
+            </div>
+
+            <div class="tree-box box-border">
+
+              <ul class="trees6">
+                <li  class="has-child">
+                  <input id="tree-controll1" type="checkbox" checked><span class="tree-control"></span>
+                  <label>
+                    <input type="checkbox" /> <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(6, 196, 136)"></i> Other Testing
+                  </label>
+        
+                  <ul>
+                    <li class="has-child">
+                      <input type="checkbox" checked ><span class="tree-control"></span>
+                      <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(6, 196, 136)"></i><b>Adhoc Testing(Unstructured)</b>
+                      </label>
+                    </li>
+
+                    <li class="has-child">
+                      <input type="checkbox" checked ><span class="tree-control"></span>
+                      <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(6, 196, 136)"></i><b>Regression Testing</b>
+                      </label>
+                    </li>
+
+                    <li class="has-child">
+                      <input type="checkbox" checked ><span class="tree-control"></span>
+                      <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(6, 196, 136)"></i><b>Retesting Testing</b>
+                      </label>
+                    </li>
+
+                    <li class="has-child">
+                      <input type="checkbox" checked ><span class="tree-control"></span>
+                      <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(6, 196, 136)"></i><b>Sanity Testing</b>
+                      </label>
+                    </li>
+
+                    <li class="has-child">
+                      <input type="checkbox" checked ><span class="tree-control"></span>
+                      <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(6, 196, 136)"></i><b>Smoke Testing</b>
+                      </label>
+                    </li>
+
+                    <li class="has-child">
+                      <input type="checkbox" checked ><span class="tree-control"></span>
+                      <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(6, 196, 136)"></i><b>Parallel Testing</b>
+                      </label>
+                    </li>
+
+                    <li class="has-child">
+                      <input type="checkbox" checked ><span class="tree-control"></span>
+                      <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(6, 196, 136)"></i><b>Concurrent Testing</b>
+                      </label>
+                    </li>
+
+                    <li class="has-child">
+                      <input type="checkbox" checked ><span class="tree-control"></span>
+                      <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(6, 196, 136)"></i><b>BenchMark Testing</b>
+                      </label>
+                    </li>
+
+                    <li class="has-child">
+                      <input type="checkbox" checked ><span class="tree-control"></span>
+                      <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(6, 196, 136)"></i><b>End to End Testing</b>
+                      </label>
+                    </li>
+
+                    <li class="has-child">
+                      <input type="checkbox" checked ><span class="tree-control"></span>
+                      <label>
+                        <input type="checkbox" />
+                        <i class="fa fa-wrench" aria-hidden="true" style="color:rgb(6, 196, 136)"></i><b>Reliability Testing</b>
+                      </label>
+                    </li>
+
+                 
+            <br><br>
+                  </ul>
+                </li>
+                </ul>
+                </div>
+<!-- 
+        http://localhost:8080/secure/SetupMode!default.jspa
+        B435-B42H-4QL5-0A1Q -->
+<div class="text2">
+
 <h1>Unit Testing</h1>
+<h3>Definition</h3>
+<P>Unit testing is a software testing technique where individual units or components of a program are tested in isolation.</P>
+<h3>Advantages of Unit Testing</h3>
+<ul>
+  <li>1.Unit tests catch bugs at an early stage of development</li><br>
+  <li>2.Provides a safety net for refactoring and code changes</li><br>
+  <li>3.Serves as living documentation for the expected behavior of units</li><br>
+  <li>4.Enhances collaboration among team members by ensuring consistent understanding of code functionality.</li><br>
+</ul>
+<h3>History</h3>
+<p>JUnit is a popular testing framework for Java</p>
+<p>It follows the xUnit architecture and was inspired by SUnit (Smalltalk unit testing framework). </p>
+<h3>Before moving to Junit , lets Reads About Xunit : </h3>
+<p>
+ 
+   xUnit is not just a testing framework; it’s a lineage(family) of testing frameworks.
+    The “x” in xUnit signifies the variable nature of the framework, adaptable to various programming languages <br>
+    xUnit.net was inspired by the earlier frameworks like JUnit (for Java) and NUnit (for .NET). Its origins can be traced back to the early 2000s when it was first developed by James Newkirk and Brad Wilson. They aimed to create a testing framework that overcame some limitations of its predecessors and was designed with extensibility and simplicity in mind</p>
+ <h3> Advantage of Xunit </h3>
+ <ul>
+  <li>1.Simplicity :Writing tests with xUnit is straightforward, and the framework does away with unnecessary abstractions, making it easy for developers to get started.</li><br>
+  <li>2.Extensibility: xUnit is highly extensible, allowing you to customize it to your specific testing needs. You can create custom test runners, reporters, and even your own test attributes</li><br>
+  <li>3.Conventions over Configuration: xUnit follows the principle of “conventions over configuration.” This means that it encourages sensible defaults and eliminates the need for excessive configuration, saving you time and reducing complexity</li><br>
+  <li>4.Parallel Test Execution: With xUnit, you can run tests in parallel, harnessing the power of multi-core processors for faster test execution. This is especially useful when you have a large test suite.</li><br>
+  <li>5.Data-Driven Tests: xUnit makes it easy to write data-driven tests, allowing you to run the same test with different input data, which can be incredibly useful for testing various scenarios.</li><br>
+  <li>6.Rich Assertions: The framework provides a wide array of assertion methods, making it easy to check the expected behavior of your code. You can verify conditions, exceptions, and more with ease.</li><br>
+  <li>7.Test Output Capture: xUnit captures and logs test output, making it easier to diagnose issues when a test fails. This can be especially helpful for debugging</li>
+  </ul>
+  <h3>UML Diagram(Unified Modeling Language) of Xunit Architecture</h3>
+  <img src="umlarchitehjunit.png" alt="">
+
+  <ul>
+    <li><b>Test Runner:</b>The test runner is responsible for executing the tests within a test suite(collection)</li>
+   <p><span style="color: rgb(6, 6, 188);">Test Suites:</span>Enables the execution of multiple tests in a specified order, May include nested test suites for hierarchical organization</p>
+  <br>
+   <li><b>Test Case:</b> A test case represents an individual unit of testing. It typically consists of one or more test methods.</li>
+    <p><span style="color: rgb(6, 6, 188);">Test Fixtures:</span>Test fixtures are the setup and teardown procedures that prepare the test environment before executing test methods and clean up afterward.
+      Ensures a consistent and controlled environment for each test method, Collects and reports test results.
+    <br><br><span style="color: rgb(6, 6, 188);">Test Execution:</span>Executes test methods within test cases, Manages the order of test execution, Collects and reports test results.
+      <br> <br><span style="color: rgb(6, 6, 188);">Test Result Formatter:</span>  The test result formatter formats and presents the results of the test execution in a human-readable format,Provides a clear representation of which tests passed, failed, or encountered errors.
+ <br>  <br><span style="color: rgb(6, 6, 188);">Assertions:</span>Assertions are statements within test methods that check if a certain condition is true. They are used to verify expected outcomes
+    </p>
+   
+  </ul>
+  <h3>Example: xunit</h3>
+  <pre>
+    <code>
+      public class MathTests
+{
+    [Fact] // This attribute marks this method as a test.
+    public void ShouldAddTwoNumbers()
+    {
+        // Arrange
+        int a = 3;
+        int b = 5;
+
+        // Act
+        int result = a + b;
+
+        // Assert
+        Assert.Equal(8, result); // Check if the result is as expected.
+    }
+}
+      </code></pre>
+      <h3>History of Junit</h3>
+      <p>In 1997, a programmer named Kent Beck created JUnit, a development environment plugin to test small pieces of code. <br>
+        Developers wrote test code that assessed the source code. He called the approach unit tests. 
+        This style of unit test tool became a staple of every major development environment for years</p>
+        <h3>Version of Junit Testing</h3>
+        <p>
+          <b>JUnit 1:</b> The original version of JUnit, released in 1997, It had a different structure compared to later versions and used naming conventions for test methods <br><br>
+          <b>JUnit 2:</b> An incremental improvement over JUnit 1, adding some features and addressing limitations <br><br>
+          <b>JUnit 3:</b> Introduced in 2002 Test cases were implemented as methods within test classes that extended junit.framework.TestCase. Annotations were not used; instead, naming conventions were followed. It was less annotation-driven compared to later versions. <br><br>
+         <b>JUnit 4:</b>  Released in 2006, JUnit 4 brought substantial changes and improvements. It introduced annotations for test methods (@Test), setup methods (@Before), and teardown methods (@After). It improved support for parameterized tests, introduced the concept of test 
+          suites and categories, and provided a more modern and flexible approach to writing tests. JUnit 4 is widely used in Java projects. <br><br>
+         <b> JUnit 5 (Jupiter):</b> Released in 2017, JUnit 5 is a major overhaul of the framework. It introduced a modular and extensible architecture, a new programming model based on annotations, and various new features. JUnit 5 is composed of three subprojects: JUnit Jupiter, JUnit Platform, and JUnit Vintage.
+           It provides better support for parameterized tests, conditional test execution, and improved lifecycle management. JUnit 5 is considered the modern choice for Java testing.
+        </p>
+  <img src="JUnit-5-Architecture-1.png" alt="">
+ <h3>JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage</h3>
+  <p><b>The JUnit Platform</b> serves as a foundation for launching testing frameworks on the JVM. It also defines the TestEngine API for developing a testing framework that runs on the platform. 
+    Furthermore, the platform provides a Console Launcher to launch the platform from the command line and the JUnit Platform Suite Engine for running a custom test suite using one or more test engines on the platform.
+     First-class support for the JUnit Platform also exists in popular IDEs (see IntelliJ IDEA, Eclipse, NetBeans, and Visual Studio Code) and build tools (see Gradle, Maven, and Ant).</p>
+<p><b>JUnit Jupiter</b> is the combination of the programming model and extension model for writing tests and extensions in JUnit 5. The Jupiter sub-project provides a TestEngine for running Jupiter based tests on the platform</p>
+<p><b>JUnit Vintage</b> provides a TestEngine for running JUnit 3 and JUnit 4 based tests on the platform. It requires JUnit 4.12 or later to be present on the class path or module path.</p>
+        <h3>Packages</h3>
+        <pre><code>
+          module
+          org.junit.jupiter.api-- org.junit.jupiter.api org.junit.jupiter.api.condition org.junit.jupiter.api.extension org.junit.jupiter.api.function org.junit.jupiter.api.io org.junit.jupiter.api.parallel        
+                  org.junit.jupiter.api -- JUnit Jupiter API for writing tests.
+                  org.junit.jupiter.api.condition --  Annotation-based conditions for enabling or disabling tests in JUnit Jupiter.
+                  org.junit.jupiter.api.extension -- JUnit Jupiter API for writing extensions.
+                  org.junit.jupiter.api.function --   Functional interfaces used within JUnit Jupiter.
+                  org.junit.jupiter.api.io --   IO-related support in JUnit Jupiter.
+                  org.junit.jupiter.api.parallel --  JUnit Jupiter API for influencing parallel test execution.
+          org.junit.jupiter.params -- org.junit.jupiter.params org.junit.jupiter.params.aggregator org.junit.jupiter.params.converter org.junit.jupiter.params.provider org.junit.jupiter.params.support
+                  org.junit.jupiter.params -- JUnit Jupiter extension for parameterized tests.
+                  org.junit.jupiter.params.aggregator --  The ArgumentsAggregator and ArgumentsAccessor interfaces and the AggregateWith annotation.
+                  org.junit.jupiter.params.converter -- ArgumentConverter implementations and the corresponding @ConvertWith annotation.
+                  org.junit.jupiter.params.provider -- ArgumentsProvider implementations and their corresponding ArgumentsSource annotations.
+                  org.junit.jupiter.params.support --  Support classes for building providers and converters for arguments.
+          org.junit.platform.commons -- org.junit.platform.commons org.junit.platform.commons.annotation org.junit.platform.commons.function org.junit.platform.commons.support
+                  org.junit.platform.commons -- Common APIs and support utilities for the JUnit Platform.
+                  org.junit.platform.commons.annotation --   Common annotations for the JUnit Platform.
+                  org.junit.platform.commons.function -- Maintained functional interfaces and support classes.
+                  org.junit.platform.commons.support --   Maintained common support APIs provided by the JUnit Platform.  
+          org.junit.jupiter.engine -- Provides the JUnit Jupiter TestEngine implementation.      
+          org.junit.jupiter.migrationsupport --  Support for migrating from JUnit 4 to JUnit Jupiter.
+                  org.junit.jupiter.migrationsupport --  Support for migrating from JUnit 4 to JUnit Jupiter.
+                  org.junit.jupiter.migrationsupport.conditions --  Extensions which provide support for conditional test execution features of JUnit 4 (e.g., the @Ignore annotation) within JUnit Jupiter.
+                  org.junit.jupiter.migrationsupport.rules --  Extensions which provide (limited) support for JUnit 4 rules within JUnit Jupiter.
+                  org.junit.jupiter.migrationsupport.rules.adapter -- Simple wrappers for JUnit 4 rules to overcome visibility limitations of the JUnit 4 implementations.
+                  org.junit.jupiter.migrationsupport.rules.member --   Abstractions for members which can be targets of JUnit 4 rule annotations.
+          org.junit.platform.console -- Support for launching the JUnit Platform from the console.
+          org.junit.platform.enginenn-- Public API for test engine
+                  org.junit.platform.engine --     Public API for test engines.
+                  org.junit.platform.engine.discovery--     Concrete selectors and filters to be used in discovery requests.
+                  org.junit.platform.engine.reporting --   Classes used by test engines to report additional data to execution listeners.
+                  org.junit.platform.engine.support.config --  ConfigurationParameters-related support classes intended to be used by test engine implementations.
+                  org.junit.platform.engine.support.descriptor --   TestDescriptor-related support classes intended to be used by test engine implementations and clients of the launcher.
+                  org.junit.platform.engine.support.discovery -- Configurable test discovery implementation that can be reused by different test engines.
+                  org.junit.platform.engine.support.filter --   Filter-related support classes intended to be used by test engine implementations.
+                  org.junit.platform.engine.support.hierarchical -- Support classes and base implementation for any TestEngine that wishes to organize test suites hierarchically based on the Node abstraction.
+                  org.junit.platform.engine.support.store --   Reusable data structures for test engines and their extensions.
+          org.junit.platform.jfr -- Provides Java Flight Recorder events for the JUnit Platform.
+          org.junit.platform.launcher -- Public API for configuring and launching test plans.
+                  org.junit.platform.launcher -- Public API for configuring and launching test plans.
+                  org.junit.platform.launcher.core -- Core support classes for the Launcher including the LauncherFactory and the LauncherDiscoveryRequestBuilder.
+                  org.junit.platform.launcher.listeners --  Common TestExecutionListener implementations and related support classes for the Launcher.
+                  org.junit.platform.launcher.listeners.discovery -- Common LauncherDiscoveryListener implementations and factory methods.
+          org.junit.platform.reporting  Defines the JUnit Platform Reporting API.
+                  org.junit.platform.reporting.legacy --    Support for legacy reporting formats.
+                  org.junit.platform.reporting.legacy.xml -- Support for generating XML reports using a format which is compatible with the de facto standard for JUnit 4 based test reports that was made popular by the Ant build system.
+                  org.junit.platform.reporting.open.xml -- Support for generating Open Test Reporting compatible XML event reports.
+          org.junit.platform.runner -- Runner and annotations for configuring and executing tests on the JUnit Platform in a JUnit 4 environment.
+                  org.junit.platform.runner -- Runner and annotations for configuring and executing tests on the JUnit Platform in a JUnit 4 environment.
+          org.junit.platform.suite --   Aggregates all JUnit Platform Suite modules.
+                  org.junit.platform.commons --  org.junit.platform.commons org.junit.platform.commons.annotation org.junit.platform.commons.function org.junit.platform.commons.support
+                  org.junit.platform.suite.api --  org.junit.platform.suite.api
+          org.junit.platform.suite.api  -- Annotations for configuring a test suite on the JUnit Platform.  
+                  org.junit.platform.suite.api --Annotations for configuring a test suite on the JUnit Platform.  
+          org.junit.platform.suite.commonsCommon support utilities for declarative test suite executors. 
+                  org.junit.platform.launcher --  org.junit.platform.launcher org.junit.platform.launcher.core org.junit.platform.launcher.listeners org.junit.platform.launcher.listeners.discovery
+          org.junit.platform.suite.engine --  Provides a TestEngine for running declarative test suites.
+          org.junit.platform.testkit -- Defines the Test Kit API for the JUnit Platform.  
+                  org.junit.platform.testkit.engine -- Test Kit for testing the execution of a TestEngine running on the JUnit Platform.
+          org.junit.vintage.engine -- Provides a TestEngine for running JUnit 3 and 4 based tests on the platform. 
+                </code></pre>
+    
+    
+
+              
+                ParameterizedTest
+                @ParameterizedTest is used to signal that the annotated method is a parameterized test method.
+
+    
+        <details>
+          <summary>
+            <span class="faq-title"> 
+              <h3>org.junit.jupiter.api </h3></span>
+            <!-- <img src="plus.svg" class="expand-icon" alt="Plus"> -->
+          </summary>        
+          <div class="faq-content">
+     
+            <h3>package org.junit.jupiter.api</h3>
+            <pre><code>
+             //Interface
+               Assertions.TimeoutFailureFactory<T extends Throwable>  -- Factory for timeout failures.
+               ClassDescriptor -- ClassDescriptor encapsulates functionality for a given Class.
+               ClassOrderer -- ClassOrderer defines the API for ordering top-level test classes and @Nested test classes.
+               ClassOrdererContext --  ClassOrdererContext encapsulates the context in which a ClassOrderer will be invoked.
+               DisplayNameGenerator --  DisplayNameGenerator defines the SPI for generating display names programmatically.
+               MethodDescriptor -- MethodDescriptor encapsulates functionality for a given Method.
+               MethodOrderer -- MethodOrderer defines the API for ordering the test methods in a given test class.
+               MethodOrdererContext -- MethodOrdererContext encapsulates the context in which a MethodOrderer will be invoked.
+               Named<T> -- Named is a container that associates a name with a given payload.
+               RepetitionInfo --  RepetitionInfo is used to inject information about the current repetition of a repeated test into @RepeatedTest, @BeforeEach, and @AfterEach methods.
+               TestInfo --  TestInfo is used to inject information about the current test or container into to @Test, @RepeatedTest, @ParameterizedTest, @TestFactory, @BeforeEach, @AfterEach, @BeforeAll, and @AfterAll methods.
+               TestReporter -- Parameters of type TestReporter can be injected into @BeforeEach and @AfterEach lifecycle methods as well as methods annotated with @Test, @RepeatedTest, @ParameterizedTest, @TestFactory, etc.
+            
+            //classes
+               AssertionFailureBuilder--  Builder for AssertionFailedErrors.
+               Assertions -- Assertions is a collection of utility methods that support asserting conditions in tests.
+               Assumptions -- Assumptions is a collection of utility methods that support conditional test execution based on assumptions.
+               ClassOrderer.ClassName -- ClassOrderer that sorts classes alphanumerically based on their fully qualified names using String.compareTo(String).
+               ClassOrderer.DisplayName --  ClassOrderer that sorts classes alphanumerically based on their display names using String.compareTo(String)
+               ClassOrderer.OrderAnnotation -- ClassOrderer that sorts classes based on the @Order annotation.
+               ClassOrderer.Random -- ClassOrderer that orders classes pseudo-randomly.
+               DisplayNameGenerator.IndicativeSentences --  DisplayNameGenerator that generates complete sentences.
+               DisplayNameGenerator.ReplaceUnderscores --  DisplayNameGenerator that replaces underscores with spaces.
+               DisplayNameGenerator.Simple --  Simple DisplayNameGenerator that removes trailing parentheses for methods with no parameters.
+               DisplayNameGenerator.Standard -- Standard DisplayNameGenerator.
+               DynamicContainer --   A DynamicContainer is a container generated at runtime.
+               DynamicNode --  DynamicNode serves as the abstract base class for a container or a test case generated at runtime.
+               DynamicTest -- A DynamicTest is a test case generated at runtime.
+               MethodOrderer.Alphanumeric --  Deprecated. as of JUnit Jupiter 5.7 in favor of MethodOrderer.MethodName; to be removed in 6.0
+               MethodOrderer.DisplayName --  MethodOrderer that sorts methods alphanumerically based on their display names using String.compareTo(String)
+               MethodOrderer.MethodName --  MethodOrderer that sorts methods alphanumerically based on their names using String.compareTo(String).
+               MethodOrderer.OrderAnnotation --  MethodOrderer that sorts methods based on the @Order annotation.
+               MethodOrderer.Random --   MethodOrderer that orders methods pseudo-randomly.
+       
+               //Enum classes
+               TestInstance.Lifecycle -- Enumeration of test instance lifecycle modes.
+               Timeout.ThreadMode -- ThreadMode is use to define whether the test code should be executed in the thread of the calling code or in a separated thread.
+             </code>
+            </pre>
+       
+            <h3>package org.junit.jupiter.api.condition</h3>
+            <pre>
+             <code>
+               //Enum Classes
+               JRE -- Enumeration of Java Runtime Environment (JRE) versions.
+               OS -- Enumeration of common operating systems used for testing Java applications.
+       
+       
+               //Annotation Interface
+               DisabledForJreRange -- @DisabledForJreRange is used to signal that the annotated test class or test method is only disabled for a specific range of Java Runtime Environment (JRE) versions from DisabledForJreRange.min() to DisabledForJreRange.max().
+               DisabledIf --  @DisabledIf is used to signal that the annotated test class or test method is disabled only if the provided condition evaluates to true.
+               DisabledIfEnvironmentVariable -- @DisabledIfEnvironmentVariable is used to signal that the annotated test class or test method is disabled if the value of the specified environment variable matches the specified regular expression.
+               DisabledIfEnvironmentVariables --  @DisabledIfEnvironmentVariables is a container for one or more @DisabledIfEnvironmentVariable declarations.
+               DisabledIfSystemProperties -- @DisabledIfSystemProperties is a container for one or more @DisabledIfSystemProperty declarations.
+               DisabledIfSystemProperty -- @DisabledIfSystemProperty is used to signal that the annotated test class or test method is disabled if the value of the specified system property matches the specified regular expression.
+               DisabledInNativeImage --   @DisabledInNativeImage is used to signal that the annotated test class or test method is only disabled when executing within a GraalVM native image.
+               DisabledOnJre -- @DisabledOnJre is used to signal that the annotated test class or test method is disabled on one or more specified Java Runtime Environment (JRE) versions.
+               DisabledOnOs --  @DisabledOnOs is used to signal that the annotated test class or test method is disabled on one or more specified operating systems or on one or more specified architectures
+               EnabledForJreRange -- @EnabledForJreRange is used to signal that the annotated test class or test method is only enabled for a specific range of Java Runtime Environment (JRE) versions from EnabledForJreRange.min() to EnabledForJreRange.max().
+               EnabledIf -- @EnabledIf is used to signal that the annotated test class or test method is enabled only if the provided condition evaluates to true.
+               EnabledIfEnvironmentVariable --  @EnabledIfEnvironmentVariable is used to signal that the annotated test class or test method is only enabled if the value of the specified environment variable matches the specified regular expression.
+               EnabledIfEnvironmentVariables --  @EnabledIfEnvironmentVariables is a container for one or more @EnabledIfEnvironmentVariable declarations.
+               EnabledIfSystemPropertiesn --  @EnabledIfSystemProperties is a container for one or more @EnabledIfSystemProperty declarations.
+               EnabledIfSystemProperty --   @EnabledIfSystemProperty is used to signal that the annotated test class or test method is only enabled if the value of the specified system property matches the specified regular expression.
+               EnabledInNativeImage --   @EnabledInNativeImage is used to signal that the annotated test class or test method is only enabled when executing within a GraalVM native image.
+               EnabledOnJre --   @EnabledOnJre is used to signal that the annotated test class or test method is only enabled on one or more specified Java Runtime Environment (JRE) versions.
+               EnabledOnOs -- @EnabledOnOs is used to signal that the annotated test class or test method is only enabled on one or more specified operating systems or one or more specified architectures.
+             </code>
+            </pre>
+       
+            <h3>  package org.junit.jupiter.api.extension</h3>
+            <pre><code>
+             //Interface
+                 AfterAllCallback -- AfterAllCallback defines the API for Extensions that wish to provide additional behavior to test containers once after all tests in the container have been executed.
+                 AfterEachCallback -- AfterEachCallback defines the API for Extensions that wish to provide additional behavior to tests after an individual test and any user-defined teardown methods (e.g., @AfterEach methods) for that test have been executed.
+                 AfterTestExecutionCallback -- AfterTestExecutionCallback defines the API for Extensions that wish to provide additional behavior to tests immediately after an individual test has been executed but before any user-defined teardown methods (e.g., @AfterEach methods) have been executed for that test.
+                 AnnotatedElementContext --  AnnotatedElementContext encapsulates the context in which an AnnotatedElement is declared.
+                 BeforeAllCallback -- BeforeAllCallback defines the API for Extensions that wish to provide additional behavior to test containers once before all tests in the container have been executed.
+                 BeforeEachCallback -- BeforeEachCallback defines the API for Extensions that wish to provide additional behavior to tests before an individual test and any user-defined setup methods (e.g., @BeforeEach methods) for that test have been executed.
+                 BeforeTestExecutionCallback -- BeforeTestExecutionCallback defines the API for Extensions that wish to provide additional behavior to tests immediately before an individual test is executed but after any user-defined setup methods (e.g., @BeforeEach methods) have been executed for that test.
+                 DynamicTestInvocationContext -- DynamicTestInvocationContext represents the context of a single invocation of a dynamic test.
+                 ExecutableInvoker --  ExecutableInvoker allows invoking methods and constructors with support for dynamic resolution of parameters via ParameterResolvers.
+                 ExecutionCondition --  ExecutionCondition defines the Extension API for programmatic, conditional test execution.
+                 Extension --  Marker interface for all extensions.
+                 ExtensionContext --  ExtensionContext encapsulates the context in which the current test or container is being executed.
+                 ExtensionContext.Store -- Store provides methods for extensions to save and retrieve data.
+                 ExtensionContext.Store.CloseableResource -- Classes implementing this interface indicate that they want to ExtensionContext.Store.CloseableResource.close() some underlying resource or resources when the enclosing Store is closed.
+                 InvocationInterceptor -- InvocationInterceptor defines the API for Extensions that wish to intercept calls to test code.
+                 InvocationInterceptor.Invocation<T> --   An invocation that returns a result and may throw a Throwable.
+                 LifecycleMethodExecutionExceptionHandler --  LifecycleMethodExecutionExceptionHandler defines the API for Extensions that wish to handle exceptions thrown during the execution of @BeforeAll, @BeforeEach, @AfterEach, and @AfterAll lifecycle methods.
+                 ParameterContext -- ParameterContext encapsulates the context in which an Executable will be invoked for a given Parameter.
+                 ParameterResolver -- ParameterResolver defines the API for Extensions that wish to dynamically resolve arguments for parameters at runtime.
+                 ReflectiveInvocationContext<T extends Executable> -- ReflectiveInvocationContext encapsulates the context of a reflective invocation of an executable (method or constructor).
+                 TestExecutionExceptionHandler --  TestExecutionExceptionHandler defines the API for Extensions that wish to handle exceptions thrown during test execution.
+                 TestInstanceFactory -- TestInstanceFactory defines the API for Extensions that wish to create test instances.
+                 TestInstanceFactoryContext -- TestInstanceFactoryContext encapsulates the context in which a test class is to be instantiated by a TestInstanceFactory.
+                 TestInstancePostProcessor --   TestInstancePostProcessor defines the API for Extensions that wish to post-process test instances.
+                 TestInstancePreConstructCallback -- TestInstancePreConstructCallback defines the API for Extensions that wish to be invoked prior to creation of test instances.
+                 TestInstancePreDestroyCallback -- TestInstancePreDestroyCallback defines the API for Extensions that wish to process test instances after they have been used in tests but before they are destroyed.
+                 TestInstances --  TestInstances encapsulates the test instances of a test.
+                 TestTemplateInvocationContext --   TestTemplateInvocationContext represents the context of a single invocation of a test template.
+                 TestTemplateInvocationContextProvider --  TestTemplateInvocationContextProvider defines the API for Extensions that wish to provide one or multiple contexts for the invocation of a @TestTemplate method.
+                 TestWatcher --  TestWatcher defines the API for Extensions that wish to process test results.
+          
+                 //Classes
+                 ConditionEvaluationResult -- The result of evaluating an ExecutionCondition.
+                 ExtensionContext.Namespace -- A Namespace is used to provide a scope for data saved by extensions within a ExtensionContext.Store.
+          
+                 //Exception
+                 ExtensionConfigurationException -- Thrown if an error is encountered regarding the configuration of an extension.
+                 ExtensionContextException -- Thrown if an error is encountered regarding the use of an ExtensionContext or ExtensionContext.Store.
+                 ParameterResolutionException --  Thrown if an error is encountered in the configuration or execution of a ParameterResolver.
+                 TestInstantiationException -- Thrown if an error is encountered during the execution of a TestInstanceFactory.
+              
+              
+                 //Annotation Interface
+                 ExtendWith --  @ExtendWith is a repeatable annotation that is used to register extensions for the annotated test class, test interface, test method, parameter, or field.
+                 Extensions --  @Extensions is a container for one or more @ExtendWith declarations.
+                 RegisterExtensionn -- @RegisterExtension is used to register an Extension via a field in a test class.
+               </code></pre>
+       
+               <h3>package org.junit.jupiter.api.function</h3>
+               <pre><code>
+                 //Interface
+                 Executable -- Executable is a functional interface that can be used to implement any generic block of code that potentially throws a Throwable.
+                 ThrowingConsumer<T> --  ThrowingConsumer is a functional interface that can be used to implement any generic block of code that consumes an argument and potentially throws a Throwable.
+                 ThrowingSupplier<T> --   ThrowingSupplier is a functional interface that can be used to implement any generic block of code that returns an object and potentially throws a Throwable.
+               </code></pre>
+       
+               <h3>package org.junit.jupiter.api.io</h3>
+               <pre><code>
+                 //Interface
+                 TempDirFactory -- TempDirFactory defines the SPI for creating temporary directories programmatically.
+              
+                 //Classes
+                 TempDirFactory.Standard -- Standard TempDirFactory implementation which delegates to Files.createTempDirectory(java.nio.file.Path, java.lang.String, java.nio.file.attribute.FileAttribute<?>...) using "junit" as the prefix.
+              
+                 //Enum Classes
+                 CleanupMode -- Enumeration of cleanup modes for @TempDir.
+       
+                 //Annotation  Interface
+                 TempDir -- @TempDir can be used to annotate a field in a test class or a parameter in a lifecycle method or test method of type Path or File that should be resolved into a temporary directory.
+               </code></pre>
+       
+               <h3>package org.junit.jupiter.api.parallel</h3>
+               <pre><code>
+                 //Classes
+                 Resources -- Common resource names for synchronizing test execution.
+       
+                 //Enum Classes
+                 ExecutionMode -- Supported execution modes for parallel test execution.
+                 ResourceAccessMode -- The access mode required by a test class or method for a given resource.
+             
+                 //Annotation Interface
+                 Execution --  @Execution is used to configure the parallel execution mode of a test class or test method.
+                 Isolated --   @Isolated is used to declare that the annotated test class should be executed in isolation from other test classes.
+                 ResourceLock --   @ResourceLock is used to declare that the annotated test class or test method requires access to a shared resource identified by a key.
+                 ResourceLocks --  @ResourceLocks is a container for one or more @ResourceLock declarations.
+               </code></pre>
+       
+        </div>
+        </details>
 
 
-  </div>
+
+        <details>
+          <summary>
+            <span class="faq-title"> 
+              <h3>org.junit.jupiter.params</h3></span>
+            <!-- <img src="plus.svg" class="expand-icon" alt="Plus"> -->
+          </summary>        
+          <div class="faq-content">
+     
+            <h3>package org.junit.jupiter.params</h3>
+            <pre><code>
+              ParameterizedTest    @ParameterizedTest is used to signal that the annotated method is a parameterized test method.
+            </code></pre>
+
+            <h3>package org.junit.jupiter.params.aggregator</h3>
+            <pre><code>
+             //Interface
+             ArgumentsAccessor--   ArgumentsAccessor defines the public API for accessing arguments provided by an ArgumentsProvider for a single invocation of a @ParameterizedTest method.
+             ArgumentsAggregator --  ArgumentsAggregator is an abstraction for the aggregation of arguments provided by an ArgumentsProvider for a single invocation of a @ParameterizedTest method into a single object.
+           
+             //class
+             DefaultArgumentsAccessor -- Default implementation of the ArgumentsAccessor API.
+
+             //exceptions
+             ArgumentAccessException --  ArgumentAccessException is an exception thrown by an ArgumentsAccessor if an error occurs while accessing or converting an argument.
+             ArgumentsAggregationException -- ArgumentsAggregationException is an exception thrown by an ArgumentsAggregator when an error occurs while aggregating arguments.
+       
+             //Annotation Interface
+             AggregateWith  @AggregateWith is an annotation that allows one to specify an ArgumentsAggregator.
+       
+        </code></pre>
+
+            <h3>package org.junit.jupiter.params.converter</h3>
+            <pre><code>
+             // Interface
+             ArgumentConverter --  ArgumentConverter is an abstraction that allows an input object to be converted to an instance of a different class.
+         
+             //classes
+             AnnotationBasedArgumentConverter<A extends Annotation> --    AnnotationBasedArgumentConverter is an abstract base class for ArgumentConverter implementations that also need to consume an annotation in order to perform the conversion.
+             DefaultArgumentConverter -- DefaultArgumentConverter is the default implementation of the ArgumentConverter API.
+             SimpleArgumentConverter --  SimpleArgumentConverter is an abstract base class for ArgumentConverter implementations that only need to know the target type and do not need access to the ParameterContext to perform the conversion.
+             TypedArgumentConverter<S,T>--    TypedArgumentConverter is an abstract base class for ArgumentConverter implementations that always convert objects of a given source type into a given target type.
+              
+            //Exception
+             ArgumentConversionException -- ArgumentConversionException is an exception that can occur when an object is converted to another object by an implementation of an ArgumentConverter.
+            
+
+             //Annotation Interface
+             ConvertWith --@ConvertWith is an annotation that allows one to specify an explicit ArgumentConverter.
+             JavaTimeConversionPattern -- @JavaTimeConversionPattern is an annotation that allows a date/time conversion pattern to be specified on a parameter of a @ParameterizedTest method.
+            </code></pre>
+
+            <h3>package org.junit.jupiter.params.provider</h3>
+            <pre><code>
+             //Interface
+             Arguments -- Arguments is an abstraction that provides access to an array of objects to be used for invoking a @ParameterizedTest method.
+             ArgumentsProvider -- An ArgumentsProvider is responsible for providing a stream of arguments to be passed to a @ParameterizedTest method.
+          
+
+              //classes
+              AnnotationBasedArgumentsProvider<A extends Annotation> --  AnnotationBasedArgumentsProvider is an abstract base class for ArgumentsProvider implementations that also need to consume an annotation in order to provide the arguments.
+
+              //Enum classes
+              EnumSource.Mode --Enumeration of modes for selecting enum constants by name.
+              NullEnum --Dummy enum class used as default value for optional attributes of annotations.
+
+              //Exception
+              CsvParsingException -- Thrown if an error is encountered while parsing CSV input.
+
+              //Annotation Interface
+              ArgumentsSource --   @ArgumentsSource is a repeatable annotation that is used to register argument providers for the annotated test method.
+              ArgumentsSources --    @ArgumentsSources is a simple container for one or more ArgumentsSource annotations.
+              CsvFileSource --     @CsvFileSource is an ArgumentsSource which is used to load comma-separated value (CSV) files from one or more classpath CsvFileSource.resources() or CsvFileSource.files().
+              CsvSource--    @CsvSource is an ArgumentsSource which reads comma-separated values (CSV) from one or more CSV records supplied via the CsvSource.value() attribute or CsvSource.textBlock() attribute.
+              EmptySource --    @EmptySource is an ArgumentsSource which provides a single empty argument to the annotated @ParameterizedTest method.
+              EnumSource --     @EnumSource is an ArgumentsSource for constants of an Enum.
+              MethodSource --    @MethodSource is an ArgumentsSource which provides access to values returned from factory methods of the class in which this annotation is declared or from static factory methods in external classes referenced by fully qualified method name.
+              NullAndEmptySource --    @NullAndEmptySource is a composed annotation that combines the functionality of @NullSource and @EmptySource.
+              NullSource --     @NullSource is an ArgumentsSource which provides a single null argument to the annotated @ParameterizedTest method.
+              ValueSource --    @ValueSource is an ArgumentsSource which provides access to an array of literal values.
+
+</code></pre>
+
+            <h3>package org.junit.jupiter.params.support</h3>
+            <pre><code>
+             // Interface
+             AnnotationConsumer<A extends Annotation> --  AnnotationConsumer is a functional interface for consuming annotations.
+            
+             //classes
+             AnnotationConsumerInitializer -- AnnotationConsumerInitializer is an internal helper class for initializing AnnotationConsumers.
+            </code></pre>
+          </div>
+        </details>
+
+
+
+        <details>
+          <summary>
+            <span class="faq-title"> 
+              <h3>org.junit.platform.commons  </h3></span>
+            <!-- <img src="plus.svg" class="expand-icon" alt="Plus"> -->
+          </summary>        
+          <div class="faq-content">
+     
+            <h3>package org.junit.platform.commons</h3>
+            <pre><code>
+              JUnitException --Base class for all RuntimeExceptions thrown by JUnit.
+              PreconditionViolationException --Thrown if a precondition is violated.
+            </code></pre>
+
+            <h3>package org.junit.platform.commons.annotation</h3>
+            <pre><code>
+              Testable -- @Testable is used to signal to IDEs and tooling vendors that the annotated or meta-annotated element is testable.
+            </code></pre>
+
+            <h3>package org.junit.platform.commons.function</h3>
+            <pre><code>
+              //Interface
+              Try.Transformer<S,T> -- A transformer for values of type S to type T.
+
+            //classes
+            Try<V> --   A container object which may either contain a nullable value in case of success or an exception in case of failure.
+            </code></pre>
+
+            <h3>package org.junit.platform.commons.logging</h3>
+            <pre><code>
+              //Interface
+              Logger --The Logger API serves as a simple logging facade for java.util.logging (JUL).
+
+              //classes
+              LoggerFactory -- Factory for the Logger facade for JUL.
+              LogRecordListener -- LogRecordListener is only intended for testing purposes within JUnit's own test suite.
+            </code></pre>
+
+            <h3>package org.junit.platform.commons.support</h3>
+            <pre><code>
+              //classes
+              AnnotationSupport -- AnnotationSupport provides static utility methods for common tasks regarding annotations — for example, checking if a class, method, or field is annotated with a particular annotation; finding annotations on a given class, method, or field; finding fields or methods annotated with a particular annotation, etc.
+              ClassSupport -- ClassSupport provides static utility methods for common tasks regarding classes — for example, generating a comma-separated list of fully qualified class names for a set of supplied classes.
+              ModifierSupport --ModifierSupport provides static utility methods for working with class and member modifiers — for example, to determine if a class or member is declared as public, private, abstract, static, etc.
+              ReflectionSupport --ReflectionSupport provides static utility methods for common reflection tasks — for example, scanning for classes in the class-path or module-path, loading classes, finding methods, invoking methods, etc.
+         
+         
+              //Enum classes
+              HierarchyTraversalMode -- Modes in which a hierarchy can be traversed — for example, when searching for methods or fields within a class hierarchy.
+              SearchOptionn --Search options for finding an annotation within a class hierarchy.
+            </code></pre>
+      
+
+            <h3>package org.junit.platform.commons.util</h3>
+            <pre>
+              <code>
+                //classes
+                AnnotationUtils --     Collection of utilities for working with annotations.
+                BlacklistedExceptions-- Deprecated.  Use UnrecoverableExceptions instead.
+                ClassFilter--   Class-related predicate used by reflection utilities.
+                ClassLoaderUtils--    Collection of utilities for working with ClassLoader and associated tasks.
+                ClassNamePatternFilterUtils --   Collection of utilities for creating filters based on class names.
+                ClassUtils--   Collection of utilities for working with classes.
+                CollectionUtils --     Collection of utilities for working with Collections.
+                ExceptionUtils -- Collection of utilities for working with exceptions.
+                FunctionUtils --   Collection of utilities for working with Functions, Predicates, etc.
+                LruCache<K,V> --    A simple LRU cache with a maximum size.
+                ModuleUtils--  Collection of utilities for working with java.lang.Module and friends.
+                PackageUtils --  Collection of utilities for working with packages.
+                Preconditions-- Collection of utilities for asserting preconditions for method and constructor arguments.
+                ReflectionUtils --  Collection of utilities for working with the Java reflection APIs.
+                RuntimeUtils --   Collection of utilities for working with Runtime, RuntimeMXBean, etc.
+                StringUtils --  Collection of utilities for working with Strings, CharSequences, etc.
+                ToStringBuilder --   Simple builder for generating strings in custom implementations of toString().
+                UnrecoverableExceptions --     Internal utilities for working with unrecoverable exceptions.
+             
+             
+             //Enum classes
+             ReflectionUtils.HierarchyTraversalMode -- Modes in which a hierarchy can be traversed — for example, when searching for methods or fields within a class hierarchy.
+              
+             //Exception
+             PreconditionViolationException -- Deprecated. Use PreconditionViolationException instead.
+            </code>
+            </pre>
+
+          </div>
+        </details>
+
+
+
+
+        <details>
+          <summary>
+            <span class="faq-title"> 
+              <h3>org.junit.jupiter.engine</h3></span>
+            <!-- <img src="plus.svg" class="expand-icon" alt="Plus"> -->
+          </summary>        
+          <div class="faq-content">
+     
+            <h3>module org.junit.jupiter.engine</h3>
+            <pre><code>
+            </code></pre>
+            TestEngine --  The JupiterTestEngine runs Jupiter based tests on the platform.
+          </div>
+        </details>
+
+
+
+
+        <details>
+          <summary>
+            <span class="faq-title"> 
+              <h3>org.junit.jupiter.api </h3></span>
+            <!-- <img src="plus.svg" class="expand-icon" alt="Plus"> -->
+          </summary>        
+          <div class="faq-content">
+     
+            <h3>package org.junit.jupiter.api</h3>
+            <pre><code>
+            </code></pre>
+      
+          </div>
+        </details>
+
+
+
+        <details>
+          <summary>
+            <span class="faq-title"> 
+              <h3>org.junit.jupiter.api </h3></span>
+            <!-- <img src="plus.svg" class="expand-icon" alt="Plus"> -->
+          </summary>        
+          <div class="faq-content">
+     
+            <h3>package org.junit.jupiter.api</h3>
+            <pre><code>
+            </code></pre>
+      
+          </div>
+        </details>
+
+
+
+        <details>
+          <summary>
+            <span class="faq-title"> 
+              <h3>org.junit.jupiter.api </h3></span>
+            <!-- <img src="plus.svg" class="expand-icon" alt="Plus"> -->
+          </summary>        
+          <div class="faq-content">
+     
+            <h3>package org.junit.jupiter.api</h3>
+            <pre><code>
+            </code></pre>
+      
+          </div>
+        </details>
+
+
+
+        <details>
+          <summary>
+            <span class="faq-title"> 
+              <h3>org.junit.jupiter.api </h3></span>
+            <!-- <img src="plus.svg" class="expand-icon" alt="Plus"> -->
+          </summary>        
+          <div class="faq-content">
+     
+            <h3>package org.junit.jupiter.api</h3>
+            <pre><code>
+            </code></pre>
+      
+          </div>
+        </details>
+
+
+    </div>
+    </div>
     
 
 
-
+ 
 
 
 
@@ -1584,5 +2644,37 @@ sidebar.classList.remove("bottom");
 }
 });
 </script> -->
+
+
+<script>
+     
+  var codeBlocks = document.querySelectorAll("pre");
+  console.log(codeBlocks);
+  codeBlocks.forEach(function(t)
+  {
+      var o = document.createElement("button");
+ 
+      o.className="at_copy",
+      o.type="button",
+      o.ariaLabel="Copy code to clipboard",
+      o.innerHTML="Copy",
+      t.append(o),
+      o.addEventListener("click",function()
+      {
+      var e =t.querySelector("code").innerText.trim();
+      window.navigator.clipboard.writeText(e),
+ 
+      o.innerHTML="Copied";
+ 
+      setTimeout(function(){
+       o.innerHTML="Copy"
+     },1e3)
+  })
+ });
+  /*]]>*/
+       </script>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script> 
+ <script>hljs.highlightAll();</script>  
 </body>
 </html>
