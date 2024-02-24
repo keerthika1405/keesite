@@ -150,29 +150,43 @@ margin-top: -50px;
            
     </style>
 
-     <style type="text/css">
-  
-      #stage{
-      position: fixed;
-      margin-left: 10px;
-      margin-top: 10px;
-      cursor: pointer;
-      z-index: 200;
-  
-  
-      }
-          @font-face {
-           font-family: 'FontAwesome';
-           src: url('fontawesome/fonts/fontawesome-webfont.ttf');
-           font-weight: normal;
-           font-style: normal;
-       
-          }
-          #stage{
-            font-family:FontAwesome;
-          }
-
-          </style> 
+<style type="text/css">
+  @media (min-width: 1024px) { 
+       #stage{
+       position: fixed;
+       margin-left: 1280px;
+       top:15px;
+       cursor: pointer;
+       z-index: 200;
+   
+       }
+     }
+     @media (max-width: 1023px) {
+    
+ 
+     }
+     @media (max-width: 767px) {
+       #stage{
+   
+         position: fixed;
+       margin-left: 280px;
+       top:60px;
+       cursor: pointer;
+       z-index: 1;
+       }
+     }
+           @font-face {
+            font-family: 'FontAwesome';
+            src: url('fontawesome/fonts/fontawesome-webfont.ttf');
+            font-weight: normal;
+            font-style: normal;
+        
+           }
+           #stage{
+             font-family:FontAwesome;
+           }
+ 
+           </style> 
  <style>
             #bg{
   position: fixed;

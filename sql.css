@@ -674,7 +674,8 @@ body {
  .trees {
     position: absolute;
    margin-top: 300px;
-   margin-left: 50px;
+   margin-left: 50px;   
+z-index:-5;
  }
  .trees li a{
   text-decoration: none;
@@ -831,6 +832,7 @@ body {
     position: absolute;
    margin-top: 300px;
    margin-left: 450px;
+   z-index:-5;
  }
  
  .trees1 li {
@@ -845,6 +847,7 @@ body {
     position: absolute;
    margin-top: 300px;
    margin-left: 780px;
+   z-index:-5;
  }
  
  .trees2 li {
@@ -859,6 +862,7 @@ body {
     position: absolute;
    margin-top: 300px;
    margin-left: 1050px;
+   z-index:-5;
  }
  
  .trees3 li {
@@ -879,6 +883,7 @@ body {
     width: 95%;
     height:fit-content;
     margin-left: 20px;
+    z-index:-10;
   }
   
   .section h1{
